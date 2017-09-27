@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/welcome/welcome"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#008842",
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "非物环保",
+    "navgiationBarTextStryle": "white"
+  },
+  "tabbar": {
+    "color": "skyblue",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list":[
+      {
+        "text": "首页"
+      },{
+        "text": "分类"
+      },{
+        "text": "购物车"
+      }
+    ]
+  }
+}
