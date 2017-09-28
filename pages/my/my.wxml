@@ -1,4 +1,4 @@
 <!-- 主页面 -->
 <view class='container'>
-  <template data="{{title:'Login'}}"></template>  
+  我的
 </view>

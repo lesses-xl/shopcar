@@ -1,6 +1,8 @@
 {
   "pages": [
-    "pages/welcome/welcome"
+    "pages/home/home",
+    "pages/my/my",
+    "pages/list/list"
   ],
   "window":{
     "navigationBarBackgroundColor": "#008842",
@@ -8,18 +10,37 @@
     "navigationBarTitleText": "非物环保",
     "navgiationBarTextStryle": "white"
   },
-  "tabbar": {
-    "color": "skyblue",
+  "tabBar": {
+    "color": "black",
     "borderStyle": "white",
     "backgroundColor": "#fff",
     "list":[
       {
+        "pagePath": "pages/home/home",
+        "iconPath": "images/shou.png",
+        "selectedIconPath": "images/shouu.png",
         "text": "首页"
       },{
+        "pagePath": "pages/list/list",
+        "iconPath": "images/shoo.png",
+        "selectedIconPath": "images/shooo.png",
         "text": "分类"
       },{
-        "text": "购物车"
+        "pagePath": "pages/my/my",
+        "iconPath": "images/icon-user.png",
+        "selectedIconPath": "images/icon-user-active.png",
+        "text": "留言"
+      },{
+        "pagePath": "pages/my/my",
+        "iconPath": "images/icon-user.png",
+        "selectedIconPath": "images/icon-user-active.png",
+        "text": "我的"
       }
     ]
-  }
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
 }
