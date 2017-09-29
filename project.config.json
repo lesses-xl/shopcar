@@ -9,7 +9,7 @@
 	"compileType": "weapp",
 	"libVersion": "1.5.4",
 	"appid": "touristappid",
-	"projectname": "shopcar",
+	"projectname": "%E9%9D%9E%E7%89%A9%E7%8E%AF%E4%BF%9D",
 	"condition": {
 		"weapp": {
 			"current": -1,
