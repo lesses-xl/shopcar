@@ -1,0 +1,5 @@
+<view class='address-add'>
+	<image class='address-img1' src='../../../images/add-addr.png'></image>
+	<text class='address-text'>新增收货地址</text>
+	<image class='address-img2' src='../../../images/arrow-right.png'></image>
+</view>

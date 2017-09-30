@@ -1,4 +1,30 @@
-<!-- 主页面 -->
-<view class='container'>
-  我的
-</view>
+<view class='my-container'>
+	<view class='userBanner'>
+		<image class="userinfo-img" src="../../images/gou-red.png" background-size="cover"></image>
+		<text class="userinfo-name">测试测试测试</text>
+	</view>	
+	<view class='my-border'></view>
+	<view class='my-list' bindtap='showMyOrder'>
+		<text>我的订单</text>	
+		<image class='my-list-img' src='../../images/arrow-right.png'></image>
+	</view>
+	<view class='my-border'></view>
+	<view class='my-list' style='border-bottom: none' bindtap='showMyAddress'>
+		<text>我的收货地址</text>	
+		<image class='my-list-img' src='../../images/arrow-right.png'></image>
+	</view>
+	<view class='my-border'></view>
+	<view class='my-list' bindtap='bindMyPhone'>
+		<text>绑定手机号码</text>
+		<image class='my-list-img' src='../../images/arrow-right.png'></image>
+	</view>
+	<view class='my-border'></view>
+	<view class='my-list' style='border-bottom: none'>
+		<text>清除缓存</text>
+	</view>
+	<view class='my-border'></view>
+	<view class='my-list'>
+		<text>系统版本</text>
+	</view>
+	<view class='my-border'></view>
+</view>	

@@ -1,0 +1,54 @@
+.userBanner {
+	width: 100%;
+	height: 350rpx;
+	background: #56B1F6;
+	box-sizing: border-box;
+	padding: 30rpx;
+	padding-top: 55rpx;
+}
+
+.userinfo-img {
+	width: 80px;
+	height: 80px;
+	background: skyblue;
+	border: 1px solid white;
+	margin: 0 auto;
+	display: block;
+	border-radius: 50%;
+}
+
+.userinfo-name {
+	width: 220rpx;
+	height: 50rpx;
+	margin: 0 auto;
+	margin-top: 15px;
+	text-align: center;
+	font-size: 16px;
+	display: block;
+}
+
+.my-border {
+	width: 100%;
+	height: 5px;
+	background: rgba(238,238,238,1);
+}
+
+.my-list {
+	width: 100%;
+	height: 60px;
+	padding: 15px;
+	padding-bottom: 10px;
+	padding-top: 26px;
+	font-size: 16px;
+	padding-right: 22px;
+	box-sizing: border-box;
+	/* background: url(../../images/arrow-right.png) no-repeat right center; */
+}
+
+.my-list-img {
+	width: 10px;
+	height: 16px;
+	float: right;
+}
+
+
