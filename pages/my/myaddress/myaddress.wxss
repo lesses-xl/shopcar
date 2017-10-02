@@ -4,7 +4,7 @@
 	left: 0;
 	height: 45px;
 	width: 100%;
-	border-top: 1px solid gray;
+	border-top: 1px solid #D5D4D4;
 	padding: 10px;
 	box-sizing: border-box;
 }

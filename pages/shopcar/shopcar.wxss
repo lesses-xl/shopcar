@@ -1,0 +1,198 @@
+.shopcar-no {
+  width: 100%;
+  height: 350rpx; 
+  padding-top: 170rpx;
+  box-sizing: border-box;
+}
+
+.shopcar-no image {
+  display: block;
+  width: 110rpx;
+  height: 110rpx;
+  margin: 0 auto;
+  margin-bottom: 10rpx;
+}
+
+.shopcar-no text {
+  font-size: 28rpx;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  color: gray;
+  margin-bottom: 30rpx;
+}
+
+.shopcar-no button {
+  margin: 0 auto;
+  width: 320rpx;
+  box-sizing: border-box;
+  padding: 0rpx 15rpx;
+  font-size: 28rpx;
+  background: red;
+  color: white;
+}
+
+.shopcar-have {
+  width: 100%;
+  min-height: 110rpx;
+  font-size: 14rpx;
+  margin-bottom: 99rpx;
+}
+
+.shopcar-have::webkit-scrollbar{
+  display:none
+} 
+
+.shopcar-top {
+  width: 100%;
+  height: 48rpx;
+  background: #ECECEC;
+  padding: 20rpx;
+  line-height: 48rpx;
+  font-size: 28rpx;
+  color: black;
+}
+
+.shopcar-top text:nth-child(2) {
+  float: right;
+  color: #B1B1B1;
+  margin-right: 40rpx;
+}
+
+.shopcar-some {
+  width: 100%;
+  height: auto;
+}
+
+.shopcar-one {
+  width: 95%;
+  height: 220rpx;
+  padding: 10rpx 10rpx 10rpx 10rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #D5D4D4;
+  margin-left: 35rpx;
+}
+
+.shopcar-choose {
+  width: 36rpx;
+  height: 36rpx;
+  border: 1rpx solid #D5D4D4;
+  border-radius: 50%;
+  margin-top: 80rpx;
+  float: left;
+}
+
+.shopcar-img {
+  width: 170rpx;
+  height: 170rpx;
+  float: left;
+  border: 1rpx solid #D5D4D4;
+  margin-top: 15rpx;
+  margin-left: 30rpx;
+}
+
+.shopcar-name {
+  width: 476rpx;
+  height: 50rpx;
+  float: left;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 50rpx;
+  margin-top: -155rpx;
+  font-size: 30rpx;
+  margin-left: 270rpx
+}
+
+.shopcar-price {
+  width:200rpx;
+  height:60rpx;
+  float:left;
+  margin-left:270rpx;
+  margin-top:-60rpx;
+  color:red;
+  font-size:32rpx;
+}
+
+.shopcar-change {
+  width:156rpx;
+  height:44rpx;
+  float:right;
+  margin-top:-50rpx;
+  margin-right:10rpx;
+  font-size: 32rpx;
+}
+
+.shopcar-change view {
+  float: left;
+  box-sizing: border-box;
+  border: 1rpx solid #D5D4D4;
+  text-align: center;
+  line-height: 38rpx;
+  height: 44rpx;
+}
+
+.shopcar-change .shopcar-sub {
+  width: 46rpx;
+
+}
+
+.shopcar-change .shopcar-num {
+  width: 64rpx;
+  margin-left: -1rpx;
+  font-size: 28rpx;
+}
+
+.shopcar-change .shopcar-add {
+  float: left;
+  width: 46rpx;
+  margin-left: -1rpx;
+}
+
+.shopcar-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  border-top: 1rpx solid #D5D4D4;
+  background: white;
+  font-size: 28rpx;
+}
+
+.shopcar-chooseall {
+  margin-top: 10rpx;
+}
+
+.shopcar-choosetext {
+  line-height: 60rpx;
+  margin-left: 20rpx;
+  float: left;
+}
+
+.shopcar-allprice {
+  width: 240rpx;
+  float: left;
+  color: red;
+  height: 100rpx;
+  margin-top: -20rpx;
+  line-height: 100rpx;
+  margin-left: 130rpx;
+}
+
+.shopcar-pay {
+  float: right;
+  width: 240rpx;
+  background: red;
+  height: 97rpx;
+  color: white;
+  margin-top: -20rpx;
+  margin-right: -20rpx;
+  line-height: 100rpx;
+  text-align: center;
+}

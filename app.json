@@ -9,7 +9,8 @@
 		"pages/my/myphone/myphone"
 	],
 	"window": {
-		"navigationBarTitleText": "首页"
+		"navigationBarTitleText": "首页",
+		"navigationBarTextStyle": "black"
 	},
 	"tabBar": {
 		"color": "#6e6d6b",
