@@ -19,3 +19,41 @@
     * 核心：掌握两组概念
     * 容器和项目概念
     * 主轴和交叉轴的概念 
+
+### 10.7    
+  * 数据绑定
+  * 渲染：条件，循环
+    * 条件
+    * 循环
+    * wx:if  hidden
+    * block
+    * template 
+  * 模版：template
+  * 引用
+    * import(可以解析模版)
+    * include(只能解析静态的) 
+  * 事件
+    *  视图层到逻辑层的通讯方式
+    *  事件对象可以携带额外信息
+    *  分类：冒泡事件和非冒泡事件
+    *  冒泡 touchxxx tap longtap
+    *  事件绑定：bindxxx catchxxx
+    *  bind不阻止冒泡事件向上冒泡
+    *  catch阻止冒泡事件向上冒泡
+    *  事件对象 type timeStamp target currenttarget
+        * type 代表事件类型
+        * timeStamp 触发事件所经过的毫秒数   
+        * Target 触发事件的源组件
+        * currentTarget 事件绑定的当前对象
+  * 组件
+    * swiper 轮播
+    * swiper-view  内部滚动
+    * progress 进度条  
+    * picker-view 嵌入滚动
+    * switch 开关选择器
+    * icon 图标
+    * navigator 页面跳转  在onload函数中 可以用options获得传入的参数
+    * wx.navigatorTo({ url: '.....'})
+    * audio video 多媒体
+    * map 地图
+    * canvas 画布
