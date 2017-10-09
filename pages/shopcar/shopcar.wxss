@@ -39,6 +39,7 @@
   min-height: 110rpx;
   font-size: 14rpx;
   margin-bottom: 99rpx;
+  box-sizing: border-box;
 }
 
 .shopcar-have::webkit-scrollbar{
@@ -47,18 +48,19 @@
 
 .shopcar-top {
   width: 100%;
-  height: 48rpx;
+  height: 72rpx;
   background: #ECECEC;
   padding: 20rpx;
-  line-height: 48rpx;
+  line-height: 36rpx;
   font-size: 28rpx;
   color: black;
+  box-sizing: border-box;
 }
 
 .shopcar-top text:nth-child(2) {
   float: right;
   color: #B1B1B1;
-  margin-right: 40rpx;
+  margin-right: 30rpx;
 }
 
 .shopcar-some {
@@ -69,10 +71,10 @@
 .shopcar-one {
   width: 95%;
   height: 220rpx;
-  padding: 10rpx 10rpx 10rpx 10rpx;
+  padding: 10rpx 10rpx 10rpx 2rpx;
   box-sizing: border-box;
-  border-bottom: 1rpx solid #D5D4D4;
-  margin-left: 35rpx;
+  /* border-bottom: 1rpx solid #D5D4D4; */
+  margin-left: 26rpx;
 }
 
 .shopcar-choose {
@@ -94,7 +96,7 @@
 }
 
 .shopcar-name {
-  width: 476rpx;
+  /* width: 476rpx; */
   height: 50rpx;
   float: left;
   word-break: keep-all;
@@ -195,4 +197,8 @@
   margin-right: -20rpx;
   line-height: 100rpx;
   text-align: center;
+}
+
+.shopdiv {
+  border-bottom: 1px solid #dfdfdf;
 }

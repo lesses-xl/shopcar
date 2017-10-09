@@ -1,0 +1,51 @@
+.myphone {
+	margin: 430rpx 0;
+}
+
+.phone {
+	width: 600rpx;
+	height: 75rpx;
+	border: 1px solid #dfdfdf;
+	border-radius: 10rpx;
+	display: flex;
+	margin: 0 auto;
+	margin-bottom: 20rpx;
+	font-size: 28rpx;
+}
+
+.phone input {
+	width: 450rpx;
+	height: 75rpx;
+	margin-left: 20rpx;
+	line-height: 75rpx;
+	font-size: 26rpx;
+}
+
+.phone text {
+	font-size: 28rpx;
+	line-height: 75rpx;
+	margin-left: 20rpx;
+	padding-right: 10rpx;
+}
+
+.borderright {
+	width: 2rpx;
+	height: 30rpx;
+	background: black;
+	margin-top: 25rpx;
+}
+
+.phone button {
+	width: 160rpx;
+	height: 50rpx;
+	font-size: 20rpx;
+	margin-top: 13rpx;
+	margin-right: 10rpx;
+}
+
+.bindphone {
+	width: 310rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 32rpx;
+}

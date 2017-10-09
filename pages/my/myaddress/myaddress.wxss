@@ -7,14 +7,15 @@
 	border-top: 1px solid #D5D4D4;
 	padding: 10px;
 	box-sizing: border-box;
+	background: rgba(0,0,0,0.1);
 }
 
 .address-img1 {
-	width: 20px;
-	height: 20px;
+	width: 40rpx;
+	height: 40rpx;
 	display: block;
 	float: left;
-	margin-top: 4px;
+	margin-top: 4rpx;
 }
 
 .address-img2 {
@@ -22,12 +23,13 @@
 	height: 16px;
 	float: right;
 	display: block;
-	margin-top: 4px;
+	margin-top: 10rpx;
 }
 
 .address-text {
-	font-size: 16px;
+	font-size: 30rpx;
 	float: left;
-	padding-left: 10px;
-	margin-top: 4px;
+	/* padding-left: 20prx; */
+	margin-top: 4rpx;
+	margin-left:20rpx;
 }

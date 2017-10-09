@@ -1,12 +1,14 @@
 {
 	"pages": [
+		"pages/list/list",
+		"pages/my/myphone/myphone",
 		"pages/index/index",
 		"pages/my/my",
-		"pages/list/list",
+		
 		"pages/shopcar/shopcar",
 		"pages/my/myaddress/myaddress",
-		"pages/my/myorder/myorder",
-		"pages/my/myphone/myphone"
+		"pages/my/myorder/myorder"
+		
 	],
 	"window": {
 		"navigationBarTitleText": "首页",

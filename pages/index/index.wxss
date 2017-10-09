@@ -1,0 +1,7 @@
+.index {
+	height: 360rpx;
+}
+
+swiper {
+	height: 360rpx;
+}

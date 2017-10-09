@@ -1,0 +1,99 @@
+.search {
+	width: 600rpx;
+	height: 50rpx;
+	/* background: gray; */
+	/* text-align: center; */
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid gray;
+	border-radius: 10rpx;
+}
+
+.search image {
+	width: 50rpx;
+	height: 50rpx;
+}
+
+.search text {
+	font-size: 24rpx;
+}
+
+.search input {
+	font-size: 24rpx;
+	width: 500rpx;
+	height: 50rpx;
+}
+
+.list {
+	width: 20%;
+	box-sizing: border-box;
+	/* min-height: 1420rpx; */
+	margin-top: 15rpx;
+	padding: 0 0 20rpx 0;
+	border-top: 1px solid gray;
+	border-right: 1px solid gray;
+	float: left;
+}
+
+.list-item {
+	width: 100%;
+	height: auto;
+	line-height: 50rpx;
+	box-sizing: border-box;
+	font-size: 26rpx;
+	text-align: center;
+	margin-top: 30rpx;
+}
+
+/* .list-item:nth-child(1) {
+	margin-top: 0;
+} */
+
+.active {
+	border-left: 2px solid #ab2b2b;
+	color: #ab2b2b;
+}
+
+.list-show {
+	border-top: 1px solid gray;
+	width: 80%;
+	height: 1000rpx;
+	float: left;
+	margin-top: 15rpx;
+}
+
+.list-show .list-img {
+	width: 90%;
+	display: block;
+	margin: 20rpx auto;
+	height: 250rpx;
+	background: gray;
+	border-radius: 10rpx;
+}
+
+.list-show .list-text {
+	font-size: 24rpx;
+	text-align: center;
+	display: block;
+}
+
+.list-show .list-div {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.list-show .list-div view {
+	width: 120rpx;
+	/* flex: auto; */
+	height: 160rpx;
+	font-size: 26rpx;
+}
+
+.list-show .list-div image {
+	width: 110rpx;
+	height: 110rpx;
+}

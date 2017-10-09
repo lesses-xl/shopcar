@@ -1,6 +1,15 @@
 Page({
   data: {
-    
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 300,
+    imgUrls: [
+      '../../images/1.jpg',
+      '../../images/2.jpg',
+      '../../images/3.jpg',
+      '../../images/4.jpg'
+    ]
   },
   onLoad: function (options) {
     // Do some initialize when page load.

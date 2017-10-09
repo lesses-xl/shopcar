@@ -1,7 +1,7 @@
 <view class='my-container'>
 	<view class='userBanner'>
-		<image class="userinfo-img" src="../../images/gou-red.png" background-size="cover"></image>
-		<text class="userinfo-name">测试测试测试</text>
+		<image class="userinfo-img" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+		<text class="userinfo-name">{{userInfo.nickName}}</text>
 	</view>	
 	<view class='my-border'></view>
 	<view class='my-list' bindtap='showMyOrder'>

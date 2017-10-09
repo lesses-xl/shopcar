@@ -1,3 +1,90 @@
 <view>
-	分类
+	<view class='search'>
+		<input type="text" placeholder="搜索商品" maxlength="30"></input>
+		<image></image>	
+	</view>
+	<view class="list">
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+		<view class='list-item active'>
+			推荐区
+		</view>
+	</view>
+	<view class='list-show'>
+		<image class='list-img'></image>
+		<text class='list-text'>推荐区分类</text>
+		<view class='list-div'>
+			<view>
+				<image src='../../images/add-addr.png'></image>
+				<text>测试测试测试</text>
+			</view>
+			<view>
+				<image src='../../images/add-addr.png'></image>
+				<text>测试测试测试</text>
+			</view>
+			<view>
+				<image src='../../images/add-addr.png'></image>
+				<text>测试测试测试</text>
+			</view>
+			<view>
+				<image src='../../images/add-addr.png'></image>
+				<text>测试测试测试</text>
+			</view>
+<!-- 			<view>
+				<image src='../../images/add-addr.png'></image>
+				<text>测试测试测试</text>
+			</view>
+			<view>
+				<image src='../../images/add-addr.png'></image>
+				<text>测试测试测试</text>
+			</view>
+			<view>
+				<image src='../../images/add-addr.png'></image>
+				<text>测试测试测试</text>
+			</view> -->
+		</view>
+	</view>
 </view>	
