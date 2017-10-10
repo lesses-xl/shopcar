@@ -14,7 +14,7 @@
 }
 
 .shopcar-no text {
-  font-size: 28rpx;
+  font-size: 26rpx;
   width: 100%;
   height: auto;
   text-align: center;
@@ -26,11 +26,11 @@
 
 .shopcar-no button {
   margin: 0 auto;
-  width: 320rpx;
+  width: 260rpx;
   box-sizing: border-box;
   padding: 0rpx 15rpx;
-  font-size: 28rpx;
-  background: red;
+  font-size: 24rpx;
+  background: #AB956C;
   color: white;
 }
 

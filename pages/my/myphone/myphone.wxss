@@ -4,7 +4,7 @@
 
 .phone {
 	width: 600rpx;
-	height: 75rpx;
+	height: 85rpx;
 	border: 1px solid #dfdfdf;
 	border-radius: 10rpx;
 	display: flex;
@@ -15,15 +15,15 @@
 
 .phone input {
 	width: 450rpx;
-	height: 75rpx;
+	height: 85rpx;
 	margin-left: 20rpx;
-	line-height: 75rpx;
+	line-height: 85rpx;
 	font-size: 26rpx;
 }
 
 .phone text {
 	font-size: 28rpx;
-	line-height: 75rpx;
+	line-height: 85rpx;
 	margin-left: 20rpx;
 	padding-right: 10rpx;
 }
@@ -32,20 +32,20 @@
 	width: 2rpx;
 	height: 30rpx;
 	background: black;
-	margin-top: 25rpx;
+	margin-top: 30rpx;
 }
 
 .phone button {
 	width: 160rpx;
 	height: 50rpx;
 	font-size: 20rpx;
-	margin-top: 13rpx;
+	margin-top: 18rpx;
 	margin-right: 10rpx;
 }
 
 .bindphone {
-	width: 310rpx;
-	height: 60rpx;
-	line-height: 60rpx;
+	width: 510rpx;
+	height: 75rpx;
+	line-height: 75rpx;
 	font-size: 32rpx;
 }

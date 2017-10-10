@@ -1,30 +1,33 @@
 .userBanner {
 	width: 100%;
-	height: 350rpx;
-	background: #56B1F6;
+	height: 190rpx;
+	background: rgb(171,149,108);
 	box-sizing: border-box;
-	padding: 30rpx;
-	padding-top: 55rpx;
+	padding: 10rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
 }
 
 .userinfo-img {
-	width: 80px;
-	height: 80px;
+	width: 110rpx;
+	height: 110rpx;
 	background: skyblue;
-	border: 1px solid white;
-	margin: 0 auto;
+	border: 2rpx solid white;
+	/* margin-left: -220rpx; */
 	display: block;
 	border-radius: 50%;
 }
 
 .userinfo-name {
-	width: 220rpx;
+	width: 320rpx;
 	height: 50rpx;
-	margin: 0 auto;
-	margin-top: 15px;
-	text-align: center;
+	/* text-align: center; */
 	font-size: 16px;
+	margin-left: 20rpx;
 	display: block;
+	margin-top: 10rpx;
 }
 
 .my-border {
@@ -35,14 +38,14 @@
 
 .my-list {
 	width: 100%;
-	height: 60px;
+	height: 90rpx;
 	padding: 15px;
-	padding-bottom: 10px;
-	padding-top: 26px;
-	font-size: 16px;
+	font-size: 14px;
 	padding-right: 22px;
 	box-sizing: border-box;
-	/* background: url(../../images/arrow-right.png) no-repeat right center; */
+	text-align: center;
+	line-height: 40rpx;
+	color: rgb(207, 207, 207);
 }
 
 .my-list-img {
@@ -51,4 +54,25 @@
 	float: right;
 }
 
+.add {
+	color: rgb(171, 150, 111);
+}
 
+.aboutwe {
+	width: 260rpx;
+	height: 50rpx;
+	padding-left: 100rpx;
+	box-sizing: border-box;
+}
+
+.aboutwe image {
+	width: 52rpx;
+	height: 52rpx;
+	float: left;
+}
+
+.aboutwe view {
+	font-size: 26rpx;
+	float: left;
+	line-height: 50rpx;
+}

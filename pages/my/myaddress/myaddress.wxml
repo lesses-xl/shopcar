@@ -1,5 +1,34 @@
-<view class='address-add'>
-	<image class='address-img1' src='../../../images/add-addr.png'></image>
-	<text class='address-text'>新增收货地址</text>
-	<image class='address-img2' src='../../../images/arrow-right.png'></image>
+<view class='container'>
+	<view class='address-item input'>
+		<input type="text" placeholder="姓名" bindinput='getName' maxlength="20"></input>
+	</view>
+	<view class='address-item'>
+		<input type="text" placeholder="手机号码" type="number" bindinput='getPhone' maxlength="11"></input>
+	</view>
+	<view class='address-item'>
+		   <view value="" bindtap="{{focus}}" bindtap="open" class='citychoose'>{{province}}-{{city}}-{{county}}</view>
+		   <button bindtap='getLocation'>定位</button>
+	</view>
+	<view class='address-item'>
+		<input type="text" placeholder="详细地址、如街道、楼牌号等" bindinput='getDetail' maxlength="60"></input>
+	</view>
+	<button class='address-save' bindtap='saveUserData'>保存</button>
+</view>
+
+<view wx:if="{{condition}}" class="citypicker">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+    <view class="cityheader">
+      <view bindtap="open" class="city-cancel">取消</view>
+      <view bindtap="open" class="city-true">确定</view>
+    </view>
+    <picker-view-column>
+      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
 </view>

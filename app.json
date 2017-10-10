@@ -1,12 +1,11 @@
 {
 	"pages": [
-		"pages/list/list",
-		"pages/my/myphone/myphone",
 		"pages/index/index",
-		"pages/my/my",
-		
-		"pages/shopcar/shopcar",
+		"pages/list/list",
+		"pages/my/my",	
+		"pages/my/myphone/myphone",	
 		"pages/my/myaddress/myaddress",
+		"pages/shopcar/shopcar",	
 		"pages/my/myorder/myorder"
 		
 	],

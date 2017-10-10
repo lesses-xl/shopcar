@@ -2,21 +2,26 @@
 	<view class='userBanner'>
 		<image class="userinfo-img" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
 		<text class="userinfo-name">{{userInfo.nickName}}</text>
+		<view class='aboutwe'>
+			
+			<image src='../../images/aboutwe.png'></image>
+			<view>关于我们</view>
+		</view>	
 	</view>	
-	<view class='my-border'></view>
+	<!-- <view class='my-border'></view> -->
 	<view class='my-list' bindtap='showMyOrder'>
-		<text>我的订单</text>	
-		<image class='my-list-img' src='../../images/arrow-right.png'></image>
+		<text><text class='add'>+</text> 我的地址</text>	
+		<!-- <image class='my-list-img' src='../../images/arrow-right.png'></image> -->
 	</view>
 	<view class='my-border'></view>
 	<view class='my-list' style='border-bottom: none' bindtap='showMyAddress'>
-		<text>我的收货地址</text>	
-		<image class='my-list-img' src='../../images/arrow-right.png'></image>
+		<text><text class='add'>+</text> 我的订单</text>	
+		<!-- <image class='my-list-img' src='../../images/arrow-right.png'></image> -->
 	</view>
 	<view class='my-border'></view>
 	<view class='my-list' bindtap='bindMyPhone'>
-		<text>绑定手机号码</text>
-		<image class='my-list-img' src='../../images/arrow-right.png'></image>
+		<text><text class='add'>+</text> 绑定手机</text>
+		<!-- <image class='my-list-img' src='../../images/arrow-right.png'></image> -->
 	</view>
 	<view class='my-border'></view>
 	<view class='my-list' style='border-bottom: none'>

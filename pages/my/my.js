@@ -8,12 +8,12 @@ Page({
 	},
 	showMyOrder: function() {
 		wx.navigateTo({
-		  url:"myorder/myorder"
+		  url:"myaddress/myaddress"
 		 });
 	},
 	showMyAddress: function() {
 		wx.navigateTo({
-		  url:"myaddress/myaddress"
+		  url:"myorder/myorder"
 		 });
 	},
 	bindMyPhone: function() {
@@ -30,7 +30,10 @@ Page({
 		}else if(this.data.canIUse) {
 
 		}
-		// console.log(app.globalData)
+		 wx.showToast({
+              title: app.globalData.userInfo.nickName
+          })
+		console.log(app.globalData)
 		// console.log(this.data.userInfo);
 	},
 	onReady:function(){

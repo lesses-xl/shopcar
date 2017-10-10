@@ -26,15 +26,19 @@
 	height: 50rpx;
 }
 
+.list-wrap {
+	display: flex;
+}
+
 .list {
 	width: 20%;
 	box-sizing: border-box;
 	/* min-height: 1420rpx; */
 	margin-top: 15rpx;
 	padding: 0 0 20rpx 0;
-	border-top: 1px solid gray;
-	border-right: 1px solid gray;
-	float: left;
+	border-top: 1rpx solid rgb(223,224,227);
+	border-right: 1rpx solid rgb(223,224,227);
+	/* float: left; */
 }
 
 .list-item {
@@ -52,16 +56,17 @@
 } */
 
 .active {
-	border-left: 2px solid #ab2b2b;
+	border-left: 2rpx solid #ab2b2b;
 	color: #ab2b2b;
 }
 
 .list-show {
-	border-top: 1px solid gray;
+	border-top: 1rpx solid rgb(223,224,227);
 	width: 80%;
 	height: 1000rpx;
-	float: left;
+	/* float: left; */
 	margin-top: 15rpx;
+	position: relative;
 }
 
 .list-show .list-img {
@@ -77,23 +82,49 @@
 	font-size: 24rpx;
 	text-align: center;
 	display: block;
+	color: rgb(185, 170, 141);
 }
 
 .list-show .list-div {
 	display: flex;
 	width: 100%;
-	justify-content: center;
+	margin: 20rpx auto;
+	margin-left: -1rpx;
+	margin-bottom: 5rpx;
+	justify-content: left;
 	align-items: center;
+	flex-wrap: wrap;
+	border-left: 1rpx solid rgb(223,224,227);
 }
 
-.list-show .list-div view {
-	width: 120rpx;
-	/* flex: auto; */
+.list-show .list-div .list-goods {
+	width: 110rpx;
 	height: 160rpx;
-	font-size: 26rpx;
+	font-size: 21rpx;
+	padding: 30rpx 45rpx;
+	text-align: center;
+	color: rgb(81, 81, 90);
 }
 
 .list-show .list-div image {
 	width: 110rpx;
 	height: 110rpx;
+	/* margin: 20rpx 20rpx; */
+}
+
+.heng {
+	position: absolute;
+	width: 75rpx;
+	height: 3rpx;
+	background: rgb(185, 170, 141);
+}
+
+.heng1 {	
+	top: 303rpx;
+	left: 155rpx;
+}
+
+.heng2 {
+	top: 303rpx;
+	left: 375rpx;
 }

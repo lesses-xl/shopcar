@@ -1,35 +1,49 @@
-.address-add {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	height: 45px;
-	width: 100%;
-	border-top: 1px solid #D5D4D4;
-	padding: 10px;
+
+.address-item {
+	position: relative;
+	width: 95%;
+	margin-left: 20rpx;
+	height: 80rpx;
+	font-size: 28rpx;
+	border-bottom: 2rpx solid rgb(240,240,240);
+}
+
+.address-item input {
+	width: 660rpx;
+	height: 50rpx;
 	box-sizing: border-box;
-	background: rgba(0,0,0,0.1);
+	padding: 5rpx 20rpx;
+	margin-top: 25rpx;
 }
 
-.address-img1 {
-	width: 40rpx;
-	height: 40rpx;
-	display: block;
-	float: left;
-	margin-top: 4rpx;
-}
-
-.address-img2 {
-	width: 10px;
-	height: 16px;
-	float: right;
-	display: block;
-	margin-top: 10rpx;
-}
-
-.address-text {
+.address-save {
+	width: 680rpx;
 	font-size: 30rpx;
-	float: left;
-	/* padding-left: 20prx; */
-	margin-top: 4rpx;
-	margin-left:20rpx;
+	margin-top: 30rpx;
+}
+
+.citychoose {
+	width: 660rpx;
+	height: 50rpx;
+	box-sizing: border-box;
+	padding: 5rpx 20rpx;
+	margin-top: 30rpx;
+}
+
+.address-item button {
+	width: 120rpx;
+	height: 50rpx;
+	line-height: 50rpx;
+	font-size: 22rpx;
+	position: absolute;
+	top: 0rpx;
+	right: 10rpx;
+}
+
+picker-view-column {
+	text-align: center;
+}
+
+picker-view-column view{
+	font-size: 34rpx;
 }

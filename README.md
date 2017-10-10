@@ -72,3 +72,7 @@
     * 加载loading
     * 加载下一页
     * 详情页 
+
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
