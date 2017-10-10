@@ -1,19 +1,26 @@
 App({
   onLaunch: function () {
     // 展示本地存储能力
+    var that = this;
     var logs = wx.getStorageSync('logs') || [];
-    var code = null;
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    // this.getUserInfo();
     // 登录
     wx.login({
       success: function(res) {
-        code = res.code;
-        var appId = '...';
-        var secret = '...';
-        // console.log(res);
+        var code = res.code;
+        var appId = 'wx7e8eb46444d8dd39';
+        var secret = 'e16dbf8e60799ecf83690112869ccca2';
+        console.log(res);
         var openid = null;
+        // wx.getUserInfo({
+        //   success: function(res) {
+        //     // globalData.usrInfo: res
+        //     console.log(res.userInfo)
+        //     that.globalData.userInfo = res.userInfo
+        //   }
+        // });
         wx.request({
           url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appId + '&secret=' + secret + '&js_code=' + code + '&grant_type=authorization_code',
           header: {
@@ -21,9 +28,10 @@ App({
           },
           success: function(res) {
             openid = res.data.openid //返回openid
-            // console.log(res);
+            console.log(res);
           }
         })
+        // console.log(that.globalData.userInfo)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }  
     })
@@ -67,6 +75,6 @@ App({
 
   globalData: {
     //全局对象
-    usrInfo : null
+    userInfo : null
   }
 })

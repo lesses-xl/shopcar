@@ -2,8 +2,7 @@
 	<view class='userBanner'>
 		<image class="userinfo-img" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
 		<text class="userinfo-name">{{userInfo.nickName}}</text>
-		<view class='aboutwe'>
-			
+		<view class='aboutwe'>		
 			<image src='../../images/aboutwe.png'></image>
 			<view>关于我们</view>
 		</view>	

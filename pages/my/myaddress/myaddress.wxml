@@ -10,7 +10,7 @@
 		   <button bindtap='getLocation'>定位</button>
 	</view>
 	<view class='address-item'>
-		<input type="text" placeholder="详细地址、如街道、楼牌号等" bindinput='getDetail' maxlength="60"></input>
+		<input type="text" placeholder="详细地址、如街道、楼牌号等" bindinput='getDetail' maxlength="60" value="{{details}}"></input>
 	</view>
 	<button class='address-save' bindtap='saveUserData'>保存</button>
 </view>

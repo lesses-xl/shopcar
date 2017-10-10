@@ -13,7 +13,8 @@ Page({
     condition: false,
     name: "",
     phone: "",
-    detail: ""
+    detail: "",
+    details: ""
   },
   bindChange: function(e) {
     //console.log(e);
@@ -155,19 +156,8 @@ Page({
     wx.getLocation({
       success: function(res) {
          console.log(res); 
-         // wx.showToast({
-         //  title: res.latitude+";"+res.longitude
-         // })
-         // wx.openLocation({
-         //       latitude: res.latitude,
-         //       longitude: res.longitude,
-         //       scale: 28,
-         //       success: function(res) {
-         //        console.log(res);
-         //       }
-         //     })
          wx.request({
-           url: 'https://api.map.baidu.com/geocoder/v2/?ak=jR6QTzxciGUAi7nX9Ga8jnbKf3aRA2pG&location=' + res.latitude + ',' + res.longitude + '&output=json',
+           url: 'https://api.map.baidu.com/geocoder/v2/?ak=jR6QTzxciGUAi7nX9Ga8jnbKf3aRA2pG&location='+res.latitude+','+res.longitude+'&output=json',
            data: {},
            header: {
                'Content-Type': 'json'
@@ -177,11 +167,12 @@ Page({
              that.setData({
                 province: res.data.result.addressComponent.province,
                 city: res.data.result.addressComponent.city,
-                county: res.data.result.addressComponent.district
+                county: res.data.result.addressComponent.district,
+                details: res.data.result.formatted_address
              });
-             wx.showToast({
-              title: that.data.city
-             })
+             // wx.showToast({
+             //  title: that.data.city
+             // })
            },
            fail: function(res) {
              wx.showToast({

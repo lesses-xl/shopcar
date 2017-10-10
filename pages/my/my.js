@@ -28,13 +28,8 @@ Page({
 				hasUserInfo: true
 			})
 		}else if(this.data.canIUse) {
-
+			console.log(app.globalData)
 		}
-		 wx.showToast({
-              title: app.globalData.userInfo.nickName
-          })
-		console.log(app.globalData)
-		// console.log(this.data.userInfo);
 	},
 	onReady:function(){
 		
