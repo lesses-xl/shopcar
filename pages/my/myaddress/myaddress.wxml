@@ -5,12 +5,14 @@
 	<view class='address-item'>
 		<input type="text" placeholder="手机号码" type="number" bindinput='getPhone' maxlength="11"></input>
 	</view>
-	<view class='address-item'>
+<!-- 	<view class='address-item'>
 		   <view value="" bindtap="{{focus}}" bindtap="open" class='citychoose'>{{province}}-{{city}}-{{county}}</view>
-		   <button bindtap='getLocation'>定位</button>
+		   <button bindtap='openMap'>选择</button>
 	</view>
-	<view class='address-item'>
-		<input type="text" placeholder="详细地址、如街道、楼牌号等" bindinput='getDetail' maxlength="60" value="{{details}}"></input>
+ -->	
+  <view class='address-item'>
+		<input type="text" placeholder="详细地址" bindinput='getDetail' maxlength="60" value="{{province}}{{city}}{{county}}{{details}}"></input>
+    <button bindtap='openMap'>选择</button>
 	</view>
 	<button class='address-save' bindtap='saveUserData'>保存</button>
 </view>

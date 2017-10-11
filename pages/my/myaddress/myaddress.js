@@ -117,74 +117,101 @@ Page({
   },
   onLoad: function () {
     // console.log("onLoad");
-    var that = this;
+    // var that = this;
     
-    tcity.init(that);
+    // tcity.init(that);
 
-    var cityData = that.data.cityData;
+    // var cityData = that.data.cityData;
 
     
-    const provinces = [];
-    const citys = [];
-    const countys = [];
+    // const provinces = [];
+    // const citys = [];
+    // const countys = [];
 
-    for(let i=0;i<cityData.length;i++){
-      provinces.push(cityData[i].name);
-    }
-    // console.log('省份完成');
-    for (let i = 0 ; i < cityData[0].sub.length; i++) {
-      citys.push(cityData[0].sub[i].name)
-    }
-    // console.log('city完成');
-    for (let i = 0 ; i < cityData[0].sub[0].sub.length; i++) {
-      countys.push(cityData[0].sub[0].sub[i].name)
-    }
+    // for(let i=0;i<cityData.length;i++){
+    //   provinces.push(cityData[i].name);
+    // }
+    // // console.log('省份完成');
+    // for (let i = 0 ; i < cityData[0].sub.length; i++) {
+    //   citys.push(cityData[0].sub[i].name)
+    // }
+    // // console.log('city完成');
+    // for (let i = 0 ; i < cityData[0].sub[0].sub.length; i++) {
+    //   countys.push(cityData[0].sub[0].sub[i].name)
+    // }
 
-    that.setData({
-      'provinces': provinces,
-      'citys':citys,
-      'countys':countys,
-      'province':cityData[0].name,
-      'city':cityData[0].sub[0].name,
-      'county':cityData[0].sub[0].sub[0].name
-    })
+    // that.setData({
+    //   'provinces': provinces,
+    //   'citys':citys,
+    //   'countys':countys,
+    //   'province':cityData[0].name,
+    //   'city':cityData[0].sub[0].name,
+    //   'county':cityData[0].sub[0].sub[0].name
+    // })
     // console.log('初始化完成');
     this.getLocation();
   },
   getLocation: function() {
     var that = this;
+    var timer = null;
+    clearTimeout(timer);
     wx.getLocation({
+      type: 'wgs84',
       success: function(res) {
          console.log(res); 
-         wx.request({
-           url: 'https://api.map.baidu.com/geocoder/v2/?ak=jR6QTzxciGUAi7nX9Ga8jnbKf3aRA2pG&location='+res.latitude+','+res.longitude+'&output=json',
-           data: {},
-           header: {
-               'Content-Type': 'json'
-           },
-           success: function(res) {
-            console.log(res);
-             that.setData({
-                province: res.data.result.addressComponent.province,
-                city: res.data.result.addressComponent.city,
-                county: res.data.result.addressComponent.district,
-                details: res.data.result.formatted_address
-             });
-             // wx.showToast({
-             //  title: that.data.city
-             // })
-           },
-           fail: function(res) {
-             wx.showToast({
-              title: '获取失败'
-             })
-           },
-           complete: function(res) {
+         that.setData({
+            province: '正在定位...',
+            city: '',
+            county: '',
+         });
+         timer = setTimeout(function() {
+            wx.request({
+              //http://apis.map.qq.com/ws/geocoder/v1/?location='+res.latitude+','+res.longitude+'&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&get_poi=1
+              url: 'https://apis.map.qq.com/ws/geocoder/v1/?location='+res.latitude+','+res.longitude+'&key=RAHBZ-KLP3O-HCJWQ-SVU4O-EHKB3-SLFZA&get_poi=1',
+              data: {},
+              header: {
+                  'Content-Type': 'json'
+              },
+              success: function(res) {
 
-           }
-         })
+               console.log(res);
+                that.setData({
+                   province: res.data.result.address_component.province,
+                   city: res.data.result.address_component.city,
+                   county: res.data.result.address_component.street,
+                });
+              },
+              fail: function(res) {
+                wx.showToast({
+                 title: '获取失败'
+                })
+              },
+              complete: function(res) {
+
+              }
+            })
+         },3000);
+         
       }
     })
+  },
+  openMap: function() {
+    var that = this;
+    wx.getSetting({
+      success: function() {
+        wx.chooseLocation({
+          success: function(res) {
+            console.log(res)
+            that.setData({
+                province: '',
+                city: '',
+                county: '',
+                details: res.address
+            });
+          }
+        })
+      }
+    });
   },
   onReady: function () {
     // Do something when page ready.

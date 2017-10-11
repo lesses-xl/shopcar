@@ -1,0 +1,44 @@
+<view class='detail-top'>
+	<image src='../../../images/goods1.png' class='top-img'></image>
+	<view class='top-btn'>
+		<picker class='top-left' bindchange="changeNum" range="{{array}}" value="{{index}}" mode = selector>
+			<text class='left-name'>数量</text>
+			<text class='left-num'>{{array[index]}}</text>
+			<text class='left-icon'>›</text>
+		</picker>
+		<view class='top-border'></view>
+		<view class='top-right' bindtap="toCart">
+			<text class='top-cart'>加入购物车</text>
+			<image src='../../../images/cart1.png' class='cart-img'></image>
+		</view>
+	</view>
+	<view class='goods-center'>
+		<view class='goods-have'>有货</view>
+		<view class='goods-name'>梨花带雨{{num}}个</view>
+		<view class='goods-money'>￥{{num * 20}}</view>
+	</view>	
+	<view class='cart-view'>
+		<view class='cart-num'>{{num}}</view>
+		<image src='../../../images/nav/cart2.png' class='cart-big'></image>
+	</view>
+	
+</view>
+<view class='detail-border'></view>
+<view class='detail-bottom'>
+	<view class='swiper-tab'>
+		<view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">商品详情</view>  
+		<view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">产品参数</view>  
+		<view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">售后保障</view>  
+	</view>
+	<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+		<swiper-item>
+			<view>1111111111111111111</view>
+		</swiper-item>
+		<swiper-item>
+			<view>2222222222222222222</view>
+		</swiper-item>
+		<swiper-item>
+			<view>3333333333333333333</view>
+		</swiper-item>
+	</swiper>
+</view>

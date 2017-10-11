@@ -1,6 +1,136 @@
 Page({
   data: {
-
+    area: ["推荐区","美食区","零食区","水果区","点心","蔬菜","美食1","美食2","美食3","美食4","美食5","美食6"],
+    goods: [
+      [
+        {
+          img: '../../images/s2.png',
+          text: "11111"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "11111"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "11111"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "11111"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "11111"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "11111"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "11111"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "11111"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "11111"
+        }
+      ],
+      [
+        {
+          img: '../../images/s2.png',
+          text: "22222"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "22222"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "22222"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "22222"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "22222"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "22222"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "22222"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "22222"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "22222"
+        }
+      ],
+      [
+        {
+          img: '../../images/s2.png',
+          text: "33333"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "33333"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "33333"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "33333"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "33333"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "33333"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "33333"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "33333"
+        },
+        {
+          img: '../../images/s2.png',
+          text: "33333"
+        }
+      ],
+    ],
+    currentIndex: 0,
+    ifChoose: false
+  },
+  changearea: function (e) {
+    this.setData({
+      currentIndex: e.target.dataset.index,
+      ifChoose: true
+    })
+    // console.log(e.target.dataset.index,this.data.currentIndex);
+  },
+  getDetail: function() {
+    wx.navigateTo({
+      url:"detail/detail"
+     });
   },
   onLoad: function (options) {
     // Do some initialize when page load.

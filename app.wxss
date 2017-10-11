@@ -41,3 +41,34 @@
   border-top: 1px #d9d9d9 solid;
   padding: 20rpx;
 }
+
+.swiper-tab{  
+    width: 100%;  
+    border-bottom: 2rpx solid #777777;  
+    text-align: center;  
+    line-height: 80rpx;
+}  
+
+.swiper-tab-list{  font-size: 30rpx;  
+    display: inline-block;  
+    width: 33.33%;  
+    color: #777777;  
+}  
+
+.on{ 
+    color: #da7c0c;  
+    border-bottom: 6rpx solid #da7c0c;
+}  
+  
+.swiper-box{ 
+    display: block;
+    /* height: 100%;  */
+    width: 100%; 
+    overflow: hidden; 
+    font-size: 26rpx;
+    box-sizing: border-box;
+    padding: 20rpx;
+}  
+.swiper-box view{  
+    text-align: center;  
+}  

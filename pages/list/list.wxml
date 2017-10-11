@@ -5,112 +5,19 @@
 	</view>
 	<view class='list-wrap'>
 		<view class="list">
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
-			</view>
-			<view class='list-item active'>
-				推荐区
+			<view class='list-item {{currentIndex==index ? "active" : "" }}'  data-index="{{index}}" wx:for="{{area}}" bindtap="changearea">
+				{{item}}
 			</view>
 		</view>
-		<view class='list-show'>
+		<view class='list-show {{currentIndex==index ? "" : "none" }}' wx:for='{{area}}'>
 			<image class='list-img'></image>
 			<view class='heng heng1'></view>
 			<text class='list-text'>推荐区分类</text>
 			<view class='heng heng2'></view>
 			<view class='list-div'>
-				<view class='list-goods'>
-					<image src='../../images/add-addr.png'></image>
-					<text>11111111</text>
-				</view>
-				<view class='list-goods'>
-					<image src='../../images/add-addr.png'></image>
-					<text>11111111</text>
-				</view>
-				<view class='list-goods'>
-					<image src='../../images/add-addr.png'></image>
-					<text>11111111</text>
-				</view>
-				<view class='list-goods'>
-					<image src='../../images/add-addr.png'></image>
-					<text>11111111</text>
-				</view>
-				<view class='list-goods'>
-					<image src='../../images/add-addr.png'></image>
-					<text>11111111</text>
-				</view>
-				<view class='list-goods'>
-					<image src='../../images/add-addr.png'></image>
-					<text>11111111</text>
-				</view>
-				<view class='list-goods'>
-					<image src='../../images/add-addr.png'></image>
-					<text>11111111</text>
-				</view>
-				<view class='list-goods'>
-					<image src='../../images/add-addr.png'></image>
-					<text>11111111</text>
-				</view>
-				<view class='list-goods'>
-					<image src='../../images/add-addr.png'></image>
-					<text>11111111</text>
-				</view>
-				<view class='list-goods'>
-					<image src='../../images/add-addr.png'></image>
-					<text>11111111</text>
-				</view>
-				<view class='list-goods'>
-					<image src='../../images/add-addr.png'></image>
-					<text>11111111</text>
-				</view>
-				<view class='list-goods'>
-					<image src='../../images/add-addr.png'></image>
-					<text>11111111</text>
-				</view>
-				<view class='list-goods'>
-					<image src='../../images/add-addr.png'></image>
-					<text>11111111</text>
+				<view class='list-goods' wx:for="{{goods[index]}}" bindtap="getDetail">
+					<image src='{{item.img}}'></image>
+					<text>{{item.text}}</text>
 				</view>
 			</view>
 		</view>

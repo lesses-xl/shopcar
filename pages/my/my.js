@@ -22,14 +22,12 @@ Page({
 		 });
 	},
 	onLoad:function(options){
-		if(app.globalData.userInfo) {
-			this.setData({
-				userInfo: app.globalData.userInfo,
-				hasUserInfo: true
+		var that = this;
+		app.getUserInfo(function(userInfo){
+			that.setData({
+				userInfo: userInfo
 			})
-		}else if(this.data.canIUse) {
-			console.log(app.globalData)
-		}
+		})
 	},
 	onReady:function(){
 		
