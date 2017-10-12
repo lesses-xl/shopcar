@@ -72,3 +72,9 @@
 .swiper-box view{  
     text-align: center;  
 }  
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

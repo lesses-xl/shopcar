@@ -55,6 +55,17 @@
   font-size: 28rpx;
   color: black;
   box-sizing: border-box;
+  position: relative;
+}
+
+.reader {
+  position: absolute;
+  top: 0;
+  width: 60rpx;
+  height: 72rpx;
+  line-height: 70rpx;
+  right: -8rpx;
+  padding: 0 10rpx;
 }
 
 .shopcar-top text:nth-child(2) {
@@ -73,8 +84,17 @@
   height: 220rpx;
   padding: 10rpx 10rpx 10rpx 2rpx;
   box-sizing: border-box;
-  /* border-bottom: 1rpx solid #D5D4D4; */
-  margin-left: 26rpx;
+  position: relative;
+  margin-left: 20rpx;
+}
+
+.shopcar-choose-big {
+  position: absolute;
+  width: 70rpx;
+  height: 100rpx;
+  /* background: black; */
+  top: 65rpx;
+  left: -15rpx;
 }
 
 .shopcar-choose {
@@ -82,50 +102,56 @@
   height: 36rpx;
   border: 1rpx solid #D5D4D4;
   border-radius: 50%;
-  margin-top: 80rpx;
-  float: left;
+  position: absolute;
+  top: 30rpx;
+  left: 16rpx;
+}
+
+.shopcar-choose image {
+  width: 36rpx;
+  height: 36rpx;
+
 }
 
 .shopcar-img {
+  position: absolute;
   width: 170rpx;
   height: 170rpx;
-  float: left;
   border: 1rpx solid #D5D4D4;
-  margin-top: 15rpx;
-  margin-left: 30rpx;
+  top: 24rpx;
+  left: 62rpx;
 }
 
 .shopcar-name {
-  /* width: 476rpx; */
+  position: absolute;
   height: 50rpx;
-  float: left;
   word-break: keep-all;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 50rpx;
-  margin-top: -155rpx;
-  font-size: 30rpx;
-  margin-left: 270rpx
+  font-size: 26rpx;
+  top: 35rpx;
+  left: 270rpx;
 }
 
 .shopcar-price {
+  position: absolute;
   width:200rpx;
   height:60rpx;
-  float:left;
-  margin-left:270rpx;
-  margin-top:-60rpx;
   color:red;
-  font-size:32rpx;
+  font-size:28rpx;
+  bottom: 18rpx;
+  left: 266rpx;
 }
 
 .shopcar-change {
-  width:156rpx;
+  width:180rpx;
   height:44rpx;
-  float:right;
-  margin-top:-50rpx;
-  margin-right:10rpx;
   font-size: 32rpx;
+  position: absolute;
+  bottom: 34rpx;
+  left: 420rpx;
 }
 
 .shopcar-change view {
@@ -138,67 +164,124 @@
 }
 
 .shopcar-change .shopcar-sub {
-  width: 46rpx;
-
+  width: 54rpx;
+  z-index: 50;
 }
 
 .shopcar-change .shopcar-num {
   width: 64rpx;
+  border-left: none;
+  border-right: none;
   margin-left: -1rpx;
   font-size: 28rpx;
+  z-index: 40;
 }
 
 .shopcar-change .shopcar-add {
   float: left;
-  width: 46rpx;
+  width: 54rpx;
   margin-left: -1rpx;
+  z-index: 50;
 }
 
 .shopcar-bottom {
+  color: white;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100rpx;
+  height: 90rpx;
   box-sizing: border-box;
   padding: 20rpx;
   border-top: 1rpx solid #D5D4D4;
-  background: white;
+  background: #AB956C;
   font-size: 28rpx;
+  overflow: hidden;
 }
 
 .shopcar-chooseall {
-  margin-top: 10rpx;
+  width: 80rpx;
+  height: 90rpx;
+  margin: 0;
+  margin-top: -28rpx;
+  border-radius: 0;
+  box-sizing: border-box;
+  text-align: center;
+  border: none;
+}
+
+.shopcar-chooseall .chooseall-sm {
+  width: 40rpx;
+  height: 40rpx;
+  border: 1px solid white;
+  margin: 22rpx auto;
+  border-radius: 50%;
+}
+
+.shopcar-chooseall .chooseall-sm image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.active {
+  border-color: rgb(230,67,64)!important;
+}
+
+.current {
+  border-color: #9F9D9D!important;
 }
 
 .shopcar-choosetext {
-  line-height: 60rpx;
-  margin-left: 20rpx;
-  float: left;
+  line-height: 50rpx;
+  margin-left: 90rpx;
+}
+
+.shopcar-delete {
+  margin-left: 50rpx;
 }
 
 .shopcar-allprice {
-  width: 240rpx;
-  float: left;
-  color: red;
-  height: 100rpx;
-  margin-top: -20rpx;
-  line-height: 100rpx;
-  margin-left: 130rpx;
+  width:190rpx;
+  height:40rpx;
+  position: absolute;
+  top: 26rpx;
+  right: 50rpx;
+}
+
+.oneprice {
+  position: absolute;
+  top: 96rpx;
+  font-size: 24rpx;
+  left: 270rpx;
 }
 
 .shopcar-pay {
-  float: right;
-  width: 240rpx;
-  background: red;
-  height: 97rpx;
-  color: white;
-  margin-top: -20rpx;
-  margin-right: -20rpx;
-  line-height: 100rpx;
-  text-align: center;
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  top: 26rpx;
+  right: 50rpx;
 }
 
 .shopdiv {
   border-bottom: 1px solid #dfdfdf;
+}
+
+.shopcar-border {
+  width: 2rpx;
+  height: 36rpx;
+  background: white;
+  position: absolute;
+  top: 28rpx;
+  right: 280rpx;
+}
+
+.shopcar-delone {
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  font-size: 30rpx;
+  top: 86rpx;
+  right: 10rpx;
+  color: gray;
 }

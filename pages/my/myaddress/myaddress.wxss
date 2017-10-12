@@ -9,9 +9,9 @@
 }
 
 .address-item input {
-	width: 660rpx;
+	width: 570rpx;
 	height: 50rpx;
-	box-sizing: border-box;
+	/* box-sizing: border-box; */
 	padding: 5rpx 20rpx;
 	margin-top: 25rpx;
 }
@@ -32,8 +32,8 @@
 
 .address-item button {
 	width: 120rpx;
-	height: 50rpx;
-	line-height: 50rpx;
+	height: 55rpx;
+	line-height: 55rpx;
 	font-size: 22rpx;
 	position: absolute;
 	top: 0rpx;
@@ -46,4 +46,9 @@ picker-view-column {
 
 picker-view-column view{
 	font-size: 34rpx;
+}
+
+.address-item .location {
+	width: 520rpx;
+	padding: 5rpx 0 5rpx 20rpx;
 }

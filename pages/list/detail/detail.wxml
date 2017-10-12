@@ -7,7 +7,7 @@
 			<text class='left-icon'>›</text>
 		</picker>
 		<view class='top-border'></view>
-		<view class='top-right' bindtap="toCart">
+		<view class='top-right' bindtap="tocart">
 			<text class='top-cart'>加入购物车</text>
 			<image src='../../../images/cart1.png' class='cart-img'></image>
 		</view>
@@ -17,8 +17,8 @@
 		<view class='goods-name'>梨花带雨{{num}}个</view>
 		<view class='goods-money'>￥{{num * 20}}</view>
 	</view>	
-	<view class='cart-view'>
-		<view class='cart-num'>{{num}}</view>
+	<view class='cart-view' bindtap="toshopcar">
+		<view class='cart-num'>{{cartNum}}</view>
 		<image src='../../../images/nav/cart2.png' class='cart-big'></image>
 	</view>
 	

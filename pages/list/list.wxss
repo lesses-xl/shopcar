@@ -49,12 +49,13 @@
 	font-size: 28rpx;
 	text-align: center;
 	margin-top: 40rpx;
-	transition: all .5s;
+	transition: all .1s;
+	padding: 10rpx 0;
 }
 
 
 .active {
-	border-left: 3rpx solid #ab2b2b;
+	border-left: 5rpx solid rgb(180,45,40);
 	color: #ab2b2b;
 	box-sizing: border-box;
 }

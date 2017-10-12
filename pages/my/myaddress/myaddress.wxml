@@ -1,36 +1,13 @@
 <view class='container'>
 	<view class='address-item input'>
-		<input type="text" placeholder="姓名" bindinput='getName' maxlength="20"></input>
+		<input type="text" placeholder="姓名" bindinput='getName' maxlength="10"></input>
 	</view>
 	<view class='address-item'>
-		<input type="text" placeholder="手机号码" type="number" bindinput='getPhone' maxlength="11"></input>
+		<input placeholder="手机号码" type="number" bindinput='getPhone' maxlength="11"></input>
 	</view>
-<!-- 	<view class='address-item'>
-		   <view value="" bindtap="{{focus}}" bindtap="open" class='citychoose'>{{province}}-{{city}}-{{county}}</view>
-		   <button bindtap='openMap'>选择</button>
-	</view>
- -->	
   <view class='address-item'>
-		<input type="text" placeholder="详细地址" bindinput='getDetail' maxlength="60" value="{{province}}{{city}}{{county}}{{details}}"></input>
+		<input type="text" placeholder="详细地址" bindinput='getDetail' maxlength="50" value="{{province}}{{city}}{{country}}{{details}}" class='location' disabled="{{disabled}}"></input>
     <button bindtap='openMap'>选择</button>
 	</view>
 	<button class='address-save' bindtap='saveUserData'>保存</button>
-</view>
-
-<view wx:if="{{condition}}" class="citypicker">
-  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
-    <view class="cityheader">
-      <view bindtap="open" class="city-cancel">取消</view>
-      <view bindtap="open" class="city-true">确定</view>
-    </view>
-    <picker-view-column>
-      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
-    </picker-view-column>
-    <picker-view-column>
-      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
-    </picker-view-column>
-    <picker-view-column>
-      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
-    </picker-view-column>
-  </picker-view>
 </view>

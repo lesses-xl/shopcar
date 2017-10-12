@@ -1,34 +1,46 @@
-<view wx-if='{{!!haveThing}}' class='shopcar-no'>	
+<view wx-if='{{!haveThing}}' class='shopcar-no'>	
   <image src='../../images/icon-cart.png'></image>
   <text>购物车空空如也~</text>
   <button>去逛逛</button> 
 </view>
-<view wx-if='{{!haveThing}}' class='shopcar-have'>
+<view wx-if='{{haveThing}}' class='shopcar-have'>
   <view class='shopcar-top'>
     <text>微商城</text>
-    <text>编辑</text>
+    <text bindtap="changereader" class='reader'><text wx:if="{{!reader}}">{{readeroff}}</text> <text wx:if="{{reader}}">{{readeron}}</text></text>
   </view>
   <!-- <scroll-view scroll-y="{{true}}"> -->
     <view class='shopcar-some'>
       <view wx:for='{{shopThing}}' class='shopdiv'>
         <view class='shopcar-one'>
-          <view class='shopcar-choose'></view>
+          <view class='shopcar-choose-big' bindtap="chooseone" data-index='{{index}}' data-Id='{{item.thingId}}'>
+            <view class='shopcar-choose {{item.choose==true?"active":""}}' >
+              <image src='../../images/gou-red.png' wx:if="{{item.choose}}"></image>
+            </view>            
+          </view>
           <image class='shopcar-img' src='{{item.thingImg}}'></image>
           <text class='shopcar-name'>{{item.thingName}}</text>
-          <text class='shopcar-price'>{{item.thingPrice}}</text>
+          <text class='shopcar-price'>￥{{item.thingPrice*item.thingNum}}</text>
+          <view class='oneprice'>单价: {{item.thingPrice}}</view>
           <view class='shopcar-change'>
-            <view class='shopcar-sub'>-</view>
+            <view class='shopcar-sub {{item.thingNum==1?"":"current"}}' bindtap="subnum" data-index='{{index}}'>-</view>
             <view class='shopcar-num'>{{item.thingNum}}</view>
-            <view class='shopcar-add'>+</view>
+            <view class='shopcar-add {{item.thingNum==99?"":"current"}}' bindtap="addnum" data-index='{{index}}'>+</view>
           </view>
+          <view class='shopcar-delone' wx:if="{{reader}}" bindtap="deletethis" data-index="{{index}}">×</view>
         </view>
       </view>
     </view> 
   <!-- </scroll-view> -->
     <view class='shopcar-bottom' wx-if='{{haveThing}}'>
-      <view class='shopcar-choose shopcar-chooseall'></view>
-      <text class='shopcar-choosetext'>全选</text>
-      <text class='shopcar-allprice'>合计：￥ 28888</text>
-      <view class='shopcar-pay'>去结算</view>  
+      <view class='shopcar-choose shopcar-chooseall' bindtap="chooseall">
+        <view class='chooseall-sm {{ifchooseall==true?"active":""}}'>
+          <image src='../../images/gou-red.png' wx:if="{{ifchooseall==true}}"></image>
+        </view>
+      </view>
+      <text class='shopcar-choosetext'>全选{{}}</text>
+      <text class='shopcar-delete' bindtap='deleteall' wx:if="{{reader}}">删除</text>
+      <view class='shopcar-border'></view>
+      <view class='shopcar-allprice'>￥<text >{{allprice}}</text></view>  
+      <image src='../../images/nav/icon3.png' class='shopcar-pay'></image>
     </view> 
 </view>	
