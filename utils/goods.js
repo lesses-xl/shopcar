@@ -1,7 +1,7 @@
 var shopThing = [
       {
         "thingName": "iphone X",
-        "thingImg": "../../images/goods01.png",
+        "thingImg": "../../images/goods/goods1.png",
         "thingPrice": 10,
         "thingNum": 1,
         "thingId": 1,
@@ -9,7 +9,7 @@ var shopThing = [
       },
       {
         "thingName": "苹果",
-        "thingImg": "../../images/goods01.png",
+        "thingImg": "../../images/goods/goods1.png",
         "thingPrice": 10,
         "thingNum": 1,
         "thingId": 2,
@@ -17,7 +17,7 @@ var shopThing = [
       },
       {
         "thingName": "梨",
-        "thingImg": "../../images/goods01.png",
+        "thingImg": "../../images/goods/goods1.png",
         "thingPrice": 10,
         "thingNum": 1,
         "thingId": 3,
@@ -25,7 +25,7 @@ var shopThing = [
       },
       {
         "thingName": "香蕉",
-        "thingImg": "../../images/goods01.png",
+        "thingImg": "../../images/goods/goods1.png",
         "thingPrice": 10,
         "thingNum": 1,
         "thingId": 4,
@@ -33,7 +33,7 @@ var shopThing = [
       },
       {
         "thingName": "橘子",
-        "thingImg": "../../images/goods01.png",
+        "thingImg": "../../images/goods/goods1.png",
         "thingPrice": 10,
         "thingNum": 1,
         "thingId": 5,
@@ -41,7 +41,7 @@ var shopThing = [
       },
       {
         "thingName": "火龙果",
-        "thingImg": "../../images/goods01.png",
+        "thingImg": "../../images/goods/goods1.png",
         "thingPrice": 10,
         "thingNum": 1,
         "thingId": 6,

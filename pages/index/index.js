@@ -1,3 +1,5 @@
+var shopThing = require('../../utils/goods.js');
+
 Page({
   data: {
     indicatorDots: true,
@@ -5,14 +7,56 @@ Page({
     interval: 5000,
     duration: 300,
     imgUrls: [
-      '../../images/1.jpg',
-      '../../images/2.jpg',
-      '../../images/3.jpg',
-      '../../images/4.jpg'
+      '../../images/goods/list1.png',
+      '../../images/goods/list2.png',
+      '../../images/goods/list3.png'
+    ],
+    index1: '精选主题',
+    index2: '最近新品',
+    theme1: '../../images/goods/s1.png',
+    theme2: '../../images/goods/s2.png',
+    theme3: '../../images/goods/list3.png',
+    news: [
+      {
+        image: '../../images/goods/goods1.png',
+        name: '梨花带雨',
+        price: '20'
+      },
+      {
+        image: '../../images/goods/goods1.png',
+        name: '梨花带雨',
+        price: '20'
+      },
+      {
+        image: '../../images/goods/goods1.png',
+        name: '梨花带雨',
+        price: '20'
+      },
+      {
+        image: '../../images/goods/goods1.png',
+        name: '梨花带雨',
+        price: '20'
+      },
+      {
+        image: '../../images/goods/goods1.png',
+        name: '梨花带雨',
+        price: '20'
+      },
+      {
+        image: '../../images/goods/goods1.png',
+        name: '梨花带雨',
+        price: '20'
+      },
+      {
+        image: '../../images/goods/goods1.png',
+        name: '梨花带雨',
+        price: '20'
+      }
     ]
   },
   onLoad: function (options) {
-    // Do some initialize when page load.
+    var a = wx.getStorageSync('userInfo');
+
   },
   onReady: function () {
     // Do something when page ready.

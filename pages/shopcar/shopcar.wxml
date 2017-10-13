@@ -8,13 +8,12 @@
     <text>微商城</text>
     <text bindtap="changereader" class='reader'><text wx:if="{{!reader}}">{{readeroff}}</text> <text wx:if="{{reader}}">{{readeron}}</text></text>
   </view>
-  <!-- <scroll-view scroll-y="{{true}}"> -->
     <view class='shopcar-some'>
       <view wx:for='{{shopThing}}' class='shopdiv'>
         <view class='shopcar-one'>
           <view class='shopcar-choose-big' bindtap="chooseone" data-index='{{index}}' data-Id='{{item.thingId}}'>
             <view class='shopcar-choose {{item.choose==true?"active":""}}' >
-              <image src='../../images/gou-red.png' wx:if="{{item.choose}}"></image>
+              <image src='../../images/pages/gou-red.png' wx:if="{{item.choose}}"></image>
             </view>            
           </view>
           <image class='shopcar-img' src='{{item.thingImg}}'></image>
@@ -26,21 +25,20 @@
             <view class='shopcar-num'>{{item.thingNum}}</view>
             <view class='shopcar-add {{item.thingNum==99?"":"current"}}' bindtap="addnum" data-index='{{index}}'>+</view>
           </view>
-          <view class='shopcar-delone' wx:if="{{reader}}" bindtap="deletethis" data-index="{{index}}">×</view>
+          <view class='shopcar-delone' wx:if="{{reader}}" bindtap="deletethis" data-index="{{index}}">删除</view>
         </view>
       </view>
     </view> 
-  <!-- </scroll-view> -->
     <view class='shopcar-bottom' wx-if='{{haveThing}}'>
       <view class='shopcar-choose shopcar-chooseall' bindtap="chooseall">
         <view class='chooseall-sm {{ifchooseall==true?"active":""}}'>
-          <image src='../../images/gou-red.png' wx:if="{{ifchooseall==true}}"></image>
+          <image src='../../images/pages/gou-red.png' wx:if="{{ifchooseall==true}}"></image>
         </view>
       </view>
-      <text class='shopcar-choosetext'>全选{{}}</text>
+      <text class='shopcar-choosetext'>全选{{chooseNum}}</text>
       <text class='shopcar-delete' bindtap='deleteall' wx:if="{{reader}}">删除</text>
       <view class='shopcar-border'></view>
       <view class='shopcar-allprice'>￥<text >{{allprice}}</text></view>  
-      <image src='../../images/nav/icon3.png' class='shopcar-pay'></image>
+      <image src='../../images/pages/icon3.png' class='shopcar-pay'></image>
     </view> 
 </view>	

@@ -76,3 +76,8 @@
 	float: left;
 	line-height: 50rpx;
 }
+
+.openid {
+	text-align: center;
+	font-size: 26rpx;
+}

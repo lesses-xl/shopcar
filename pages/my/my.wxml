@@ -31,4 +31,5 @@
 		<text>系统版本</text>
 	</view>
 	<view class='my-border'></view>
+	<view class='openid'>openid：{{openId}}</view>
 </view>	

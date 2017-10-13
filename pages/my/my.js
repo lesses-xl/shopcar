@@ -4,7 +4,8 @@ Page({
 	data:{
 		userInfo: {},
 		userImage:null,
-		canIUse: wx.canIUse('button.open-type.getUserInfo')
+		canIUse: wx.canIUse('button.open-type.getUserInfo'),
+		openId: ''
 	},
 	showMyOrder: function() {
 		wx.navigateTo({
@@ -23,10 +24,9 @@ Page({
 	},
 	onLoad:function(options){
 		var that = this;
-		app.getUserInfo(function(userInfo){
-			that.setData({
-				userInfo: userInfo
-			})
+		this.setData({
+			userInfo: wx.getStorageSync('userInfo'),
+			openId: wx.getStorageSync('user').openid
 		})
 	},
 	onReady:function(){

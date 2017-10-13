@@ -6,4 +6,26 @@
 			</swiper-item>
 		</block>
 	</swiper>
+	<text class='index-center-text'>{{index1}}</text>
+	<view class='theme-view'>
+		<view class='theme-top'>
+			<view class='theme-view-left'>
+				<image src="{{theme1}}" class='half-img'></image>
+			</view>
+			<view class='theme-view-right'>
+				<image src="{{theme2}}" class='half-img'></image>
+			</view>
+		</view>		
+		<view class='theme-view-bottom'>
+			<image src="{{theme3}}" class='one-img'></image>
+		</view>
+	</view>
+	<text class='index-center-text'>{{index2}}</text>
+	<view class='new-goods'>
+		<view class='new-goods-one' wx:for="{{news}}">
+			<image src='{{item.image}}'></image>
+			<text>{{item.name}} 1个</text>
+			<text>￥{{item.price}}</text>
+		</view>
+	</view>
 </view>	

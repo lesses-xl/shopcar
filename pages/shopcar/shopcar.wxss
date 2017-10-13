@@ -61,17 +61,16 @@
 .reader {
   position: absolute;
   top: 0;
-  width: 60rpx;
+  width: 100rpx;
   height: 72rpx;
   line-height: 70rpx;
   right: -8rpx;
   padding: 0 10rpx;
 }
 
-.shopcar-top text:nth-child(2) {
-  float: right;
+.reader text {
+  margin-left: 20rpx;
   color: #B1B1B1;
-  margin-right: 30rpx;
 }
 
 .shopcar-some {
@@ -237,7 +236,9 @@
 }
 
 .shopcar-delete {
-  margin-left: 50rpx;
+  position: absolute;
+  top: 28rpx;
+  left: 250rpx;
 }
 
 .shopcar-allprice {
@@ -280,8 +281,9 @@
   position: absolute;
   width: 50rpx;
   height: 50rpx;
-  font-size: 30rpx;
-  top: 86rpx;
+  font-size: 24rpx;
+  top: 88rpx;
   right: 10rpx;
-  color: gray;
+  color: red;
+  line-height: 50rpx;
 }

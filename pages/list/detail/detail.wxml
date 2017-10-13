@@ -1,5 +1,5 @@
 <view class='detail-top'>
-	<image src='../../../images/goods1.png' class='top-img'></image>
+	<image src='../../../images/goods/goods1.png' class='top-img'></image>
 	<view class='top-btn'>
 		<picker class='top-left' bindchange="changeNum" range="{{array}}" value="{{index}}" mode = selector>
 			<text class='left-name'>数量</text>
@@ -9,7 +9,7 @@
 		<view class='top-border'></view>
 		<view class='top-right' bindtap="tocart">
 			<text class='top-cart'>加入购物车</text>
-			<image src='../../../images/cart1.png' class='cart-img'></image>
+			<image src='../../../images/pages/cart1.png' class='cart-img'></image>
 		</view>
 	</view>
 	<view class='goods-center'>
@@ -19,7 +19,7 @@
 	</view>	
 	<view class='cart-view' bindtap="toshopcar">
 		<view class='cart-num'>{{cartNum}}</view>
-		<image src='../../../images/nav/cart2.png' class='cart-big'></image>
+		<image src='../../../images/nav/cart2.png' class='cart-big {{ifadd==true?"cart-num-big":""}}'></image>
 	</view>
 	
 </view>

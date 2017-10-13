@@ -107,7 +107,9 @@
 	height: 70rpx;
 	position: absolute;
 	top: -5rpx;
+	right: 10rpx;
 	z-index: 10;
+	transition: all 1s ease-in-out;
 }
 
 .cart-num {
@@ -123,6 +125,14 @@
 	top: 4rpx;
 	right: 62rpx;
 	z-index: 20;
+}
+
+.cart-num-big {
+	width: 60rpx;
+	height: 60rpx;
+/* 	right: 4rpx;
+	top: -5rpx; */
+	
 }
 
 .cart-view {

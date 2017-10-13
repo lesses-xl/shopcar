@@ -1,193 +1,100 @@
 var shopThing = require('../../utils/goods.js')
+/*
+  1.单个选中
+  2.全部选中
+  3.数量增加
+  4.金额修改
+  5.同步utils数据
+  6.编辑完成
 
+*/
 Page({
   data:{
     haveThing: true,
+    ifchoose: false,
     chooseId: 1,
-    // shopThing: [
-    //   {
-    //     "thingName": "iphone X",
-    //     "thingImg": "../../images/goods01.png",
-    //     "thingPrice": 10,
-    //     "thingNum": 1,
-    //     "thingId": 1,
-    //     "choose": false
-    //   },
-    //   {
-    //     "thingName": "苹果",
-    //     "thingImg": "../../images/goods01.png",
-    //     "thingPrice": 10,
-    //     "thingNum": 1,
-    //     "thingId": 2,
-    //     "choose": false
-    //   },
-    //   {
-    //     "thingName": "梨",
-    //     "thingImg": "../../images/goods01.png",
-    //     "thingPrice": 10,
-    //     "thingNum": 1,
-    //     "thingId": 3,
-    //     "choose": false
-    //   },
-    //   {
-    //     "thingName": "香蕉",
-    //     "thingImg": "../../images/goods01.png",
-    //     "thingPrice": 10,
-    //     "thingNum": 1,
-    //     "thingId": 4,
-    //     "choose": false
-    //   },
-    //   {
-    //     "thingName": "橘子",
-    //     "thingImg": "../../images/goods01.png",
-    //     "thingPrice": 10,
-    //     "thingNum": 1,
-    //     "thingId": 5,
-    //     "choose": false
-    //   },
-    //   {
-    //     "thingName": "火龙果",
-    //     "thingImg": "../../images/goods01.png",
-    //     "thingPrice": 10,
-    //     "thingNum": 1,
-    //     "thingId": 6,
-    //     "choose": false
-    //   }
-    // ],
     shopThing: shopThing.shopThing,
     ifchooseall: false,
     allprice: 0,
     ifchoosegoods: false,
     reader: false,
     readeroff: '编辑',
-    readeron: '完成'
+    readeron: '完成',
+    chooseNum: "（0）"
   },
   changereader: function() {
     this.setData({
       reader: !this.data.reader
     })
   },
-  chooseone: function(e) {
-    var id = e.currentTarget.dataset.index;
-    var thisChoose = "shopThing["+id+"].choose";
-    var fan = !(this.data.shopThing[id].choose);
-    console.log(thisChoose,fan)
-    this.setData({
-      [thisChoose]: fan
-    })
-    console.log(shopThing.shopThing);
-    shopThing.shopThing = this.data.shopThing;
-    this.changeprice();
-  },
-  chooseall: function() {
-    var b = this.data.ifchooseall;
-    this.setData({
-      ifchooseall: !b
-    })
-    console.log(this.data.ifchooseall)
+  chooseNum: function() {
+    var num = 0;
     for(var i=0; i<this.data.shopThing.length; i++) {
-      var this_ = "shopThing["+i+"].choose"
-      this.setData({
-        [this_]: !b
-      })
+      if(this.data.shopThing[i].choose == true) {
+        num += this.data.shopThing[i].thingNum;
+      }     
     }
-    console.log(shopThing.shopThing)
-    shopThing.shopThing = this.data.shopThing;
-    this.changeprice();
+    this.setData({
+      chooseNum: "（"+num+"）"
+    })
   },
   subnum: function(e) {
-    var i = e.currentTarget.dataset.index;
-    // var n = this.data.shopThing[i].thingNum;
-    var n = shopThing.shopThing[i].thingNum;
-    var N = "shopThing["+i+"].thingNum"
-    if(n <= 1) {
-      // this.setData({
-      //   [N]:1
-      // }) 
-      shopThing.shopThing[i].thingNum = 1;
+    // this.download();
+    var index = e.currentTarget.dataset.index;
+    var num = this.data.shopThing[index].thingNum;
+    var Num = "shopThing["+index+"].thingNum";
+    if(num <= 1) {
       this.setData({
-        shopThing:shopThing.shopThing
-      }) 
+        [Num]: 1
+      })
     }else {
-      // this.setData({
-      //   [N]: n-1
-      // }) 
-      shopThing.shopThing[i].thingNum -= 1;
       this.setData({
-        shopThing:shopThing.shopThing
-      }) 
+        [Num]: num-1
+      })
     }
-    shopThing.shopThing = this.data.shopThing;
     this.changeprice();
   },
   addnum: function(e) {
-    var i = e.currentTarget.dataset.index;
-    // var n = this.data.shopThing[i].thingNum;
-    var n = shopThing.shopThing[i].thingNum;
-    var N = "shopThing["+i+"].thingNum"
-    if(n >= 99) {
-      // this.setData({
-      //   [N]:99
-      // }) 
-      shopThing.shopThing[i].thingNum = 99;
+    // this.download()
+    var index = e.currentTarget.dataset.index;
+    var num = this.data.shopThing[index].thingNum;
+    var Num = "shopThing["+index+"].thingNum";
+    if(num >= 99) {
       this.setData({
-        shopThing:shopThing.shopThing
+        [Num]: 99
       })
     }else {
-      // this.setData({
-      //   [N]: n+1
-      // }) 
-      shopThing.shopThing[i].thingNum += 1;
       this.setData({
-        shopThing:shopThing.shopThing
+        [Num]: num+1
       })
     }
-    shopThing.shopThing = this.data.shopThing;
-    console.log(shopThing.shopThing)
     this.changeprice();
   },
-  changeprice: function() {
-    // this.setData({
-    //   shopThing: shopThing.shopThing
-    // })
-    var length = this.data.shopThing.length;
-    var num = 0;
-    var price = 0;
-    var oneprice = 0;
-    for(var i=0; i<length; i++) {
-      var truenum = 0;
-      var this_ = this.data.shopThing[i];
-      if(this_.choose) {
-        truenum++;
-        num = this_.thingNum-0;
-        price = this_.thingPrice-0;
-        oneprice += num*price
-        // this.setData({
-        //   ifchooseall: true
-        // })
-        if(truenum == length) {
-          this.setData({
-            ifchooseall: true
-          })
-        }
-      }
-      else {
-        this.setData({
-          ifchooseall: false
-        })
-        oneprice: '';
-      }
-    }
+  chooseall: function() {
+    var choose = this.data.ifchooseall;
     this.setData({
-      allprice: oneprice
+      ifchooseall: !choose
     })
-    // console.log(num,price,oneprice)
+    for(var i=0; i<this.data.shopThing.length; i++) {
+      var s = "shopThing["+i+"].choose";
+      this.setData({
+        [s]: this.data.ifchooseall
+      })
+    }
+    this.changeprice();
+  },
+  chooseone: function(e) {
+    var index = e.currentTarget.dataset.index;
+    var bool = this.data.shopThing[index].choose;
+    var Bool = "shopThing["+index+"].choose";
+    this.setData({
+      [Bool]: !bool
+    })
+    this.changeprice();
   },
   deletethis: function(e) {
-    console.log(e)
     var index = e.currentTarget.dataset.index;
     this.data.shopThing.splice(index,1);
-    // console.log(shopThing)
     this.setData({
       shopThing:this.data.shopThing
     })
@@ -196,72 +103,88 @@ Page({
         haveThing: false
       })
     }
-    shopThing.shopThing = this.data.shopThing;
     this.changeprice();
   },
-
   deleteall: function() {
-    var that = this
-    if(this.data.ifchooseall === true) {
-      wx.showModal({
-        title: '提示',
-        content: '是否要全部删除',
-        success: function(res) {
-          if(res.confirm) {
-            that.setData({
-              shopThing: []
-            });
-            that.changeprice();
-            that.setData({
-              haveThing: false
-            })
-            shopThing.shopThing = that.data.shopThing;
-          }
-        }
+
+    var arr = [];
+    var bool = this.data.shopThing.some(function(item,index){
+      if(item.choose == true) {
+        return true;
+      }
+    });
+    this.data.shopThing.forEach(function(item,index){
+      if(item.choose == true) {
+        arr.push(index);
+      }
+    })
+    if(bool) {
+      var s = this.data.shopThing;
+      for(var i=arr.length-1; i >= 0; i--) {
+        s.splice(arr[i],1)
+      }
+      this.setData({
+        shopThing: s
       })
     }else {
       wx.showToast({
-        title: '请选中!'
+        title: '请选择!'
       })
     }
-  },
-
-  onLoad:function(options){
-    // this.setData({
-    //     shopThing:shopThing.shopThing
-    // })
-    if(shopThing.shopThing.length >= 1) {
-      this.setData({
-        haveThing: true
-      })
-    }else {
+    if(this.data.shopThing.length <= 0) {
       this.setData({
         haveThing: false
       })
     }
     this.changeprice();
-    console.log(shopThing)
   },
-  onReady:function(){
-    
+  changeprice: function() {
+    var num = 0;
+    var price = 0;
+    var allprice = 0;
+    var choosenum = 0;
+    var length = this.data.shopThing.length;
+    for(var i=0; i<this.data.shopThing.length; i++) {
+      if(this.data.shopThing[i].choose == true) {
+        choosenum++;
+        allprice += this.data.shopThing[i].thingNum * this.data.shopThing[i].thingPrice;
+      }
+      if(choosenum == length) {
+        this.setData({
+          ifchooseall: true 
+        })
+      }else {
+        this.setData({
+          ifchooseall: false
+        })
+      }
+    }
+    if(choosenum == 0) {
+      this.setData({
+        allprice: 0 
+      })
+    }
+    this.setData({
+      allprice: allprice
+    })
+    this.chooseNum()
+  },
+  onLoad:function(options){
+    this.setData({
+      shopThing: shopThing.shopThing
+    })
+    this.changeprice();
+  },
+  onReady:function(){    
   },
   onShow:function(){
     this.setData({
-        shopThing:shopThing.shopThing
+      shopThing: shopThing.shopThing
     })
-    if(shopThing.shopThing.length >= 1) {
-      this.setData({
-        haveThing: true
-      })
-    }else {
-      this.setData({
-        haveThing: false
-      })
-    }
     this.changeprice();
   },
   onHide:function(){
-    
+    shopThing.shopThing = this.data.shopThing;
   },
   onUnload:function(){
     

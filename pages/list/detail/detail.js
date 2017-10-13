@@ -8,7 +8,8 @@ Page({
 		array: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,20],
 		index: 0,
 		num: 1,
-		cartNUm: 0
+		cartNUm: 0,
+		ifadd: false
 	},
 	onLoad: function() {  
 	  var that = this;  
@@ -50,23 +51,30 @@ Page({
      	});
 	},
 	tocart: function() {
+		var that = this;
 		var obj = {
 			"thingName": "梨花带雨",
-			"thingImg": "../../images/goods01.png",
+			"thingImg": "../../images/goods/goods1.png",
 			"thingPrice": 20,
 			"thingNum": this.data.num,
 			"thingId": 99,
 			"choose": true
 		}
-
+		var timer = null;
 		var num = 0;
 		for(var k=0; k<shopThing.shopThing.length; k++) {
 			num += shopThing.shopThing[k].thingNum;
 		}
-		console.log(shopThing.shopThing)
+		
 		this.setData({
-			cartNum: num
+			cartNum: num,
+			ifadd: true
 		})	
+		timer = setTimeout(function() {
+			that.setData({
+				ifadd: false
+			})
+		},300)
 		for(var i=0; i<shopThing.shopThing.length; i++) {
 			if(shopThing.shopThing[i].thingName === '梨花带雨') {
 				if(this.data.num === 1) {

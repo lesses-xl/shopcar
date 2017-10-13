@@ -4,115 +4,115 @@ Page({
     goods: [
       [
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "11111"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "11111"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "11111"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "11111"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "11111"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "11111"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "11111"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "11111"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "11111"
         }
       ],
       [
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "22222"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "22222"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "22222"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "22222"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "22222"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "22222"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "22222"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "22222"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "22222"
         }
       ],
       [
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "33333"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "33333"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "33333"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "33333"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "33333"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "33333"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "33333"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "33333"
         },
         {
-          img: '../../images/s2.png',
+          img: '../../images/goods/goods1.png',
           text: "33333"
         }
       ],
@@ -125,7 +125,6 @@ Page({
       currentIndex: e.target.dataset.index,
       ifChoose: true
     })
-    // console.log(e.target.dataset.index,this.data.currentIndex);
   },
   getDetail: function() {
     wx.navigateTo({
