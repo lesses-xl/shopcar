@@ -105,15 +105,40 @@ Page({
       success: function() {
         wx.chooseLocation({
           success: function(res) {
-            console.log(res)
-            that.setData({
-                province: '',
-                city: '',
-                country: '',
-                details: res.address
-            });
+            if(!res.address) {
+              that.setData({
+                  province: '',
+                  city: '',
+                  country: '',
+                  details: '请选择位置...'
+              });
+              return;
+            }
+            if(res.name == '') {
+              that.setData({
+                  province: '',
+                  city: '',
+                  country: '',
+                  details: res.address
+              });
+            }else {
+              that.setData({
+                  province: '',
+                  city: '',
+                  country: '',
+                  details: res.address+"("+res.name+")"
+              });
+            }            
           }
         })
+      },
+      cancel: function() {
+        that.setData({
+            province: '',
+            city: '',
+            country: '',
+            details: '请选择位置...'
+        });
       }
     });
   },
