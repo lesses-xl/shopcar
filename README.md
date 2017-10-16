@@ -76,5 +76,15 @@
 
   git config --global user.email "you@example.com"
   git config --global user.name "Your Name"
-  https://github.com/lesses-xl/smApp.git
-  http://gitee.com/feiwuhb/SmallAPP.git
+  git remote add origin http://gitee.com/feiwuhb/SmallAPP.git
+
+  生成密钥：
+  $ ssh-keygen -t rsa -C “邮箱”
+  按3个回车，密码为空。
+
+  clip < ~/.ssh/id_rsa.pub
+  复制key到剪贴板
+
+  ssh -T
+  git@github.com
+  测试key是否配置成功
