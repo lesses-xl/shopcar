@@ -2,10 +2,6 @@
 App({
   globalData: {
     //全局对象
-    // appid: 'wxf11f2010be66e3e1',
-    appid: 'wx7e8eb46444d8dd39',
-    // secret: '4baede8faf6a3db0fe4c2a1ec264ffe1',
-    secret: '73c6e8eed4fe54ed530313af0cd339b0',
     userInfo : null
   },
   onLaunch: function () {
@@ -15,6 +11,7 @@ App({
     // if((!user.openid || (user.expires_in || Date.now()) < (Date.now() + 600))&&(!userInfo.nickName)) {
       wx.login({
         success: function(res) {
+          console.log(res);
           if(res.code) {
             wx.getUserInfo({
               success: function(res) {

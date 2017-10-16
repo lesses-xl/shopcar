@@ -1,0 +1,13 @@
+<template name="indexMsg">
+	<view class='topimg'>
+		<image src='{{indexImg}}'></image>
+	</view>
+	
+	<view class='new-goods'>
+		<view class='new-goods-one' wx:for="{{fruit}}">
+			<image src='{{item.image}}'></image>
+			<text>{{item.name}} 1个</text>
+			<text>￥{{item.price}}</text>
+		</view>
+	</view>
+</template>

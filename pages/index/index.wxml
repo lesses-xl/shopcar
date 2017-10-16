@@ -9,14 +9,14 @@
 	<text class='index-center-text'>{{index1}}</text>
 	<view class='theme-view'>
 		<view class='theme-top'>
-			<view class='theme-view-left'>
+			<view class='theme-view-left' bindtap="onetap">
 				<image src="{{theme1}}" class='half-img'></image>
 			</view>
-			<view class='theme-view-right'>
+			<view class='theme-view-right' bindtap="twotap">
 				<image src="{{theme2}}" class='half-img'></image>
 			</view>
 		</view>		
-		<view class='theme-view-bottom'>
+		<view class='theme-view-bottom' bindtap="threetap">
 			<image src="{{theme3}}" class='one-img'></image>
 		</view>
 	</view>

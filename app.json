@@ -1,7 +1,11 @@
 {
 	"pages": [
-		
 		"pages/index/index",
+		"pages/index/recommed/recommed",
+		
+		
+		"pages/template/template",
+		
 		"pages/list/list",
 		"pages/my/my",	
 		"pages/my/myphone/myphone",	

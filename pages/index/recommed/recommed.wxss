@@ -1,0 +1,11 @@
+.topimg {
+	width: 740rpx;
+	height: 350rpx;
+	margin: 0 auto;
+	margin-bottom: 20rpx;
+}
+
+.topimg image {
+	width: 100%;
+	height: 350rpx;
+}

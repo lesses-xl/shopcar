@@ -52,7 +52,104 @@ Page({
         name: '梨花带雨',
         price: '20'
       }
-    ]
+    ],
+    item1: {
+      indexImg: '../../../images/goods/s1.png',
+      fruit: [
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        },
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        },
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        },
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        },
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        }
+      ]
+    },
+    item2: {
+      indexImg: '../../../images/goods/s2.png',
+      fruit: [
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        },
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        },
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        },
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        },
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        }
+      ]
+    },
+    item3: {
+      indexImg: '../../../images/goods/list3.png',
+      fruit: [
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        },
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        },
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        },
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        },
+        {
+          image: '../../../images/goods/goods1.png',
+          name: '梨花带雨',
+          price: 20
+        }
+      ]
+    }
+  },
+  onetap: function() {
+    console.log(this.data.item1)
+    var url = this.data.item1;
+    wx.navigateTo({
+      url: 'recommed/recommed? url='+ url
+    })
   },
   onLoad: function (options) {
     var a = wx.getStorageSync('userInfo');
