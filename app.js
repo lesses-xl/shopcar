@@ -2,6 +2,8 @@
 App({
   globalData: {
     //全局对象
+    appid: '',
+    secret: '',
     userInfo : null
   },
   onLaunch: function () {
