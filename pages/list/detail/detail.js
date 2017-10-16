@@ -1,5 +1,13 @@
-var shopThing = require('../../../utils/goods.js')
-
+var shopThing = require('../../../utils/goods.js');
+var news = require('../../../utils/inedx.js');
+/*
+	图片
+	是否有货
+	名字
+	价格
+	详情
+	参数
+*/
 Page({
 	data:{
 		winWidth: 0,
@@ -9,7 +17,9 @@ Page({
 		index: 0,
 		num: 1,
 		cartNUm: 0,
-		ifadd: false
+		ifadd: false,
+		detail: '',
+		eIndex: 0
 	},
 	onLoad: function() {  
 	  var that = this;  
@@ -52,11 +62,12 @@ Page({
 	},
 	tocart: function() {
 		var that = this;
+		console.log(this.data.detail)
 		var obj = {
-			"thingName": "梨花带雨",
-			"thingImg": "../../images/goods/goods1.png",
-			"thingPrice": 20,
-			"thingNum": this.data.num,
+			"thingName": this.data.detail.name,
+			"thingImg": this.data.detail.image,
+			"thingPrice": this.data.detail.price,
+			"thingNum": 1,
 			"thingId": 99,
 			"choose": true
 		}
@@ -100,14 +111,20 @@ Page({
 		})		
 	},
 	onLoad:function(options){
+		this.setData({
+			detail: news.news[options.index],
+			eIndex: options.index
+		})
+		console.log(this.data.detail,news.news[options.index])
 		var num = 0;
 		for(var i=0; i<shopThing.shopThing.length; i++) {
 			num += shopThing.shopThing[i].thingNum;
 		}
-		console.log(shopThing.shopThing)
+		// console.log(shopThing.shopThing)
 		this.setData({
 			cartNum: num
 		})	
+
 	},
 	onReady:function(){
 		

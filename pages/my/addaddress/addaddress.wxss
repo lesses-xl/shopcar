@@ -1,0 +1,65 @@
+
+.address-item {
+	position: relative;
+	width: 95%;
+	margin-left: 20rpx;
+	height: 80rpx;
+	font-size: 28rpx;
+	border-bottom: 2rpx solid rgb(240,240,240);
+}
+
+.address-item input {
+	position: absolute;
+	left: 170rpx;
+	width: 350rpx;
+	height: 50rpx;
+	/* box-sizing: border-box; */
+	padding: 5rpx 5rpx;
+	margin-top: 12rpx;
+	/* line-height: 50rpx; */
+}
+
+.address-item text {
+	position: absolute;
+	height: 80rpx;
+	width: 160rpx;
+	line-height: 80rpx;
+}
+
+.address-save {
+	width: 680rpx;
+	font-size: 30rpx;
+	margin-top: 30rpx;
+}
+
+.citychoose {
+	width: 660rpx;
+	height: 50rpx;
+	box-sizing: border-box;
+	padding: 5rpx 20rpx;
+	margin-top: 30rpx;
+}
+
+.address-item button {
+	/* width: 120rpx; */
+	padding: 0px 25rpx;
+	height: 55rpx;
+	line-height: 55rpx;
+	font-size: 20rpx;
+	position: absolute;
+	top: 15rpx;
+	right: 10rpx;
+}
+
+picker-view-column {
+	text-align: center;
+}
+
+picker-view-column view{
+	font-size: 34rpx;
+}
+
+.address-item .location {
+	width: 420rpx;
+	/* padding: 5rpx 0 5rpx 20rpx; */
+}

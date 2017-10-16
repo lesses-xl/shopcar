@@ -169,6 +169,11 @@ Page({
     })
     this.chooseNum()
   },
+  tobuy: function() {
+    wx.navigateTo({
+      url: '../buy/buy'
+    })
+  },
   onLoad:function(options){
     this.setData({
       shopThing: shopThing.shopThing

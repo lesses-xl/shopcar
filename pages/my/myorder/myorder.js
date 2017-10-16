@@ -10,6 +10,7 @@ Page({
 		this.setData({
 			currentType: curType
 		});
+		console.log(this.data.currentType)
 		// this.onShow();
 	}
 })

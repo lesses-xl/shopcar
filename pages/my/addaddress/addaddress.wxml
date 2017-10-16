@@ -1,0 +1,21 @@
+<view class='container'>
+		<view class='address-item input'>
+			<text>联系人</text>
+			<input type="text" placeholder="姓名" bindinput='getName' maxlength="10"></input>
+		</view>
+		<view class='address-item'>
+			<text>手机号码</text>
+			<input placeholder="11位手机号码" type="digit" bindinput='getPhone' maxlength="11"></input>
+			<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机</button>
+		</view>
+	  <view class='address-item'>
+	  		<text>详细地址</text>
+			<input type="text" placeholder="详细地址" bindinput='getDetail' maxlength="50" value="{{province}}{{city}}{{country}}{{details}}" class='location' disabled="{{disabled}}"></input>
+	    <button bindtap='openMap'>选择</button>
+		</view>
+		<view class='address-item'>
+			<text>邮政编码</text>
+			<input placeholder="邮政编码" type="digit" bindinput='getPhone' maxlength="6"></input>
+		</view>
+		<button class='address-save' bindtap='saveUserData'>保存</button>
+</view>

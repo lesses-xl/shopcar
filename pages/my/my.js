@@ -5,7 +5,9 @@ Page({
 		userInfo: {},
 		userImage:null,
 		canIUse: wx.canIUse('button.open-type.getUserInfo'),
-		openId: ''
+		ifbind: false,
+		mobile: 1,
+		code: ''
 	},
 	showMyOrder: function() {
 		wx.navigateTo({
@@ -22,11 +24,16 @@ Page({
 		  url:"myphone/myphone"
 		 });
 	},
+	tous: function() {
+		wx.navigateTo({
+			url:'aboutus/aboutus'
+		})
+	},
 	onLoad:function(options){
 		var that = this;
 		this.setData({
 			userInfo: wx.getStorageSync('userInfo'),
-			openId: wx.getStorageSync('user').openid
+			code: wx.getStorageSync('userInfo').code
 		})
 	},
 	onReady:function(){

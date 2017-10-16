@@ -37,6 +37,7 @@
 }
 
 .my-list {
+	position: relative;
 	width: 100%;
 	height: 90rpx;
 	padding: 15px;
@@ -80,4 +81,17 @@
 .openid {
 	text-align: center;
 	font-size: 26rpx;
+}
+
+.changemobile {
+	width: 100rpx;
+	height: 90rpx;
+	font-size: 20rpx;
+	padding: 0 5rpx;
+	position: absolute;
+	right: 0rpx;
+	top: 0rpx;
+	border: none;
+	background: white;
+	line-height: 90rpx;
 }

@@ -1,5 +1,5 @@
 <view class='detail-top'>
-	<image src='../../../images/goods/goods1.png' class='top-img'></image>
+	<image src='../{{detail.image}}' class='top-img'></image>
 	<view class='top-btn'>
 		<picker class='top-left' bindchange="changeNum" range="{{array}}" value="{{index}}" mode = selector>
 			<text class='left-name'>数量</text>
@@ -13,9 +13,9 @@
 		</view>
 	</view>
 	<view class='goods-center'>
-		<view class='goods-have'>有货</view>
-		<view class='goods-name'>梨花带雨{{num}}个</view>
-		<view class='goods-money'>￥{{num * 20}}</view>
+		<view class='goods-have'>{{detail.have}}</view>
+		<view class='goods-name'>{{detail.name}}{{num}}个</view>
+		<view class='goods-money'>￥{{num * detail.price}}</view>
 	</view>	
 	<view class='cart-view' bindtap="toshopcar">
 		<view class='cart-num'>{{cartNum}}</view>
@@ -32,13 +32,13 @@
 	</view>
 	<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
 		<swiper-item>
-			<view>1111111111111111111</view>
+			<view>{{detail.para}}</view>
 		</swiper-item>
 		<swiper-item>
-			<view>2222222222222222222</view>
+			<view>{{detail.details}}</view>
 		</swiper-item>
 		<swiper-item>
-			<view>3333333333333333333</view>
+			<view>{{detail.name}}</view>
 		</swiper-item>
 	</swiper>
 </view>

@@ -1,7 +1,7 @@
 <view class='index'>
 	<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
 		<block wx:for="{{imgUrls}}">
-			<swiper-item>
+			<swiper-item bindtap="toDetail" data-index="{{index}}">
 				<image src="{{item}}" class='swiper-img'></image>
 			</swiper-item>
 		</block>
@@ -22,7 +22,7 @@
 	</view>
 	<text class='index-center-text'>{{index2}}</text>
 	<view class='new-goods'>
-		<view class='new-goods-one' wx:for="{{news}}">
+		<view class='new-goods-one' wx:for="{{news}}" bindtap="toDetail" data-index="{{index}}">
 			<image src='{{item.image}}'></image>
 			<text>{{item.name}} 1个</text>
 			<text>￥{{item.price}}</text>

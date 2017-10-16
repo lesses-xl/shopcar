@@ -1,4 +1,5 @@
 var shopThing = require('../../utils/goods.js');
+var news = require('../../utils/inedx.js');
 
 Page({
   data: {
@@ -16,144 +17,94 @@ Page({
     theme1: '../../images/goods/s1.png',
     theme2: '../../images/goods/s2.png',
     theme3: '../../images/goods/list3.png',
-    news: [
-      {
-        image: '../../images/goods/goods1.png',
-        name: '梨花带雨',
-        price: '20'
-      },
-      {
-        image: '../../images/goods/goods1.png',
-        name: '梨花带雨',
-        price: '20'
-      },
-      {
-        image: '../../images/goods/goods1.png',
-        name: '梨花带雨',
-        price: '20'
-      },
-      {
-        image: '../../images/goods/goods1.png',
-        name: '梨花带雨',
-        price: '20'
-      },
-      {
-        image: '../../images/goods/goods1.png',
-        name: '梨花带雨',
-        price: '20'
-      },
-      {
-        image: '../../images/goods/goods1.png',
-        name: '梨花带雨',
-        price: '20'
-      },
-      {
-        image: '../../images/goods/goods1.png',
-        name: '梨花带雨',
-        price: '20'
-      }
-    ],
-    item1: {
-      indexImg: '../../../images/goods/s1.png',
-      fruit: [
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        },
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        },
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        },
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        },
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        }
-      ]
-    },
-    item2: {
-      indexImg: '../../../images/goods/s2.png',
-      fruit: [
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        },
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        },
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        },
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        },
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        }
-      ]
-    },
-    item3: {
-      indexImg: '../../../images/goods/list3.png',
-      fruit: [
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        },
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        },
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        },
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        },
-        {
-          image: '../../../images/goods/goods1.png',
-          name: '梨花带雨',
-          price: 20
-        }
-      ]
-    }
+    // news: [
+    //   {
+    //     image: '../../images/goods/goods1.png',
+    //     name: '梨花带雨',
+    //     price: '20',
+    //     have: '有货',
+    //     details: '梨花带雨.....................',
+    //     para: '20.........................'
+    //   },
+    //   {
+    //     image: '../../images/goods/goods1.png',
+    //     name: '梨花带雨',
+    //     price: '20',
+    //     have: '有货',
+    //     details: '梨花带雨.....................',
+    //     para: '20.........................'
+    //   },
+    //   {
+    //     image: '../../images/goods/goods1.png',
+    //     name: '梨花带雨',
+    //     price: '20',
+    //     have: '有货',
+    //     details: '梨花带雨.....................',
+    //     para: '20.........................'
+    //   },
+    //   {
+    //     image: '../../images/goods/goods1.png',
+    //     name: '梨花带雨',
+    //     price: '20',
+    //     have: '有货',
+    //     details: '梨花带雨.....................',
+    //     para: '20.........................'
+    //   },
+    //   {
+    //     image: '../../images/goods/goods1.png',
+    //     name: '梨花带雨',
+    //     price: '20',
+    //     have: '有货',
+    //     details: '梨花带雨.....................',
+    //     para: '20.........................'
+    //   },
+    //   {
+    //     image: '../../images/goods/goods1.png',
+    //     name: '梨花带雨',
+    //     price: '20',
+    //     have: '有货',
+    //     details: '梨花带雨.....................',
+    //     para: '20.........................'
+    //   },
+    //   {
+    //     image: '../../images/goods/goods1.png',
+    //     name: '梨花带雨',
+    //     price: '20',
+    //     have: '有货',
+    //     details: '梨花带雨.....................',
+    //     para: '20.........................'
+    //   }
+    // ]
+    news: ''
   },
   onetap: function() {
-    console.log(this.data.item1)
-    var url = this.data.item1;
     wx.navigateTo({
-      url: 'recommed/recommed? url='+ url
+      url: "recommed/recommed?item=item1"
     })
   },
-  onLoad: function (options) {
-    var a = wx.getStorageSync('userInfo');
-
+  twotap: function() {
+    wx.navigateTo({
+      url: "recommed/recommed?item=item2"
+    })
+  },
+  threetap: function() {
+    wx.navigateTo({
+      url: "recommed/recommed?item=item3"
+    })
+  },
+  toDetail: function(e) {
+    // console.log(e.currentTarget)
+    var index = e.currentTarget.dataset.index;
+    wx.navigateTo({
+      url: "../list/detail/detail?index="+index
+    })
+  },
+  onLoad: function (options) { 
+    // console.log(news.news);
+    this.setData({
+      news: news.news
+    })  
+    // console.log(this.data.news)
   },
   onReady: function () {
     // Do something when page ready.

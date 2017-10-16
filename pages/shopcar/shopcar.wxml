@@ -38,7 +38,9 @@
       <text class='shopcar-choosetext'>全选{{chooseNum}}</text>
       <text class='shopcar-delete' bindtap='deleteall' wx:if="{{reader}}">删除</text>
       <view class='shopcar-border'></view>
-      <view class='shopcar-allprice'>￥<text >{{allprice}}</text></view>  
-      <image src='../../images/pages/icon3.png' class='shopcar-pay'></image>
+      <view class='shopcar-allprice'>￥<text >{{allprice}}</text></view> 
+      <view class='buy' bindtap="tobuy">
+        <image src='../../images/pages/icon3.png' class='shopcar-pay'></image>
+      </view>     
     </view> 
 </view>	

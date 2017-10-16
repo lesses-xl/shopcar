@@ -1,18 +1,21 @@
 {
 	"pages": [
+		
+
 		"pages/index/index",
-		"pages/index/recommed/recommed",
-		
-		
-		"pages/template/template",
-		
-		"pages/list/list",
-		"pages/my/my",	
-		"pages/my/myphone/myphone",	
 		"pages/my/myaddress/myaddress",
+		"pages/my/addaddress/addaddress",
+		"pages/my/my",	
+		"pages/index/recommed/recommed",
+		"pages/my/aboutus/aboutus",		
+		"pages/template/template",		
+		"pages/list/list",
+		"pages/my/myorder/myorder",	
+		"pages/my/myphone/myphone",	
+		
 		"pages/shopcar/shopcar",	
-		"pages/list/detail/detail",		
-		"pages/my/myorder/myorder"
+		"pages/list/detail/detail"	
+		
 		
 	],
 	"window": {

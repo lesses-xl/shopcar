@@ -10,22 +10,26 @@ App({
     var that = this;
     var user = wx.getStorageSync('user') || {};
     var userInfo = wx.getStorageSync('userInfo') || {};
-    // if((!user.openid || (user.expires_in || Date.now()) < (Date.now() + 600))&&(!userInfo.nickName)) {
+    if((!user.openid || (user.expires_in || Date.now()) < (Date.now() + 600))&&(!userInfo.nickName)) {
       wx.login({
-        success: function(res) {
-          console.log(res);
-          if(res.code) {
+        success: function(res_code) {
+          console.log(res_code.code);
+          if(res_code.code) {
             wx.getUserInfo({
+              withCredentials: true,
               success: function(res) {
                 var objs = {};
+                objs.code = res_code.code;
                 objs.avatarUrl = res.userInfo.avatarUrl;
                 objs.nickName = res.userInfo.nickName;
+                objs.encryptedData = res.encryptedData;
+                objs.iv = res.iv;
                 wx.setStorageSync('userInfo',objs); //存储
                 console.log(res)
               }
             });
             var d = that.globalData;
-            var u = "https://api.weixin.qq.com/sns/jscode2session?appid="+d.appid+"&secret="+d.secret+"&js_code="+res.code+"&grant_type=authorization_code'"; 
+            var u = "https://api.weixin.qq.com/sns/jscode2session?appid="+d.appid+"&secret="+d.secret+"&js_code="+res_code.code+"&grant_type=authorization_code'"; 
             wx.request({
               url: u,
               data:{},
@@ -43,7 +47,9 @@ App({
           }
         }
       })
-    // }
+    }else {
+      console.log(wx.getStorageSync('userInfo'))
+    }
            
   },
   onShow: function() {

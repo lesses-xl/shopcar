@@ -12,6 +12,33 @@ Page({
     details: "",
     disabled: false
   },
+  addaddress: function() {
+    wx.navigateTo({
+      url: '../addaddress/addaddress'
+    })
+  },
+  getPhoneNumber: function(e) {
+    console.log(e);
+    console.log(e.detail.iv);
+    console.log(e.detail.encryptedData);
+    wx.request({
+      url: 'https://api.feiwuhb.com/getUserPhoneNumber',
+      data: {},
+      method: "POST",
+      header: {
+          'Content-Type': 'application/json'
+      },
+      success: function(res) {
+        
+      },
+      fail: function(res) {
+        
+      },
+      complete: function(res) {
+        
+      }
+    })
+  },
   getName: function(e) {
     this.data.name = e.detail.value;
   },

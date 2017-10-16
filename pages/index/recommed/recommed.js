@@ -1,3 +1,5 @@
+var item = require('../../../utils/inedx.js');
+
 Page({
 	data:{
 		// item: {
@@ -29,10 +31,15 @@ Page({
 		// 			price: 20
 		// 		}
 		// 	]
-		// }
+		// },
+		item: ''
 	},
 	onLoad:function(options){
-		console.log(options.url)	
+		// console.log(options.item)	
+		console.log(item[options.item]);
+		this.setData({
+			item: item[options.item]
+		})
 	},
 	onReady:function(){
 		

@@ -1,13 +1,19 @@
 <view class='container'>
-	<view class='address-item input'>
-		<input type="text" placeholder="姓名" bindinput='getName' maxlength="10"></input>
-	</view>
 	<view class='address-item'>
-		<input placeholder="手机号码" type="number" bindinput='getPhone' maxlength="11"></input>
+		<view class='address-choose'>
+			<image src='../../../images/pages/addr-active.png'></image>
+		</view>
+		<view class='address-info'>
+			<view class='address-name'>ddd</view>
+			<view class='address-mobile'>11111111111</view>
+			<view class='address-detail'>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</view>
+		</view>
+		<view class='address-edit'>
+			<image src='../../../images/pages/addr-edit.png'></image>
+		</view>
 	</view>
-  <view class='address-item'>
-		<input type="text" placeholder="详细地址" bindinput='getDetail' maxlength="50" value="{{province}}{{city}}{{country}}{{details}}" class='location' disabled="{{disabled}}"></input>
-    <button bindtap='openMap'>选择</button>
+	<view class='add-new-address' bindtap="addaddress">
+		<view class='add-btn'>+</view>
+		<view class='add-text'>新增收货地址</view>
 	</view>
-	<button class='address-save' bindtap='saveUserData'>保存</button>
 </view>

@@ -1,0 +1,3 @@
+<view>code：<text selectable='true'>{{code}}</text></view>
+<view>encryptedData：<text selectable='true'>{{encryptedData}}</text></view>
+<view>iv：<text selectable='true'>{{iv}}</text></view>
