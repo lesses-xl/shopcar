@@ -1,14 +1,15 @@
 <view class='container'>
-	<view class='address-item'>
-		<view class='address-choose'>
+	<view class='address-item' wx:for="{{address}}">
+		<view class='address-choose' bindtap="choosethis">
 			<image src='../../../images/pages/addr-active.png'></image>
 		</view>
 		<view class='address-info'>
-			<view class='address-name'>ddd</view>
-			<view class='address-mobile'>11111111111</view>
-			<view class='address-detail'>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</view>
+			<view class='address-name'>{{item.name}}</view>
+			<view class='address-mobile'>{{item.mobile}}</view>
+			<view class='address-detail'>{{item.detail}}</view>
+			<view class='address-post'>{{item.postCode}}</view>
 		</view>
-		<view class='address-edit'>
+		<view class='address-edit' bindtap="changeaddress" data-index='{{index}}'>
 			<image src='../../../images/pages/addr-edit.png'></image>
 		</view>
 	</view>

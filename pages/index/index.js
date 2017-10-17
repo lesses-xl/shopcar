@@ -17,64 +17,6 @@ Page({
     theme1: '../../images/goods/s1.png',
     theme2: '../../images/goods/s2.png',
     theme3: '../../images/goods/list3.png',
-    // news: [
-    //   {
-    //     image: '../../images/goods/goods1.png',
-    //     name: '梨花带雨',
-    //     price: '20',
-    //     have: '有货',
-    //     details: '梨花带雨.....................',
-    //     para: '20.........................'
-    //   },
-    //   {
-    //     image: '../../images/goods/goods1.png',
-    //     name: '梨花带雨',
-    //     price: '20',
-    //     have: '有货',
-    //     details: '梨花带雨.....................',
-    //     para: '20.........................'
-    //   },
-    //   {
-    //     image: '../../images/goods/goods1.png',
-    //     name: '梨花带雨',
-    //     price: '20',
-    //     have: '有货',
-    //     details: '梨花带雨.....................',
-    //     para: '20.........................'
-    //   },
-    //   {
-    //     image: '../../images/goods/goods1.png',
-    //     name: '梨花带雨',
-    //     price: '20',
-    //     have: '有货',
-    //     details: '梨花带雨.....................',
-    //     para: '20.........................'
-    //   },
-    //   {
-    //     image: '../../images/goods/goods1.png',
-    //     name: '梨花带雨',
-    //     price: '20',
-    //     have: '有货',
-    //     details: '梨花带雨.....................',
-    //     para: '20.........................'
-    //   },
-    //   {
-    //     image: '../../images/goods/goods1.png',
-    //     name: '梨花带雨',
-    //     price: '20',
-    //     have: '有货',
-    //     details: '梨花带雨.....................',
-    //     para: '20.........................'
-    //   },
-    //   {
-    //     image: '../../images/goods/goods1.png',
-    //     name: '梨花带雨',
-    //     price: '20',
-    //     have: '有货',
-    //     details: '梨花带雨.....................',
-    //     para: '20.........................'
-    //   }
-    // ]
     news: ''
   },
   onetap: function() {

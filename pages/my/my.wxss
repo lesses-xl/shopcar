@@ -62,7 +62,7 @@
 .aboutwe {
 	width: 260rpx;
 	height: 50rpx;
-	padding-left: 100rpx;
+	padding-left: 135rpx;
 	box-sizing: border-box;
 }
 

@@ -5,15 +5,15 @@ Page({
     ifMobile: false,
     getCode: '获取验证码',
     disabled: false,
-    code: null
+    code: null,
+    mobile: null
   },
   getPhoneNumber: function(e) {
-    this.data.phoneNumber = e.detail.value;
-
+    this.data.mobile = e.detail.value;
   },
   phoneIfTrue: function() {  
     var reg = /^1[0-9]{10}$/;
-    var mobile = this.data.phoneNumber;
+    var mobile = this.data.mobile;
     if(!reg.test(mobile)) {
       wx.showToast({
         title: '手机号有误!'
@@ -29,6 +29,7 @@ Page({
     }
   },
   getAuthCode: function() {
+    console.log(this.data.mobile)
     this.phoneIfTrue();
     if(!this.data.ifMobile) {
       wx.showToast({
@@ -36,11 +37,30 @@ Page({
       });
     }else {
       var that = this;
-      var t = 10;
+      var t = 60;
       var timer = null;
       wx.showToast({
         title: '验证码已发送'
       });
+      wx.request({
+        url: 'https://api.feiwuhb.com/getUserPhoneNumber',
+        data: {
+          phoneNumber: this.data.mobile
+        },
+        method: "POST",
+        header: {
+            'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function(res) {
+          console.log(res);
+        },
+        fail: function(res) {
+          
+        },
+        complete: function(res) {
+          
+        }
+      })
       clearInterval(timer);
       timer = setInterval(function() {
         t = t-1;
@@ -55,25 +75,6 @@ Page({
             disabled: false
           });
         }
-        wx.request({
-          url: '',
-          data: {
-            
-          },
-          method: "POST",
-          header: {
-              'content-type': 'application/x-www-form-urlencoded'
-          },
-          success: function(res) {
-            
-          },
-          fail: function(res) {
-            
-          },
-          complete: function(res) {
-            
-          }
-        })
       },1000);
     }
   },
@@ -98,6 +99,46 @@ Page({
         //绑定
       }
     }
+  },
+  getCode: function() {
+    var that = this;
+    wx.login({
+      success: function(res) {
+        that.setData({
+          code: res.code
+        })
+        console.log(that.data.code)
+      }
+    })
+  },
+  getPhoneNumbers: function(e) {
+    var that = this;
+    console.log(e);
+    console.log(that.data.code)
+    wx.request({
+      url: 'https://api.feiwuhb.com/getUserPhoneNumber',
+      data: {
+        encryptedData: e.detail.encryptedData,
+        iv: e.detail.iv,
+        code: that.data.code
+      },
+      method: "POST",
+      header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function(res) {
+        console.log(res);
+        that.setData({
+          mobile: res.data.userPhoneNumber
+        })
+      },
+      fail: function(res) {
+        console.log(res)
+      },
+      complete: function(res) {       
+        console.log(that.data.mobile)
+      }
+    })
   },
   onLoad: function (options) {
     // Do some initialize when page load.

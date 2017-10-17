@@ -31,7 +31,7 @@ App({
             var d = that.globalData;
             var u = "https://api.weixin.qq.com/sns/jscode2session?appid="+d.appid+"&secret="+d.secret+"&js_code="+res_code.code+"&grant_type=authorization_code'"; 
             wx.request({
-              url: u,
+              url: '',
               data:{},
               method: "GET",
               success: function(res) {

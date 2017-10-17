@@ -3,6 +3,7 @@
 }
 
 .phone {
+	position: relative;
 	width: 600rpx;
 	height: 85rpx;
 	border: 1px solid #dfdfdf;
@@ -14,7 +15,7 @@
 }
 
 .phone input {
-	width: 450rpx;
+	width: 320rpx;
 	height: 85rpx;
 	margin-left: 20rpx;
 	line-height: 85rpx;
@@ -36,16 +37,18 @@
 }
 
 .phone button {
+	position: absolute;
 	width: 160rpx;
 	height: 50rpx;
 	font-size: 20rpx;
-	margin-top: 18rpx;
-	margin-right: 10rpx;
+	top: 18rpx;
+	right: 10rpx;
+	background: white;
 }
 
 .bindphone {
-	width: 510rpx;
-	height: 75rpx;
-	line-height: 75rpx;
-	font-size: 32rpx;
+	width: 500rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	font-size: 26rpx;
 }

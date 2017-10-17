@@ -1,9 +1,9 @@
 {
 	"pages": [
-		
-
 		"pages/index/index",
 		"pages/my/myaddress/myaddress",
+		
+		
 		"pages/my/addaddress/addaddress",
 		"pages/my/my",	
 		"pages/index/recommed/recommed",

@@ -26,10 +26,15 @@
 	line-height: 80rpx;
 }
 
-.address-save {
-	width: 680rpx;
-	font-size: 30rpx;
+.address-button {
+	width: 600rpx;
+	font-size: 26rpx;
 	margin-top: 30rpx;
+}
+
+.address-delete {
+	color: white;
+	background: red;
 }
 
 .citychoose {
@@ -49,6 +54,7 @@
 	position: absolute;
 	top: 15rpx;
 	right: 10rpx;
+	background: white;
 }
 
 picker-view-column {
