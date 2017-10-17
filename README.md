@@ -88,3 +88,7 @@
   ssh -T
   git@github.com
   测试key是否配置成功
+
+
+  10.17
+  优化增加地址
