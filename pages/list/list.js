@@ -1,122 +1,9 @@
+var list = require('../../utils/list.js')
+
 Page({
   data: {
     area: ["推荐区","美食区","零食区","水果区","点心","蔬菜","美食1","美食2","美食3","美食4","美食5","美食6"],
-    goods: [
-      [
-        {
-          img: '../../images/goods/goods1.png',
-          text: "11111"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "11111"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "11111"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "11111"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "11111"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "11111"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "11111"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "11111"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "11111"
-        }
-      ],
-      [
-        {
-          img: '../../images/goods/goods1.png',
-          text: "22222"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "22222"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "22222"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "22222"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "22222"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "22222"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "22222"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "22222"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "22222"
-        }
-      ],
-      [
-        {
-          img: '../../images/goods/goods1.png',
-          text: "33333"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "33333"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "33333"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "33333"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "33333"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "33333"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "33333"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "33333"
-        },
-        {
-          img: '../../images/goods/goods1.png',
-          text: "33333"
-        }
-      ],
-    ],
+    goods: list.list,
     currentIndex: 0,
     ifChoose: false
   },
@@ -126,13 +13,15 @@ Page({
       ifChoose: true
     })
   },
-  getDetail: function() {
+  getDetail: function(e) {
+    // console.log(e.currentTarget.dataset.index);
+    var arr = [this.data.currentIndex,e.currentTarget.dataset.index]
     wx.navigateTo({
-      url:"detail/detail"
+      url:"detail/detail?index="+arr
      });
   },
   onLoad: function (options) {
-    // Do some initialize when page load.
+    // console.log(goods.goods)
   },
   onReady: function () {
     // Do something when page ready.

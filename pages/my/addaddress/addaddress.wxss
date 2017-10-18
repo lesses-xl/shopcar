@@ -66,6 +66,6 @@ picker-view-column view{
 }
 
 .address-item .location {
-	width: 420rpx;
+	width: 390rpx;
 	/* padding: 5rpx 0 5rpx 20rpx; */
 }

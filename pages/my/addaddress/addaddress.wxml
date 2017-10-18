@@ -1,7 +1,7 @@
 <view class='container'>
 		<view class='address-item input'>
 			<text>联系人</text>
-			<input type="text" placeholder="姓名" bindinput='getName' maxlength="10"></input>
+			<input type="text" placeholder="姓名" bindinput='getName' maxlength="10" value='{{name}}'></input>
 		</view>
 		<view class='address-item'>
 			<text>手机号码</text>
@@ -15,7 +15,7 @@
 		</view>
 		<view class='address-item'>
 			<text>邮政编码</text>
-			<input placeholder="邮政编码" type="digit" bindinput='getPost' maxlength="6"></input>
+			<input placeholder="邮政编码" type="digit" bindinput='getPost' maxlength="6" value="{{postCode}}"></input>
 		</view>
 		<button class='address-button address-add' bindtap='addUserData' wx:if="{{add}}">添加</button>
 		<button class='address-button address-delete' bindtap='deleteUserData' wx:if="{{delete}}">删除</button>

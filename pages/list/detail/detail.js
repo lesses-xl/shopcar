@@ -1,5 +1,6 @@
 var shopThing = require('../../../utils/goods.js');
 var news = require('../../../utils/inedx.js');
+var list = require('../../../utils/list.js');
 /*
 	图片
 	是否有货
@@ -10,8 +11,8 @@ var news = require('../../../utils/inedx.js');
 */
 Page({
 	data:{
-		winWidth: 0,
-		winHeight: 0,
+		// winWidth: 0,
+		// winHeight: 0,
 		currentTab: 0,
 		array: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,20],
 		index: 0,
@@ -20,17 +21,6 @@ Page({
 		ifadd: false,
 		detail: '',
 		eIndex: 0
-	},
-	onLoad: function() {  
-	  var that = this;  
-	  wx.getSystemInfo( {  	
-	    success: function( res ) {  
-	      that.setData( {  
-	        winWidth: res.windowWidth,  
-	        winHeight: res.windowHeight  
-	      });  
-	    }  	
-	  });  
 	},
 	bindChange: function(e) {
 		var that = this;
@@ -111,20 +101,38 @@ Page({
 		})		
 	},
 	onLoad:function(options){
-		this.setData({
-			detail: news.news[options.index],
-			eIndex: options.index
-		})
-		console.log(this.data.detail,news.news[options.index])
-		var num = 0;
-		for(var i=0; i<shopThing.shopThing.length; i++) {
-			num += shopThing.shopThing[i].thingNum;
-		}
-		// console.log(shopThing.shopThing)
-		this.setData({
-			cartNum: num
-		})	
+		console.log(options.index)
+		var a = options.index[0];
+		var b = options.index[2];
+		if(options.index.length > 1) {
+			console.log(list.list[a][b]);
+			this.setData({
+				detail: list.list[a][b]
+			})
 
+			var num = 0;
+			for(var i=0; i<shopThing.shopThing.length; i++) {
+				num += shopThing.shopThing[i].thingNum;
+			}
+
+			this.setData({
+				cartNum: num
+			})	
+		}else {
+			this.setData({
+				detail: news.news[options.index],
+				eIndex: options.index
+			})
+			// console.log(this.data.detail,news.news[options.index]);
+			var num = 0;
+			for(var i=0; i<shopThing.shopThing.length; i++) {
+				num += shopThing.shopThing[i].thingNum;
+			}
+			// console.log(shopThing.shopThing)
+			this.setData({
+				cartNum: num
+			})	
+		}
 	},
 	onReady:function(){
 		

@@ -32,7 +32,6 @@ Page({
   			that.setData({
   				code: res.code
   			})
-  			// console.log(that.data.code)
   		}
   	})
   },
@@ -74,9 +73,9 @@ Page({
   },
   getDetail: function(e) {
     this.setData({
-      detail: e.detail.value
+      details: e.detail.value
     })
-    console.log(this.data.detail)
+    console.log(this.data.details)
   },
   getPost: function(e) {
     this.setData({
@@ -84,8 +83,9 @@ Page({
     })
   },
   saveUserData: function() {
-    // this.getDetail();
-    console.log(this.data.detail)
+    var timer = null;
+    clearTimeout(timer);
+    console.log(this.data.details)
     if(this.data.name =='') {
       wx.showToast({
         title: '请填写姓名!'
@@ -103,7 +103,7 @@ Page({
             title: '手机号有误!'
           })
         }else {
-          if(this.data.detail == '') {
+          if(!this.data.detail == '' && !this.data.details == '') {
             wx.showToast({
               title: '请填写详细地址!'
             });
@@ -118,11 +118,16 @@ Page({
               });
               address.address[this.data.index].name = this.data.name;
               address.address[this.data.index].mobile = this.data.mobile;
-              address.address[this.data.index].detail = this.data.detail;
+              address.address[this.data.index].detail = this.data.details;
               address.address[this.data.index].postCode = this.data.postCode;
               wx.showToast({
                 title: '保存完成!'
               });
+              timer = setTimeout(function() {
+                wx.navigateBack({
+                  url: '../myaddress/myaddress'
+                })
+              },500)
             }
           }
         }
@@ -142,8 +147,14 @@ Page({
   		add: address.address[options.index].add,
       save: address.address[options.index].save,
   		location: address.address[options.index].location,
-      index: options.index
+      index: options.index,
+      details: address.address[options.index].detail,
+      mobile: address.address[options.index].mobile,
+      postCode: address.address[options.index].postCode,
+      name: address.address[options.index].name
+
   	})
+    console.log(this.data.details)
   	if(this.data.location) {
   		this.getLocation();
   	}
@@ -179,9 +190,9 @@ Page({
                    disabled: false
                 });
                 that.setData({
-                   detail: that.data.province+that.data.city+that.data.country,
+                   details: that.data.province+that.data.city+that.data.country,
                 });
-                console.log(that.data.detail)   
+                // console.log(that.data.detail)   
               },
               fail: function(res) {
                 wx.showToast({
@@ -242,8 +253,8 @@ Page({
   onReady: function () {
     // Do something when page ready.
   },
-  onShow: function () {
-    // Do something when page show.
+  onShow: function (options) {
+    // console.log(options)
   },
   onHide: function (options) {
     console.log(options);

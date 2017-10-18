@@ -15,9 +15,9 @@
 			<text class='list-text'>推荐区分类</text>
 			<view class='heng heng2'></view>
 			<view class='list-div'>
-				<view class='list-goods' wx:for="{{goods[index]}}" bindtap="getDetail">
-					<image src='{{item.img}}'></image>
-					<text>{{item.text}}</text>
+				<view class='list-goods' wx:for="{{goods[index]}}" data-index="{{index}}" bindtap="getDetail">
+					<image src='{{item.image}}'></image>
+					<text>{{item.name}}</text>
 				</view>
 			</view>
 		</view>

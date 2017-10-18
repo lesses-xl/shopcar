@@ -44,7 +44,6 @@
 	position: absolute;
 	width: 8%;
 	height: 100%;
-	/* background: black; */
 	left: 0;
 }
 
@@ -60,7 +59,6 @@
 	position: absolute;
 	width: 8%;
 	height: 100%;
-	/* background: black; */
 	right: 0;
 }
 
@@ -78,13 +76,22 @@
 }
 
 .address-name {
-	top: 25rpx;
-	left: 30rpx;
+	/* top: 25rpx;
+	left: 30rpx; */
+	position: static!important;
+	float: left;
+	margin-top: 15rpx;
+	margin-left: 15rpx;
+	margin-right: 20rpx;
 }
 
 .address-mobile {
-	top: 25rpx;
-	left: 110rpx;
+	/* top: 25rpx;
+	left: 110rpx; */
+	position: static!important;
+	float: left;
+	margin-top: 15rpx;
+	margin-left: 20rpx;
 }
 
 .address-detail {
