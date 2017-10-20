@@ -55,7 +55,10 @@
   font-size: 28rpx;
   color: black;
   box-sizing: border-box;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
 }
 
 .reader {
@@ -74,8 +77,11 @@
 }
 
 .shopcar-some {
+  position: relative;
+  z-index: 10;
   width: 100%;
   height: auto;
+  margin-top: 72rpx;
 }
 
 .shopcar-one {
@@ -196,6 +202,7 @@
   background: #AB956C;
   font-size: 28rpx;
   overflow: hidden;
+  z-index: 99;
 }
 
 .shopcar-chooseall {

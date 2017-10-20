@@ -13,7 +13,7 @@
 .userinfo-img {
 	width: 110rpx;
 	height: 110rpx;
-	background: skyblue;
+	/* background: skyblue; */
 	border: 2rpx solid white;
 	/* margin-left: -220rpx; */
 	display: block;

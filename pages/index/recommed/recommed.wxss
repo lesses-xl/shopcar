@@ -3,9 +3,11 @@
 	height: 350rpx;
 	margin: 0 auto;
 	margin-bottom: 20rpx;
+	text-align: center;
 }
 
 .topimg image {
-	width: 100%;
+	width: 740rpx;
 	height: 350rpx;
+	vertical-align: top;
 }

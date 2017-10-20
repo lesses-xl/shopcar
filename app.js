@@ -11,12 +11,13 @@ App({
     var user = wx.getStorageSync('user') || {};
     var userInfo = wx.getStorageSync('userInfo') || {};
     if((!user.openid || (user.expires_in || Date.now()) < (Date.now() + 600))&&(!userInfo.nickName)) {
+      console.log(userInfo)
       wx.login({
         success: function(res_code) {
           console.log(res_code.code);
           if(res_code.code) {
             wx.getUserInfo({
-              withCredentials: true,
+              // withCredentials: true,
               success: function(res) {
                 var objs = {};
                 objs.code = res_code.code;
@@ -31,7 +32,7 @@ App({
             var d = that.globalData;
             var u = "https://api.weixin.qq.com/sns/jscode2session?appid="+d.appid+"&secret="+d.secret+"&js_code="+res_code.code+"&grant_type=authorization_code'"; 
             wx.request({
-              url: '',
+              url: u,
               data:{},
               method: "GET",
               success: function(res) {
@@ -45,9 +46,13 @@ App({
           }else {
             console.log('获取用户信息失败!' + res.errMsg)
           }
+        },
+        fail: function() {
+          console.log(1);
         }
       })
-    }else {
+    }
+    else {
       console.log(wx.getStorageSync('userInfo'))
     }
            

@@ -1,5 +1,5 @@
 <view class='detail-top'>
-	<image src='../{{detail.image}}' class='top-img'></image>
+	<image src='../{{detail.thingImg}}' class='top-img'></image>
 	<view class='top-btn'>
 		<picker class='top-left' bindchange="changeNum" range="{{array}}" value="{{index}}" mode = selector>
 			<text class='left-name'>数量</text>
@@ -14,8 +14,8 @@
 	</view>
 	<view class='goods-center'>
 		<view class='goods-have'>{{detail.have}}</view>
-		<view class='goods-name'>{{detail.name}}{{num}}个</view>
-		<view class='goods-money'>￥{{num * detail.price}}</view>
+		<view class='goods-name'>{{detail.thingName}}{{num}}个</view>
+		<view class='goods-money'>￥{{num * detail.thingPrice}}</view>
 	</view>	
 	<view class='cart-view' bindtap="toshopcar">
 		<view class='cart-num'>{{cartNum}}</view>

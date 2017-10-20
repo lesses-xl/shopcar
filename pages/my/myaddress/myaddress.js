@@ -9,26 +9,33 @@ Page({
         name: '',
         mobile: null,
         detail: '',
-        postCode: null,
+        postCode: '',
         delete: false,
         add: true,
         location: true,
-        save: false
+        save: false,
+        currentIndex: 0,
     }
     address.address.push(obj);
     var length = address.address.length -1;
-    // console.log(length)
     wx.navigateTo({
-      url: '../addaddress/addaddress?index='+length
+      url: 'addaddress/addaddress?index='+length
     })
   },
-  choosethis: function() {
-
+  choosethis: function(e) {
+    var thisIndex = e.currentTarget.dataset.index;
+    this.setData({
+      currentIndex: thisIndex
+    })
   },
   changeaddress: function(e) {
     var num = e.currentTarget.dataset.index;
+    address.address[num].delete = true;
+    address.address[num].save = true;
+    address.address[num].add = false;
+    address.address[num].location = false;
     wx.navigateTo({
-      url: '../addaddress/addaddress?index='+num
+      url: 'addaddress/addaddress?index='+num
     })
   },
   onLoad: function () {

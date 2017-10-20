@@ -4,22 +4,26 @@
 		<image></image>	
 	</view>
 	<view class='list-wrap'>
-		<view class="list">
-			<view class='list-item {{currentIndex==index ? "active" : "" }}'  data-index="{{index}}" wx:for="{{area}}" bindtap="changearea">
-				{{item}}
-			</view>
-		</view>
-		<view class='list-show {{currentIndex==index ? "" : "none" }}' wx:for='{{area}}'>
-			<image class='list-img'></image>
-			<view class='heng heng1'></view>
-			<text class='list-text'>推荐区分类</text>
-			<view class='heng heng2'></view>
-			<view class='list-div'>
-				<view class='list-goods' wx:for="{{goods[index]}}" data-index="{{index}}" bindtap="getDetail">
-					<image src='{{item.image}}'></image>
-					<text>{{item.name}}</text>
+		<scroll-view scroll-y class='scroll-left'>
+			<view class="list">
+				<view class='list-item {{currentIndex==index ? "active" : "" }}'  data-index="{{index}}" wx:for="{{area}}" bindtap="changearea">
+					{{item}}
 				</view>
 			</view>
-		</view>
+		</scroll-view>
+		<scroll-view scroll-y class='scroll-right'>
+			<view class='list-show {{currentIndex==index ? "" : "none" }}' wx:for='{{area}}'>
+				<image class='list-img'></image>
+				<view class='heng heng1'></view>
+				<text class='list-text'>推荐区分类</text>
+				<view class='heng heng2'></view>
+				<view class='list-div'>
+					<view class='list-goods' wx:for="{{list[index]}}" data-index="{{index}}" bindtap="getDetail">
+						<image src='{{item.thingImg}}'></image>
+						<text>{{item.thingName}}</text>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
 	</view>
 </view>	

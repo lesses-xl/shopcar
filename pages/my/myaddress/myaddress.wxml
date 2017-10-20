@@ -1,7 +1,7 @@
 <view class='container'>
 	<view class='address-item' wx:for="{{address}}">
-		<view class='address-choose' bindtap="choosethis">
-			<image src='../../../images/pages/addr-active.png'></image>
+		<view class='address-choose' bindtap="choosethis" data-index="{{index}}">
+			<image src='../../../images/pages/addr-active.png' data-index='{{index}}' class="{{index == currentIndex?'show':'hide'}}"></image>
 		</view>
 		<view class='address-info'>
 			<view class='address-name'>{{item.name}}</view>

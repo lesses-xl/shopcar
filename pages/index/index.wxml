@@ -22,10 +22,10 @@
 	</view>
 	<text class='index-center-text'>{{index2}}</text>
 	<view class='new-goods'>
-		<view class='new-goods-one' wx:for="{{news}}" bindtap="toDetail" data-index="{{index}}">
-			<image src='{{item.image}}'></image>
-			<text>{{item.name}} 1个</text>
-			<text>￥{{item.price}}</text>
+		<view class='new-goods-one' wx:for="{{index}}" bindtap="toDetail" data-index="{{index}}">
+			<image src='{{item.thingImg}}'></image>
+			<text>{{item.thingName}} 1个</text>
+			<text>￥{{item.thingPrice}}</text>
 		</view>
 	</view>
 </view>	

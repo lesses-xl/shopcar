@@ -1,5 +1,5 @@
-var shopThing = require('../../utils/goods.js');
-var news = require('../../utils/inedx.js');
+var shopThing = require('../../utils/shopThing.js');
+var index = require('../../utils/inedx.js');
 
 Page({
   data: {
@@ -17,7 +17,7 @@ Page({
     theme1: '../../images/goods/s1.png',
     theme2: '../../images/goods/s2.png',
     theme3: '../../images/goods/list3.png',
-    news: ''
+    index: ''
   },
   onetap: function() {
     wx.navigateTo({
@@ -35,18 +35,15 @@ Page({
     })
   },
   toDetail: function(e) {
-    // console.log(e.currentTarget)
     var index = e.currentTarget.dataset.index;
     wx.navigateTo({
       url: "../list/detail/detail?index="+index
     })
   },
   onLoad: function (options) { 
-    // console.log(news.news);
     this.setData({
-      news: news.news
+      index: index.index
     })  
-    // console.log(this.data.news)
   },
   onReady: function () {
     // Do something when page ready.

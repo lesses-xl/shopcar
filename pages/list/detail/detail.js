@@ -1,5 +1,5 @@
-var shopThing = require('../../../utils/goods.js');
-var news = require('../../../utils/inedx.js');
+var shopThing = require('../../../utils/shopThing.js');
+var index = require('../../../utils/inedx.js');
 var list = require('../../../utils/list.js');
 /*
 	图片
@@ -11,8 +11,6 @@ var list = require('../../../utils/list.js');
 */
 Page({
 	data:{
-		// winWidth: 0,
-		// winHeight: 0,
 		currentTab: 0,
 		array: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,20],
 		index: 0,
@@ -39,11 +37,12 @@ Page({
 	  }  
 	},
 	changeNum: function(e) {
+		console.log(e);
 		this.setData({
 			index: e.detail.value,
 			num: this.data.array[e.detail.value]
 		})
-		console.log(this.data.index,e)
+		// console.log(this.data.index,e)
 	},
 	toshopcar: function() {
 		wx.switchTab({
@@ -54,11 +53,11 @@ Page({
 		var that = this;
 		console.log(this.data.detail)
 		var obj = {
-			"thingName": this.data.detail.name,
-			"thingImg": this.data.detail.image,
-			"thingPrice": this.data.detail.price,
-			"thingNum": 1,
-			"thingId": 99,
+			"thingName": this.data.detail.thingName,
+			"thingImg": this.data.detail.thingImg,
+			"thingPrice": this.data.detail.thingPrice,
+			"thingNum": this.data.detail.thingNum,
+			"thingId": this.data.detail.thingId,
 			"choose": true
 		}
 		var timer = null;
@@ -77,7 +76,7 @@ Page({
 			})
 		},300)
 		for(var i=0; i<shopThing.shopThing.length; i++) {
-			if(shopThing.shopThing[i].thingName === '梨花带雨') {
+			if(shopThing.shopThing[i].thingName === obj.thingName) {
 				if(this.data.num === 1) {
 					shopThing.shopThing[i].thingNum += 1;
 					num += 1
@@ -101,13 +100,14 @@ Page({
 		})		
 	},
 	onLoad:function(options){
-		console.log(options.index)
-		var a = options.index[0];
-		var b = options.index[2];
+		var arr = options.index.split(',');
+		for(var i=0; i<arr.length; i++) {
+			arr[i] = Number(arr[i]);
+		}
+		console.log(arr);
 		if(options.index.length > 1) {
-			console.log(list.list[a][b]);
 			this.setData({
-				detail: list.list[a][b]
+				detail: list.list[arr[0]][arr[1]]
 			})
 
 			var num = 0;
@@ -120,15 +120,13 @@ Page({
 			})	
 		}else {
 			this.setData({
-				detail: news.news[options.index],
+				detail: index.index[arr[0]],
 				eIndex: options.index
 			})
-			// console.log(this.data.detail,news.news[options.index]);
 			var num = 0;
 			for(var i=0; i<shopThing.shopThing.length; i++) {
 				num += shopThing.shopThing[i].thingNum;
 			}
-			// console.log(shopThing.shopThing)
 			this.setData({
 				cartNum: num
 			})	

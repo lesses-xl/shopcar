@@ -1,4 +1,4 @@
-var shopThing = require('../../utils/goods.js')
+var shopThing = require('../../utils/shopThing.js')
 /*
   1.单个选中
   2.全部选中
@@ -10,7 +10,7 @@ var shopThing = require('../../utils/goods.js')
 */
 Page({
   data:{
-    haveThing: true,
+    haveThing: false,
     ifchoose: false,
     chooseId: 1,
     shopThing: shopThing.shopThing,
@@ -169,6 +169,11 @@ Page({
     })
     this.chooseNum()
   },
+  tolist: function() {
+    wx.switchTab({
+      url: '../list/list'
+    });
+  },
   tobuy: function() {
     wx.navigateTo({
       url: '../buy/buy'
@@ -185,7 +190,12 @@ Page({
   onShow:function(){
     this.setData({
       shopThing: shopThing.shopThing
-    })
+    });
+    if(this.data.shopThing.length > 0) {
+      this.setData({
+        haveThing: true
+      })
+    }
     this.changeprice();
   },
   onHide:function(){

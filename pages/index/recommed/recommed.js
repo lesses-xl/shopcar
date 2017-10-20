@@ -2,41 +2,15 @@ var item = require('../../../utils/inedx.js');
 
 Page({
 	data:{
-		// item: {
-		// 	indexImg: '../../../images/goods/s1.png',
-		// 	fruit: [
-		// 		{
-		// 			image: '../../../images/goods/goods1.png',
-		// 			name: '梨花带雨',
-		// 			price: 20
-		// 		},
-		// 		{
-		// 			image: '../../../images/goods/goods1.png',
-		// 			name: '梨花带雨',
-		// 			price: 20
-		// 		},
-		// 		{
-		// 			image: '../../../images/goods/goods1.png',
-		// 			name: '梨花带雨',
-		// 			price: 20
-		// 		},
-		// 		{
-		// 			image: '../../../images/goods/goods1.png',
-		// 			name: '梨花带雨',
-		// 			price: 20
-		// 		},
-		// 		{
-		// 			image: '../../../images/goods/goods1.png',
-		// 			name: '梨花带雨',
-		// 			price: 20
-		// 		}
-		// 	]
-		// },
 		item: ''
 	},
+	toCart: function(e) {
+		var index = e.currentTarget.dataset.index;
+		wx.navigateTo({
+		  url: "../../list/detail/detail?index="+index
+		})
+	},
 	onLoad:function(options){
-		// console.log(options.item)	
-		console.log(item[options.item]);
 		this.setData({
 			item: item[options.item]
 		})

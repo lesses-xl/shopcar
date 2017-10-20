@@ -26,16 +26,34 @@
 
 .list-wrap {
 	display: flex;
+	position: fixed;
+	top: 58rpx;
+	left: 0;
+}
+
+.scroll-left {
+	width: 20%;
+	margin-top: 16rpx;
+	border-top: 1rpx solid rgb(223,224,227);
+	border-right: 1rpx solid rgb(223,224,227);
+	transition: all .2s;
+}
+
+.scroll-right {
+	width: 80%;
+	margin-top: 16rpx;
+	border-top: 1rpx solid rgb(223,224,227);
+	transition: all .2s;
 }
 
 .list {
-	width: 20%;
+	/* width: 20%; */
 	box-sizing: border-box;
 	/* min-height: 1420rpx; */
 	margin-top: 15rpx;
 	padding: 0 0 20rpx 0;
-	border-top: 1rpx solid rgb(223,224,227);
-	border-right: 1rpx solid rgb(223,224,227);
+/* 	border-top: 1rpx solid rgb(223,224,227);
+	border-right: 1rpx solid rgb(223,224,227); */
 }
 
 .list-item {
@@ -58,8 +76,8 @@
 }
 
 .list-show {
-	border-top: 1rpx solid rgb(223,224,227);
-	width: 80%;
+	/* border-top: 1rpx solid rgb(223,224,227); */
+	/* width: 80%; */
 	height: 1000rpx;
 	/* float: left; */
 	margin-top: 15rpx;

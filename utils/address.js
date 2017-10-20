@@ -7,7 +7,8 @@ var address = [
 		delete: true,
 		add: false,
 		location: false,
-		save: true
+		save: true,
+		current: true
 	}
 ]
 
