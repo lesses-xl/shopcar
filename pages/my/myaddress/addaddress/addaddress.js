@@ -21,11 +21,6 @@ Page({
     saveOk: false,
     showtitle: ''
   },
-  // addaddress: function() {
-  //   wx.navigateTo({
-  //     url: '../addaddress/addaddress'
-  //   })
-  // },
   getCode: function() {
   	var that = this;
   	wx.login({
@@ -84,8 +79,6 @@ Page({
     })
   },
   testData: function() {
-    // var timer = null;
-    // clearTimeout(timer);
     if(this.data.name =='') {
       wx.showToast({
         title: '请填写姓名!'
@@ -128,19 +121,16 @@ Page({
                 saveOk: false
               })
             }else {
-              console.log(this.data.postCode)
-              this.setData({
-                saveOk: true
+              wx.showToast({
+                title: this.data.showtitle
               });
               address.address[this.data.index].name = this.data.name;
               address.address[this.data.index].mobile = this.data.mobile;
               address.address[this.data.index].detail = this.data.details;
               address.address[this.data.index].postCode = this.data.postCode;
-              wx.showToast({
-                title: this.data.showtitle
+              this.setData({
+                saveOk: true
               });
-              // timer = setTimeout(function() {
-              // },500)
             }
           }
         }
@@ -154,11 +144,13 @@ Page({
       showtitle: '保存完成!'
     })
     this.testData();
-    // timer = setTimeout(function() {
-          wx.navigateBack({
-            delta: 1
-          });
-    // },500)
+    if(this.data.saveOk) {
+      timer = setTimeout(function() {
+        wx.navigateBack({
+          delta: 1
+        });
+      },1500)     
+    }
   },
   addUserData: function() {
     var timer = null;
@@ -166,12 +158,14 @@ Page({
     this.setData({
       showtitle: '添加完成!'
     })
-  	this.testData();
-    // timer = setTimeout(function() {
+    this.testData();
+    if(this.data.saveOk) {
+      timer = setTimeout(function() {
         wx.navigateBack({
           delta: 1
         });
-    // },500)
+      },1500)     
+    }   
   },
   deleteUserData: function() {
     var that = this;
@@ -311,7 +305,7 @@ Page({
   },
   onUnload: function () {
     if(address.address.length > 0) {
-      this.testData();
+      // this.testData();
       if(!this.data.saveOk) {
         address.address.splice(this.data.index,1);
       }
