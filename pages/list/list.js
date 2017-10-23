@@ -2,7 +2,18 @@ var list = require('../../utils/list.js')
 
 Page({
   data: {
-    area: ["推荐区","美食区","零食区","水果区","点心","蔬菜","美食1","美食2","美食3","美食4","美食5","美食6"],
+    area: ["推荐区","美食区","零食区","水果区","点心","蔬菜","美食1","美食2","美食3"],
+    imgList: [
+        '../../images/goods/list1.png',
+        '../../images/goods/list1.png',
+        '../../images/goods/list1.png',
+        '../../images/goods/list1.png',
+        '../../images/goods/list1.png',
+        '../../images/goods/list1.png',
+        '../../images/goods/list1.png',
+        '../../images/goods/list1.png',
+        '../../images/goods/list1.png'
+    ],
     list: list.list,
     currentIndex: 0,
     ifChoose: false

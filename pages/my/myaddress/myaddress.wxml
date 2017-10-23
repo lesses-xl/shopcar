@@ -4,10 +4,10 @@
 			<image src='../../../images/pages/addr-active.png' data-index='{{index}}' class="{{index == currentIndex?'show':'hide'}}"></image>
 		</view>
 		<view class='address-info'>
-			<view class='address-name'>{{item.name}}</view>
-			<view class='address-mobile'>{{item.mobile}}</view>
-			<view class='address-detail'>{{item.detail}}</view>
-			<view class='address-post'>{{item.postCode}}</view>
+			<view class='address-name'>联系人：{{item.name}}</view>
+			<view class='address-mobile'>手机号码：{{item.mobile}}</view>
+			<view class='address-detail'>详细地址：{{item.detail}}</view>
+			<view class='address-post'>邮编：{{item.postCode}}</view>
 		</view>
 		<view class='address-edit' bindtap="changeaddress" data-index='{{index}}'>
 			<image src='../../../images/pages/addr-edit.png'></image>

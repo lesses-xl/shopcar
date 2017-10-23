@@ -1,16 +1,22 @@
 {
 	"pages": [
+		
 		"pages/index/index",
+		"pages/my/myorder/myorder",
+		"pages/buy/buy",
+		"pages/my/myphone/myphone",	
 		"pages/my/myaddress/myaddress",
-			
+		
 		"pages/my/myaddress/addaddress/addaddress",
+			
+		
 		"pages/my/my",	
 		"pages/index/recommed/recommed",
 		"pages/my/aboutus/aboutus",		
 		"pages/template/template",		
 		"pages/list/list",
-		"pages/my/myorder/myorder",	
-		"pages/my/myphone/myphone",	
+			
+		
 		
 		"pages/shopcar/shopcar",	
 		"pages/list/detail/detail"	

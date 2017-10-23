@@ -6,7 +6,8 @@ Page({
     getCode: '获取验证码',
     disabled: false,
     code: null,
-    mobile: null
+    mobile: null,
+    wrongText: ''
   },
   getPhoneNumber: function(e) {
     this.data.mobile = e.detail.value;
@@ -15,9 +16,9 @@ Page({
     var reg = /^1[0-9]{10}$/;
     var mobile = this.data.mobile;
     if(!reg.test(mobile)) {
-      wx.showToast({
-        title: '手机号有误!'
-      })
+      // wx.showToast({
+      //   title: '手机号有误!'
+      // })
       this.setData({
         ifMobile: false
       })
@@ -87,16 +88,22 @@ Page({
   bindPhone: function() {
     this.phoneIfTrue();
     if(!this.data.ifMobile) {
-      wx.showToast({
-        title: '手机号有误!'
-      });
+      // wx.showToast({
+      //   title: '手机号有误!'
+      // });
+      this.setData({
+        wrongText: '手机号有误!'
+      })
     }else {
       if(!this.data.ifSend) {
-        wx.showToast({
-          title: '验证码有误!'
-        });
+        this.setData({
+          wrongText: '验证码有误!'
+        })
       }else {
         //绑定
+        this.setData({
+          wrongText: '通过!'
+        })
       }
     }
   },

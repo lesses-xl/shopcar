@@ -2,7 +2,7 @@
 	<view class="status-box">
 	    <view bindtap="statustap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}">
 	        {{item}}
-	        <view class="red-dot"></view>
+	        <!-- <view class="red-dot"></view> -->
 	        <view class="{{tabClass[index]}}">  	
 	        </view>
 	    </view>
@@ -10,5 +10,79 @@
 	<view class="no-order" hidden="{{orderList ? true : false}}">
 	    <image src="../../../images/nav/order-off.png" class="no-order-img"></image>
 	    <view class="text">暂无订单</view>
+	</view>
+	<view class='topay orderlist' hidden="{{currentType == 0 ? false : true}}">
+		<view class='paylist' wx:for="{{orderList}}">
+			<view class='ordernumber'>订单编号: {{item.number}}</view>
+			<view class='orderwrap'>
+				<image class='orderwrap-left' src='{{item.img}}'></image>
+				<view class='orderwrap-right'>
+					<view class='orderwrap-name'>{{item.name}}</view>
+					<view class='orderwrap-num'>{{item.num}}件商品</view>
+				</view>
+				<text class='orderwrap-wait'>待付款</text>
+			</view>
+			<view class='orderpay'><text>实付:￥{{item.money}}</text><button>付款</button></view>
+		</view>
+	</view>
+
+	<view class='tosend orderlist'  hidden="{{currentType == 1 ? false : true}}">
+		<view class='paylist' wx:for="{{orderList}}">
+			<view class='ordernumber'>订单编号: {{item.number}}</view>
+			<view class='orderwrap'>
+				<image class='orderwrap-left' src='{{item.img}}'></image>
+				<view class='orderwrap-right'>
+					<view class='orderwrap-name'>{{item.name}}</view>
+					<view class='orderwrap-num'>{{item.num}}件商品</view>
+				</view>
+				<text class='orderwrap-wait'>已付款</text>
+			</view>
+			<view class='orderpay'><text>实付:￥{{item.money}}</text><button>等待发货</button></view>
+		</view>
+	</view>
+
+	<view class='totake orderlist' hidden="{{currentType == 2 ? false : true}}" >
+		<view class='paylist' wx:for="{{orderList}}">
+			<view class='ordernumber'>订单编号: {{item.number}}</view>
+			<view class='orderwrap'>
+				<image class='orderwrap-left' src='{{item.img}}'></image>
+				<view class='orderwrap-right'>
+					<view class='orderwrap-name'>{{item.name}}</view>
+					<view class='orderwrap-num'>{{item.num}}件商品</view>
+				</view>
+				<text class='orderwrap-wait'>已付款</text>
+			</view>
+			<view class='orderpay'><text>实付:￥{{item.money}}</text><button>待收货</button><button>查看物流</button></view>
+		</view>
+	</view>
+
+	<view class='tosay orderlist'  hidden="{{currentType == 3 ? false : true}}">
+		<view class='paylist' wx:for="{{orderList}}">
+			<view class='ordernumber'>订单编号: {{item.number}}</view>
+			<view class='orderwrap'>
+				<image class='orderwrap-left' src='{{item.img}}'></image>
+				<view class='orderwrap-right'>
+					<view class='orderwrap-name'>{{item.name}}</view>
+					<view class='orderwrap-num'>{{item.num}}件商品</view>
+				</view>
+				<text class='orderwrap-wait'>交易完成</text>
+			</view>
+			<view class='orderpay'><text>实付:￥{{item.money}}</text><button>评价</button></view>
+		</view>
+	</view>
+
+	<view class='complete orderlist'  hidden="{{currentType == 4 ? false : true}}">
+		<view class='paylist' wx:for="{{orderList}}">
+			<view class='ordernumber'>订单编号: {{item.number}}</view>
+			<view class='orderwrap'>
+				<image class='orderwrap-left' src='{{item.img}}'></image>
+				<view class='orderwrap-right'>
+					<view class='orderwrap-name'>{{item.name}}</view>
+					<view class='orderwrap-num'>{{item.num}}件商品</view>
+				</view>
+				<text class='orderwrap-wait'>交易完成</text>
+				<text class='orderwrap-price'>价格:￥{{item.money}}</text>
+			</view>
+		</view>
 	</view>
 </view>

@@ -1,7 +1,8 @@
 <view class='myphone'>
+	<image src='../../../images/goods/goods1.png' class='login-logo'></image>
 	<view class='phone'>
-		<text>手机</text>
-		<view class='borderright'></view>	
+		<!-- <text>手机</text>
+		<view class='borderright'></view>	 -->
 		<input type="text" placeholder="请输入手机号" maxlength="11" bindinput="getPhoneNumber" value='{{mobile}}'></input>
 		<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumbers" bindtap="getCode">获取手机</button>
 	</view>
@@ -9,5 +10,6 @@
 		<input type="text" placeholder="请输入验证码" maxlength="6" bindinput="codeTrue"></input>
 		<button bindtap='getAuthCode' disabled="{{disabled}}">{{getCode}}</button>
 	</view>	
+	<view class='wrong-text'>{{wrongText}}</view>
 	<button class='bindphone' bindtap='bindPhone'>立即绑定</button>
 </view>

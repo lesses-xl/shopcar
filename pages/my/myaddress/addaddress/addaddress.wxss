@@ -27,9 +27,9 @@
 }
 
 .address-button {
-	width: 600rpx;
+	width: 95%;
 	font-size: 26rpx;
-	margin-top: 30rpx;
+	margin-top: 12rpx;
 }
 
 .address-delete {
@@ -46,15 +46,18 @@
 }
 
 .address-item button {
-	/* width: 120rpx; */
 	padding: 0px 25rpx;
-	height: 55rpx;
-	line-height: 55rpx;
-	font-size: 20rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 22rpx;
 	position: absolute;
-	top: 15rpx;
+	/* top: 15rpx; */
 	right: 10rpx;
 	background: white;
+}
+
+.address-item button::after {
+	border: none;
 }
 
 picker-view-column {
@@ -68,4 +71,14 @@ picker-view-column view{
 .address-item .location {
 	width: 390rpx;
 	/* padding: 5rpx 0 5rpx 20rpx; */
+}
+
+.wrong-text {
+	font-size: 24rpx;
+	width: 95%;
+	height: 45rpx;
+	line-height: 45rpx;
+	color: rgb(181,47,46);
+	margin: 0 auto;
+	margin-top: 5rpx;
 }

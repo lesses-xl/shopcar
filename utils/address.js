@@ -12,6 +12,9 @@ var address = [
 	}
 ]
 
+var chooseId = 0;
+
 module.exports = {
-	address: address
+	address: address,
+	chooseId: chooseId
 }

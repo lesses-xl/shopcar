@@ -39,16 +39,42 @@
 .phone button {
 	position: absolute;
 	width: 160rpx;
-	height: 50rpx;
-	font-size: 20rpx;
-	top: 18rpx;
-	right: 10rpx;
+	height: 80rpx;
+	font-size: 22rpx;
+	top: 2rpx;
+	right: 2rpx;
+	line-height: 80rpx;
 	background: white;
 }
 
+.phone button::after {
+	border: none;
+}
+
 .bindphone {
-	width: 500rpx;
-	height: 70rpx;
-	line-height: 70rpx;
+	width: 605rpx;
+	height: 65rpx;
+	line-height: 65rpx;
 	font-size: 26rpx;
+	background: #AB956C;
+	color: white;
+}
+
+.wrong-text {
+	width: 600rpx;
+	height: 45rpx;
+	margin: 0 auto;
+	font-size: 24rpx;
+	margin-top: -4rpx;
+	color: rgb(180,46,45);
+}
+
+.login-logo {
+	width: 140rpx;
+	height: 140rpx;
+	border-radius: 50%;
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 50rpx;
+	margin-top: 70rpx;
 }

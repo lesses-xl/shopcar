@@ -16,10 +16,11 @@ Page({
     add: false,
     save: true,
     code: '',
-    mobile:null,
+    mobile:'',
     index: null,
-    saveOk: false,
-    showtitle: ''
+    saveOk: true,
+    showtitle: '',
+    wrongtext: ''
   },
   getCode: function() {
   	var that = this;
@@ -68,9 +69,16 @@ Page({
       })
   },
   getDetail: function(e) {
+    console.log(e.detail.value)
     this.setData({
-      details: e.detail.value
+      detail: e.detail.value,
     })
+    console.log(this.data.detail)
+    if(this.data.detail == '') {
+      this.setData({
+        details: ''
+      })
+    }
     console.log(this.data.details)
   },
   getPost: function(e) {
@@ -79,58 +87,68 @@ Page({
     })
   },
   testData: function() {
+    // var timer = null;
+    // clearTimeout(timer);
     if(this.data.name =='') {
-      wx.showToast({
-        title: '请填写姓名!'
-      });
+      // wx.showToast({
+      //   title: '请填写姓名!'
+      // });
       this.setData({
-        saveOk: false
+        saveOk: false,
+        wrongtext: '请填写姓名!'
       })
     }else {
       if(this.data.mobile == '') {
-        wx.showToast({
-          title: '手机号为空!'
-        });
+        // wx.showToast({
+        //   title: '手机号为空!'
+        // });
         this.setData({
-          saveOk: false
+          saveOk: false,
+          wrongtext: '手机号为空!'
         })
       }else {
         var reg = /^1[0-9]{10}$/;
         var mobile = this.data.mobile;
         if(!reg.test(mobile)) {
-          wx.showToast({
-            title: '手机号有误!'
-          })
+          // wx.showToast({
+          //   title: '手机号有误!'
+          // })
           this.setData({
-            saveOk: false
+            saveOk: false,
+            wrongtext: '手机号有误!'
           })
         }else {
-          if(!this.data.detail == '' && !this.data.details == '') {
-            wx.showToast({
-              title: '请填写详细地址!'
-            });
+          console.log(this.data.detail,this.data.details)
+          if(this.data.detail == '' && this.data.details == '') {
+            // wx.showToast({
+            //   title: '请填写详细地址!'
+            // });
             this.setData({
-              saveOk: false
+              saveOk: false,
+              wrongtext: '请填写详细地址!'
             })
           }else {
             if(this.data.postCode == '') {
-              wx.showToast({
-                title: '请输入邮编!'
-              });
+              // wx.showToast({
+              //   title: '请输入邮编!'
+              // });
               this.setData({
-                saveOk: false
+                saveOk: false,
+                wrongtext: '请输入邮编'
               })
             }else {
-              wx.showToast({
-                title: this.data.showtitle
+              console.log(this.data.postCode)
+              this.setData({
+                saveOk: true,
+                wrongtext: ''
               });
               address.address[this.data.index].name = this.data.name;
               address.address[this.data.index].mobile = this.data.mobile;
               address.address[this.data.index].detail = this.data.details;
               address.address[this.data.index].postCode = this.data.postCode;
-              this.setData({
-                saveOk: true
-              });
+              // wx.showToast({
+              //   title: this.data.showtitle
+              // });
             }
           }
         }
@@ -140,32 +158,32 @@ Page({
   saveUserData: function() {
     var timer = null;
     clearTimeout(timer);
-    this.setData({
-      showtitle: '保存完成!'
-    })
     this.testData();
     if(this.data.saveOk) {
-      timer = setTimeout(function() {
-        wx.navigateBack({
-          delta: 1
-        });
-      },1500)     
+      wx.showToast({
+        title: '保存完成!'
+      });
+    timer = setTimeout(function() {
+      wx.navigateBack({
+        delta: 1
+      });
+    },1500)
     }
   },
   addUserData: function() {
     var timer = null;
     clearTimeout(timer);
-    this.setData({
-      showtitle: '添加完成!'
-    })
-    this.testData();
+  	this.testData();
     if(this.data.saveOk) {
-      timer = setTimeout(function() {
-        wx.navigateBack({
-          delta: 1
-        });
-      },1500)     
-    }   
+      wx.showToast({
+        title: '添加完成!'
+      });
+    timer = setTimeout(function() {
+      wx.navigateBack({
+        delta: 1
+      });
+    },1500)
+    }
   },
   deleteUserData: function() {
     var that = this;
@@ -196,8 +214,8 @@ Page({
       details: address.address[options.index].detail,
       mobile: address.address[options.index].mobile,
       postCode: address.address[options.index].postCode,
-      name: address.address[options.index].name
-
+      name: address.address[options.index].name,
+      wrongtext: ''
   	})
     console.log(this.data.details)
   	if(this.data.location) {
@@ -213,9 +231,10 @@ Page({
       success: function(res) {
          console.log(res); 
          that.setData({
-            province: '正在定位...',
+            province: '',
             city: '',
             country: '',
+            details: '正在定位...',
             disabled: true
          });
          timer = setTimeout(function() {
@@ -237,7 +256,6 @@ Page({
                 that.setData({
                    details: that.data.province+that.data.city+that.data.country,
                 });
-                // console.log(that.data.detail)   
               },
               fail: function(res) {
                 wx.showToast({
@@ -299,16 +317,21 @@ Page({
     // Do something when page ready.
   },
   onShow: function (options) {
-    // console.log(options)
+    this.setData({
+      wrongtext: ''
+    })
   },
   onHide: function () {
   },
   onUnload: function () {
+    console.log(address.address)
+
     if(address.address.length > 0) {
-      // this.testData();
-      if(!this.data.saveOk) {
-        address.address.splice(this.data.index,1);
-      }
+      var this_ = address.address[this.data.index];
+      console.log(this_)
+      if(this_.name == '' || this_.mobile == '' || this_.postCode == '') {
+        address.address.splice(this.data.index,1)
+      } 
     }   
   },
   onPullDownRefresh: function () {

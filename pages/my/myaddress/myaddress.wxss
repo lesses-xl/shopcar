@@ -7,7 +7,7 @@
 	bottom: 0;
 	left: 0;
 	font-size: 26rpx;
-	border-top: 1rpx solid gray;
+	border-top: 1rpx solid rgb(238,238,238);
 }
 
 .add-btn {
@@ -33,9 +33,8 @@
 
 .address-item {
 	position: relative;
-	/* border-top: 6rpx solid rgb(238, 238, 238); */
 	width: 100%;
-	height: 130rpx;
+	height: 170rpx;
 	font-size: 22rpx;
 	border-bottom: 12rpx solid rgb(238, 238, 238);
 }
@@ -59,7 +58,7 @@
 	position: absolute;
 	width: 30rpx;
 	height: 30rpx;
-	top: 48rpx;
+	top: 65rpx;
 	left: 16rpx;
 }
 
@@ -84,8 +83,6 @@
 }
 
 .address-name {
-	/* top: 25rpx;
-	left: 30rpx; */
 	position: static!important;
 	float: left;
 	margin-top: 15rpx;
@@ -94,8 +91,6 @@
 }
 
 .address-mobile {
-	/* top: 25rpx;
-	left: 110rpx; */
 	position: static!important;
 	float: left;
 	margin-top: 15rpx;
@@ -108,6 +103,6 @@
 }
 
 .address-post {
-	right: 20rpx;
-	top: 25rpx;
+	top: 72rpx;
+	left: 30rpx;
 }

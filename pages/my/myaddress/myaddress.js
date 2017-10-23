@@ -2,7 +2,8 @@ var address = require('../../../utils/address.js')
 
 Page({
   data: {
-    address: ''
+    address: '',
+    currentIndex: 0
   },
   addaddress: function() {
     var obj = {
@@ -14,7 +15,6 @@ Page({
         add: true,
         location: true,
         save: false,
-        currentIndex: 0,
     }
     address.address.push(obj);
     var length = address.address.length -1;
@@ -27,6 +27,7 @@ Page({
     this.setData({
       currentIndex: thisIndex
     })
+    address.chooseId = thisIndex;
   },
   changeaddress: function(e) {
     var num = e.currentTarget.dataset.index;
@@ -40,7 +41,8 @@ Page({
   },
   onLoad: function () {
       this.setData({
-        address: address.address 
+        address: address.address,
+        currentIndex:address.chooseId
       })
   },
   onReady: function () {
@@ -48,7 +50,8 @@ Page({
   },
   onShow: function () {
     this.setData({
-      address: address.address 
+      address: address.address,
+      currentIndex: address.chooseId 
     })
   },
   onHide: function () {

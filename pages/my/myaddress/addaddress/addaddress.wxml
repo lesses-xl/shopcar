@@ -10,13 +10,14 @@
 		</view>
 	  <view class='address-item'>
 	  		<text>详细地址</text>
-			<input type="text" placeholder="详细地址" bindinput='getDetail' maxlength="50" value="{{province}}{{city}}{{country}}{{details}}" class='location' disabled="{{disabled}}"></input>
+			<input type="text" placeholder="详细地址" bindinput='getDetail' maxlength="50" value="{{details}}" class='location' disabled="{{disabled}}"></input>
 	    <button bindtap='openMap'>选择地址</button>
 		</view>
 		<view class='address-item'>
 			<text>邮政编码</text>
 			<input placeholder="邮政编码" type="digit" bindinput='getPost' maxlength="6" value="{{postCode}}"></input>
 		</view>
+		<view class='wrong-text'>{{wrongtext}}</view>
 		<button class='address-button address-add' bindtap='addUserData' wx:if="{{add}}">添加</button>
 		<button class='address-button address-delete' bindtap='deleteUserData' wx:if="{{delete}}">删除</button>
 		<button class='address-button address-save' bindtap='saveUserData' wx:if="{{save}}">保存</button>
