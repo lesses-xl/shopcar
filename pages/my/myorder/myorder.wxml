@@ -15,7 +15,7 @@
 		<view class='paylist' wx:for="{{orderList}}">
 			<view class='ordernumber'>订单编号: {{item.thingNumber}}</view>
 			<view class='orderwrap'>
-				<image class='orderwrap-left' src='{{item.thingImg}}'></image>
+				<image class='orderwrap-left' src='../{{item.thingImg}}'></image>
 				<view class='orderwrap-right'>
 					<view class='orderwrap-name'>{{item.thingName}}</view>
 					<view class='orderwrap-num'>{{item.thingNum}}件商品</view>
@@ -28,12 +28,12 @@
 
 	<view class='tosend orderlist'  hidden="{{currentType == 1 ? false : true}}">
 		<view class='paylist' wx:for="{{orderList}}">
-			<view class='ordernumber'>订单编号: {{item.number}}</view>
+			<view class='ordernumber'>订单编号: {{item.thingNumber}}</view>
 			<view class='orderwrap'>
-				<image class='orderwrap-left' src='{{item.img}}'></image>
+				<image class='orderwrap-left' src='../{{item.thingImg}}'></image>
 				<view class='orderwrap-right'>
-					<view class='orderwrap-name'>{{item.name}}</view>
-					<view class='orderwrap-num'>{{item.num}}件商品</view>
+					<view class='orderwrap-name'>{{item.thingName}}</view>
+					<view class='orderwrap-num'>{{item.thingNum}}件商品</view>
 				</view>
 				<text class='orderwrap-wait'>已付款</text>
 			</view>
@@ -43,12 +43,12 @@
 
 	<view class='totake orderlist' hidden="{{currentType == 2 ? false : true}}" >
 		<view class='paylist' wx:for="{{orderList}}">
-			<view class='ordernumber'>订单编号: {{item.number}}</view>
+			<view class='ordernumber'>订单编号: {{item.thingNumber}}</view>
 			<view class='orderwrap'>
-				<image class='orderwrap-left' src='{{item.img}}'></image>
+				<image class='orderwrap-left' src='../{{item.thingImg}}'></image>
 				<view class='orderwrap-right'>
-					<view class='orderwrap-name'>{{item.name}}</view>
-					<view class='orderwrap-num'>{{item.num}}件商品</view>
+					<view class='orderwrap-name'>{{item.thingName}}</view>
+					<view class='orderwrap-num'>{{item.thingNum}}件商品</view>
 				</view>
 				<text class='orderwrap-wait'>已付款</text>
 			</view>
@@ -58,12 +58,12 @@
 
 	<view class='tosay orderlist'  hidden="{{currentType == 3 ? false : true}}">
 		<view class='paylist' wx:for="{{orderList}}">
-			<view class='ordernumber'>订单编号: {{item.number}}</view>
+			<view class='ordernumber'>订单编号: {{item.thingNumber}}</view>
 			<view class='orderwrap'>
-				<image class='orderwrap-left' src='{{item.img}}'></image>
+				<image class='orderwrap-left' src='../{{item.thingImg}}'></image>
 				<view class='orderwrap-right'>
-					<view class='orderwrap-name'>{{item.name}}</view>
-					<view class='orderwrap-num'>{{item.num}}件商品</view>
+					<view class='orderwrap-name'>{{item.thingName}}</view>
+					<view class='orderwrap-num'>{{item.thingNum}}件商品</view>
 				</view>
 				<text class='orderwrap-wait'>交易完成</text>
 			</view>
@@ -73,15 +73,15 @@
 
 	<view class='complete orderlist'  hidden="{{currentType == 4 ? false : true}}">
 		<view class='paylist' wx:for="{{orderList}}">
-			<view class='ordernumber'>订单编号: {{item.number}}</view>
+			<view class='ordernumber'>订单编号: {{item.thingNumber}}</view>
 			<view class='orderwrap'>
-				<image class='orderwrap-left' src='{{item.img}}'></image>
+				<image class='orderwrap-left' src='../{{item.thingImg}}'></image>
 				<view class='orderwrap-right'>
-					<view class='orderwrap-name'>{{item.name}}</view>
-					<view class='orderwrap-num'>{{item.num}}件商品</view>
+					<view class='orderwrap-name'>{{item.thingName}}</view>
+					<view class='orderwrap-num'>{{item.thingNum}}件商品</view>
 				</view>
 				<text class='orderwrap-wait'>交易完成</text>
-				<text class='orderwrap-price'>价格:￥{{item.thingPrice * item.thingNum}}</text>
+				<text class='orderwrap-price'>价格:￥{{(item.thingPrice * 10) * (item.thingNum * 10 ) /100}}</text>
 			</view>
 		</view>
 	</view>

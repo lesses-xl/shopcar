@@ -204,6 +204,7 @@ Page({
   },
   tobuy: function() {
     console.log(shopThing.shopThing)
+    console.log(this.data.shopThing)
     for(var i=0; i<shopThing.shopThing.length; i++) {
       var obj = {
         thingNumber: this.getTime(),
@@ -214,7 +215,7 @@ Page({
         thingId: shopThing.shopThing[i].thingId,
         thingPay: '待付款'
       }
-
+      console.log(obj.thingNum);
       order.order.push(obj);
     }
     shopThing.shopThing = [];
