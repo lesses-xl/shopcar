@@ -71,14 +71,18 @@ Page({
   getDetail: function(e) {
     console.log(e.detail.value)
     this.setData({
-      detail: e.detail.value,
+      details: e.detail.value,
     })
-    console.log(this.data.detail)
-    if(this.data.detail == '') {
-      this.setData({
-        details: ''
-      })
-    }
+    // console.log(this.data.detail)
+    // if(this.data.detail == '') {
+    //   this.setData({
+    //     details: ''
+    //   })
+    // }else {
+    //   this.setData({
+    //     details: this.data.detail
+    //   })
+    // }
     console.log(this.data.details)
   },
   getPost: function(e) {
@@ -119,7 +123,7 @@ Page({
           })
         }else {
           console.log(this.data.detail,this.data.details)
-          if(this.data.detail == '' && this.data.details == '') {
+          if(this.data.details == '') {
             // wx.showToast({
             //   title: '请填写详细地址!'
             // });

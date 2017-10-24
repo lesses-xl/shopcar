@@ -13,16 +13,16 @@
 	</view>
 	<view class='topay orderlist' hidden="{{currentType == 0 ? false : true}}">
 		<view class='paylist' wx:for="{{orderList}}">
-			<view class='ordernumber'>订单编号: {{item.number}}</view>
+			<view class='ordernumber'>订单编号: {{item.thingNumber}}</view>
 			<view class='orderwrap'>
-				<image class='orderwrap-left' src='{{item.img}}'></image>
+				<image class='orderwrap-left' src='{{item.thingImg}}'></image>
 				<view class='orderwrap-right'>
-					<view class='orderwrap-name'>{{item.name}}</view>
-					<view class='orderwrap-num'>{{item.num}}件商品</view>
+					<view class='orderwrap-name'>{{item.thingName}}</view>
+					<view class='orderwrap-num'>{{item.thingNum}}件商品</view>
 				</view>
-				<text class='orderwrap-wait'>待付款</text>
+				<text class='orderwrap-wait'>{{item.pay}}</text>
 			</view>
-			<view class='orderpay'><text>实付:￥{{item.money}}</text><button>付款</button></view>
+			<view class='orderpay'><text>实付:￥{{item.thingPrice * item.thingNum}}</text><button>付款</button></view>
 		</view>
 	</view>
 
@@ -37,7 +37,7 @@
 				</view>
 				<text class='orderwrap-wait'>已付款</text>
 			</view>
-			<view class='orderpay'><text>实付:￥{{item.money}}</text><button>等待发货</button></view>
+			<view class='orderpay'><text>实付:￥{{item.thingPrice * item.thingNum}}</text><button>等待发货</button></view>
 		</view>
 	</view>
 
@@ -52,7 +52,7 @@
 				</view>
 				<text class='orderwrap-wait'>已付款</text>
 			</view>
-			<view class='orderpay'><text>实付:￥{{item.money}}</text><button>待收货</button><button>查看物流</button></view>
+			<view class='orderpay'><text>实付:￥{{item.thingPrice * item.thingNum}}</text><button>待收货</button><button>查看物流</button></view>
 		</view>
 	</view>
 
@@ -67,7 +67,7 @@
 				</view>
 				<text class='orderwrap-wait'>交易完成</text>
 			</view>
-			<view class='orderpay'><text>实付:￥{{item.money}}</text><button>评价</button></view>
+			<view class='orderpay'><text>实付:￥{{item.thingPrice * item.thingNum}}</text><button>评价</button></view>
 		</view>
 	</view>
 
@@ -81,7 +81,7 @@
 					<view class='orderwrap-num'>{{item.num}}件商品</view>
 				</view>
 				<text class='orderwrap-wait'>交易完成</text>
-				<text class='orderwrap-price'>价格:￥{{item.money}}</text>
+				<text class='orderwrap-price'>价格:￥{{item.thingPrice * item.thingNum}}</text>
 			</view>
 		</view>
 	</view>

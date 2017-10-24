@@ -36,7 +36,7 @@ Page({
   },
   toDetail: function(e) {
     var index = e.currentTarget.dataset.index;
-    wx.navigateTo({
+    wx.redirectTo({
       url: "../list/detail/detail?index="+index
     })
   },

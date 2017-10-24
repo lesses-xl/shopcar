@@ -17,19 +17,20 @@
 <view class='address-confirm'>商品列表</view>
 <view class='topay orderlist' >
 	<view class='paylist' wx:for="{{orderList}}">
-		<view class='ordernumber'>订单编号: {{item.number}}</view>
+		<view class='ordernumber'>订单编号: {{item.thingNumber}}</view>
 		<view class='orderwrap'>
-			<image class='orderwrap-left' src='{{item.img}}'></image>
+			<image class='orderwrap-left' src='{{item.thingImg}}'></image>
 			<view class='orderwrap-right'>
-				<view class='orderwrap-name'>{{item.name}}</view>
-				<view class='orderwrap-num'>{{item.num}}件商品</view>
+				<view class='orderwrap-name'>{{item.thingName}}</view>
+				<view class='orderwrap-num'>{{item.thingNum}}件商品</view>
 			</view>
-			<text class='orderwrap-wait'>价格:￥{{item.money}}</text>
+			<text class='orderwrap-wait'>价格:￥{{item.thingPrice * item.thingNum}}</text>
 		</view>
 	</view>
 </view>
 
 <view class='pay'>
-	<view class='allprice'>合计: ￥123456</view>
-	<view class='topay'>提交订单</view>
+	<view class='allprice'>合计: ￥{{allmoney}}</view>
+	<view class='tocancel' bindtap="tocancel">取消订单</view>
+	<view class='topay' indtap="topay">提交订单</view>
 </view>

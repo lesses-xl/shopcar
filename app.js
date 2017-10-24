@@ -11,7 +11,7 @@ App({
     var user = wx.getStorageSync('user') || {};
     var userInfo = wx.getStorageSync('userInfo') || {};
     if((!user.openid || (user.expires_in || Date.now()) < (Date.now() + 600))&&(!userInfo.nickName)) {
-      console.log(userInfo)
+      // console.log(userInfo)
       wx.login({
         success: function(res_code) {
           console.log(res_code.code);
@@ -48,7 +48,7 @@ App({
           }
         },
         fail: function() {
-          console.log(1);
+          // console.log(1);
         }
       })
     }

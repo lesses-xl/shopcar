@@ -265,7 +265,7 @@
 	height: 100%;
 	top: 0;
 	line-height: 80rpx;
-	right: 175rpx;
+	left: 35rpx;
 }
 
 .pay .topay {
@@ -278,4 +278,16 @@
 	text-align: center;
 	right: 0;
 	top: 0;
+}
+
+.pay .tocancel {
+	position: absolute;
+	width: 175rpx;
+	height: 100%;
+	line-height: 80rpx;
+	color: white;
+	top: 0;
+	right: 175rpx;
+	text-align: center;
+	background: rgb(171, 149, 108);
 }

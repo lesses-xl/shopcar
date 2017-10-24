@@ -1,4 +1,6 @@
-var shopThing = require('../../utils/shopThing.js')
+var shopThing = require('../../utils/shopThing.js');
+var order = require('../../utils/order.js');
+// var time = require('../../utils/time.js');
 /*
   1.单个选中
   2.全部选中
@@ -26,6 +28,31 @@ Page({
     this.setData({
       reader: !this.data.reader
     })
+  },
+  getTime: function () {
+    var timeNumber = 0;
+    var dates = new Date();
+    var year = dates.getFullYear() + '';
+    var month = dates.getMonth() + 1 + '';
+    var date = dates.getDate() + '';
+    var minute = dates.getMinutes() + '';
+    var second = dates.getSeconds() + '';
+    var time = dates.getTime() % 6 + '';
+    time = parseInt(Math.random() * time);
+
+    if(month.length < 2) {
+      month = '0' + month
+    }
+
+    if(minute.length < 2) {
+      minute = '0' + minute
+    }
+
+    if(second.length < 2) {
+      second = '0' + second
+    }
+
+    return timeNumber = year + month + date + minute + second + minute + second + time;
   },
   chooseNum: function() {
     var num = 0;
@@ -175,9 +202,28 @@ Page({
     });
   },
   tobuy: function() {
+    console.log(shopThing.shopThing)
+    for(var i=0; i<shopThing.shopThing.length; i++) {
+      var obj = {
+        thingNumber: this.getTime(),
+        thingName: shopThing.shopThing[i].thingName,
+        thingImg: shopThing.shopThing[i].thingImg,
+        thingPrice: shopThing.shopThing[i].thingPrice,
+        thingNum: shopThing.shopThing[i].thingNum,
+        thingId: shopThing.shopThing[i].thingId,
+        thingPay: '待付款'
+      }
+
+      order.order.push(obj);
+    }
+    shopThing.shopThing = [];
+    this.setData({
+      shopThing: shopThing.shopThing,
+      haveThing: false
+    })
     wx.navigateTo({
       url: '../buy/buy'
-    })
+    })    
   },
   onLoad:function(options){
     this.setData({

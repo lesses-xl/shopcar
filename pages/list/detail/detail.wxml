@@ -18,7 +18,7 @@
 		<view class='goods-money'>￥{{num * detail.thingPrice}}</view>
 	</view>	
 	<view class='cart-view' bindtap="toshopcar">
-		<view class='cart-num'>{{cartNum}}</view>
+		<view class='cart-num' animation="{{animationData}}">{{cartNum}}</view>
 		<image src='../../../images/nav/cart2.png' class='cart-big {{ifadd==true?"cart-num-big":""}}'></image>
 	</view>
 	

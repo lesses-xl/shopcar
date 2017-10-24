@@ -2,26 +2,24 @@
 	"pages": [
 		
 		"pages/index/index",
-		"pages/my/myorder/myorder",
+		"pages/list/detail/detail",
+
+		"pages/shopcar/shopcar",
 		"pages/buy/buy",
+		
+		"pages/my/myorder/myorder",
+		
 		"pages/my/myphone/myphone",	
 		"pages/my/myaddress/myaddress",
 		
 		"pages/my/myaddress/addaddress/addaddress",
-			
-		
+				
 		"pages/my/my",	
 		"pages/index/recommed/recommed",
 		"pages/my/aboutus/aboutus",		
 		"pages/template/template",		
-		"pages/list/list",
-			
-		
-		
-		"pages/shopcar/shopcar",	
-		"pages/list/detail/detail"	
-		
-		
+		"pages/list/list"
+													
 	],
 	"window": {
 		"navigationBarTitleText": "首页",

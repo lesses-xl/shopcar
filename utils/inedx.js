@@ -1,73 +1,73 @@
 var index = [
   {
-    "thingName": "梨花带雨",
+    "thingName": "薯片",
     "thingImg": "../../images/goods/goods1.png",
-    "thingPrice": 10,
+    "thingPrice": 5.5,
     "thingNum": 1,
     "thingId": 1,
     "choose": false,
-    "details": '梨花带雨.....................',
-    "para": '20.........................'
+    "details": '薯片.....................',
+    "para": '5.5一包.........................'
   },
   {
-    "thingName": "梨花带雨",
+    "thingName": "卫龙辣条",
     "thingImg": "../../images/goods/goods1.png",
-    "thingPrice": 11,
+    "thingPrice": 2.5,
     "thingNum": 1,
     "thingId": 2,
     "choose": false,
-    "details": '梨花带雨.....................',
-    "para": '20.........................'
+    "details": '卫龙辣条.....................',
+    "para": '2.5一包.........................'
   },
   {
-    "thingName": "梨花带雨",
+    "thingName": "香肠",
     "thingImg": "../../images/goods/goods1.png",
-    "thingPrice": 12,
+    "thingPrice": 1.5,
     "thingNum": 1,
     "thingId": 3,
     "choose": false,
-    "details": '梨花带雨.....................',
-    "para": '20.........................'
+    "details": '香肠.....................',
+    "para": '1.5一根.........................'
   },
   {
-    "thingName": "梨花带雨",
+    "thingName": "可乐",
     "thingImg": "../../images/goods/goods1.png",
-    "thingPrice": 13,
+    "thingPrice": 3,
     "thingNum": 1,
     "thingId": 4,
     "choose": false,
-    "details": '梨花带雨.....................',
-    "para": '20.........................'
+    "details": '可乐.....................',
+    "para": '3块一瓶.........................'
   },
   {
-    "thingName": "梨花带雨",
+    "thingName": "雪碧",
     "thingImg": "../../images/goods/goods1.png",
-    "thingPrice": 14,
+    "thingPrice": 3,
     "thingNum": 1,
     "thingId": 5,
     "choose": false,
-    "details": '梨花带雨.....................',
-    "para": '20.........................'
+    "details": '雪碧.....................',
+    "para": '3块一瓶.........................'
   },
   {
-    "thingName": "梨花带雨",
+    "thingName": "橙汁",
     "thingImg": "../../images/goods/goods1.png",
-    "thingPrice": 15,
+    "thingPrice": 3,
     "thingNum": 1,
     "thingId": 6,
     "choose": false,
-    "details": '梨花带雨.....................',
-    "para": '20.........................'
+    "details": '橙汁.....................',
+    "para": '3块一瓶.........................'
   },
   {
-    "thingName": "梨花带雨",
+    "thingName": "山楂",
     "thingImg": "../../images/goods/goods1.png",
-    "thingPrice": 16,
+    "thingPrice": 5,
     "thingNum": 1,
     "thingId": 7,
     "choose": false,
-    "details": '梨花带雨.....................',
-    "para": '20.........................'
+    "details": '山楂.....................',
+    "para": '5块一包.........................'
   }
 ];
 

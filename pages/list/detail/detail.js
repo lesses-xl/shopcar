@@ -18,7 +18,7 @@ Page({
 		cartNUm: 0,
 		ifadd: false,
 		detail: '',
-		eIndex: 0
+		eIndex: 0,
 	},
 	bindChange: function(e) {
 		var that = this;
@@ -42,7 +42,6 @@ Page({
 			index: e.detail.value,
 			num: this.data.array[e.detail.value]
 		})
-		// console.log(this.data.index,e)
 	},
 	toshopcar: function() {
 		wx.switchTab({
@@ -51,7 +50,6 @@ Page({
 	},
 	tocart: function() {
 		var that = this;
-		console.log(this.data.detail)
 		var obj = {
 			"thingName": this.data.detail.thingName,
 			"thingImg": this.data.detail.thingImg,
@@ -67,14 +65,14 @@ Page({
 		}
 		
 		this.setData({
-			cartNum: num,
-			ifadd: true
+			cartNum: num
+			// ifadd: true
 		})	
-		timer = setTimeout(function() {
-			that.setData({
-				ifadd: false
-			})
-		},300)
+		// timer = setTimeout(function() {
+		// 	that.setData({
+		// 		ifadd: false
+		// 	})
+		// },300)
 		for(var i=0; i<shopThing.shopThing.length; i++) {
 			if(shopThing.shopThing[i].thingName === obj.thingName) {
 				if(this.data.num === 1) {
@@ -97,7 +95,7 @@ Page({
 		}
 		this.setData({
 			cartNum: num
-		})		
+		})	
 	},
 	onLoad:function(options){
 		var arr = options.index.split(',');
