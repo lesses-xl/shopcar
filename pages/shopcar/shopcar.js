@@ -1,6 +1,5 @@
 var shopThing = require('../../utils/shopThing.js');
 var order = require('../../utils/order.js');
-// var time = require('../../utils/time.js');
 /*
   1.单个选中
   2.全部选中
@@ -119,6 +118,7 @@ Page({
       [Bool]: !bool
     })
     this.changeprice();
+    console.log(this.data.shopThing)
   },
   deletethis: function(e) {
     var index = e.currentTarget.dataset.index;
@@ -203,26 +203,35 @@ Page({
     });
   },
   tobuy: function() {
-    console.log(shopThing.shopThing)
-    console.log(this.data.shopThing)
+    // console.log(shopThing.shopThing)
+    // console.log(this.data.shopThing)
+    shopThing.shopThing = this.data.shopThing;
     for(var i=0; i<shopThing.shopThing.length; i++) {
-      var obj = {
-        thingNumber: this.getTime(),
-        thingName: shopThing.shopThing[i].thingName,
-        thingImg: shopThing.shopThing[i].thingImg,
-        thingPrice: shopThing.shopThing[i].thingPrice,
-        thingNum: shopThing.shopThing[i].thingNum,
-        thingId: shopThing.shopThing[i].thingId,
-        thingPay: '待付款'
+      if(shopThing.shopThing[i].choose == true) {
+        var obj = {
+          thingNumber: this.getTime(),
+          thingName: shopThing.shopThing[i].thingName,
+          thingImg: shopThing.shopThing[i].thingImg,
+          thingPrice: shopThing.shopThing[i].thingPrice,
+          thingNum: shopThing.shopThing[i].thingNum,
+          thingId: shopThing.shopThing[i].thingId,
+          thingPay: '待付款'
+        }
+        console.log(obj);
+        order.order.push(obj);
+        console.log(order.order)
+        shopThing.shopThing.splice(i,1);
       }
-      console.log(obj.thingNum);
-      order.order.push(obj);
     }
-    shopThing.shopThing = [];
     this.setData({
       shopThing: shopThing.shopThing,
-      haveThing: false
+      haveThing: true
     })
+    if(this.data.shopThing.length == 0) {
+      this.setData({
+        haveThing: false
+      })
+    }
     wx.navigateTo({
       url: '../buy/buy'
     })    
