@@ -111,11 +111,12 @@
 
 .new-goods-one text {
   width: 200rpx;
-  height: 50rpx;
+  height: auto;
   font-size: 26rpx;
   text-align: center;
   display: block;
   margin: 5rpx auto;
+  /* margin-top: 20rpx; */
 }
 
 .new-goods-one:nth-of-type(even) {

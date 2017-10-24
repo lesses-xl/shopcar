@@ -1,5 +1,5 @@
 <view class='container'>
-	<view class='address-item'>
+	<view class='address-item' hidden="{{noaddress == true ? true : false}}">
 		<!-- <view class='address-choose' bindtap="choosethis" data-index="{{index}}">
 			<image src='../../../images/pages/addr-active.png' data-index='{{index}}' class="{{index == currentIndex?'show':'hide'}}"></image>
 		</view> -->
@@ -10,9 +10,10 @@
 			<view class='address-post'>邮编：{{addressList.postCode}}</view>
 		</view>
 		<view class='address-edit' bindtap="chooseaddress">
-			<image src='../../../images/pages/arrow-right.png'></image>
+			<image src='../../images/pages/arrow-right.png'></image>
 		</view>
 	</view>
+	<view class='address-item address-noaddress' bindtap="chooseaddress" hidden="{{noaddress == true ? false : true}}">请选择收货地址!</view>
 </view>
 <view class='address-confirm'>商品列表</view>
 <view class='topay orderlist' >

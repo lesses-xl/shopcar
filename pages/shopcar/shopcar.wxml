@@ -18,7 +18,7 @@
           </view>
           <image class='shopcar-img' src='{{item.thingImg}}'></image>
           <text class='shopcar-name'>{{item.thingName}}</text>
-          <text class='shopcar-price'>￥{{item.thingPrice*item.thingNum}}</text>
+          <text class='shopcar-price'>￥{{(item.thingPrice * 10)*(item.thingNum * 10) / 100}}</text>
           <view class='oneprice'>单价: {{item.thingPrice}}</view>
           <view class='shopcar-change'>
             <view class='shopcar-sub {{item.thingNum==1?"":"current"}}' bindtap="subnum" data-index='{{index}}'>-</view>
@@ -38,7 +38,7 @@
       <text class='shopcar-choosetext'>全选{{chooseNum}}</text>
       <text class='shopcar-delete' bindtap='deleteall' wx:if="{{reader}}">删除</text>
       <view class='shopcar-border'></view>
-      <view class='shopcar-allprice'>￥<text >{{allprice}}</text></view> 
+      <view class='shopcar-allprice'>￥<text >{{allprice * 100 / 100}}</text></view> 
       <view class='buy' bindtap="tobuy">
         <image src='../../images/pages/icon3.png' class='shopcar-pay'></image>
       </view>     

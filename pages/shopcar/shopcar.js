@@ -22,7 +22,8 @@ Page({
     reader: false,
     readeroff: '编辑',
     readeron: '完成',
-    chooseNum: "（0）"
+    chooseNum: "（0）",
+    onePrice: 0
   },
   changereader: function() {
     this.setData({
@@ -192,7 +193,7 @@ Page({
       })
     }
     this.setData({
-      allprice: allprice
+      allprice: allprice.toFixed(2)
     })
     this.chooseNum()
   },

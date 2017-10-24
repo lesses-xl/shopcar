@@ -122,7 +122,7 @@
   position: absolute;
   width: 170rpx;
   height: 170rpx;
-  border: 1rpx solid #D5D4D4;
+  /* border: 1rpx solid #D5D4D4; */
   top: 24rpx;
   left: 62rpx;
 }

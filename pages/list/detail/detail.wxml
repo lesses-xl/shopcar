@@ -14,7 +14,7 @@
 	</view>
 	<view class='goods-center'>
 		<view class='goods-have'>{{detail.have}}</view>
-		<view class='goods-name'>{{detail.thingName}}{{num}}个</view>
+		<view class='goods-name'>{{detail.thingName}} x{{num}}</view>
 		<view class='goods-money'>￥{{num * detail.thingPrice}}</view>
 	</view>	
 	<view class='cart-view' bindtap="toshopcar">

@@ -1,73 +1,63 @@
 var index = [
   {
-    "thingName": "薯片",
-    "thingImg": "../../images/goods/goods1.png",
-    "thingPrice": 5.5,
+    "thingName": "鲜果冻 180克",
+    "thingImg": "../../images/food/xiaoshi/xianguodong.png",
+    "thingPrice": 14.0,
     "thingNum": 1,
-    "thingId": 1,
+    "thingId": 20,
     "choose": false,
-    "details": '薯片.....................',
-    "para": '5.5一包.........................'
+    "details": '鲜果冻 180克.....................',
+    "para": '14.0.........................'
   },
   {
-    "thingName": "卫龙辣条",
-    "thingImg": "../../images/goods/goods1.png",
-    "thingPrice": 2.5,
+    "thingName": "新疆灰枣 280克",
+    "thingImg": "../../images/food/guogan/huizao.png",
+    "thingPrice": 18.0,
     "thingNum": 1,
-    "thingId": 2,
+    "thingId": 40,
     "choose": false,
-    "details": '卫龙辣条.....................',
-    "para": '2.5一包.........................'
+    "details": '新疆灰枣 280克.....................',
+    "para": '18.0.........................'
   },
   {
-    "thingName": "香肠",
-    "thingImg": "../../images/goods/goods1.png",
-    "thingPrice": 1.5,
+    "thingName": "绿香妃葡萄干 180克",
+    "thingImg": "../../images/food/guogan/putaogan.png",
+    "thingPrice": 26.0,
     "thingNum": 1,
-    "thingId": 3,
+    "thingId": 41,
     "choose": false,
-    "details": '香肠.....................',
-    "para": '1.5一根.........................'
+    "details": '绿香妃葡萄干 180克.....................',
+    "para": '26.0.........................'
   },
   {
-    "thingName": "可乐",
-    "thingImg": "../../images/goods/goods1.png",
-    "thingPrice": 3,
+    "thingName": "开口甘栗 100克",
+    "thingImg": "../../images/food/xiaoshi/ganli.png",
+    "thingPrice": 9.0,
     "thingNum": 1,
-    "thingId": 4,
+    "thingId": 24,
     "choose": false,
-    "details": '可乐.....................',
-    "para": '3块一瓶.........................'
+    "details": '开口甘栗 100克.....................',
+    "para": '9.0.........................'
   },
   {
-    "thingName": "雪碧",
-    "thingImg": "../../images/goods/goods1.png",
-    "thingPrice": 3,
+    "thingName": "草莓白巧克力 65克",
+    "thingImg": "../../images/food/xiaoshi/caomeibaiqiaokeli.png",
+    "thingPrice": 16.0,
     "thingNum": 1,
-    "thingId": 5,
+    "thingId": 25,
     "choose": false,
-    "details": '雪碧.....................',
-    "para": '3块一瓶.........................'
+    "details": '草莓白巧克力 65克.....................',
+    "para": '16.0.........................'
   },
   {
-    "thingName": "橙汁",
-    "thingImg": "../../images/goods/goods1.png",
-    "thingPrice": 3,
+    "thingName": "藕片 45克",
+    "thingImg": "../../images/food/xiaoshi/oupian.png",
+    "thingPrice": 9.9,
     "thingNum": 1,
-    "thingId": 6,
+    "thingId": 26,
     "choose": false,
-    "details": '橙汁.....................',
-    "para": '3块一瓶.........................'
-  },
-  {
-    "thingName": "山楂",
-    "thingImg": "../../images/goods/goods1.png",
-    "thingPrice": 5,
-    "thingNum": 1,
-    "thingId": 7,
-    "choose": false,
-    "details": '山楂.....................',
-    "para": '5块一包.........................'
+    "details": '藕片 45克.....................',
+    "para": '9.9.........................'
   }
 ];
 
@@ -75,54 +65,64 @@ var item1 = {
   indexImg: '../../../images/goods/s1.png',
   fruit: [
     {
-      "thingName": "梨花带雨1",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 25,
+      "thingName": "曲奇礼盒 520克",
+      "thingImg": "../../images/food/gaodian/quqilihe.png",
+      "thingPrice": 78.0,
       "thingNum": 1,
-      "thingId": 7,
+      "thingId": 1,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '25.........................'
+      "details": '曲奇礼盒 520克.....................',
+      "para": '78.0.........................'
     },
     {
-      "thingName": "梨花带雨1",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 25,
+      "thingName": "苏打夹心饼干 270克",
+      "thingImg": "../../images/food/gaodian/jiaxinbinggan.png",
+      "thingPrice": 15.8,
       "thingNum": 1,
-      "thingId": 7,
+      "thingId": 2,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '25.........................'
+      "details": '苏打夹心饼干 270克.....................',
+      "para": '15.8.........................'
     },
     {
-      "thingName": "梨花带雨1",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 25,
+      "thingName": "绿豆糕 80克",
+      "thingImg": "../../images/food/gaodian/lvdougao.png",
+      "thingPrice": 12.9,
       "thingNum": 1,
-      "thingId": 7,
+      "thingId": 3,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '25.........................'
+      "details": '绿豆糕 80克.....................',
+      "para": '12.9.........................'
     },
     {
-      "thingName": "梨花带雨1",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 25,
+      "thingName": "牛扎饼 280克",
+      "thingImg": "../../images/food/gaodian/niuzhabing.png",
+      "thingPrice": 14.0,
       "thingNum": 1,
-      "thingId": 7,
+      "thingId": 4,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '25.........................'
+      "details": '牛扎饼 280克.....................',
+      "para": '14.0.........................'
     },
     {
-      "thingName": "梨花带雨1",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 25,
+      "thingName": "法式松饼 160克",
+      "thingImg": "../../images/food/gaodian/songbing.png",
+      "thingPrice": 28.0,
       "thingNum": 1,
-      "thingId": 7,
+      "thingId": 5,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '25.........................'
+      "details": '法式松饼 160克.....................',
+      "para": '28.0.........................'
+    },
+    {
+      "thingName": "法式奶酪 300克",
+      "thingImg": "../../images/food/gaodian/nailao.png",
+      "thingPrice": 38.0,
+      "thingNum": 1,
+      "thingId": 6,
+      "choose": false,
+      "details": '法式奶酪 300克.....................',
+      "para": '38.0.........................'
     }
   ]
 };
@@ -130,54 +130,74 @@ var item2 = {
   indexImg: '../../../images/goods/s2.png',
   fruit: [
     {
-      "thingName": "梨花带雨",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 35,
+      "thingName": "鲜果冻 180克",
+      "thingImg": "../../images/food/xiaoshi/xianguodong.png",
+      "thingPrice": 14.0,
       "thingNum": 1,
-      "thingId": 7,
+      "thingId": 20,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '35.........................'
+      "details": '鲜果冻 180克.....................',
+      "para": '14.0.........................'
     },
     {
-      "thingName": "梨花带雨",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 35,
+      "thingName": "薯角 50克",
+      "thingImg": "../../images/food/xiaoshi/shujiao.png",
+      "thingPrice": 7.9,
       "thingNum": 1,
-      "thingId": 7,
+      "thingId": 21,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '35.........................'
+      "details": '薯角 50克.....................',
+      "para": '7.9.........................'
     },
     {
-      "thingName": "梨花带雨",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 35,
+      "thingName": "春日落花酥 158克",
+      "thingImg": "../../images/food/xiaoshi/luohuasu.png",
+      "thingPrice": 9.9,
       "thingNum": 1,
-      "thingId": 7,
+      "thingId": 22,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '35.........................'
+      "details": '春日落花酥 158克.....................',
+      "para": '9.9.........................'
     },
     {
-      "thingName": "梨花带雨",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 35,
+      "thingName": "台湾手工牛轧糖 250克",
+      "thingImg": "../../images/food/xiaoshi/niuzhatang.png",
+      "thingPrice": 48.0,
       "thingNum": 1,
-      "thingId": 7,
+      "thingId": 23,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '35.........................'
+      "details": '台湾手工牛轧糖 250克.....................',
+      "para": '48.00.........................'
     },
     {
-      "thingName": "梨花带雨",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 35,
+      "thingName": "开口甘栗 100克",
+      "thingImg": "../../images/food/xiaoshi/ganli.png",
+      "thingPrice": 9.0,
       "thingNum": 1,
-      "thingId": 7,
+      "thingId": 24,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '35.........................'
+      "details": '开口甘栗 100克.....................',
+      "para": '9.0.........................'
+    },
+    {
+      "thingName": "草莓白巧克力 65克",
+      "thingImg": "../../images/food/xiaoshi/caomeibaiqiaokeli.png",
+      "thingPrice": 16.0,
+      "thingNum": 1,
+      "thingId": 25,
+      "choose": false,
+      "details": '草莓白巧克力 65克.....................',
+      "para": '16.0.........................'
+    },
+    {
+      "thingName": "藕片 45克",
+      "thingImg": "../../images/food/xiaoshi/oupian.png",
+      "thingPrice": 9.9,
+      "thingNum": 1,
+      "thingId": 26,
+      "choose": false,
+      "details": '藕片 45克.....................',
+      "para": '9.9.........................'
     }
   ]
 };

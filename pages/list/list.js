@@ -2,7 +2,7 @@ var list = require('../../utils/list.js')
 
 Page({
   data: {
-    area: ["推荐区","美食区","零食区","水果区","点心","蔬菜","美食1","美食2","美食3"],
+    area: ["糕点","小食","果干","坚果","冲饮","茗茶","肉制品","调味","生鲜"],
     imgList: [
         '../../images/goods/list1.png',
         '../../images/goods/list1.png',

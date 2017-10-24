@@ -5,7 +5,8 @@ Page({
 	data:{
 		addressList: '',
 		orderList: '',
-		allmoney: 0
+		allmoney: 0,
+		noaddress: true
 	},
 	chooseaddress: function() {
 		wx.navigateTo({
@@ -34,6 +35,15 @@ Page({
 
 	},
 	onLoad:function(options){
+		if(address.address.length < 1) {
+			this.setData({
+				noaddress: true
+			})
+		}else {
+			this.setData({
+				noaddress: false
+			})
+		}
 		var a = 0;
 		for(var i=0; i<order.order.length; i++) {
 			a+=order.order[i].thingNum * order.order[i].thingPrice
@@ -52,6 +62,15 @@ Page({
 			addressList: address.address[address.chooseId],
 			orderList: order.order
 		})
+		if(address.address.length < 1) {
+			this.setData({
+				noaddress: true
+			})
+		}else {
+			this.setData({
+				noaddress: false
+			})
+		}
 	},
 	onHide:function(){
 		

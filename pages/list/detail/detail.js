@@ -49,12 +49,13 @@ Page({
      	});
 	},
 	tocart: function() {
+		console.log()
 		var that = this;
 		var obj = {
 			"thingName": this.data.detail.thingName,
 			"thingImg": this.data.detail.thingImg,
 			"thingPrice": this.data.detail.thingPrice,
-			"thingNum": this.data.detail.thingNum,
+			"thingNum": this.data.num,
 			"thingId": this.data.detail.thingId,
 			"choose": true
 		}
@@ -68,11 +69,6 @@ Page({
 			cartNum: num
 			// ifadd: true
 		})	
-		// timer = setTimeout(function() {
-		// 	that.setData({
-		// 		ifadd: false
-		// 	})
-		// },300)
 		for(var i=0; i<shopThing.shopThing.length; i++) {
 			if(shopThing.shopThing[i].thingName === obj.thingName) {
 				if(this.data.num === 1) {

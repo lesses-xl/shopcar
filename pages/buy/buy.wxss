@@ -45,7 +45,7 @@
 .address-item {
 	position: relative;
 	width: 100%;
-	height: 130rpx;
+	height: 160rpx;
 	font-size: 22rpx;
 	border-bottom: 12rpx solid rgb(238, 238, 238);
 }
@@ -114,10 +114,17 @@
 }
 
 .address-post {
-	right: 20rpx;
-	top: 25rpx;
+	position: absolute;
+	top: 67rpx;
+	left: 29rpx;
 }
 
+
+.container .address-noaddress {
+	line-height: 160rpx;
+	font-size: 26rpx;
+	text-align: center;
+}
 
 
 /* 商品信息 */
