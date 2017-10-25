@@ -6,8 +6,7 @@
 		"pages/list/detail/detail",
 		"pages/buy/buy",
 		"pages/shopcar/shopcar",
-		
-		
+		"pages/list/list",		
 		"pages/my/myorder/myorder",
 		
 		"pages/my/myphone/myphone",	
@@ -18,11 +17,12 @@
 		"pages/my/my",	
 		"pages/index/recommed/recommed",
 		"pages/my/aboutus/aboutus",		
-		"pages/template/template",		
-		"pages/list/list"
+		"pages/template/template"		
+		
 													
 	],
 	"window": {
+		"enablePullDownRefresh": true,
 		"navigationBarTitleText": "首页",
 		"navigationBarTextStyle": "black",
 		"navigationBarBackgroundColor": "white"

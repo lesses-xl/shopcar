@@ -44,9 +44,13 @@
 
 .swiper-tab{  
     width: 100%;  
-    /* border-bottom: 5rpx solid rgba(238,238,238,1);   */
+    height: 8%;
     text-align: center;  
     line-height: 80rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }  
 
 .swiper-tab-list{  
@@ -66,13 +70,22 @@
   
 .swiper-box{ 
     display: block;
-    /* height: 100%;  */
+    height: 92%; 
     width: 100%; 
+    margin-top: 12%;
     overflow: hidden; 
     font-size: 26rpx;
     box-sizing: border-box;
-    padding: 20rpx;
-}  
+    /* padding: 20rpx; */
+    overflow-x: hidden;
+    position: relative;
+} 
+
+.swiper-box swiper-item {
+  overflow: auto;
+  overflow-x: hidden;
+}
+
 .swiper-box view{  
     text-align: center;  
 }  

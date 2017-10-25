@@ -58,7 +58,9 @@ Page({
     // Do something when page close.
   },
   onPullDownRefresh: function () {
-    // Do something when pull down.
+    this.setData({
+      index: index.index
+    })
   },
   onReachBottom: function () {
     // Do something when page reach bottom.

@@ -1,144 +1,338 @@
-.top-img {
-	width: 260rpx;
-	height: 260rpx;
-	display: block;
-	margin: 50rpx auto 80rpx auto;
-}
-
-.detail-top {
-	position: relative;
-	/* text-align: center; */
-}
-
 .top-btn {
-	width: 700rpx;
-	height: 100rpx;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 85rpx;
 	font-size: 26rpx;
 	color: white;
-	background: #AB956C;
-	border-radius: 50rpx;
+	/* background: #AB956C; */
 	margin: 0 auto;
-	line-height: 100rpx;
+	line-height: 85rpx;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-.cart-img {
-	width: 40rpx;
-	height: 40rpx;
-	float: right;
-	margin-top: 28rpx;
-	margin-right: 50rpx;
+	border-top: 2rpx solid rgb(238, 238, 238);
 }
 
 .top-left {
-	width: 50%;
+	width: 250rpx;
 	height: 100%;
 	box-sizing: border-box;
 	position: relative;
 	box-sizing: border-box;
-}
-
-.top-border {
-	width: 2rpx;
-	height: 30rpx;
-	background: white;
-	margin-left: -50rpx;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 .top-right {
-	width: 45%;
+	width: 225rpx;
 	height: 100%;
 	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	right: 225rpx;
+	text-align: center;
+	background: rgb(255,164,1);
+}
+
+.top-buy {
+	position: absolute;
+	right: 0;
+	top: 0;
+	text-align: center;
+	width: 225rpx;
+	font-size: 28rpx;
+	background: rgb(255,95,1);
+}
+
+.top-collection {
+	width: 85rpx;
+	height: 100%;
+	position: absolute;
+	left: 40rpx;
+	top: 1rpx;
+	text-align: center;
+}
+
+.top-collection image {
+	width: 45rpx;
+	height: 45rpx;
+	display: block;
+	margin: 0 auto;
+	margin-top: 4rpx;
+}
+
+.top-collection text {
+	font-size: 20rpx;
+	position: absolute;
+	width: 100%;
+	height: 40rpx;
+	left: 0;
+	top: 24rpx;
+	color: black;
 }
 
 .left-name {
-	margin-left: 65rpx;
-}
-
-.left-num {
-	margin-left: 40rpx;
-}
-
-.left-icon {
-	position: absolute;
-	top: 44rpx;
-	font-size: 42rpx;
-	right: 70rpx;
-	width: 50rpx;
-	height: 50rpx;
-	display: block;
-	transform: rotate(90deg);
-}
-
-.top-cart {
-	margin-left: 70rpx;
-}
-
-.goods-center {
-	text-align: center;
-}
-
-.goods-have {
-	font-size: 24rpx;
-	margin-top: 50rpx;
-	margin-bottom: 20rpx;
-}
-
-.goods-name {
-	font-size: 38rpx;
-	margin-bottom: 20rpx;
-}
-
-.goods-money {
-	font-size: 34rpx;
-	margin-bottom: 35rpx;
-}
-
-.detail-border {
-	width: 100%;
-	height: 25rpx;
-	background: rgb(249,249,249);
+	margin-left: 35rpx;
 }
 
 .cart-big {
-	width: 70rpx;
-	height: 70rpx;
+	width: 45rpx;
+	height: 45rpx;
 	position: absolute;
-	top: -5rpx;
+	top: 2rpx;
 	right: 10rpx;
 	z-index: 10;
 	transition: all 1s ease-in-out;
-}
-
-.cart-num {
-	position: absolute;
-	width: 30rpx;
-	height: 30rpx;
-	background: #AB956C;
-	border-radius: 50%;
-	font-size: 20rpx;
-	color: white;
-	text-align: center;
-	line-height: 30rpx;
-	top: 4rpx;
-	right: 62rpx;
-	z-index: 20;
-}
-
-.cart-num-big {
-	width: 60rpx;
-	height: 60rpx;
-/* 	right: 4rpx;
-	top: -5rpx; */
-	
 }
 
 .cart-view {
 	position: absolute;
 	width: 80rpx;
 	height: 80rpx;
-	top: 17rpx;
-	right: 30rpx;
+	top: 8rpx;
+	left: 150rpx;
 }
+
+.cart-view text {
+	font-size: 20rpx;
+	position: absolute;
+	width: 100%;
+	height: 40rpx;
+	left: 24rpx;
+	top: 18rpx;
+	color: black;
+}
+
+.cart-view view {
+	width: 28rpx;
+	height: 28rpx;
+	background: red;
+	border-radius: 50%;
+	position: absolute;
+	top: -3rpx;
+	right: -9rpx;
+	color: white;
+	font-size: 20rpx;
+	line-height: 28rpx;
+	z-index: 101;
+	text-align: center;
+}
+
+.detail-top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 85rpx;
+}
+
+.top-img {
+	width: 100%;
+	height: 470rpx;
+}
+
+.top-img image {
+	width: 100%;
+	height: 100%;
+}
+
+.top-text {
+	width: 100%;
+	min-height: 160rpx;
+	position: relative;
+}
+
+.top-text .top-text-name {
+	width: 95%;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 15rpx;
+	word-wrap: break-word;
+	/* border: 1px solid gray; */
+	padding: 10rpx 5rpx;
+	font-size: 28rpx;
+	text-align: left;
+	position: relative;
+}
+
+.top-text .top-text-price {
+	position: absolute;
+	left: 4rpx;
+	bottom: -60rpx;
+	color: red;
+	font-size: 24rpx;
+}
+
+.top-text .top-text-buycount {
+	position: absolute;
+	left: 160rpx;
+	bottom: -60rpx;
+	font-size: 24rpx;
+	color: rgb(198,198,198);
+}
+
+.top-border {
+	width: 100%;
+	height: 12rpx;
+	background: rgb(238,238,238);
+}
+
+.top-main {
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.top-main text {
+	/* position: absolute;
+	top: 15rpx;
+	left: 15rpx; */
+	width: 100%;
+	height: 80rpx;
+	line-height: 80rpx;
+	display: block;
+}
+
+.top-main image {
+	width: 95%;
+	height: 320rpx;
+}
+
+
+
+/* 遮罩 */
+.mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.6);
+	z-index: 999;
+}
+
+.addgoods {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background: white;
+	width: 100%;
+	min-height: 380rpx;
+	z-index: 1000;
+}
+
+.add-top {
+	width: 100%;
+	min-height: 290rpx;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 24rpx;
+}
+
+.add-top-img {
+	width: 110rpx;
+	height: 110rpx;
+	margin-top: 15rpx;
+	margin-left: 10rpx;
+}
+
+.add-top-name {
+	position: absolute;
+	top: 40rpx;
+	left: 150rpx;
+	font-size: 26rpx;
+}
+
+.add-top-price {
+	color: red;
+	position: absolute;
+	top: 90rpx;
+	left: 142rpx;
+}
+
+.add-top-changenumber {
+	width: 100%;
+	height: 110rpx;
+	box-sizing: border-box;
+	/* border: 1px solid black; */
+	position: absolute;
+	bottom: 0;
+}
+
+.add-top-changenumber>text {
+	line-height: 110rpx;
+	margin-left: 20rpx;
+}
+
+.add-top-btn {
+	width: 180rpx;
+	height: 50rpx;
+	position: absolute;
+	right: 60rpx;
+	top: 36rpx;
+}
+
+.add-top-btn view {
+	position: absolute;
+	width: 60rpx;
+	height: 100%;
+	display: block;
+	line-height: 50rpx;
+	text-align: center;
+	border: 1rpx solid rgba(0, 0, 0, 0.2);
+/* 	border-left: none;
+	border-right: none;	 */
+	top: 0;
+	left: 60rpx;	
+	box-sizing: border-box;
+	/* background-color:#F8F8F8; */
+}
+
+.add-top-btn button {
+	position: absolute;
+	width: 60rpx;
+	height: 100%;
+	line-height: 50rpx;
+	text-align: center;
+	border-radius: 2rpx;
+	padding: 0;
+}
+
+.add-top-btn button::after {
+	border-radius: 1rpx;
+	border: 1rpx solid rgba(0, 0, 0,0.2);
+}
+
+.add-top-btn .value {
+	left: 59rpx;
+	border-left: none;
+	border-right: none;
+}
+
+.add-top-btn .btn1 {
+	left: 0;
+	top: 0;
+}
+
+.add-top-btn .btn2 {
+	left: 117rpx;
+	top: 0;
+}
+
+.add-bottom {
+	width: 100%;
+	height: 78rpx;
+	background: red;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	font-size: 28rpx;
+	line-height: 78rpx;
+	color: white;
+}
+

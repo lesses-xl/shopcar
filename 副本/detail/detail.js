@@ -1,7 +1,6 @@
 var shopThing = require('../../../utils/shopThing.js');
 var index = require('../../../utils/inedx.js');
 var list = require('../../../utils/list.js');
-var order = require('../../../utils/order.js');
 /*
 	图片
 	是否有货
@@ -13,40 +12,13 @@ var order = require('../../../utils/order.js');
 Page({
 	data:{
 		currentTab: 0,
-		// array: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,20],
+		array: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,20],
 		index: 0,
 		num: 1,
-		cartNum: 0,
+		cartNUm: 0,
 		ifadd: false,
 		detail: '',
 		eIndex: 0,
-		putcart: false,
-		buycart: false
-	},
-	getTime: function () {
-	  var timeNumber = 0;
-	  var dates = new Date();
-	  var year = dates.getFullYear() + '';
-	  var month = dates.getMonth() + 1 + '';
-	  var date = dates.getDate() + '';
-	  var minute = dates.getMinutes() + '';
-	  var second = dates.getSeconds() + '';
-	  var time = dates.getTime() % 6 + '';
-	  time = parseInt(Math.random() * time);
-
-	  if(month.length < 2) {
-	    month = '0' + month
-	  }
-
-	  if(minute.length < 2) {
-	    minute = '0' + minute
-	  }
-
-	  if(second.length < 2) {
-	    second = '0' + second
-	  }
-
-	  return timeNumber = year + month + date + minute + second + minute + second + time;
 	},
 	bindChange: function(e) {
 		var that = this;
@@ -76,48 +48,6 @@ Page({
       		url:"../../shopcar/shopcar"
      	});
 	},
-	subnum: function() {
-		if(this.data.num <= 1) {
-			this.setData({
-				num: 1
-			})
-		}else {
-			this.setData({
-				num: this.data.num-1
-			})
-		}
-	},
-	addnum: function() {
-		if(this.data.num >= 99) {
-			this.setData({
-				num: 99
-			})
-		}else {
-			this.setData({
-				num: this.data.num+1
-			})
-		}
-	},
-	changeput: function() {
-		this.setData({
-			putcart: true
-		})
-	},
-	hidemask: function() {
-		this.setData({
-			putcart: false
-		})
-	},
-	hidemask1: function() {
-		this.setData({
-			buycart: false
-		})
-	},
-	gobuy: function() {
-		this.setData({
-			buycart: true
-		})
-	},
 	tocart: function() {
 		console.log()
 		var that = this;
@@ -136,8 +66,8 @@ Page({
 		}
 		
 		this.setData({
-			cartNum: num,
-			putcart: false
+			cartNum: num
+			// ifadd: true
 		})	
 		for(var i=0; i<shopThing.shopThing.length; i++) {
 			if(shopThing.shopThing[i].thingName === obj.thingName) {
@@ -162,22 +92,6 @@ Page({
 		this.setData({
 			cartNum: num
 		})	
-	},
-	toorder: function() {
-		var obj = {
-		  thingNumber: this.getTime(),
-		  thingName: this.data.detail.thingName,
-		  thingImg: this.data.detail.thingImg,
-		  thingPrice: this.data.detail.thingPrice,
-		  thingNum: this.data.num,
-		  thingId: this.data.detail.thingId,
-		  thingPay: '待付款'
-		}
-		order.order.push(obj);
-
-		wx.navigateTo({
-		  url: '../../buy/buy'
-		}) 
 	},
 	onLoad:function(options){
 		var arr = options.index.split(',');

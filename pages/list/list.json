@@ -1,4 +1,5 @@
 {
+  "enablePullDownRefresh": false,	
   "navigationBarTitleText": "分类",
   "navigationBarBackgroundColor": "white"
 }

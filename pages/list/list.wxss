@@ -1,17 +1,29 @@
+.container {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
 .search {
-	width: 600rpx;
-	height: 50rpx;
+	width: 80%;
+	height: 4%;
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid gray;
+	border: 1px solid rgb(223,224,227);
 	border-radius: 10rpx;
+	margin-bottom: 20rpx;
 }
 
 .search image {
 	width: 50rpx;
 	height: 50rpx;
+	margin-right: -15rpx;
 }
 
 .search text {
@@ -22,30 +34,37 @@
 	font-size: 24rpx;
 	width: 500rpx;
 	height: 50rpx;
+	margin-left: -10rpx;
 }
 
 .list-wrap {
 	display: flex;
+	width: 100%;
+	/* height: 90%; */
+	box-sizing: border-box;
 	position: fixed;
 	top: 58rpx;
 	left: 0;
 	bottom: 0;
 	right: 0;
+	margin-top: 16rpx;
 }
 
 .scroll-left {
 	width: 20%;
-	margin-top: 16rpx;
+	/* margin-top: 16rpx; */
 	border-top: 1rpx solid rgb(223,224,227);
 	border-right: 1rpx solid rgb(223,224,227);
 	transition: all .2s;
+	height: 100%;
 }
 
 .scroll-right {
 	width: 80%;
-	margin-top: 16rpx;
+	/* margin-top: 16rpx; */
 	border-top: 1rpx solid rgb(223,224,227);
 	transition: all .2s;
+	height: 100%;
 }
 
 .list {
@@ -55,8 +74,6 @@
 	/* min-height: 1420rpx; */
 	margin-top: 15rpx;
 	padding: 0 0 20rpx 0;
-/* 	border-top: 1rpx solid rgb(223,224,227);
-	border-right: 1rpx solid rgb(223,224,227); */
 }
 
 .list-item {
@@ -136,13 +153,13 @@
 }
 
 .heng1 {	
-	top: 303rpx;
-	left: 155rpx;
+	top: 288rpx;
+	left: 173rpx;
 }
 
 .heng2 {
-	top: 303rpx;
-	left: 375rpx;
+	top: 288rpx;
+	left: 355rpx;
 }
 
 .none {
