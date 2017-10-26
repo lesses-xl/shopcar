@@ -15,14 +15,14 @@
 			<view class='theme-view-right' bindtap="twotap">
 				<image src="{{theme2}}" class='half-img'></image>
 			</view>
-		</view>		
+		</view>
 		<view class='theme-view-bottom' bindtap="threetap">
 			<image src="{{theme3}}" class='one-img'></image>
 		</view>
 	</view>
 	<text class='index-center-text'>{{index2}}</text>
 	<view class='new-goods'>
-		<view class='new-goods-one' wx:for="{{index}}" bindtap="toDetail" data-index="{{index}}">
+		<view class='new-goods-one' wx:for="{{index[0]}}" bindtap="toDetail" data-index="{{index}}">
 			<image src='{{item.thingImg}}'></image>
 			<text>{{item.thingName}} 1个</text>
 			<text>￥{{item.thingPrice}}</text>

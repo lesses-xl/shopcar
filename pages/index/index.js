@@ -21,23 +21,24 @@ Page({
   },
   onetap: function() {
     wx.navigateTo({
-      url: "recommed/recommed?item=item1"
-    })
+      url: "recommed/recommed?index=1"
+    }) 
   },
   twotap: function() {
     wx.navigateTo({
-      url: "recommed/recommed?item=item2"
+      url: "recommed/recommed?index=2"
     })
   },
   threetap: function() {
     wx.navigateTo({
-      url: "recommed/recommed?item=item3"
+      url: "recommed/recommed?index=3"
     })
   },
   toDetail: function(e) {
     var index = e.currentTarget.dataset.index;
+    var arr = [0,index]
     wx.redirectTo({
-      url: "../list/detail/detail?index="+index
+      url: "../list/detail/detail?index="+arr
     })
   },
   onLoad: function (options) { 

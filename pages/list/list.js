@@ -28,7 +28,7 @@ Page({
     // console.log(e.currentTarget.dataset.index);
     var arr = [this.data.currentIndex,e.currentTarget.dataset.index]
     wx.navigateTo({
-      url:"detail/detail?index="+arr
+      url:"detail/detail?list="+arr
      });
   },
   onLoad: function (options) {

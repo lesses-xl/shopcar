@@ -1,67 +1,69 @@
 var index = [
-  [
-    {
-      "thingName": "鲜果冻 180克",
-      "thingImg": "../../images/food/xiaoshi/xianguodong.png",
-      "thingPrice": 14.0,
-      "thingNum": 1,
-      "thingId": 20,
-      "choose": false,
-      "details": '鲜果冻 180克.....................',
-      "para": '14.0.........................'
-    },
-    {
-      "thingName": "新疆灰枣 280克",
-      "thingImg": "../../images/food/guogan/huizao.png",
-      "thingPrice": 18.0,
-      "thingNum": 1,
-      "thingId": 40,
-      "choose": false,
-      "details": '新疆灰枣 280克.....................',
-      "para": '18.0.........................'
-    },
-    {
-      "thingName": "绿香妃葡萄干 180克",
-      "thingImg": "../../images/food/guogan/putaogan.png",
-      "thingPrice": 26.0,
-      "thingNum": 1,
-      "thingId": 41,
-      "choose": false,
-      "details": '绿香妃葡萄干 180克.....................',
-      "para": '26.0.........................'
-    },
-    {
-      "thingName": "开口甘栗 100克",
-      "thingImg": "../../images/food/xiaoshi/ganli.png",
-      "thingPrice": 9.0,
-      "thingNum": 1,
-      "thingId": 24,
-      "choose": false,
-      "details": '开口甘栗 100克.....................',
-      "para": '9.0.........................'
-    },
-    {
-      "thingName": "草莓白巧克力 65克",
-      "thingImg": "../../images/food/xiaoshi/caomeibaiqiaokeli.png",
-      "thingPrice": 16.0,
-      "thingNum": 1,
-      "thingId": 25,
-      "choose": false,
-      "details": '草莓白巧克力 65克.....................',
-      "para": '16.0.........................'
-    },
-    {
-      "thingName": "藕片 45克",
-      "thingImg": "../../images/food/xiaoshi/oupian.png",
-      "thingPrice": 9.9,
-      "thingNum": 1,
-      "thingId": 26,
-      "choose": false,
-      "details": '藕片 45克.....................',
-      "para": '9.9.........................'
-    }
-  ],
-  [
+  {
+    "thingName": "鲜果冻 180克",
+    "thingImg": "../../images/food/xiaoshi/xianguodong.png",
+    "thingPrice": 14.0,
+    "thingNum": 1,
+    "thingId": 20,
+    "choose": false,
+    "details": '鲜果冻 180克.....................',
+    "para": '14.0.........................'
+  },
+  {
+    "thingName": "新疆灰枣 280克",
+    "thingImg": "../../images/food/guogan/huizao.png",
+    "thingPrice": 18.0,
+    "thingNum": 1,
+    "thingId": 40,
+    "choose": false,
+    "details": '新疆灰枣 280克.....................',
+    "para": '18.0.........................'
+  },
+  {
+    "thingName": "绿香妃葡萄干 180克",
+    "thingImg": "../../images/food/guogan/putaogan.png",
+    "thingPrice": 26.0,
+    "thingNum": 1,
+    "thingId": 41,
+    "choose": false,
+    "details": '绿香妃葡萄干 180克.....................',
+    "para": '26.0.........................'
+  },
+  {
+    "thingName": "开口甘栗 100克",
+    "thingImg": "../../images/food/xiaoshi/ganli.png",
+    "thingPrice": 9.0,
+    "thingNum": 1,
+    "thingId": 24,
+    "choose": false,
+    "details": '开口甘栗 100克.....................',
+    "para": '9.0.........................'
+  },
+  {
+    "thingName": "草莓白巧克力 65克",
+    "thingImg": "../../images/food/xiaoshi/caomeibaiqiaokeli.png",
+    "thingPrice": 16.0,
+    "thingNum": 1,
+    "thingId": 25,
+    "choose": false,
+    "details": '草莓白巧克力 65克.....................',
+    "para": '16.0.........................'
+  },
+  {
+    "thingName": "藕片 45克",
+    "thingImg": "../../images/food/xiaoshi/oupian.png",
+    "thingPrice": 9.9,
+    "thingNum": 1,
+    "thingId": 26,
+    "choose": false,
+    "details": '藕片 45克.....................',
+    "para": '9.9.........................'
+  }
+];
+
+var item1 = {
+  indexImg: '../../../images/goods/s1.png',
+  fruit: [
     {
       "thingName": "曲奇礼盒 520克",
       "thingImg": "../../images/food/gaodian/quqilihe.png",
@@ -122,8 +124,11 @@ var index = [
       "details": '法式奶酪 300克.....................',
       "para": '38.0.........................'
     }
-  ],
-  [
+  ]
+};
+var item2 = {
+  indexImg: '../../../images/goods/s2.png',
+  fruit: [
     {
       "thingName": "鲜果冻 180克",
       "thingImg": "../../images/food/xiaoshi/xianguodong.png",
@@ -194,8 +199,11 @@ var index = [
       "details": '藕片 45克.....................',
       "para": '9.9.........................'
     }
-  ],
-  [
+  ]
+};
+var item3 = {
+  indexImg: '../../../images/goods/list3.png',
+  fruit: [
     {
       "thingName": "梨花带雨",
       "thingImg": "../../images/goods/goods1.png",
@@ -247,16 +255,11 @@ var index = [
       "para": '36.........................'
     }
   ]
-]
-
-var imgArr = [
-  '../../../images/goods/s1.png',
-  '../../../images/goods/s2.png',
-  '../../../images/goods/list3.png'
-]
-
+}
 
 module.exports = {
   index: index,
-  imgArr: imgArr
+  item1: item1,
+  item2: item2,
+  item3: item3
 }

@@ -1,4 +1,4 @@
-var item = require('../../../utils/inedx.js');
+var index = require('../../../utils/inedx.js');
 
 Page({
 	data:{
@@ -11,8 +11,10 @@ Page({
 		})
 	},
 	onLoad:function(options){
+		console.log(options.index)
+		var num = Number(options.index)
 		this.setData({
-			item: item[options.item]
+			index: index.index[num]
 		})
 	},
 	onReady:function(){

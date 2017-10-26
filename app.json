@@ -1,25 +1,25 @@
 {
 	"pages": [
-		
+
 		
 		"pages/index/index",
 		"pages/list/detail/detail",
 		"pages/buy/buy",
 		"pages/shopcar/shopcar",
-		"pages/list/list",		
+		"pages/list/list",
 		"pages/my/myorder/myorder",
-		
-		"pages/my/myphone/myphone",	
+
+		"pages/my/myphone/myphone",
 		"pages/my/myaddress/myaddress",
-		
+
 		"pages/my/myaddress/addaddress/addaddress",
-				
-		"pages/my/my",	
+
+		"pages/my/my",
 		"pages/index/recommed/recommed",
-		"pages/my/aboutus/aboutus",		
-		"pages/template/template"		
-		
-													
+		"pages/my/aboutus/aboutus",
+		"pages/template/template"
+
+
 	],
 	"window": {
 		"enablePullDownRefresh": true,
@@ -57,7 +57,7 @@
 	    		"iconPath": "images/nav/my.png",
 	    		"selectedIconPath": "images/nav/my-active.png",
 	      		"text": "我的"
-	    	}	
+	    	}
 	    ]
 	  },
 	  "networkTimeout": {

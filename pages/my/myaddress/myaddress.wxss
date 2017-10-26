@@ -58,7 +58,7 @@
 	position: absolute;
 	width: 30rpx;
 	height: 30rpx;
-	top: 65rpx;
+	top: 72rpx;
 	left: 16rpx;
 }
 
@@ -86,7 +86,7 @@
 	position: static!important;
 	float: left;
 	margin-top: 15rpx;
-	margin-left: 15rpx;
+	margin-left: 18rpx;
 	margin-right: 20rpx;
 }
 
@@ -104,5 +104,5 @@
 
 .address-post {
 	top: 72rpx;
-	left: 30rpx;
+	left: 31rpx;
 }

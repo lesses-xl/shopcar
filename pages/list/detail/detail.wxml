@@ -13,27 +13,38 @@
 		<image src='../../../images/nav/car.png' class='cart-big {{ifadd==true?"cart-num-big":""}}'></image>
 		<text>购物车</text>
 		<view>{{cartNum}}</view>
-	</view>	
+	</view>
 </view>
 
 <view class='detail-top'>
 	<view class='swiper-tab'>
-		<view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">商品详情</view>  
-		<view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">产品参数</view>  
-		<view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">售后保障</view>  
+		<view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">商品详情</view>
+		<view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">产品参数</view>
+		<view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">售后保障</view>
 	</view>
 	<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
 		<swiper-item>
 			<view class='top-one'>
 				<view class='top-img'>
-					<image src='../{{detail.thingImg}}'></image>
+					<swiper class='one-swiper' indicator-dots="true"
+  autoplay="true" duration="300">
+						<swiper-item>
+							<image src='../{{detail.thingImg}}'></image>
+						</swiper-item>
+						<swiper-item>
+							<image src='../{{detail.thingImg}}'></image>
+						</swiper-item>
+						<swiper-item>
+							<image src='../{{detail.thingImg}}'></image>
+						</swiper-item>
+					</swiper>
 				</view>
 				<view class='top-text'>
 					<view class='top-text-name'>
 					{{detail.thingName}}
 					<view class='top-text-price'>￥{{detail.thingPrice}}</view>
 					<view class='top-text-buycount'>购买1000001次</view>
-					</view>						
+					</view>
 				</view>
 				<view class='top-border'></view>
 				<view class='top-main'>
@@ -59,27 +70,27 @@
 		</swiper-item>
 		<swiper-item>
 			<view class='top-three'>
-				
+
 			</view>
 		</swiper-item>
 	</swiper>
 </view>
 
-<!-- 遮罩 -->
+<!-- 加入购物车遮罩 -->
 <view class='mask' hidden="{{putcart == true ? false : true}}" bindtap='hidemask'></view>
 
-<!-- 类别选择 -->
+<!-- 加入购物车类别选择 -->
 <view class='addgoods' hidden="{{putcart == true ? false : true}}">
 	<view class='add-top'>
-		<image class='add-top-img' src='../../../images/goods/goods1.png'></image>
+		<image class='add-top-img' src='../{{detail.thingImg}}'></image>
 		<text class='add-top-name'>{{detail.thingName}}</text>
 		<text class='add-top-price'>￥{{detail.thingPrice}}</text>
 		<view class='add-top-changenumber'>
 			<text>购买数量</text>
 			<view class='add-top-btn'>
-				<view class="btn1" bindtap='subnum'>-</view>
+				<view class='btn1 {{num==1?"":"current"}}' bindtap='subnum'>-</view>
 				<view class='value'>{{num}}</view>
-				<view class="btn2" bindtap='addnum'>+</view>
+				<view class='btn2 {{num==99?"":"current"}}' bindtap='addnum'>+</view>
 			</view>
 		</view>
 	</view>
@@ -87,13 +98,14 @@
 </view>
 
 
+<!-- 立即购买遮罩 -->
 <view class='mask' hidden="{{buycart == true ? false : true}}" bindtap='hidemask1'></view>
 
 
-<!-- 类别选择 -->
+<!-- 立即购买类别选择 -->
 <view class='addgoods' hidden="{{buycart == true ? false : true}}">
 	<view class='add-top'>
-		<image class='add-top-img' src='../../../images/goods/goods1.png'></image>
+		<image class='add-top-img' src='../{{detail.thingImg}}'></image>
 		<text class='add-top-name'>{{detail.thingName}}</text>
 		<text class='add-top-price'>￥{{detail.thingPrice}}</text>
 		<view class='add-top-changenumber'>
@@ -106,4 +118,26 @@
 		</view>
 	</view>
 	<view class='add-bottom' bindtap='toorder'>立即购买</view>
+</view>
+
+
+<!-- 购物车遮罩 -->
+<view class='mask' hidden="{{shopcarcart == true ? false : true}}" bindtap='hidemask2'></view>
+
+<!-- 购物车显示 -->
+<view class='shopcar-wrap' hidden="{{shopcarcart == true ? false : true}}">
+	<view class='shopcar-list'>商品列表</view>
+	<view class='shopcar-div' hidden="{{ifHave == true ? false : true}}">
+		<view wx:for='{{shopThing}}' class='shopdiv'>
+			<image src='../{{item.thingImg}}' class='shopcar-img'></image>
+			<view class='shopcar-name'>{{item.thingName}}</view>
+			<view class='shopcar-price'>单价:￥{{item.thingPrice}} x {{item.thingNum}}</view>
+			<view class='shopcar-all'>总价:￥{{(item.thingPrice * 10) * (item.thingNum * 10) / 100}}</view>
+			<image src='../../../images/pages/clear_input.png' class='shopcar-del' bindtap='delshopThing' data-index="{{index}}"></image>
+		</view>
+	</view>
+	<view hidden="{{ifHave == true ? true : false}}" class='nothing'>购物车空空如也~</view>
+	<view class='toshopcar' bindtap='tomyshopcar'>
+		前往购物车>>
+	</view>											
 </view>

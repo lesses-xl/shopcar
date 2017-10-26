@@ -21,7 +21,10 @@ Page({
 		detail: '',
 		eIndex: 0,
 		putcart: false,
-		buycart: false
+		buycart: false,
+		shopcarcart: false ,
+		shopThing: [],
+		ifHave: false
 	},
 	getTime: function () {
 	  var timeNumber = 0;
@@ -72,9 +75,52 @@ Page({
 		})
 	},
 	toshopcar: function() {
+		console.log(this.data.shopThing);
+		console.log(shopThing.shopThing);
+		this.setData({
+			shopThing: shopThing.shopThing
+		})
+  		this.setData({
+  			shopcarcart: true
+  		})
+
+  		if(shopThing.shopThing.length == 0) {
+  			this.setData({
+  				ifHave: false
+  			})
+  		}else {
+  			this.setData({
+  				ifHave: true
+  			})
+  		}
+	},
+	tomyshopcar: function() {
 		wx.switchTab({
-      		url:"../../shopcar/shopcar"
-     	});
+			url: '../../shopcar/shopcar'
+		})
+	},
+	delshopThing: function(e) {
+		this.showwhat();
+		var that = this;
+		var num = e.currentTarget.dataset.index;
+		wx.showModal({
+			title: '提示',
+			content: '是否删除商品',
+			success: function(res) {
+				if(res.confirm) {
+					shopThing.shopThing.splice(num,1);
+					that.setData({
+						shopThing: shopThing.shopThing
+					})
+				}else if(res.cancel) {
+					//null
+				}
+			},
+			complete: function() {
+				console.log(shopThing.shopThing.length)
+				that.showwhat();
+			}
+		})	
 	},
 	subnum: function() {
 		if(this.data.num <= 1) {
@@ -113,10 +159,16 @@ Page({
 			buycart: false
 		})
 	},
+	hidemask2: function() {
+		this.setData({
+			shopcarcart: false
+		})
+	},
 	gobuy: function() {
 		this.setData({
 			buycart: true
 		})
+		this.toShopThing();
 	},
 	tocart: function() {
 		console.log()
@@ -162,6 +214,8 @@ Page({
 		this.setData({
 			cartNum: num
 		})	
+		this.toShopThing();
+		console.log(this.data.shopThing);
 	},
 	toorder: function() {
 		var obj = {
@@ -178,30 +232,75 @@ Page({
 		wx.navigateTo({
 		  url: '../../buy/buy'
 		}) 
+		this.toShopThing();
+	},
+	toShopThing: function() {
+		this.setData({
+			shopThing: shopThing.shopThing
+		})
+		console.log(this.data.shopThing)
+	},
+	showwhat: function() {
+		// console.log(cartNum,shopThing.shopThing.length)
+		if(shopThing.shopThing.length == 0) {
+			this.setData({
+				ifHave: false,
+				cartNum: 0
+			})
+		}else {
+			var num = 0;
+			for(var i=0; i<shopThing.shopThing.length; i++) {
+				num += shopThing.shopThing[i].thingNum
+			}
+			this.setData({
+				ifHave: true,
+				cartNum: num
+			})
+		}
 	},
 	onLoad:function(options){
-		var arr = options.index.split(',');
-		for(var i=0; i<arr.length; i++) {
-			arr[i] = Number(arr[i]);
-		}
-		console.log(arr);
-		if(options.index.length > 1) {
-			this.setData({
-				detail: list.list[arr[0]][arr[1]]
-			})
-
-			var num = 0;
-			for(var i=0; i<shopThing.shopThing.length; i++) {
-				num += shopThing.shopThing[i].thingNum;
+		console.log(options.list)
+		if(options.index) {
+			console.log('1')
+			var arr = options.index.split(',');
+			for(var i=0; i<arr.length; i++) {
+				arr[i] = Number(arr[i]);
 			}
+			if(arr[0] == 0) {
+				this.setData({
+					detail: index.index[0][arr[1]]
+				})
+				console.log(index.index[0]);
+				var num = 0;
+				for(var i=0; i<shopThing.shopThing.length; i++) {
+					num += shopThing.shopThing[i].thingNum;
+				}
 
-			this.setData({
-				cartNum: num
-			})	
+				this.setData({
+					cartNum: num
+				})	
+			}
+			else {
+				this.setData({
+					detail: index.index[arr[0]][arr[1]],
+					eIndex: options.index
+				})
+				var num = 0;
+				for(var i=0; i<shopThing.shopThing.length; i++) {
+					num += shopThing.shopThing[i].thingNum;
+				}
+				this.setData({
+					cartNum: num
+				})	
+			}
 		}else {
+			var arr1 = options.list.split(',');
+			for(var i=0; i<arr1.length; i++) {
+				arr1[i] = Number(arr1[i]);
+			}
+			console.log(arr1)
 			this.setData({
-				detail: index.index[arr[0]],
-				eIndex: options.index
+				detail: list.list[arr1[0]][arr1[1]]
 			})
 			var num = 0;
 			for(var i=0; i<shopThing.shopThing.length; i++) {
@@ -211,12 +310,16 @@ Page({
 				cartNum: num
 			})	
 		}
+
+		this.toShopThing();
+		this.showwhat();
 	},
 	onReady:function(){
 		
 	},
 	onShow:function(){
-		
+		this.toShopThing();
+		this.showwhat();
 	},
 	onHide:function(){
 		

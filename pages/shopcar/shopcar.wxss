@@ -267,7 +267,7 @@
   position: absolute;
   width: 40rpx;
   height: 40rpx;
-  top: 26rpx;
+  top: 28rpx;
   right: 50rpx;
 }
 

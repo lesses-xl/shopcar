@@ -46,6 +46,30 @@ var shopThing = [
       //   "thingNum": 1,
       //   "thingId": 6,
       //   "choose": false
+      // },
+      // {
+      //   "thingName": "香蕉",
+      //   "thingImg": "../../images/goods/goods1.png",
+      //   "thingPrice": 10,
+      //   "thingNum": 1,
+      //   "thingId": 4,
+      //   "choose": false
+      // },
+      // {
+      //   "thingName": "橘子",
+      //   "thingImg": "../../images/goods/goods1.png",
+      //   "thingPrice": 10,
+      //   "thingNum": 1,
+      //   "thingId": 5,
+      //   "choose": false
+      // },
+      // {
+      //   "thingName": "火龙果",
+      //   "thingImg": "../../images/goods/goods1.png",
+      //   "thingPrice": 10,
+      //   "thingNum": 1,
+      //   "thingId": 6,
+      //   "choose": false
       // }
 ]
 

@@ -13,6 +13,7 @@
 	justify-content: center;
 	align-items: center;
 	border-top: 2rpx solid rgb(238, 238, 238);
+	z-index: 299;
 }
 
 .top-left {
@@ -127,6 +128,7 @@
 	left: 0;
 	right: 0;
 	bottom: 85rpx;
+	z-index: 280;
 }
 
 .top-img {
@@ -134,9 +136,20 @@
 	height: 470rpx;
 }
 
+.top-one .one-swiper {
+	width: 100%;
+	height: 470rpx;
+}
+
+.top-one .one-swiper swiper-item{
+	width: 100%;
+	height: 470rpx;
+}
+
 .top-img image {
 	width: 100%;
 	height: 100%;
+	display: block;
 }
 
 .top-text {
@@ -211,7 +224,7 @@
 	right: 0;
 	bottom: 0;
 	background: rgba(0,0,0,0.6);
-	z-index: 999;
+	z-index: 500;
 }
 
 .addgoods {
@@ -236,14 +249,14 @@
 .add-top-img {
 	width: 110rpx;
 	height: 110rpx;
-	margin-top: 15rpx;
-	margin-left: 10rpx;
+	margin-top: 25rpx;
+	margin-left: 20rpx;
 }
 
 .add-top-name {
 	position: absolute;
 	top: 40rpx;
-	left: 150rpx;
+	left: 155rpx;
 	font-size: 26rpx;
 }
 
@@ -251,7 +264,7 @@
 	color: red;
 	position: absolute;
 	top: 90rpx;
-	left: 142rpx;
+	left: 147rpx;
 }
 
 .add-top-changenumber {
@@ -281,26 +294,23 @@
 	width: 60rpx;
 	height: 100%;
 	display: block;
-	line-height: 50rpx;
+	line-height: 48rpx;
 	text-align: center;
 	border: 1rpx solid rgba(0, 0, 0, 0.2);
-/* 	border-left: none;
-	border-right: none;	 */
 	top: 0;
-	left: 60rpx;	
+	left: 60rpx;
 	box-sizing: border-box;
-	/* background-color:#F8F8F8; */
 }
 
-.add-top-btn button {
+/*.add-top-btn button {
 	position: absolute;
 	width: 60rpx;
 	height: 100%;
-	line-height: 50rpx;
+	line-height: 45rpx;
 	text-align: center;
 	border-radius: 2rpx;
 	padding: 0;
-}
+}*/
 
 .add-top-btn button::after {
 	border-radius: 1rpx;
@@ -336,3 +346,103 @@
 	color: white;
 }
 
+
+
+/* 购物车弹层 */
+.shopcar-wrap {
+	position: fixed;
+	top: 15%;
+	bottom: 15%;
+	left: 75rpx;
+	right: 75rpx;
+	height: 850rpx;
+	background: white;
+	z-index: 600;
+	border-radius: 15rpx;
+}
+
+.shopcar-list {
+	font-size: 28rpx;
+	width: 100%;
+	height: 70rpx;
+	text-align: center;
+	/* padding: 12rpx 0rpx; */
+	line-height: 70rpx;
+	box-sizing: border-box;
+	border-bottom: 5rpx solid rgb(220,220,220);
+}
+
+.shopdiv {
+	width: 100%;
+	height: 110rpx;
+	position: relative;
+	font-size: 24rpx;
+	border-bottom: 1rpx solid rgb(220,220,220);
+}
+
+.shopdiv .shopcar-img {
+	position: absolute;
+	width: 90rpx;
+	height: 90rpx;
+	top: 15rpx;
+	left: 15rpx;
+}
+
+.shopdiv .shopcar-name {
+	position: absolute;
+	left: 145rpx;
+	top: 18rpx;
+}
+
+.shopdiv .shopcar-price {
+	position: absolute;
+	left: 145rpx;
+	top: 60rpx;
+}
+
+.shopdiv .shopcar-all {
+	position: absolute;
+	left: 362rpx;
+	top: 35rpx;
+}
+
+.shopdiv .shopcar-del {
+	position: absolute;
+	right: 30rpx;
+	top: 28rpx;
+	width: 55rpx;
+	height: 55rpx;
+}
+
+.toshopcar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-size: 28rpx;
+	width: 100%;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	border-top: 1rpx solid rgb(220, 220, 220);
+}
+
+.shopcar-div {
+	position: absolute;
+	top: 70rpx;
+	bottom: 80rpx;
+	width: 100%;
+	overflow-x: hidden;
+	/* height: auto; */
+}
+
+.current {
+  border-color: #9F9D9D!important;
+}
+
+.nothing {
+	width: 100%;
+	height: 200rpx;
+	font-size: 28rpx;
+	text-align: center;
+	margin-top: 250rpx;
+}
