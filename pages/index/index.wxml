@@ -6,26 +6,329 @@
 			</swiper-item>
 		</block>
 	</swiper>
-	<text class='index-center-text'>{{index1}}</text>
-	<view class='theme-view'>
-		<view class='theme-top'>
-			<view class='theme-view-left' bindtap="onetap">
-				<image src="{{theme1}}" class='half-img'></image>
-			</view>
-			<view class='theme-view-right' bindtap="twotap">
-				<image src="{{theme2}}" class='half-img'></image>
-			</view>
+	
+	<!-- 小图标分类 -->
+	<view class='sm-wrap'>
+		<view class='sm-btn'>
+			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
+			<text class='sm-text'>xx超市</text>
 		</view>
-		<view class='theme-view-bottom' bindtap="threetap">
-			<image src="{{theme3}}" class='one-img'></image>
+		<view class='sm-btn'>
+			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
+			<text class='sm-text'>xx超市</text>
+		</view>
+		<view class='sm-btn'>
+			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
+			<text class='sm-text'>xx超市</text>
+		</view>
+		<view class='sm-btn'>
+			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
+			<text class='sm-text'>xx超市</text>
+		</view>
+		<view class='sm-btn'>
+			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
+			<text class='sm-text'>xx超市</text>
+		</view>
+		<view class='sm-btn'>
+			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
+			<text class='sm-text'>xx超市</text>
+		</view>
+		<view class='sm-btn'>
+			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
+			<text class='sm-text'>xx超市</text>
+		</view>
+		<view class='sm-btn'>
+			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
+			<text class='sm-text'>xx超市</text>
+		</view>
+		<view class='sm-btn'>
+			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
+			<text class='sm-text'>xx超市</text>
+		</view>
+		<view class='sm-btn'>
+			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
+			<text class='sm-text'>xx超市</text>
 		</view>
 	</view>
-	<text class='index-center-text'>{{index2}}</text>
-	<view class='new-goods'>
-		<view class='new-goods-one' wx:for="{{index[0]}}" bindtap="toDetail" data-index="{{index}}">
-			<image src='{{item.thingImg}}'></image>
-			<text>{{item.thingName}} 1个</text>
-			<text>￥{{item.thingPrice}}</text>
+
+
+
+
+	<!-- 一半 -->
+	<view class='sm-container'>
+		<view class='sm-content'>
+			<view class='sm-content-top'>
+				<view class='big-text'>闪购</view>
+				<view>一元freestyle 特卖搞起来</view>
+			</view>
+			<view class='sm-content-bottom'>
+				<image src='../../images/img1.jpg'></image>
+				<image src='../../images/img1.jpg'></image>
+			</view>
+		</view>
+		<view class='sm-content'>
+			<view class='sm-content-top'>
+				<view class='big-text'>闪购</view>
+				<view>一元freestyle 特卖搞起来</view>
+			</view>
+			<view class='sm-content-bottom'>
+				<image src='../../images/img1.jpg'></image>
+				<image src='../../images/img1.jpg'></image>
+			</view>
+		</view>
+		<view class='sm-content'>
+			<view class='sm-content-top'>
+				<view class='big-text'>闪购</view>
+				<view>一元freestyle 特卖搞起来</view>
+			</view>
+			<view class='sm-content-bottom'>
+				<image src='../../images/img1.jpg'></image>
+				<image src='../../images/img1.jpg'></image>
+			</view>
+		</view>
+		<view class='sm-content'>
+			<view class='sm-content-top'>
+				<view class='big-text'>闪购</view>
+				<view>一元freestyle 特卖搞起来</view>
+			</view>
+			<view class='sm-content-bottom'>
+				<image src='../../images/img1.jpg'></image>
+				<image src='../../images/img1.jpg'></image>
+			</view>
+		</view>
+	</view>
+
+
+
+
+	
+		<!-- 小型轮播 -->
+	<swiper class='scroll-banner' circular='true'>
+		<swiper-item>
+			<image src='../../images/scroll1.jpg'></image>
+		</swiper-item>
+		<swiper-item>
+			<image src='../../images/scroll2.jpg'></image>
+		</swiper-item>	
+	</swiper>
+	<view class='banner'>
+		<image src='../../images/banner3.jpg'></image>
+	</view>
+
+	<!-- 四格 -->
+	<view class='sm-container'>
+		<view class='sm-container-wrap'>
+			<view class='sm-container-top'>
+				<view class='sm-container-name1'>美食城</view>
+				<view class='sm-container-name2'>3件7折</view>
+			</view>
+			<view class='sm-container-bottom'>
+				<image src='../../images/container1.jpg'></image>
+			</view>
+		</view>
+		<view class='sm-container-wrap'>
+			<view class='sm-container-top'>
+				<view class='sm-container-name1'>美食城</view>
+				<view class='sm-container-name2'>3件7折</view>
+			</view>
+			<view class='sm-container-bottom'>
+				<image src='../../images/container1.jpg'></image>
+			</view>
+		</view>
+		<view class='sm-container-wrap'>
+			<view class='sm-container-top'>
+				<view class='sm-container-name1'>美食城</view>
+				<view class='sm-container-name2'>3件7折</view>
+			</view>
+			<view class='sm-container-bottom'>
+				<image src='../../images/container1.jpg'></image>
+			</view>
+		</view>
+		<view class='sm-container-wrap'>
+			<view class='sm-container-top'>
+				<view class='sm-container-name1'>美食城</view>
+				<view class='sm-container-name2'>3件7折</view>
+			</view>
+			<view class='sm-container-bottom'>
+				<image src='../../images/container1.jpg'></image>
+			</view>
+		</view>
+		<view class='sm-container-wrap'>
+			<view class='sm-container-top'>
+				<view class='sm-container-name1'>美食城</view>
+				<view class='sm-container-name2'>3件7折</view>
+			</view>
+			<view class='sm-container-bottom'>
+				<image src='../../images/container1.jpg'></image>
+			</view>
+		</view>
+		<view class='sm-container-wrap'>
+			<view class='sm-container-top'>
+				<view class='sm-container-name1'>美食城</view>
+				<view class='sm-container-name2'>3件7折</view>
+			</view>
+			<view class='sm-container-bottom'>
+				<image src='../../images/container1.jpg'></image>
+			</view>
+		</view>
+		<view class='sm-container-wrap'>
+			<view class='sm-container-top'>
+				<view class='sm-container-name1'>美食城</view>
+				<view class='sm-container-name2'>3件7折</view>
+			</view>
+			<view class='sm-container-bottom'>
+				<image src='../../images/container1.jpg'></image>
+			</view>
+		</view>
+		<view class='sm-container-wrap'>
+			<view class='sm-container-top'>
+				<view class='sm-container-name1'>美食城</view>
+				<view class='sm-container-name2'>3件7折</view>
+			</view>
+			<view class='sm-container-bottom'>
+				<image src='../../images/container1.jpg'></image>
+			</view>
+		</view>
+	</view>
+
+
+
+
+	<!-- 小型轮播 -->
+	<swiper class='scroll-banner' circular='true'>
+		<swiper-item>
+			<image src='../../images/scroll1.jpg'></image>
+		</swiper-item>
+		<swiper-item>
+			<image src='../../images/scroll2.jpg'></image>
+		</swiper-item>	
+	</swiper>
+
+	<view class='banner'>
+		<image src='../../images/banner1.jpg'></image>
+	</view>
+	
+	<view class='sm-container'>
+		<view class='sm-container1-wrap'>
+			<view class='sm-container1-top'>
+				<view class='sm-container1-name1'>电脑办公</view>
+				<view class='sm-container1-name2'>亿元神券限抢</view>
+			</view>
+			<view class='sm-container1-bottom'>
+				<image src='../../images/container2.jpg'></image>
+			</view>
+		</view>
+		<view class='sm-container1-wrap'>
+			<view class='sm-container1-top'>
+				<view class='sm-container1-name1'>电脑办公</view>
+				<view class='sm-container1-name2'>亿元神券限抢</view>
+			</view>
+			<view class='sm-container1-bottom'>
+				<image src='../../images/container2.jpg'></image>
+			</view>
+		</view>
+		<view class='sm-container1-wrap' style='margin-top: -5rpx'>
+			<view class='sm-container1-top'>
+				<view class='sm-container1-name1'>电脑办公</view>
+				<view class='sm-container1-name2'>亿元神券限抢</view>
+			</view>
+			<view class='sm-container1-bottom'>
+				<image src='../../images/container2.jpg'></image>
+			</view>
+		</view>
+		<view class='sm-container1-wrap'>
+			<view class='sm-container1-top'>
+				<view class='sm-container1-name1'>电脑办公</view>
+				<view class='sm-container1-name2'>亿元神券限抢</view>
+			</view>
+			<view class='sm-container1-bottom'>
+				<image src='../../images/container2.jpg'></image>
+			</view>
+		</view>
+	</view>
+
+
+	<!-- 小型轮播 -->
+	<swiper class='scroll-banner' circular='true'>
+		<swiper-item>
+			<image src='../../images/scroll1.jpg'></image>
+		</swiper-item>
+		<swiper-item>
+			<image src='../../images/scroll2.jpg'></image>
+		</swiper-item>	
+	</swiper>
+
+	<!-- 推荐 -->
+	<view class='foryou'>
+		<text>为您推荐</text>
+	</view>
+
+	<!-- 推荐内容 -->
+	<view class='showyou'>
+		<view class='showyou-content'>
+			<view class='showyou-top'>
+				<image src='../../images/showyou1.jpg'></image>
+			</view>
+			<view class='showyou-center'>
+				<view class='showyou-name'>双汇 火腿肠 王中王火腿肠 60g*10支装</view>
+				<view class='showyou-price'>￥ 15.90</view>
+			</view>
+			<view class='showyou-bottom'>
+				<view class='showyou-percent'>好评率99%</view>
+				<view class='showyou-same'>看相似</view>
+			</view>
+		</view>
+		<view class='showyou-content'>
+			<view class='showyou-top'>
+				<image src='../../images/showyou1.jpg'></image>
+			</view>
+			<view class='showyou-center'>
+				<view class='showyou-name'>双汇 火腿肠 王中王火腿肠 60g*10支装</view>
+				<view class='showyou-price'>￥ 15.90</view>
+			</view>
+			<view class='showyou-bottom'>
+				<view class='showyou-percent'>好评率99%</view>
+				<view class='showyou-same'>看相似</view>
+			</view>
+		</view>
+		<view class='showyou-content'>
+			<view class='showyou-top'>
+				<image src='../../images/showyou1.jpg'></image>
+			</view>
+			<view class='showyou-center'>
+				<view class='showyou-name'>双汇 火腿肠 王中王火腿肠 60g*10支装</view>
+				<view class='showyou-price'>￥ 15.90</view>
+			</view>
+			<view class='showyou-bottom'>
+				<view class='showyou-percent'>好评率99%</view>
+				<view class='showyou-same'>看相似</view>
+			</view>
+		</view>
+		<view class='showyou-content'>
+			<view class='showyou-top'>
+				<image src='../../images/showyou1.jpg'></image>
+			</view>
+			<view class='showyou-center'>
+				<view class='showyou-name'>双汇 火腿肠 王中王火腿肠 60g*10支装</view>
+				<view class='showyou-price'>￥ 15.90</view>
+			</view>
+			<view class='showyou-bottom'>
+				<view class='showyou-percent'>好评率99%</view>
+				<view class='showyou-same'>看相似</view>
+			</view>
+		</view>
+		<view class='showyou-content'>
+			<view class='showyou-top'>
+				<image src='../../images/showyou1.jpg'></image>
+			</view>
+			<view class='showyou-center'>
+				<view class='showyou-name'>双汇 火腿肠 王中王火腿肠 60g*10支装</view>
+				<view class='showyou-price'>￥ 15.90</view>
+			</view>
+			<view class='showyou-bottom'>
+				<view class='showyou-percent'>好评率99%</view>
+				<view class='showyou-same'>看相似</view>
+			</view>
 		</view>
 	</view>
 </view>	

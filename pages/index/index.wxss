@@ -1,9 +1,14 @@
 .index {
 	height: auto;
+	/* background: rgb(240,242,245); */
 }
 
 swiper {
 	height: 360rpx;
+}
+
+image {
+	vertical-align: top;
 }
 
 .index-center-text {
@@ -56,4 +61,281 @@ swiper {
 	height: 350rpx;
 }
 
+.sm-wrap {
+	width: 100%;
+	height: 260rpx;
+	margin-top: 25rpx;
+}
 
+.sm-btn {
+	width: 20%;
+	height: 105rpx;
+	/* border: 1px solid gray; */
+	float: left;	
+	box-sizing: border-box;
+	margin: 10rpx 0;
+}
+
+.sm-icon {
+	width: 50rpx;
+	height: 50rpx;
+	margin: 0 auto;
+	display: block;
+}
+
+.sm-text {
+	font-size: 24rpx;
+	display: block;
+	text-align: center
+}
+
+.sm-container {
+	width: 100%;
+	height: auto;
+}
+
+.sm-container-wrap {
+	width: 25%;
+	height: 228rpx;
+	border: 1rpx solid rgb(238, 238, 238);
+	display: inline-block;
+	font-size: 26rpx;
+	box-sizing: border-box;
+}
+
+.sm-container-top {
+	width: 100%;
+	height: 35%;
+	box-sizing: border-box;
+	padding: 5rpx 15rpx;
+}
+
+.sm-container-name1 {
+	font-size: 32rpx;
+}
+
+.sm-container-name2 {
+	color: #D663E1;
+}
+
+.sm-container-bottom {
+	width: 100%;
+	height: 65%;
+}
+
+.sm-container-bottom image {
+	width: 85%;
+	display: inline-block;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.sm-container1-wrap {
+	width: 50%;
+	box-sizing: border-box;
+	border: 1px solid rgb(238, 238, 238);
+	height: 180rpx;
+	display: inline-block;
+	margin-bottom: -10rpx;
+}
+
+.sm-container1-top {
+	width: 65%;
+	height: 100%;
+	box-sizing: border-box;
+	float: left;
+	padding: 10rpx 15rpx;
+}
+
+.sm-container1-name1 {
+	font-size: 32rpx;
+}
+
+.sm-container1-name2 {
+	font-size: 26rpx;
+	color: #D663E1;
+}
+
+.sm-container1-bottom {
+	width: 35%;
+	height: 100%;
+	box-sizing: border-box;
+	float: left;
+}
+
+.sm-container1-bottom image {
+	width: 100%;
+	height: 90%;
+	display: inline-block;
+	margin: 0 auto;
+	margin-top: 10rpx;
+}
+
+.sm-content {
+	width: 50%;
+	height: 250rpx;
+	box-sizing: border-box;
+	border: 1rpx solid rgb(238, 238, 238);
+	display: inline-block;
+	font-size: 24rpx;
+}
+
+.big-text {
+	font-size: 34rpx;
+	background-image: -webkit-linear-gradient(left, rgb(255, 118, 92), rgb(255, 35, 179));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.sm-content-top {
+	width: 100%;
+	height: 85rpx;
+	padding: 5rpx 10rpx;
+	box-sizing: border-box;
+}
+
+.sm-content-bottom {
+	width: 100%;
+	height: 165rpx;
+	box-sizing: border-box;
+}
+
+.sm-content-bottom image {
+	width: 50%;
+	height: 90%;
+}
+
+.banner {
+	width: 100%;
+	height: 60rpx;
+	background: rgb(246,246,246);
+}
+
+.banner image {
+	height: 60rpx;
+	width: 380rpx;
+	display: block;
+	margin: 0 auto;
+}
+
+
+.scroll-banner {
+	height: 240rpx;
+	width: 100%;
+	display: inline-block;
+	white-space: nowrap;
+	margin: 25rpx 0;
+	background: rgb(246,246,246);
+}
+
+.scroll-banner image {
+	width: 100%;
+	height: 240rpx;
+}
+
+.foryou {
+	width: 100%;
+	height: 65rpx;
+	/* border: 1px solid black; */
+	text-align: center;
+	font-size: 26rpx;
+	line-height: 65rpx;
+	background: rgb(240, 242, 245);
+	padding: 10rpx 0;
+}
+
+.foryou text {
+	position: relative;
+	color: rgb(132,134,137);
+}
+
+.foryou text::after {
+	position: absolute;
+	content: '';
+	width: 300rpx;
+	height: 3rpx;
+	background: rgb(212,213,213);
+	left: 120rpx;
+	top: 20rpx;
+}
+
+.foryou text::before {
+	position: absolute;
+	content: '';
+	width: 300rpx;
+	height: 3rpx;
+	background: rgb(212,213,213);
+	left: -314rpx;
+	top: 20rpx;
+}
+
+.showyou {
+	width: 100%;
+	height: auto;
+	background: rgb(240,242,245);
+}
+
+.showyou-content {
+	width: 49%;
+	height: 470rpx;
+	/* box-sizing: border-box; */
+	font-size: 24rpx;
+	display: inline-block;
+	margin-bottom: 15rpx;
+	background: white;
+	/* float: left; */
+}
+
+.showyou-content:nth-child(even) {
+	/* float: right; */
+	margin-left: 2%;
+}
+
+.showyou-top {
+	width: 100%;
+	height: 330rpx;
+}
+
+.showyou-top image {
+	width: 100%;
+	height: 330rpx;
+}
+
+.showyou-center {
+	width: 100%;
+	height: 95rpx;
+	padding: 5rpx 10rpx;
+	box-sizing: border-box;
+}
+
+.showyou-price {
+	color: red;
+	font-size: 26rpx;
+}
+
+.showyou-bottom {
+	width: 100%;
+	height: 45rpx;
+	padding: 5rpx 10rpx;
+	box-sizing: border-box;
+}
+
+.showyou-percent {
+	color: #999;
+	float: left;
+	font-size: 22rpx;
+	margin-top: 10rpx;
+}
+
+.showyou-same {
+	float: right;
+	width: 90rpx;
+	text-align: center;
+	padding: 5rpx 0;
+	height: 28rpx;
+	line-height: 28rpx;
+	border: 1rpx solid rgb(222, 222, 222);
+	margin-right: -1rpx;
+	margin-bottom: 18rpx;
+	color: #686868;
+}
