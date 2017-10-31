@@ -17,7 +17,13 @@ Page({
     theme1: '../../images/goods/s1.png',
     theme2: '../../images/goods/s2.png',
     theme3: '../../images/goods/list3.png',
-    index: ''
+    index: '',
+    swiperCurrent: 0
+  },
+  swiperChange: function(e){
+    this.setData({
+        swiperCurrent: e.detail.current
+    })
   },
   onetap: function() {
     wx.navigateTo({
@@ -37,7 +43,7 @@ Page({
   toDetail: function(e) {
     var index = e.currentTarget.dataset.index;
     var arr = [0,index]
-    wx.redirectTo({
+    wx.navigateTo({
       url: "../list/detail/detail?index="+arr
     })
   },
