@@ -1,0 +1,5 @@
+<view class='say-wrap'>
+	<view>{{num}}/500</view>
+	<textarea bindinput='getnumber' placeholder="对我们小程序、商品、服务，你还有什么建议吗？请告诉我们..." maxlength="500"></textarea>
+</view>
+<view class='to-update'>提交</view>

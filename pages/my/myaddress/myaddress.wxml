@@ -1,7 +1,7 @@
 <view class='container'>
 	<view class='address-item' wx:for="{{address}}">
 		<view class='address-choose' bindtap="choosethis" data-index="{{index}}">
-			<image src='../../../images/pages/addr-active.png' data-index='{{index}}' class="{{index == currentIndex?'show':'hide'}}"></image>
+			<image src='../../../images/ali/choose.png' data-index='{{index}}' class="{{index == currentIndex?'show':'hide'}}"></image>
 		</view>
 		<view class='address-info'>
 			<view class='address-name'>联系人：{{item.name}}</view>
@@ -10,11 +10,11 @@
 			<view class='address-post'>邮编：{{item.postCode}}</view>
 		</view>
 		<view class='address-edit' bindtap="changeaddress" data-index='{{index}}'>
-			<image src='../../../images/pages/addr-edit.png'></image>
+			<image src='../../../images/ali/edit1.png'></image>
 		</view>
 	</view>
 	<view class='add-new-address' bindtap="addaddress">
-		<view class='add-btn'>+</view>
+		<image class='add-btn' src='../../../images/ali/add-address.png'></image>
 		<view class='add-text'>新增收货地址</view>
 	</view>
 </view>

@@ -5,7 +5,8 @@ var shopThing = [
         "thingPrice": 10,
         "thingNum": 1,
         "thingId": 1,
-        "choose": false
+        "choose": false,
+        "star": false
       },
       {
         "thingName": "苹果",
@@ -13,7 +14,8 @@ var shopThing = [
         "thingPrice": 10,
         "thingNum": 1,
         "thingId": 2,
-        "choose": false
+        "choose": false,
+        "star": false
       },
       {
         "thingName": "梨",
@@ -21,7 +23,8 @@ var shopThing = [
         "thingPrice": 10,
         "thingNum": 1,
         "thingId": 3,
-        "choose": false
+        "choose": false,
+        "star": false
       },
       {
         "thingName": "香蕉",
@@ -29,7 +32,8 @@ var shopThing = [
         "thingPrice": 10,
         "thingNum": 1,
         "thingId": 4,
-        "choose": false
+        "choose": false,
+        "star": false
       },
       {
         "thingName": "橘子",
@@ -37,7 +41,8 @@ var shopThing = [
         "thingPrice": 10,
         "thingNum": 1,
         "thingId": 5,
-        "choose": false
+        "choose": false,
+        "star": false
       },
       {
         "thingName": "火龙果",
@@ -45,7 +50,8 @@ var shopThing = [
         "thingPrice": 10,
         "thingNum": 1,
         "thingId": 6,
-        "choose": false
+        "choose": false,
+        "star": false
       }
 ]
 

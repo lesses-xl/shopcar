@@ -1,6 +1,20 @@
+page {
+	width: 100%;
+	height: 100%;
+}
+
+.noscroll {
+	overflow: hidden;
+}
+
+.index-container {
+	width: 100%;
+	height: 100%;
+}
+
 .index {
 	height: auto;
-	/* background: rgb(240,242,245); */
+	/* overflow: hidden; */
 }
 
 swiper {
@@ -11,14 +25,37 @@ image {
 	vertical-align: top;
 }
 
+.index-mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255,255,255,1);
+	z-index: 999;
+	overflow: hidden;
+}
+
+.search-wrap {
+	width: 100%;
+	height: 74rpx;
+	background: white;
+	position: fixed;
+	z-index: 999;
+}
+
 .search {
 	background: rgb(237, 237, 237);
-	width: 95%;
+	width: 96%;
 	height: 62rpx;
 	margin: 10rpx auto;
 	box-sizing: border-box;
 	border-radius: 10rpx;
 	margin-bottom: 25rpx;
+	position: fixed;
+	z-index: 999;
+	left: 50%;
+	margin-left: -48%;
 }
 
 .search image {
@@ -43,6 +80,8 @@ image {
 
 .swiper-container{
   position: relative;
+  top: 82rpx;
+  margin-bottom: 96rpx;
 }
 
 .swiper-container .swiper{
@@ -70,7 +109,7 @@ image {
   background: white;
   opacity: 0.5;
   border-radius: 3rpx;
-  transition: all .6s;
+  transition: all .4s;
 }
 
 .swiper-container .dots .dot.active{
@@ -183,7 +222,7 @@ image {
 }
 
 .sm-container1-top {
-	width: 65%;
+	width: 60%;
 	height: 100%;
 	box-sizing: border-box;
 	float: left;
@@ -191,16 +230,22 @@ image {
 }
 
 .sm-container1-name1 {
-	font-size: 32rpx;
+	font-size: 28rpx;
+	margin-top: 20rpx;
 }
 
 .sm-container1-name2 {
 	font-size: 26rpx;
 	color: #D663E1;
+	word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 10rpx;
 }
 
 .sm-container1-bottom {
-	width: 35%;
+	width: 40%;
 	height: 100%;
 	box-sizing: border-box;
 	float: left;
@@ -252,11 +297,11 @@ image {
 .sm-content image {
 	position: absolute;
 	/* top: 0; */
-	bottom: 15rpx;
+	bottom: 0rpx;
 	/* left: 0; */
 	right: 0;
-	width: 300rpx;
-	height: 200rpx;
+	width: 240rpx;
+	height: 170rpx;
 }
 
 .banner {
@@ -506,7 +551,7 @@ image {
 }
 
 .special-wrap:last-child {
-	margin-right: 20rpx;
+	margin-right: 25rpx;
 }
 
 .special-wrap text {

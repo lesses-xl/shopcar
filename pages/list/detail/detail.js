@@ -2,6 +2,7 @@ var shopThing = require('../../../utils/shopThing.js');
 var index = require('../../../utils/inedx.js');
 var list = require('../../../utils/list.js');
 var order = require('../../../utils/order.js');
+var star = require('../../../utils/star.js');
 /*
 	图片
 	是否有货
@@ -24,7 +25,10 @@ Page({
 		buycart: false,
 		shopcarcart: false ,
 		shopThing: [],
-		ifHave: false
+		ifHave: false,
+		starfull: false,
+		whatrequire: '',
+		one: false
 	},
 	getTime: function () {
 	  var timeNumber = 0;
@@ -56,6 +60,100 @@ Page({
 		this.setData({
 			currentTab: e.detail.current
 		})
+	},
+	tostar: function() {
+		console.log(this.data.whatrequire)
+		var n = this.data.whatrequire[0];
+		var n1 = this.data.whatrequire[1];
+		var n2 = this.data.whatrequire[2];
+		var obj = {}
+		var that = this;
+		function addgoods() {
+			obj = {
+				"thingName": that.data.detail.thingName,
+				"thingImg": that.data.detail.thingImg,
+				"thingPrice": that.data.detail.thingPrice,
+				"thingNum": that.data.num,
+				"thingId": that.data.detail.thingId,
+				"choose": true
+			}					
+			
+			if(n === 'index') {
+				index.index[n1][n2].star = true;
+				that.setData({
+					starfull: true,
+					detail: index.index[n1][n2]
+				})
+			}else if(n === 'list') {
+				list.list[n1][n2].star = true;
+				that.setData({
+					starfull: true,
+					detail: list.list[n1][n2]
+				})
+			}
+			console.log(index.index[n1][n2])
+			wx.showToast({
+				title: '收藏成功!'
+			})	
+			that.setData({
+				one: true
+			})
+		}
+
+		console.log(star.star)
+		if(star.star.length == 0) {
+			console.log('相同')
+			var nogoods = true;
+		}else {
+			var length = star.star.length;
+			nogoods = false;
+		}
+		
+		if(this.data.detail.star == false) {
+			if(nogoods) {
+				addgoods();
+				console.log(111);
+			}else {
+				for(var i=0; i<length; i++) {
+					if((star.star[i].thingId == this.data.thingId)) {
+
+					}
+					else {						
+						addgoods();
+					}
+				}	
+			}
+		}else {
+			this.setData({
+				one: false
+			})
+			for(var i=0; i<star.star.length; i++) {
+
+				if(star.star[i].thingId == this.data.detail.thingId) {
+					star.star.splice(i,1);
+				}
+				// console.log(star.star[i].thingName)
+			}
+			if(n === 'index') {
+				index.index[n1][n2].star = false;
+				this.setData({
+					starfull: false,
+					detail: index.index[n1][n2]
+				})
+			}else if(n === 'list') {
+				list.list[n1][n2].star = false;
+				this.setData({
+					starfull: false,
+					detail: list.list[n1][n2]
+				})
+			}
+			wx.showToast({
+				title: '取消收藏'
+			})	
+		}
+		if(this.data.one) {
+			star.star.push(obj);
+		}
 	},
 	swichNav: function(e) {  	
 	  var that = this;  	
@@ -179,7 +277,8 @@ Page({
 			"thingPrice": this.data.detail.thingPrice,
 			"thingNum": this.data.num,
 			"thingId": this.data.detail.thingId,
-			"choose": true
+			"choose": true,
+			"star": false
 		}
 		var timer = null;
 		var num = 0;
@@ -225,7 +324,8 @@ Page({
 		  thingPrice: this.data.detail.thingPrice,
 		  thingNum: this.data.num,
 		  thingId: this.data.detail.thingId,
-		  thingPay: '待付款'
+		  thingPay: '待付款',
+		  star: false
 		}
 		order.order.push(obj);
 
@@ -260,15 +360,18 @@ Page({
 	},
 	onLoad:function(options){
 		console.log(options.list)
+		console.log(options.index)
 		if(options.index) {
-			console.log('1')
 			var arr = options.index.split(',');
 			for(var i=0; i<arr.length; i++) {
 				arr[i] = Number(arr[i]);
 			}
+			console.log(arr)
 			if(arr[0] == 0) {
+
 				this.setData({
-					detail: index.index[0][arr[1]]
+					detail: index.index[0][arr[1]],
+					whatrequire: ['index',arr[0],arr[1]]
 				})
 				console.log(index.index[0]);
 				var num = 0;
@@ -282,6 +385,7 @@ Page({
 			}
 			else {
 				this.setData({
+					whatrequire: ['index',arr[0],arr[1]],
 					detail: index.index[arr[0]][arr[1]],
 					eIndex: options.index
 				})
@@ -300,6 +404,7 @@ Page({
 			}
 			console.log(arr1)
 			this.setData({
+				whatrequire: ['list',arr1[0],arr1[1]],
 				detail: list.list[arr1[0]][arr1[1]]
 			})
 			var num = 0;
@@ -310,9 +415,12 @@ Page({
 				cartNum: num
 			})	
 		}
-
 		this.toShopThing();
 		this.showwhat();
+		this.setData({
+			starfull: this.data.detail.star
+		})
+		console.log(this.data.detail.star)
 	},
 	onReady:function(){
 		
@@ -320,6 +428,10 @@ Page({
 	onShow:function(){
 		this.toShopThing();
 		this.showwhat();
+		this.setData({
+			starfull: this.data.detail.star
+		})
+
 	},
 	onHide:function(){
 		

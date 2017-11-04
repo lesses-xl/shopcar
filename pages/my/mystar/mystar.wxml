@@ -1,0 +1,8 @@
+<view class='star-wrap'>	
+	<view class='star-list' wx:for="{{starList}}">
+		<image class='star-img' src='../{{item.thingImg}}'></image>
+		<view class='star-border'></view>
+		<text class='star-name'>{{item.thingName}}</text>
+		<text class='star-price'>￥{{item.thingPrice}}</text>
+	</view>
+</view>

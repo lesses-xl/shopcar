@@ -7,8 +7,8 @@
 	        </view>
 	    </view>
 	</view>
-	<view class="no-order" hidden="{{orderList ? true : false}}">
-	    <image src="../../../images/nav/order-off.png" class="no-order-img"></image>
+	<view class="no-order" hidden="{{haveOrder ? true : false}}">
+	    <image src="../../../images/ali/cart_y.png" class="no-order-img"></image>
 	    <view class="text">暂无订单</view>
 	</view>
 	<view class='topay orderlist' hidden="{{currentType == 0 ? false : true}}">

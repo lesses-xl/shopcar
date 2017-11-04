@@ -1,5 +1,5 @@
 <view wx-if='{{!haveThing}}' class='shopcar-no'>	
-  <image src='../../images/icon-cart.png'></image>
+  <image src='../../images/ali/cart_y.png'></image>
   <text>购物车空空如也~</text>
   <button bindtap="tolist">去逛逛</button> 
 </view>
@@ -11,9 +11,10 @@
     <view class='shopcar-some'>
       <view wx:for='{{shopThing}}' class='shopdiv'>
         <view class='shopcar-one'>
+          <text class='right-num'>x {{item.thingNum}}</text>
           <view class='shopcar-choose-big' bindtap="chooseone" data-index='{{index}}' data-Id='{{item.thingId}}'>
             <view class='shopcar-choose {{item.choose==true?"active":""}}' >
-              <image src='../../images/pages/gou-red.png' wx:if="{{item.choose}}"></image>
+              <image src='../../images/ali/check_red.png' wx:if="{{item.choose}}"></image>
             </view>            
           </view>
           <image class='shopcar-img' src='{{item.thingImg}}'></image>
@@ -25,14 +26,14 @@
             <view class='shopcar-num'>{{item.thingNum}}</view>
             <view class='shopcar-add {{item.thingNum==99?"":"current"}}' bindtap="addnum" data-index='{{index}}'>+</view>
           </view>
-          <view class='shopcar-delone' wx:if="{{reader}}" bindtap="deletethis" data-index="{{index}}">删除</view>
+          <view class='shopcar-delone' wx:if="{{reader}}" bindtap="deletethis" data-index="{{index}}"><image src='../../images/ali/close.png'></image></view>
         </view>
       </view>
     </view> 
     <view class='shopcar-bottom' wx-if='{{haveThing}}'>
       <view class='shopcar-choose shopcar-chooseall' bindtap="chooseall">
         <view class='chooseall-sm {{ifchooseall==true?"active":""}}'>
-          <image src='../../images/pages/gou-red.png' wx:if="{{ifchooseall==true}}"></image>
+          <image src='../../images/ali/check_red.png' wx:if="{{ifchooseall==true}}"></image>
         </view>
       </view>
       <text class='shopcar-choosetext'>全选{{chooseNum}}</text>
@@ -40,7 +41,7 @@
       <view class='shopcar-border'></view>
       <view class='shopcar-allprice'>￥<text >{{allprice * 100 / 100}}</text></view> 
       <view class='buy' bindtap="tobuy">
-        <image src='../../images/pages/icon3.png' class='shopcar-pay'></image>
+        <image src='../../images/ali/pull_right.png' class='shopcar-pay'></image>
       </view>     
     </view> 
 </view>	

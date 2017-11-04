@@ -18,7 +18,9 @@ Page({
     theme2: '../../images/goods/s2.png',
     theme3: '../../images/goods/list3.png',
     index: '',
-    swiperCurrent: 0
+    imgList: [],
+    swiperCurrent: 0,
+    showMask: false
   },
   swiperChange: function(e){
     this.setData({
@@ -47,16 +49,58 @@ Page({
       url: "../list/detail/detail?index="+arr
     })
   },
+  index1: function(e) {
+    console.log(e);
+    var arr = [0,e.currentTarget.dataset.index]
+    wx.navigateTo({
+      url: "../list/detail/detail?index="+arr
+    })
+  },
+  index2: function(e) {
+    console.log(e);
+    var arr = [1,e.currentTarget.dataset.index]
+    wx.navigateTo({
+      url: "../list/detail/detail?index="+arr
+    })
+  },
+  index3: function(e) {
+    console.log(e);
+    var arr = [2,e.currentTarget.dataset.index]
+    wx.navigateTo({
+      url: "../list/detail/detail?index="+arr
+    })
+  },
+  index4: function(e) {
+    console.log(e);
+    var arr = [3,e.currentTarget.dataset.index]
+    wx.navigateTo({
+      url: "../list/detail/detail?index="+arr
+    })
+  },
+  getmask: function() {
+    this.setData({
+      showMask: true
+    })
+  },
+  hidemask: function() {
+    this.setData({
+      showMask: false
+    })
+  },
   onLoad: function (options) { 
     this.setData({
-      index: index.index
+      index: index.index,
+      imgList: index.list
     })  
+    console.log(index.list)
   },
   onReady: function () {
     // Do something when page ready.
   },
   onShow: function () {
-    // Do something when page show.
+    this.setData({
+      showMask: false
+    })
   },
   onHide: function () {
     // Do something when page hide.

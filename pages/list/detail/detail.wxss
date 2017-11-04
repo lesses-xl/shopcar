@@ -58,11 +58,11 @@
 }
 
 .top-collection image {
-	width: 45rpx;
-	height: 45rpx;
+	width: 52rpx;
+	height: 52rpx;
 	display: block;
 	margin: 0 auto;
-	margin-top: 4rpx;
+	margin-top: 3rpx;
 }
 
 .top-collection text {
@@ -229,12 +229,17 @@
 
 .addgoods {
 	position: fixed;
-	bottom: 0;
+	bottom: -380rpx;
 	left: 0;
 	background: white;
 	width: 100%;
-	min-height: 380rpx;
+	height: 380rpx;
 	z-index: 1000;
+	transition: all .2s linear;
+}
+
+.addgoods-top {
+	bottom: 0;
 }
 
 .add-top {
@@ -302,16 +307,6 @@
 	box-sizing: border-box;
 }
 
-/*.add-top-btn button {
-	position: absolute;
-	width: 60rpx;
-	height: 100%;
-	line-height: 45rpx;
-	text-align: center;
-	border-radius: 2rpx;
-	padding: 0;
-}*/
-
 .add-top-btn button::after {
 	border-radius: 1rpx;
 	border: 1rpx solid rgba(0, 0, 0,0.2);
@@ -351,7 +346,7 @@
 /* 购物车弹层 */
 .shopcar-wrap {
 	position: fixed;
-	top: 15%;
+	top: -860rpx;
 	bottom: 15%;
 	left: 75rpx;
 	right: 75rpx;
@@ -359,6 +354,11 @@
 	background: white;
 	z-index: 600;
 	border-radius: 15rpx;
+	transition: all .2s linear;
+}
+
+.shopcar-wrap-down {
+	top: 15%;
 }
 
 .shopcar-list {
@@ -403,7 +403,7 @@
 .shopdiv .shopcar-all {
 	position: absolute;
 	left: 362rpx;
-	top: 35rpx;
+	top: 40rpx;
 }
 
 .shopdiv .shopcar-del {

@@ -2,37 +2,50 @@
 	<view class='userBanner'>
 		<image class="userinfo-img" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
 		<text class="userinfo-name">{{userInfo.nickName}}</text>
-		<view class='aboutwe' bindtap='tous'>		
-			<!-- <image src='../../images/aboutwe.png'></image> -->
+		<view class='aboutwe' bindtap='tous'>	
+			<image src='../../images/ali/tishi.png'></image>	
 			<view>关于我们</view>
 		</view>	
 	</view>	
-	<!-- <view class='my-border'></view> -->
-	<view class='my-list' bindtap='showMyOrder'>
-		<text><text class='add'>+</text> 我的地址</text>	
-		<!-- <image class='my-list-img' src='../../images/arrow-right.png'></image> -->
+	<view class='my-list my-wrap' bindtap='showMyOrder'>
+		<image src='../../images/ali/zuobiao.png'></image>
+		<text>我的地址</text>	
 	</view>
-	<view class='my-border'></view>
-	<view class='my-list' style='border-bottom: none' bindtap='showMyAddress'>
-		<text><text class='add'>+</text> 我的订单</text>	
-		<!-- <image class='my-list-img' src='../../images/arrow-right.png'></image> -->
+	
+	<view class='my-list my-wrap'  bindtap='showMyAddress'>
+		<image src='../../images/ali/order.png'></image>
+		<text>我的订单</text>	
 	</view>
-	<view class='my-border'></view>
-	<view class='my-list' bindtap='bindMyPhone' wx:if="{{!ifbind}}">
-		<text ><text class='add'>+</text> 绑定手机</text>
+	
+	<view class='my-list my-wrap' bindtap='bindMyPhone' wx:if="{{!ifbind}}">
+		<image src='../../images/ali/phone.png'></image>
+		<text>绑定手机</text>
 	</view>
-	<view class='my-list' bindtap=''  wx:if="{{ifbind}}">
+	<view class='my-list my-wrap' bindtap=''  wx:if="{{ifbind}}">
 		<text>已绑定: {{mobile}}</text>
 		<view class='changemobile' >修改</view>
 	</view>
-	<view class='my-border'></view>
-	<view class='my-list' style='border-bottom: none'>
+
+	<view class='my-list my-wrap'  bindtap='showMyStar'>
+		<image src='../../images/ali/star.png'></image>
+		<text>我的收藏</text>	
+	</view>
+	
+	<view class='my-list my-wrap' >
+		<image src='../../images/ali/delete.png'></image>
 		<text>清除缓存</text>
 	</view>
-	<view class='my-border'></view>
-	<view class='my-list'>
+	
+	<view class='my-list my-wrap' bindtap="tohelp">
+		<image src='../../images/ali/help.png'></image>
+		<text>帮助中心</text>
+	</view>
+	<view class='my-list my-wrap' bindtap="tosay">
+		<image src='../../images/ali/survey.png'></image>
+		<text>意见反馈</text>
+	</view>
+	<view class='my-list my-wrap' bindtap='toversion'>
+		<image src='../../images/ali/hot.png'></image>
 		<text>系统版本</text>
 	</view>
-<!-- 	<view class='my-border'></view>
-	<view class='openid'>code：{{code}}</view> -->
 </view>	

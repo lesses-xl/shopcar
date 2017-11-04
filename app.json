@@ -1,19 +1,24 @@
 {
 	"pages": [
-
 		
 		"pages/index/index",
 		"pages/list/detail/detail",
-		"pages/buy/buy",
+		"pages/my/mystar/mystar",
 		"pages/shopcar/shopcar",
+		"pages/buy/buy",
+		"pages/my/myphone/myphone",
 		"pages/list/list",
 		"pages/my/myorder/myorder",
 
-		"pages/my/myphone/myphone",
+		
 		"pages/my/myaddress/myaddress",
 
 		"pages/my/myaddress/addaddress/addaddress",
-
+		"pages/my/version/version",
+		
+		
+		"pages/my/help/help",
+		"pages/my/tosay/tosay",
 		"pages/my/my",
 		"pages/index/recommed/recommed",
 		"pages/my/aboutus/aboutus",
@@ -22,40 +27,40 @@
 
 	],
 	"window": {
-		"enablePullDownRefresh": true,
+		"enablePullDownRefresh": false,
 		"navigationBarTitleText": "首页",
 		"navigationBarTextStyle": "black",
 		"navigationBarBackgroundColor": "white"
 	},
 	"tabBar": {
 		"color": "#6e6d6b",
-		"selectedColor": "#e64340",
+		"selectedColor": "#AB956C",
 		"borderStyle": "white",
 		"backgroundColor": "#ECECEC",
 		"box-shadow":"0 0 6px 0",
 	    "list": [
 	    	{
 	    		"pagePath": "pages/index/index",
-	    		"iconPath": "images/nav/home.png",
-	    		"selectedIconPath": "images/nav/home-active.png",
+	    		"iconPath": "images/ali/home.png",
+	    		"selectedIconPath": "images/ali/home (1).png",
 	      		"text": "首页"
 	    	},
 	    	{
 	    		"pagePath": "pages/list/list",
-	    		"iconPath": "images/nav/list.png",
-	    		"selectedIconPath": "images/nav/list-active.png",
+	    		"iconPath": "images/ali/apps.png",
+	    		"selectedIconPath": "images/ali/apps (1).png",
 	      		"text": "分类"
 	    	},
 	    	{
 	    		"pagePath": "pages/shopcar/shopcar",
-	    		"iconPath": "images/nav/car.png",
-	    		"selectedIconPath": "images/nav/car-active.png",
+	    		"iconPath": "images/ali/cart.png",
+	    		"selectedIconPath": "images/ali/cart (1).png",
 	      		"text": "购物车"
 	    	},
 	    	{
 	    		"pagePath": "pages/my/my",
-	    		"iconPath": "images/nav/my.png",
-	    		"selectedIconPath": "images/nav/my-active.png",
+	    		"iconPath": "images/ali/people.png",
+	    		"selectedIconPath": "images/ali/people (1).png",
 	      		"text": "我的"
 	    	}
 	    ]

@@ -8,7 +8,8 @@ var index = [
       "thingId": 20,
       "choose": false,
       "details": '鲜果冻 180克.....................',
-      "para": '14.0.........................'
+      "para": '14.0.........................',
+      "star": false
     },
     {
       "thingName": "新疆灰枣 280克",
@@ -18,7 +19,8 @@ var index = [
       "thingId": 40,
       "choose": false,
       "details": '新疆灰枣 280克.....................',
-      "para": '18.0.........................'
+      "para": '18.0.........................',
+      "star": false
     },
     {
       "thingName": "绿香妃葡萄干 180克",
@@ -28,7 +30,8 @@ var index = [
       "thingId": 41,
       "choose": false,
       "details": '绿香妃葡萄干 180克.....................',
-      "para": '26.0.........................'
+      "para": '26.0.........................',
+      "star": false
     },
     {
       "thingName": "开口甘栗 100克",
@@ -38,7 +41,8 @@ var index = [
       "thingId": 24,
       "choose": false,
       "details": '开口甘栗 100克.....................',
-      "para": '9.0.........................'
+      "para": '9.0.........................',
+      "star": false
     },
     {
       "thingName": "草莓白巧克力 65克",
@@ -48,7 +52,8 @@ var index = [
       "thingId": 25,
       "choose": false,
       "details": '草莓白巧克力 65克.....................',
-      "para": '16.0.........................'
+      "para": '16.0.........................',
+      "star": false
     },
     {
       "thingName": "藕片 45克",
@@ -58,7 +63,8 @@ var index = [
       "thingId": 26,
       "choose": false,
       "details": '藕片 45克.....................',
-      "para": '9.9.........................'
+      "para": '9.9.........................',
+      "star": false
     }
   ],
   [
@@ -70,7 +76,8 @@ var index = [
       "thingId": 1,
       "choose": false,
       "details": '曲奇礼盒 520克.....................',
-      "para": '78.0.........................'
+      "para": '78.0.........................',
+      "star": false
     },
     {
       "thingName": "苏打夹心饼干 270克",
@@ -80,7 +87,8 @@ var index = [
       "thingId": 2,
       "choose": false,
       "details": '苏打夹心饼干 270克.....................',
-      "para": '15.8.........................'
+      "para": '15.8.........................',
+      "star": false
     },
     {
       "thingName": "绿豆糕 80克",
@@ -90,7 +98,8 @@ var index = [
       "thingId": 3,
       "choose": false,
       "details": '绿豆糕 80克.....................',
-      "para": '12.9.........................'
+      "para": '12.9.........................',
+      "star": false
     },
     {
       "thingName": "牛扎饼 280克",
@@ -100,7 +109,8 @@ var index = [
       "thingId": 4,
       "choose": false,
       "details": '牛扎饼 280克.....................',
-      "para": '14.0.........................'
+      "para": '14.0.........................',
+      "star": false
     },
     {
       "thingName": "法式松饼 160克",
@@ -110,7 +120,8 @@ var index = [
       "thingId": 5,
       "choose": false,
       "details": '法式松饼 160克.....................',
-      "para": '28.0.........................'
+      "para": '28.0.........................',
+      "star": false
     },
     {
       "thingName": "法式奶酪 300克",
@@ -120,7 +131,8 @@ var index = [
       "thingId": 6,
       "choose": false,
       "details": '法式奶酪 300克.....................',
-      "para": '38.0.........................'
+      "para": '38.0.........................',
+      "star": false
     }
   ],
   [
@@ -132,7 +144,8 @@ var index = [
       "thingId": 20,
       "choose": false,
       "details": '鲜果冻 180克.....................',
-      "para": '14.0.........................'
+      "para": '14.0.........................',
+      "star": false
     },
     {
       "thingName": "薯角 50克",
@@ -142,7 +155,8 @@ var index = [
       "thingId": 21,
       "choose": false,
       "details": '薯角 50克.....................',
-      "para": '7.9.........................'
+      "para": '7.9.........................',
+      "star": false
     },
     {
       "thingName": "春日落花酥 158克",
@@ -152,7 +166,8 @@ var index = [
       "thingId": 22,
       "choose": false,
       "details": '春日落花酥 158克.....................',
-      "para": '9.9.........................'
+      "para": '9.9.........................',
+      "star": false
     },
     {
       "thingName": "台湾手工牛轧糖 250克",
@@ -162,7 +177,8 @@ var index = [
       "thingId": 23,
       "choose": false,
       "details": '台湾手工牛轧糖 250克.....................',
-      "para": '48.00.........................'
+      "para": '48.00.........................',
+      "star": false
     },
     {
       "thingName": "开口甘栗 100克",
@@ -172,7 +188,8 @@ var index = [
       "thingId": 24,
       "choose": false,
       "details": '开口甘栗 100克.....................',
-      "para": '9.0.........................'
+      "para": '9.0.........................',
+      "star": false
     },
     {
       "thingName": "草莓白巧克力 65克",
@@ -182,7 +199,8 @@ var index = [
       "thingId": 25,
       "choose": false,
       "details": '草莓白巧克力 65克.....................',
-      "para": '16.0.........................'
+      "para": '16.0.........................',
+      "star": false
     },
     {
       "thingName": "藕片 45克",
@@ -192,59 +210,65 @@ var index = [
       "thingId": 26,
       "choose": false,
       "details": '藕片 45克.....................',
-      "para": '9.9.........................'
+      "para": '9.9.........................',
+      "star": false
     }
   ],
   [
     {
-      "thingName": "梨花带雨",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 36,
+      "thingName": "性价比好物来打榜",
+      "thingImg": "../../images/special1.jpg",
+      "thingPrice": 9999,
       "thingNum": 1,
       "thingId": 7,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '36.........................'
+      "details": '性价比好物来打榜.....................',
+      "para": '9999.........................',
+      "star": false
     },
     {
-      "thingName": "梨花带雨",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 36,
+      "thingName": "性价比好物来打榜",
+      "thingImg": "../../images/special1.jpg",
+      "thingPrice": 9999,
       "thingNum": 1,
       "thingId": 7,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '36.........................'
+      "details": '性价比好物来打榜.....................',
+      "para": '9999.........................',
+      "star": false
     },
     {
-      "thingName": "梨花带雨",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 36,
+      "thingName": "性价比好物来打榜",
+      "thingImg": "../../images/special1.jpg",
+      "thingPrice": 9999,
       "thingNum": 1,
       "thingId": 7,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '36.........................'
+      "details": '性价比好物来打榜.....................',
+      "para": '9999.........................',
+      "star": false
     },
     {
-      "thingName": "梨花带雨",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 36,
+      "thingName": "性价比好物来打榜",
+      "thingImg": "../../images/special1.jpg",
+      "thingPrice": 9999,
       "thingNum": 1,
       "thingId": 7,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '36.........................'
+      "details": '性价比好物来打榜.....................',
+      "para": '9999.........................',
+      "star": false
     },
     {
-      "thingName": "梨花带雨",
-      "thingImg": "../../images/goods/goods1.png",
-      "thingPrice": 36,
+      "thingName": "性价比好物来打榜",
+      "thingImg": "../../images/special1.jpg",
+      "thingPrice": 9999,
       "thingNum": 1,
       "thingId": 7,
       "choose": false,
-      "details": '梨花带雨.....................',
-      "para": '36.........................'
+      "details": '性价比好物来打榜.....................',
+      "para": '9999.........................',
+      "star": false
     }
   ]
 ]
@@ -255,8 +279,19 @@ var imgArr = [
   '../../../images/goods/list3.png'
 ]
 
+var list = [
+  '../../images/sm-icon1.png',
+  '../../images/sm-icon1.png',
+  '../../images/sm-icon1.png',
+  '../../images/sm-icon1.png',
+  '../../images/sm-icon1.png',
+  '../../images/sm-icon1.png'
+]
+
+
 
 module.exports = {
   index: index,
-  imgArr: imgArr
+  imgArr: imgArr,
+  list: list
 }

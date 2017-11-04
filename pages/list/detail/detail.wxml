@@ -1,6 +1,7 @@
 <view class='top-btn'>
-	<view class='top-collection'>
-		<image src='../../../images/nav/icon_collect.png'></image>
+	<view class='top-collection' bindtap='tostar'>
+		<image src='../../../images/ali/fav.png' wx-if="{{!starfull}}"></image>
+		<image src='../../../images/ali/fav_fill.png' wx-if="{{starfull}}"></image>
 		<text>收藏</text>
 	</view>
 	<view class='top-right' bindtap="changeput">
@@ -10,7 +11,7 @@
 		<text class='top-cart'>立即购买</text>
 	</view>
 	<view class='cart-view' bindtap="toshopcar">
-		<image src='../../../images/nav/car.png' class='cart-big {{ifadd==true?"cart-num-big":""}}'></image>
+		<image src='../../../images/ali/cart.png' class='cart-big {{ifadd==true?"cart-num-big":""}}'></image>
 		<text>购物车</text>
 		<view>{{cartNum}}</view>
 	</view>
@@ -27,7 +28,7 @@
 			<view class='top-one'>
 				<view class='top-img'>
 					<swiper class='one-swiper' indicator-dots="true"
-  autoplay="true" duration="300">
+  autoplay="true" duration="300" circular='true' autoplay='true'>
 						<swiper-item>
 							<image src='../{{detail.thingImg}}'></image>
 						</swiper-item>
@@ -80,7 +81,8 @@
 <view class='mask' hidden="{{putcart == true ? false : true}}" bindtap='hidemask'></view>
 
 <!-- 加入购物车类别选择 -->
-<view class='addgoods' hidden="{{putcart == true ? false : true}}">
+<!-- hidden="{{putcart == true ? false : true}}" -->
+<view class='addgoods {{putcart == true ? "addgoods-top" : " "}}'>
 	<view class='add-top'>
 		<image class='add-top-img' src='../{{detail.thingImg}}'></image>
 		<text class='add-top-name'>{{detail.thingName}}</text>
@@ -103,7 +105,8 @@
 
 
 <!-- 立即购买类别选择 -->
-<view class='addgoods' hidden="{{buycart == true ? false : true}}">
+<!-- hidden="{{buycart == true ? false : true}}" -->
+<view class='addgoods {{buycart == true ? "addgoods-top" : " "}}'>
 	<view class='add-top'>
 		<image class='add-top-img' src='../{{detail.thingImg}}'></image>
 		<text class='add-top-name'>{{detail.thingName}}</text>
@@ -125,7 +128,8 @@
 <view class='mask' hidden="{{shopcarcart == true ? false : true}}" bindtap='hidemask2'></view>
 
 <!-- 购物车显示 -->
-<view class='shopcar-wrap' hidden="{{shopcarcart == true ? false : true}}">
+<!-- hidden="{{shopcarcart == true ? false : true}}" -->
+<view class='shopcar-wrap {{shopcarcart == true ? "shopcar-wrap-down" : " "}}'>
 	<view class='shopcar-list'>商品列表</view>
 	<view class='shopcar-div' hidden="{{ifHave == true ? false : true}}">
 		<view wx:for='{{shopThing}}' class='shopdiv'>

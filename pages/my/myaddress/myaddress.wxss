@@ -11,14 +11,14 @@
 }
 
 .add-btn {
-	width: 40rpx;
-	height: 40rpx;
-	border-radius: 50%;
+	width: 44rpx;
+	height: 44rpx;
+	/* border-radius: 50%; */
 	color: white;
 	text-align: center;
 	line-height: 40rpx;
 	float: left;
-	background: rgb(171,149,108);
+	/* background: rgb(171,149,108); */
 	margin-left: 20rpx;
 	margin-top: 21rpx;
 }
@@ -41,6 +41,8 @@
 
 .address-item .show {
 	display: block;
+	width: 48rpx;
+	height: 48rpx;
 }
 
 .address-item .hide {
@@ -56,10 +58,10 @@
 
 .address-item image{
 	position: absolute;
-	width: 30rpx;
-	height: 30rpx;
-	top: 72rpx;
-	left: 16rpx;
+	width: 42rpx;
+	height: 42rpx;
+	top: 70rpx;
+	left: 14rpx;
 }
 
 .address-edit {

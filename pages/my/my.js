@@ -19,6 +19,11 @@ Page({
 		  url:"myorder/myorder"
 		 });
 	},
+	showMyStar: function() {
+		wx.navigateTo({
+		  url:"mystar/mystar"
+		 });
+	},
 	bindMyPhone: function() {
 		wx.navigateTo({
 		  url:"myphone/myphone"
@@ -27,6 +32,21 @@ Page({
 	tous: function() {
 		wx.navigateTo({
 			url:'aboutus/aboutus'
+		})
+	},
+	toversion: function() {
+		wx.navigateTo({
+			url:'version/version'
+		})
+	},
+	tohelp: function() {
+		wx.navigateTo({
+			url:'help/help'
+		})
+	},
+	tosay: function() {
+		wx.navigateTo({
+			url:'tosay/tosay'
 		})
 	},
 	onLoad:function(options){

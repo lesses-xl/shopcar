@@ -7,10 +7,17 @@ Page({
     disabled: false,
     code: null,
     mobile: null,
-    wrongText: ''
+    wrongText: '',
+    userInfo: {},
+    havePhone: false
   },
   getPhoneNumber: function(e) {
     this.data.mobile = e.detail.value;
+  },
+  changePhone: function() {
+    this.setData({
+      havePhone: false
+    })
   },
   phoneIfTrue: function() {  
     var reg = /^1[0-9]{10}$/;
@@ -148,6 +155,9 @@ Page({
     })
   },
   onLoad: function (options) {
+    this.setData({
+      userInfo: wx.getStorageSync('userInfo')
+    })
     // Do some initialize when page load.
   },
   onReady: function () {

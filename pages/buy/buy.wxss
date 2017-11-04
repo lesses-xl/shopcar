@@ -268,7 +268,7 @@
 .pay .allprice {
 	position: absolute;
 	color: rgb(181, 47, 46);
-	width: 220rpx;
+	width: 250rpx;
 	height: 100%;
 	top: 0;
 	line-height: 80rpx;

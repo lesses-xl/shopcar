@@ -7,8 +7,8 @@
 
 .shopcar-no image {
   display: block;
-  width: 110rpx;
-  height: 110rpx;
+  width: 80rpx;
+  height: 80rpx;
   margin: 0 auto;
   margin-bottom: 10rpx;
 }
@@ -97,15 +97,14 @@
   position: absolute;
   width: 70rpx;
   height: 100rpx;
-  /* background: black; */
   top: 65rpx;
   left: -15rpx;
 }
 
 .shopcar-choose {
-  width: 36rpx;
-  height: 36rpx;
-  border: 1rpx solid #D5D4D4;
+  width: 40rpx;
+  height: 40rpx;
+  border: 1px solid #D5D4D4;
   border-radius: 50%;
   position: absolute;
   top: 30rpx;
@@ -113,9 +112,11 @@
 }
 
 .shopcar-choose image {
-  width: 36rpx;
-  height: 36rpx;
-
+  position: absolute;
+  width: 48rpx;
+  height: 48rpx;
+  left: -2rpx;
+  top: -2rpx;  
 }
 
 .shopcar-img {
@@ -151,12 +152,12 @@
 }
 
 .shopcar-change {
-  width:180rpx;
+  width:188rpx;
   height:44rpx;
   font-size: 32rpx;
   position: absolute;
   bottom: 34rpx;
-  left: 420rpx;
+  left: 430rpx;
 }
 
 .shopcar-change view {
@@ -169,7 +170,7 @@
 }
 
 .shopcar-change .shopcar-sub {
-  width: 54rpx;
+  width: 58rpx;
   z-index: 50;
 }
 
@@ -184,7 +185,7 @@
 
 .shopcar-change .shopcar-add {
   float: left;
-  width: 54rpx;
+  width: 58rpx;
   margin-left: -1rpx;
   z-index: 50;
 }
@@ -222,11 +223,15 @@
   border: 1px solid white;
   margin: 22rpx auto;
   border-radius: 50%;
+  position: relative;
 }
 
 .shopcar-chooseall .chooseall-sm image {
   width: 40rpx;
   height: 40rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .active {
@@ -253,7 +258,8 @@
   height:40rpx;
   position: absolute;
   top: 26rpx;
-  right: 50rpx;
+  right: 58rpx;
+  z-index: 99;
 }
 
 .oneprice {
@@ -267,8 +273,8 @@
   position: absolute;
   width: 40rpx;
   height: 40rpx;
-  top: 28rpx;
-  right: 50rpx;
+  top: 26rpx;
+  right: 30rpx;
 }
 
 .shopdiv {
@@ -290,15 +296,30 @@
   height: 50rpx;
   font-size: 24rpx;
   top: 88rpx;
-  right: 10rpx;
+  right: 8rpx;
   color: red;
   line-height: 50rpx;
+}
+
+.shopcar-delone image {
+  width: 100%;
+  height: 100%;
 }
 
 .buy {
   position: absolute;
   top: 0;
   right: 0;
-  width: 150rpx;
+  width: 130rpx;
   height: 90rpx;
+  z-index: 88;
+}
+
+.right-num {
+  position: absolute;
+  width: auto;
+  right: 10rpx;
+  top: 35rpx;
+  font-size: 26rpx;
+  font-weight: 400;
 }

@@ -203,10 +203,9 @@ Page({
     });
   },
   tobuy: function() {
-    // console.log(shopThing.shopThing)
-    // console.log(this.data.shopThing)
     shopThing.shopThing = this.data.shopThing;
     for(var i=0; i<shopThing.shopThing.length; i++) {
+      console.log(i)
       if(shopThing.shopThing[i].choose == true) {
         var obj = {
           thingNumber: this.getTime(),
@@ -215,14 +214,24 @@ Page({
           thingPrice: shopThing.shopThing[i].thingPrice,
           thingNum: shopThing.shopThing[i].thingNum,
           thingId: shopThing.shopThing[i].thingId,
-          thingPay: '待付款'
+          thingPay: '待付款',
+          star: false
         }
-        console.log(obj);
+        // console.log(obj);
         order.order.push(obj);
-        console.log(order.order)
-        shopThing.shopThing.splice(i,1);
+        console.log(order.order);
+        console.log(i);
+        shopThing.shopThing[i] = '';
       }
     }
+
+    for(var j=0; j<shopThing.shopThing.length; j++) {
+      if(shopThing.shopThing[j] == '') {
+        shopThing.shopThing.splice(j,1);
+        j = j-1;
+      }
+    }
+
     this.setData({
       shopThing: shopThing.shopThing,
       haveThing: true

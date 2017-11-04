@@ -1,301 +1,154 @@
-<view class='index'>
-	<view class='search'>
-		<image src='../../images/pages/search.png'></image>
-		<input type="text" placeholder="搜索商品" />
-	</view>
-	<view class='swiper-container'>		
-		<swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='true' current="{{swiperCurrent}}" bindchange='swiperChange' class='swiper'>
-			<block wx:for="{{imgUrls}}">
-				<swiper-item bindtap="toDetail" data-index="{{index}}">
-					<image src="{{item}}" class='swiper-img'></image>
-				</swiper-item>
-			</block>
-		</swiper>
-		<view class="dots">
-		    <block wx:for="{{imgUrls}}" wx:key="unique">
-		      <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
-		    </block>
+<view class='index-container {{showMask == true ? "noscroll" : " "}}'>
+	<view class='index-mask' wx:if="{{showMask}}" bindtap="hidemask"></view>
+	<view class='index'>
+		<view class='search-wrap'>
+			<view class='search' bindtap="getmask">
+				<image src='../../images/ali/search.png'></image>
+				<input type="text" placeholder="搜索商品" />
+			</view>	
+		</view>
+		<view class='swiper-container'>		
+			<swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='true' current="{{swiperCurrent}}" bindchange='swiperChange' class='swiper'>
+				<block wx:for="{{imgUrls}}">
+					<swiper-item bindtap="toDetail" data-index="{{index}}">
+						<image src="{{item}}" class='swiper-img'></image>
+					</swiper-item>
+				</block>
+			</swiper>
+			<view class="dots">
+			    <block wx:for="{{imgUrls}}" wx:key="unique">
+			      <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+			    </block>
+		  	</view>
 	  	</view>
-  	</view>
-	
-	<!-- 小图标分类 -->
-	<view class='sm-wrap'>
-		<view class='sm-btn'>
-			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
-			<text class='sm-text'>xx超市</text>
+		
+		<!-- 小图标分类 -->
+		<view class='sm-wrap'>
+			<view class='sm-btn' wx:for='{{imgList}}'>
+				<image src='{{item}}' class='sm-icon'></image>
+				<text class='sm-text'>xx超市</text>
+			</view>
 		</view>
-		<view class='sm-btn'>
-			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
-			<text class='sm-text'>xx超市</text>
-		</view>
-		<view class='sm-btn'>
-			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
-			<text class='sm-text'>xx超市</text>
-		</view>
-		<view class='sm-btn'>
-			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
-			<text class='sm-text'>xx超市</text>
-		</view>
-		<view class='sm-btn'>
-			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
-			<text class='sm-text'>xx超市</text>
-		</view>
-		<view class='sm-btn'>
-			<image src='../../images/sm-icon1.png' class='sm-icon'></image>
-			<text class='sm-text'>xx超市</text>
-		</view>
-	</view>
 
 
-	<!-- 一半 -->
-	<view class='sm-container'>
-		<view class='sm-content'>
-			<image src='../../images/sm1.png'></image>
-			<view class='sm-content-text'>
-				<view class='big-text'>Ralph Lauren制造商</view>
-				<view>19元起</view>
+		<!-- 一半 -->
+		<view class='sm-container'>
+			<view class='sm-content' wx:for='{{index[0]}}' data-index='{{index}}' bindtap='index1'>
+				<image src='{{item.thingImg}}'></image>
+				<view class='sm-content-text'>
+					<view class='big-text'>{{item.thingName}}</view>
+					<view>{{item.thingPrice}}元起</view>
+				</view>
 			</view>
 		</view>
-		<view class='sm-content'>
-			<image src='../../images/sm1.png'></image>
-			<view class='sm-content-text'>
-				<view class='big-text'>Ralph Lauren制造商</view>
-				<view>19元起</view>
-			</view>
+		
+		<!-- 大号banner -->
+		<view class='bg-banner'>
+			<text>周一周五·新品首发</text>
+			<view>查看更多></view>	
+			<view class='san'></view>
 		</view>
-		<view class='sm-content'>
-			<image src='../../images/sm1.png'></image>
-			<view class='sm-content-text'>
-				<view class='big-text'>Ralph Lauren制造商</view>
-				<view>19元起</view>
-			</view>
-		</view>
-		<view class='sm-content'>
-			<image src='../../images/sm1.png'></image>
-			<view class='sm-content-text'>
-				<view class='big-text'>Ralph Lauren制造商</view>
-				<view>19元起</view>
-			</view>
-		</view>
-		<view class='sm-content'>
-			<image src='../../images/sm1.png'></image>
-			<view class='sm-content-text'>
-				<view class='big-text'>Ralph Lauren制造商</view>
-				<view>19元起</view>
-			</view>
-		</view>
-		<view class='sm-content'>
-			<image src='../../images/sm1.png'></image>
-			<view class='sm-content-text'>
-				<view class='big-text'>Ralph Lauren制造商</view>
-				<view>19元起</view>
-			</view>
-		</view>
-	</view>
-	
-	<!-- 大号banner -->
-	<view class='bg-banner'>
-		<text>周一周五·新品首发</text>
-		<view>查看更多></view>	
-		<view class='san'></view>
-	</view>
 
-	<scroll-view scroll-x class='banner-wrap'>
-		<view class='banner-list'>
-			<view class='banner-list-img'>
-				<image src='../../images/scroll-banner.png'></image>
+		<scroll-view scroll-x class='banner-wrap'>
+			<view class='banner-list' wx:for='{{index[1]}}' data-index='{{index}}' bindtap='index2'>
+				<view class='banner-list-img'>
+					<image src='{{item.thingImg}}'></image>
+				</view>
+				<view class='banner-list-text'>
+					<text>{{item.thingName}}</text>
+					<text>{{item.para}}</text>
+					<text>￥{{item.thingPrice}}</text>
+				</view>
 			</view>
-			<view class='banner-list-text'>
-				<text>20周年纪念款 男式修身合体牛仔裤</text>
-				<text>自由弹力让灵魂驰骋，印记20周年的情怀</text>
-				<text>￥229</text>
-			</view>
-		</view>
-		<view class='banner-list'>
-			<view class='banner-list-img'>
-				<image src='../../images/scroll-banner.png'></image>
-			</view>
-			<view class='banner-list-text'>
-				<text>20周年纪念款 男式修身合体牛仔裤</text>
-				<text>自由弹力让灵魂驰骋，印记20周年的情怀</text>
-				<text>￥229</text>
-			</view>
-		</view>
-		<view class='banner-list'>
-			<view class='banner-list-img'>
-				<image src='../../images/scroll-banner.png'></image>
-			</view>
-			<view class='banner-list-text'>
-				<text>20周年纪念款 男式修身合体牛仔裤</text>
-				<text>自由弹力让灵魂驰骋，印记20周年的情怀</text>
-				<text>￥229</text>
-			</view>
-		</view>
-		<view class='banner-list'>
-			<view class='banner-list-img'>
-				<image src='../../images/scroll-banner.png'></image>
-			</view>
-			<view class='banner-list-text'>
-				<text>20周年纪念款 男式修身合体牛仔裤</text>
-				<text>自由弹力让灵魂驰骋，印记20周年的情怀</text>
-				<text>￥229</text>
-			</view>
-		</view>
-		<view class='banner-list'>
-			<view class='banner-list-img'>
-				<image src='../../images/scroll-banner.png'></image>
-			</view>
-			<view class='banner-list-text'>
-				<text>20周年纪念款 男式修身合体牛仔裤</text>
-				<text>自由弹力让灵魂驰骋，印记20周年的情怀</text>
-				<text>￥229</text>
-			</view>
-		</view>
-		<view class='banner-list'>
-			<view class='banner-list-img'>
-				<image src='../../images/scroll-banner.png'></image>
-			</view>
-			<view class='banner-list-text'>
-				<text>20周年纪念款 男式修身合体牛仔裤</text>
-				<text>自由弹力让灵魂驰骋，印记20周年的情怀</text>
-				<text>￥229</text>
-			</view>
-		</view>
-	</scroll-view>
+		</scroll-view>
 
-	<!-- 大号banner -->
-	<view class='bg-banner bg-banner-two'>
-		<text>人气推荐·好物精选</text>
-		<view>查看更多></view>	
-		<view class='san'></view>
-	</view>
+		<!-- 大号banner -->
+		<view class='bg-banner bg-banner-two'>
+			<text>人气推荐·好物精选</text>
+			<view>查看更多></view>	
+			<view class='san'></view>
+		</view>
 
-	<view class='sm-container'>
-		<view class='sm-container1-wrap'>
-			<view class='sm-container1-top'>
-				<view class='sm-container1-name1'>电脑办公</view>
-				<view class='sm-container1-name2'>亿元神券限抢</view>
-			</view>
-			<view class='sm-container1-bottom'>
-				<image src='../../images/sm2.png'></image>
-			</view>
-		</view>
-		<view class='sm-container1-wrap'>
-			<view class='sm-container1-top'>
-				<view class='sm-container1-name1'>电脑办公</view>
-				<view class='sm-container1-name2'>亿元神券限抢</view>
-			</view>
-			<view class='sm-container1-bottom'>
-				<image src='../../images/sm2.png'></image>
+		<view class='sm-container'>
+			<view class='sm-container1-wrap' wx:for='{{index[2]}}' data-index='{{index}}' bindtap='index3'>
+				<view class='sm-container1-top'>
+					<view class='sm-container1-name1'>{{item.thingName}}</view>
+					<view class='sm-container1-name2'>{{item.para}}</view>
+				</view>
+				<view class='sm-container1-bottom'>
+					<image src='{{item.thingImg}}' lazy-load='true'></image>
+				</view>
 			</view>
 		</view>
-		<view class='sm-container1-wrap' style='margin-top: -5rpx'>
-			<view class='sm-container1-top'>
-				<view class='sm-container1-name1'>电脑办公</view>
-				<view class='sm-container1-name2'>亿元神券限抢</view>
-			</view>
-			<view class='sm-container1-bottom'>
-				<image src='../../images/sm2.png'></image>
-			</view>
-		</view>
-		<view class='sm-container1-wrap'>
-			<view class='sm-container1-top'>
-				<view class='sm-container1-name1'>电脑办公</view>
-				<view class='sm-container1-name2'>亿元神券限抢</view>
-			</view>
-			<view class='sm-container1-bottom'>
-				<image src='../../images/sm2.png'></image>
-			</view>
-		</view>
-	</view>
 
 
-	<!-- 专题精选 -->
-	<view class='special-top'>专题精选</view>
-	<scroll-view class='special' scroll-x>
-		<view class='special-wrap'>
-			<image src='../../images/special1.jpg'></image>
-			<text style='left: 15rpx'>性价比好物来打榜</text>		
-			<text class='special-right'>29元起</text>
-		</view>
-		<view class='special-wrap'>
-			<image src='../../images/special1.jpg'></image>
-			<text style='left: 15rpx'>性价比好物来打榜</text>		
-			<text class='special-right'>29元起</text>
-		</view>
-		<view class='special-wrap'>
-			<image src='../../images/special1.jpg'></image>
-			<text style='left: 15rpx'>性价比好物来打榜</text>		
-			<text class='special-right'>29元起</text>
-		</view>
-		<view class='special-wrap'>
-			<image src='../../images/special1.jpg'></image>
-			<text style='left: 15rpx'>性价比好物来打榜</text>		
-			<text class='special-right'>29元起</text>
-		</view>
-		<view class='special-wrap'>
-			<image src='../../images/special1.jpg'></image>
-			<text style='left: 15rpx'>性价比好物来打榜</text>		
-			<text class='special-right'>29元起</text>
-		</view>
-	</scroll-view>
+		<!-- 专题精选 -->
+		<view class='special-top'>专题精选</view>
+		<scroll-view class='special' scroll-x>
+			<view class='special-wrap' wx:for='{{index[3]}}' data-index='{{index}}' bindtap='index4'>
+				<image src='{{item.thingImg}}' lazy-load='true'></image>
+				<text style='left: 15rpx'>{{item.thingName}}</text>		
+				<text class='special-right'>{{item.thingPrice}}元起</text>
+			</view>
+		</scroll-view>
 
-	<!-- 推荐 -->
-	<view class='foryou'>
-		<text>为您推荐</text>
-	</view>
+		<!-- 推荐 -->
+		<view class='foryou'>
+			<text>为您推荐</text>
+		</view>
 
-	<!-- 推荐内容 -->
-	<view class='showyou'>
-		<view class='banner-list'>
-			<view class='banner-list-img'>
-				<image src='../../images/showyou1.jpg'></image>
-				<text>几何线条，北欧简约风</text>
+		<!-- 推荐内容 -->
+		<view class='showyou'>
+			<view class='banner-list'>
+				<view class='banner-list-img'>
+					<image src='../../images/showyou1.jpg' lazy-load='true'></image>
+					<text>几何线条，北欧简约风</text>
+				</view>
+				<view class='banner-list-text'>
+					<text>几何印花AB面全棉四件套</text>
+					<text>￥251</text>
+				</view>
 			</view>
-			<view class='banner-list-text'>
-				<text>几何印花AB面全棉四件套</text>
-				<text>￥251</text>
+			<view class='banner-list'>
+				<view class='banner-list-img'>
+					<image src='../../images/showyou1.jpg' lazy-load='true'></image>
+					<text>几何线条，北欧简约风</text>
+				</view>
+				<view class='banner-list-text'>
+					<text>几何印花AB面全棉四件套</text>
+					<text>￥251</text>
+				</view>
+			</view>
+			<view class='banner-list'>
+				<view class='banner-list-img'>
+					<image src='../../images/showyou1.jpg' lazy-load='true'></image>
+					<text>几何线条，北欧简约风</text>
+				</view>
+				<view class='banner-list-text'>
+					<text>几何印花AB面全棉四件套</text>
+					<text>￥251</text>
+				</view>
+			</view>
+			<view class='banner-list'>
+				<view class='banner-list-img'>
+					<image src='../../images/showyou1.jpg' lazy-load='true'></image>
+					<text>几何线条，北欧简约风</text>
+				</view>
+				<view class='banner-list-text'>
+					<text>几何印花AB面全棉四件套</text>
+					<text>￥251</text>
+				</view>
+			</view>
+			<view class='banner-list'>
+				<view class='banner-list-img'>
+					<image src='../../images/showyou1.jpg' lazy-load='true'></image>
+					<text>几何线条，北欧简约风</text>
+				</view>
+				<view class='banner-list-text'>
+					<text>几何印花AB面全棉四件套</text>
+					<text>￥251</text>
+				</view>
 			</view>
 		</view>
-		<view class='banner-list'>
-			<view class='banner-list-img'>
-				<image src='../../images/showyou1.jpg'></image>
-				<text>几何线条，北欧简约风</text>
-			</view>
-			<view class='banner-list-text'>
-				<text>几何印花AB面全棉四件套</text>
-				<text>￥251</text>
-			</view>
-		</view>
-		<view class='banner-list'>
-			<view class='banner-list-img'>
-				<image src='../../images/showyou1.jpg'></image>
-				<text>几何线条，北欧简约风</text>
-			</view>
-			<view class='banner-list-text'>
-				<text>几何印花AB面全棉四件套</text>
-				<text>￥251</text>
-			</view>
-		</view>
-		<view class='banner-list'>
-			<view class='banner-list-img'>
-				<image src='../../images/showyou1.jpg'></image>
-				<text>几何线条，北欧简约风</text>
-			</view>
-			<view class='banner-list-text'>
-				<text>几何印花AB面全棉四件套</text>
-				<text>￥251</text>
-			</view>
-		</view>
-		<view class='banner-list'>
-			<view class='banner-list-img'>
-				<image src='../../images/showyou1.jpg'></image>
-				<text>几何线条，北欧简约风</text>
-			</view>
-			<view class='banner-list-text'>
-				<text>几何印花AB面全棉四件套</text>
-				<text>￥251</text>
-			</view>
-		</view>
-	</view>
-</view>	
+	</view>	
+</view>

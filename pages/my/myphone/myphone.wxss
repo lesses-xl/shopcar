@@ -38,7 +38,7 @@
 
 .phone button {
 	position: absolute;
-	width: 160rpx;
+	width: auto;
 	height: 80rpx;
 	font-size: 22rpx;
 	top: 2rpx;
@@ -77,4 +77,17 @@
 	display: block;
 	margin-bottom: 50rpx;
 	margin-top: 70rpx;
+}
+
+.havephone {
+	width: 605rpx;
+	height: 65rpx;
+	margin: 0 auto;
+	display: block;
+	font-size: 32rpx;
+	text-align: center;
+}
+
+.changephone {
+	width: 360rpx;
 }

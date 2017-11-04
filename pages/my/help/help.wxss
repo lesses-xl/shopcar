@@ -1,0 +1,19 @@
+view {
+	text-align: center;
+	font-size: 28rpx;
+}
+
+.help-wrap {
+	width: 100%;
+	height: 100rpx;
+	padding: 15rpx;
+	border-bottom: 10rpx solid rgb(222, 222, 222);
+}
+
+.help-wrap view {
+	height: 45rpx;
+	width: 60%;
+	line-height: 45rpx;
+	text-align: left;
+	margin: 0 auto;
+}
