@@ -47,10 +47,13 @@ Page({
           "Content-Type": "application/x-www-form-urlencoded"
       },
       success: function(res) {
-        console.log(res);
-        that.setData({
-        	mobile: res.data.userPhoneNumber
-        })
+        if(res == undefined || res == null || res == '') {
+          //null
+        }else {
+          that.setData({
+            mobile: res.data.userPhoneNumber
+          })
+        }
       },
       fail: function(res) {
         console.log(res)
@@ -73,17 +76,6 @@ Page({
     this.setData({
       details: e.detail.value,
     })
-    // console.log(this.data.detail)
-    // if(this.data.detail == '') {
-    //   this.setData({
-    //     details: ''
-    //   })
-    // }else {
-    //   this.setData({
-    //     details: this.data.detail
-    //   })
-    // }
-    console.log(this.data.details)
   },
   getPost: function(e) {
     this.setData({
@@ -326,17 +318,22 @@ Page({
     })
   },
   onHide: function () {
+    console.log(address.address)
+    // wx.setStorageSync('address',address.address)
   },
   onUnload: function () {
     console.log(address.address)
 
     if(address.address.length > 0) {
-      var this_ = address.address[this.data.index];
+      var this_ = address.address[this.data.index-1];
+      console.log(this.data.index)
       console.log(this_)
+      // console.log(this_)
       if(this_.name == '' || this_.mobile == '' || this_.postCode == '') {
         address.address.splice(this.data.index,1)
       } 
-    }   
+    }
+    wx.setStorageSync('address',address.address);   
   },
   onPullDownRefresh: function () {
     // Do something when pull down.

@@ -1,3 +1,5 @@
+var countNum = require('../../../utils/time.js');
+
 Page({
   data: {
     phoneNumber: 0,
@@ -12,7 +14,10 @@ Page({
     havePhone: false
   },
   getPhoneNumber: function(e) {
-    this.data.mobile = e.detail.value;
+    this.setData({
+      mobile: e.detail.value
+    })
+    console.log(this.data.mobile)
   },
   changePhone: function() {
     this.setData({
@@ -45,7 +50,7 @@ Page({
       });
     }else {
       var that = this;
-      var t = 60;
+      // var t = 60;
       var timer = null;
       wx.showToast({
         title: '验证码已发送'
@@ -71,17 +76,19 @@ Page({
       })
       clearInterval(timer);
       timer = setInterval(function() {
-        t = t-1;
+        // t = t-1;
+        countNum.countNum -= 1;
         that.setData({
-          getCode: t + 's后重发',
+          getCode: countNum.countNum + 's后重发',
           disabled: true
         });
-        if(t == 0) {
+        if(countNum.countNum == 0) {
           clearInterval(timer);
           that.setData({
             getCode: '获取验证码',
             disabled: false
           });
+          countNum.countNum = 60;
         }
       },1000);
     }
@@ -95,9 +102,7 @@ Page({
   bindPhone: function() {
     this.phoneIfTrue();
     if(!this.data.ifMobile) {
-      // wx.showToast({
-      //   title: '手机号有误!'
-      // });
+
       this.setData({
         wrongText: '手机号有误!'
       })
@@ -127,8 +132,9 @@ Page({
   },
   getPhoneNumbers: function(e) {
     var that = this;
-    console.log(e);
-    console.log(that.data.code)
+    // console.log(e);
+    // console.log(that.data.code)
+    console.log(this.data.mobile);
     wx.request({
       url: 'https://api.feiwuhb.com/getUserPhoneNumber',
       data: {
@@ -142,9 +148,14 @@ Page({
       },
       success: function(res) {
         console.log(res);
-        that.setData({
-          mobile: res.data.userPhoneNumber
-        })
+        console.log(this.data.mobile);
+        if(res == undefined || res == null || res == '') {
+          //null
+        }else {
+          that.setData({
+            mobile: res.data.userPhoneNumber
+          })
+        }
       },
       fail: function(res) {
         console.log(res)

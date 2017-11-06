@@ -1,7 +1,7 @@
 var address = [
 	{
-		name: 'Dog',
-		mobile: 121212121212,
+		name: '柴犬',
+		mobile: 11111111111,
 		detail: '江苏省无锡宠物店',
 		postCode: 214000,
 		delete: true,

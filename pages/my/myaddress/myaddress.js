@@ -40,26 +40,42 @@ Page({
     })
   },
   onLoad: function () {
-      this.setData({
-        address: address.address,
-        currentIndex:address.chooseId
-      })
+    console.log(wx.getStorageSync('address').length)  
+    if(wx.getStorageSync('address')) {
+      if(wx.getStorageSync('address').length > address.address.length) {
+        address.address = wx.getStorageSync('address');
+      }
+    }
+
+    this.setData({
+      address: address.address,
+      currentIndex:address.chooseId
+    })
   },
   onReady: function () {
     // Do something when page ready.
   },
   onShow: function () {
+    var addressStorage = wx.getStorageSync('address');    
+    if(wx.getStorageSync('address')) {
+      if(wx.getStorageSync('address').length > address.address.length) {
+        address.address = wx.getStorageSync('address');
+      }
+    }
+
     this.setData({
       address: address.address,
       currentIndex: address.chooseId 
     })
-    wx.setStorageSync('address',address.address);
+    // wx.setStorageSync('address',address.address);
   },
   onHide: function () {
-    // Do something when page hide.
+    console.log(address.address)
+    
   },
   onUnload: function () {
-    // Do something when page close.
+    console.log(address.address)
+    wx.setStorageSync('address',address.address)
   },
   onPullDownRefresh: function () {
     // Do something when pull down.

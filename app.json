@@ -2,6 +2,9 @@
 	"pages": [
 		
 		"pages/index/index",
+		"pages/my/myaddress/myaddress",
+		"pages/my/myphone/myphone",
+		
 		"pages/my/mystar/mystar",
 		"pages/my/my",
 		
@@ -9,12 +12,12 @@
 		
 		"pages/shopcar/shopcar",
 		"pages/buy/buy",
-		"pages/my/myphone/myphone",
+		
 		"pages/list/list",
 		"pages/my/myorder/myorder",
 
 		
-		"pages/my/myaddress/myaddress",
+		
 
 		"pages/my/myaddress/addaddress/addaddress",
 		"pages/my/version/version",

@@ -22,6 +22,9 @@
 
 	timeNumber = year + month + date + minute + second + minute + second + time;
 
+	var countNum = 60;
+
 module.exports = {
-	time: timeNumber
+	time: timeNumber,
+	countNum: countNum
 }

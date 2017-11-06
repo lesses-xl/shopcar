@@ -15,7 +15,7 @@
 }
 
 .phone input {
-	width: 320rpx;
+	width: 450rpx;
 	height: 85rpx;
 	margin-left: 20rpx;
 	line-height: 85rpx;
@@ -90,4 +90,8 @@
 
 .changephone {
 	width: 360rpx;
+}
+
+button[disabled][type="default"], wx-button[disabled]:not([type]) {
+	background: rgba(0, 0, 0, 0);
 }
