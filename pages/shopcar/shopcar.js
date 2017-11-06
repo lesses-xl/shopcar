@@ -263,6 +263,8 @@ Page({
       })
     }
     this.changeprice();
+    wx.setStorageSync('order',order.order);
+    wx.setStorageSync('shopThing',shopThing.shopThing);
   },
   onHide:function(){
     shopThing.shopThing = this.data.shopThing;

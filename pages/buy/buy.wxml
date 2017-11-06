@@ -33,5 +33,5 @@
 <view class='pay'>
 	<view class='allprice'>合计: ￥{{allmoney}}</view>
 	<view class='tocancel' bindtap="tocancel">取消订单</view>
-	<view class='topay' indtap="topay">提交订单</view>
+	<view class='topay' bindtap="topay">提交订单</view>
 </view>

@@ -2,18 +2,42 @@ var star = require('../../../utils/star.js');
 
 Page({
 	data:{
-		starList: ''
+		starList: '',
+		havestar: false
+	},
+	tolist: function() {
+		console.log(1);
+		wx.switchTab({
+			url: '../../list/list'
+		})
 	},
 	onLoad:function(options){
 		this.setData({
 			starList: star.star
 		})
+		if(star.star.length <= 0) {
+			this.setData({
+				havestar: false
+			})
+		}else {
+			this.setData({
+				havestar: true
+			})
+		}
 	},
 	onReady:function(){
 		
 	},
 	onShow:function(){
-		
+		if(star.star.length <= 0) {
+			this.setData({
+				havestar: false
+			})
+		}else {
+			this.setData({
+				havestar: true
+			})
+		}
 	},
 	onHide:function(){
 		

@@ -2,8 +2,11 @@
 	"pages": [
 		
 		"pages/index/index",
-		"pages/list/detail/detail",
 		"pages/my/mystar/mystar",
+		"pages/my/my",
+		
+		"pages/list/detail/detail",
+		
 		"pages/shopcar/shopcar",
 		"pages/buy/buy",
 		"pages/my/myphone/myphone",
@@ -19,7 +22,7 @@
 		
 		"pages/my/help/help",
 		"pages/my/tosay/tosay",
-		"pages/my/my",
+		
 		"pages/index/recommed/recommed",
 		"pages/my/aboutus/aboutus",
 		"pages/template/template"

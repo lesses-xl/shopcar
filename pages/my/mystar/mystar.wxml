@@ -1,8 +1,13 @@
-<view class='star-wrap'>	
+<view class='star-wrap' wx:if='{{havestar}}'>	
 	<view class='star-list' wx:for="{{starList}}">
 		<image class='star-img' src='../{{item.thingImg}}'></image>
 		<view class='star-border'></view>
 		<text class='star-name'>{{item.thingName}}</text>
 		<text class='star-price'>￥{{item.thingPrice}}</text>
 	</view>
+</view>
+
+<view class='no-star' wx:if='{{!havestar}}'>
+	<text>抱歉，您没有收藏过任何商品!</text>
+	<button bindtap='tolist'>去逛一逛</button>
 </view>

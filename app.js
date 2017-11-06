@@ -41,6 +41,7 @@ App({
                 obj.openid = res.data.openid;
                 obj.expires_in = Date.now() + res.data.expires_in;
                 wx.setStorageSync('user',obj); //存储openid
+                console.log(wx.getStorageSync('user'))
               }
             })
           }else {
@@ -53,7 +54,7 @@ App({
       })
     }
     else {
-      console.log(wx.getStorageSync('userInfo'))
+      // console.log(wx.getStorageSync('userInfo'))
     }
            
   },

@@ -53,6 +53,7 @@ Page({
       address: address.address,
       currentIndex: address.chooseId 
     })
+    wx.setStorageSync('address',address.address);
   },
   onHide: function () {
     // Do something when page hide.

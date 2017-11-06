@@ -31,7 +31,17 @@
 		<text>我的收藏</text>	
 	</view>
 	
-	<view class='my-list my-wrap' >
+	<view class='my-list my-wrap' bindtap='myCode'>
+		<image src='../../images/ali/erweima.png'></image>
+		<text>我的二维码</text>
+	</view>
+
+	<view class='my-list my-wrap' bindtap='sys'>
+		<image src='../../images/ali/saoma.png'></image>
+		<text>扫一扫</text>
+	</view>
+
+	<view class='my-list my-wrap' bindtap='removeStorage'>
 		<image src='../../images/ali/delete.png'></image>
 		<text>清除缓存</text>
 	</view>
@@ -49,3 +59,9 @@
 		<text>系统版本</text>
 	</view>
 </view>	
+
+<view class='my-mask' wx:if='{{codeget}}' bindtap='myMask'></view>
+<view class='my-show' wx:if='{{codeget}}'>
+	<text class='my-title'>结果</text>
+	<text class='my-result'>{{coderesult}}</text>
+</view>

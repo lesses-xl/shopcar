@@ -123,3 +123,44 @@
 	margin: 0 auto;
 	margin-left: 10rpx;
 }
+
+.my-mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 100;
+}
+
+.my-show {
+	width: 280rpx;
+	height: 200rpx;
+	border: 1px solid gray;
+	background: white;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -140rpx;
+	margin-top: -180rpx;
+	text-align: center;
+	z-index: 999;
+	font-size: 25rpx;
+	border-radius: 10rpx;
+}
+
+.my-title {
+	width: 100%;
+	height: 70rpx;
+	line-height: 70rpx;
+	font-size: 32rpx;
+}
+
+.my-result {
+	width: 90%;
+	height: 140rpx;
+	margin-top: 20rpx;
+	word-wrap: break-word;
+}
+

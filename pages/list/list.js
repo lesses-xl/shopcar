@@ -38,7 +38,7 @@ Page({
     // Do something when page ready.
   },
   onShow: function () {
-    // Do something when page show.
+    wx.setStorageSync('list',list.list);
   },
   onHide: function () {
     // Do something when page hide.

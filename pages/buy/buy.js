@@ -32,7 +32,18 @@ Page({
 		})
 	},
 	topay: function() {
-
+		wx.requestPayment({
+			'timeStamp': '',
+			'nonceStr': '',
+			'package': '',
+			'signType': 'MD5',
+			'paySign': '',
+			'success':function(res){
+				console.log(res);
+			},
+			'fail':function(res){
+			}
+		})
 	},
 	onLoad:function(options){
 		if(address.address.length < 1) {

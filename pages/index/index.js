@@ -1,5 +1,7 @@
 var shopThing = require('../../utils/shopThing.js');
 var index = require('../../utils/inedx.js');
+var list = require('../../utils/list.js');
+var pic = require('../../util/base.js');
 
 Page({
   data: {
@@ -18,6 +20,7 @@ Page({
     theme2: '../../images/goods/s2.png',
     theme3: '../../images/goods/list3.png',
     index: '',
+    list: '',
     imgList: [],
     swiperCurrent: 0,
     showMask: false
@@ -90,17 +93,24 @@ Page({
   onLoad: function (options) { 
     this.setData({
       index: index.index,
-      imgList: index.list
+      imgList: index.list,
+      list: list.list
     })  
-    console.log(index.list)
+    // console.log(index.list)
   },
   onReady: function () {
     // Do something when page ready.
   },
   onShow: function () {
     this.setData({
-      showMask: false
+      showMask: false,
+      list: list.list
     })
+
+    wx.setStorageSync('list',list.list);
+    wx.setStorageSync('index',index.index);
+    wx.setStorageSync('shopThing',shopThing.shopThing);
+    wx.setStorageSync('pic',pic.pic);
   },
   onHide: function () {
     // Do something when page hide.
