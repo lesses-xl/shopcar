@@ -159,6 +159,7 @@ Page({
       wx.showToast({
         title: '保存完成!'
       });
+    wx.setStorageSync('address',address.address);   
     timer = setTimeout(function() {
       wx.navigateBack({
         delta: 1
@@ -174,6 +175,7 @@ Page({
       wx.showToast({
         title: '添加完成!'
       });
+    wx.setStorageSync('address',address.address);   
     timer = setTimeout(function() {
       wx.navigateBack({
         delta: 1
@@ -192,6 +194,7 @@ Page({
           wx.navigateBack({
             delta: 1
           })
+          wx.setStorageSync('address',address.address); 
         }else if(res.cancel) {
           //
         }
@@ -325,15 +328,17 @@ Page({
     console.log(address.address)
 
     if(address.address.length > 0) {
-      var this_ = address.address[this.data.index-1];
+      var this_ = address.address[this.data.index];
       console.log(this.data.index)
       console.log(this_)
       // console.log(this_)
-      if(this_.name == '' || this_.mobile == '' || this_.postCode == '') {
+      console.log(this_.name,this_.mobile)
+      if(this_.name == '' || this_.mobile == null || this_.postCode == '') {
         address.address.splice(this.data.index,1)
+        console.log(1);
       } 
     }
-    wx.setStorageSync('address',address.address);   
+    // wx.setStorageSync('address',address.address);   
   },
   onPullDownRefresh: function () {
     // Do something when pull down.

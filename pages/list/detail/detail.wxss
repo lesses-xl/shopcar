@@ -230,6 +230,7 @@
 .addgoods {
 	position: fixed;
 	bottom: -380rpx;
+	transform: translate(0,0rpx);
 	left: 0;
 	background: white;
 	width: 100%;
@@ -239,7 +240,7 @@
 }
 
 .addgoods-top {
-	bottom: 0;
+	transform: translate(0,-380rpx);
 }
 
 .add-top {
@@ -346,7 +347,8 @@
 /* 购物车弹层 */
 .shopcar-wrap {
 	position: fixed;
-	top: -860rpx;
+	top: 0;
+	transform: translate(0, -860rpx);
 	bottom: 15%;
 	left: 75rpx;
 	right: 75rpx;
@@ -354,11 +356,11 @@
 	background: white;
 	z-index: 600;
 	border-radius: 15rpx;
-	transition: all .2s linear;
+	transition: all .3s ease-in-out;
 }
 
 .shopcar-wrap-down {
-	top: 15%;
+	transform: translate(0,15%);
 }
 
 .shopcar-list {

@@ -1,5 +1,5 @@
 <view class='star-wrap' wx:if='{{havestar}}'>	
-	<view class='star-list' wx:for="{{starList}}">
+	<view class='star-list' wx:for="{{starList}}" bindtap='opendetail' data-id='{{item.thingId}}'>
 		<image class='star-img' src='../{{item.thingImg}}'></image>
 		<view class='star-border'></view>
 		<text class='star-name'>{{item.thingName}}</text>

@@ -157,7 +157,8 @@
   font-size: 32rpx;
   position: absolute;
   bottom: 34rpx;
-  left: 430rpx;
+  /* left: 430rpx; */
+  right: 10%;
 }
 
 .shopcar-change view {

@@ -1,4 +1,5 @@
-var list = require('../../utils/list.js')
+// var list = require('../../utils/list.js')
+var cart = require('../../utils/cart.js')
 
 Page({
   data: {
@@ -14,7 +15,7 @@ Page({
         '../../images/goods/list1.png',
         '../../images/goods/list1.png'
     ],
-    list: list.list,
+    list: cart.cart,
     currentIndex: 0,
     ifChoose: false
   },
@@ -38,7 +39,7 @@ Page({
     // Do something when page ready.
   },
   onShow: function () {
-    wx.setStorageSync('list',list.list);
+    // wx.setStorageSync('list',list.list);
   },
   onHide: function () {
     // Do something when page hide.

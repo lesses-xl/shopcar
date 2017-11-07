@@ -28,6 +28,7 @@ Page({
       currentIndex: thisIndex
     })
     address.chooseId = thisIndex;
+    wx.setStorageSync('currentIndex',this.data.currentIndex)
   },
   changeaddress: function(e) {
     var num = e.currentTarget.dataset.index;
@@ -65,9 +66,17 @@ Page({
 
     this.setData({
       address: address.address,
-      currentIndex: address.chooseId 
     })
-    // wx.setStorageSync('address',address.address);
+    
+    if(wx.getStorageSync('currentIndex')) {
+      this.setData({
+        currentIndex: wx.getStorageSync('currentIndex')
+      })
+    }else {
+      this.setData({
+        currentIndex: address.chooseId
+      })
+    }
   },
   onHide: function () {
     console.log(address.address)
@@ -75,7 +84,8 @@ Page({
   },
   onUnload: function () {
     console.log(address.address)
-    wx.setStorageSync('address',address.address)
+    // wx.setStorageSync('address',address.address);
+    wx.setStorageSync('currentIndex',this.data.currentIndex)
   },
   onPullDownRefresh: function () {
     // Do something when pull down.

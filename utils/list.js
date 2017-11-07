@@ -171,7 +171,50 @@ var list = [
         }
       ],
       [
-        
+        {
+          "thingName": "果物荟萃(坚果果干礼盒) 950克",
+          "thingImg": "../../images/food/jianguo/lihe.png",
+          "thingPrice": 128.0,
+          "thingNum": 1,
+          "thingId": 60,
+          "choose": false,
+          "details": '果物荟萃 馈赠佳品.....',
+          "para": '果物荟萃(坚果果干礼盒)！！！',
+          "star": false
+        },
+        {
+          "thingName": "大核桃仁(生) 118克",
+          "thingImg": "../../images/food/jianguo/dahetaoren.png",
+          "thingPrice": 21.0,
+          "thingNum": 1,
+          "thingId": 61,
+          "choose": false,
+          "details": '经典原味，酥脆果仁.....',
+          "para": '大核桃仁(生)！！！',
+          "star": false
+        },
+        {
+          "thingName": "开心果 142克",
+          "thingImg": "../../images/food/jianguo/kaixinguo.png",
+          "thingPrice": 22.8,
+          "thingNum": 1,
+          "thingId": 62,
+          "choose": false,
+          "details": '无农药，健康不漂白.....',
+          "para": '开心果！！！',
+          "star": false
+        },
+        {
+          "thingName": "麻辣花生 110克",
+          "thingImg": "../../images/food/jianguo/malahuashen.png",
+          "thingPrice": 6.0,
+          "thingNum": 1,
+          "thingId": 63,
+          "choose": false,
+          "details": '乳山花生，麻辣爽脆.....',
+          "para": '麻辣花生！！！',
+          "star": false
+        }
       ],
       [
         
@@ -186,10 +229,39 @@ var list = [
         
       ],
       [
-        
-      ],
-      [
-        
+        {
+          "thingName": "阳澄湖大闸蟹",
+          "thingImg": "../../images/food/shenxian/dazhaxie.png",
+          "thingPrice": 388.0,
+          "thingNum": 1,
+          "thingId": 180,
+          "choose": false,
+          "details": '鲜享蟹宴.....',
+          "para": '大闸蟹！！！',
+          "star": false
+        },
+        {
+          "thingName": "味央黑猪肉 1050克",
+          "thingImg": "../../images/food/shenxian/zhurou.png",
+          "thingPrice": 159.0,
+          "thingNum": 1,
+          "thingId": 181,
+          "choose": false,
+          "details": '肥瘦俱全,款款精选',
+          "para": '黑猪肉！！！',
+          "star": false
+        },
+        {
+          "thingName": "小龙虾4~6钱/只 净虾850克",
+          "thingImg": "../../images/food/shenxian/xiaolongxia.png",
+          "thingPrice": 138.0,
+          "thingNum": 1,
+          "thingId": 182,
+          "choose": false,
+          "details": '好水好虾，鲜香弹润.....',
+          "para": '小龙虾！！！',
+          "star": false
+        }
       ]
     ]
 

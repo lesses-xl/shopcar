@@ -1,13 +1,13 @@
 <template name="indexMsg">
 	<view class='topimg'>
-		<image src='{{indexImg}}'></image>
+		<image src='../{{imgUrl}}'></image>
 	</view>
 	
 	<view class='new-goods'>
-		<view class='new-goods-one' wx:for="{{index}}" data-index='{{index}}' bindtap="toCart">
-<!-- 			<image src='../{{item.thingImg}}'></image>
+		<view class='new-goods-one' wx:for="{{list}}" data-index='{{index}}' bindtap="toCart">
+			<image src='../{{item.thingImg}}'></image>
 			<text>{{item.thingName}}1个</text>
-			<text>￥{{item.thingPrice}}</text> -->
+			<text>￥{{item.thingPrice}}</text>
 		</view>
 	</view>
 </template>

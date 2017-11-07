@@ -11,6 +11,11 @@ Page({
 			url: '../../list/list'
 		})
 	},
+	opendetail: function(e) {
+		console.log(e)
+		var id = e.currentTarget.dataset.id;
+		
+	},
 	onLoad:function(options){
 		this.setData({
 			starList: star.star

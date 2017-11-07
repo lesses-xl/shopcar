@@ -18,7 +18,7 @@
 				<text class='list-text'>{{area[index]}}</text>
 				<view class='heng heng2'></view>
 				<view class='list-div'>
-					<view class='list-goods' wx:for="{{list[index]}}" data-index="{{index}}" bindtap="getDetail">
+					<view class='list-goods' wx:for="{{list[index]['list']}}" data-index="{{index}}" bindtap="getDetail">
 						<image src='{{item.thingImg}}'></image>
 						<text>{{item.thingName}}</text>
 					</view>

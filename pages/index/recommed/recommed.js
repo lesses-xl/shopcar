@@ -1,21 +1,26 @@
-var index = require('../../../utils/inedx.js');
+var cart = require('../../../utils/cart.js');
 
 Page({
 	data:{
-		item: ''
+		item: '',
+		index: '',
+		indexs: 0
 	},
 	toCart: function(e) {
 		var index = e.currentTarget.dataset.index;
+		var arr = [this.data.indexs,index];
+		console.log(arr);
 		wx.navigateTo({
-		  url: "../../list/detail/detail?index="+index
+		  url: "../../list/detail/detail?list="+arr
 		})
 	},
 	onLoad:function(options){
-		console.log(options.index)
 		var num = Number(options.index)
 		this.setData({
-			index: index.index[num]
+			index: cart.cart[num],
+			indexs: num
 		})
+		console.log(this.data.index)
 	},
 	onReady:function(){
 		

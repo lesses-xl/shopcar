@@ -1,6 +1,7 @@
 var shopThing = require('../../../utils/shopThing.js');
-var index = require('../../../utils/inedx.js');
-var list = require('../../../utils/list.js');
+// var index = require('../../../utils/inedx.js');
+// var list = require('../../../utils/list.js');
+var cart = require('../../../utils/cart.js');
 var order = require('../../../utils/order.js');
 var star = require('../../../utils/star.js');
 /*
@@ -75,7 +76,10 @@ Page({
 				"thingPrice": that.data.detail.thingPrice,
 				"thingNum": that.data.num,
 				"thingId": that.data.detail.thingId,
-				"choose": true
+				"details": that.data.detail.details,
+				"para": that.data.detail.para,
+				"choose": true,
+				"star": true
 			}					
 			
 			if(n === 'index') {
@@ -85,13 +89,13 @@ Page({
 					detail: index.index[n1][n2]
 				})
 			}else if(n === 'list') {
-				list.list[n1][n2].star = true;
+				cart.cart[n1]['list'][n2].star = true;
 				that.setData({
 					starfull: true,
-					detail: list.list[n1][n2]
+					detail: cart.cart[n1]['list'][n2]
 				})
 			}
-			console.log(index.index[n1][n2])
+			// console.log(index.index[n1][n2])
 			wx.showToast({
 				title: '收藏成功!'
 			})	
@@ -141,10 +145,10 @@ Page({
 					detail: index.index[n1][n2]
 				})
 			}else if(n === 'list') {
-				list.list[n1][n2].star = false;
+				cart.cart[n1]['list'][n2].star = false;
 				this.setData({
 					starfull: false,
-					detail: list.list[n1][n2]
+					detail: cart.cart[n1]['list'][n2]
 				})
 			}
 			wx.showToast({
@@ -277,6 +281,8 @@ Page({
 			"thingPrice": this.data.detail.thingPrice,
 			"thingNum": this.data.num,
 			"thingId": this.data.detail.thingId,
+			"para": this.data.detail.para,
+			"details": this.data.detail.details,
 			"choose": true,
 			"star": false
 		}
@@ -360,7 +366,7 @@ Page({
 	},
 	onLoad:function(options){
 		console.log(options.list)
-		console.log(options.index)
+		// console.log(options.index)
 		if(options.index) {
 			var arr = options.index.split(',');
 			for(var i=0; i<arr.length; i++) {
@@ -371,7 +377,7 @@ Page({
 
 				this.setData({
 					detail: index.index[0][arr[1]],
-					whatrequire: ['index',arr[0],arr[1]]
+					whatrequire: ['list',arr[0],arr[1]]
 				})
 				console.log(index.index[0]);
 				var num = 0;
@@ -385,7 +391,7 @@ Page({
 			}
 			else {
 				this.setData({
-					whatrequire: ['index',arr[0],arr[1]],
+					whatrequire: ['list',arr[0],arr[1]],
 					detail: index.index[arr[0]][arr[1]],
 					eIndex: options.index
 				})
@@ -402,10 +408,12 @@ Page({
 			for(var i=0; i<arr1.length; i++) {
 				arr1[i] = Number(arr1[i]);
 			}
-			console.log(arr1)
+			// console.log(arr1)
+			// detail: list.list[arr1[0]][arr1[1]]
+			console.log(cart.cart[arr1[0]].list[arr1[1]])
 			this.setData({
 				whatrequire: ['list',arr1[0],arr1[1]],
-				detail: list.list[arr1[0]][arr1[1]]
+				detail: cart.cart[arr1[0]]["list"][arr1[1]]
 			})
 			var num = 0;
 			for(var i=0; i<shopThing.shopThing.length; i++) {

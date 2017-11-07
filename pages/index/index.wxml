@@ -9,7 +9,7 @@
 		</view>
 		<view class='swiper-container'>		
 			<swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='true' current="{{swiperCurrent}}" bindchange='swiperChange' class='swiper'>
-				<block wx:for="{{imgUrls}}">
+				<block wx:for="{{index}}">
 					<swiper-item bindtap="toDetail" data-index="{{index}}">
 						<image src="{{item}}" class='swiper-img'></image>
 					</swiper-item>
@@ -33,7 +33,7 @@
 
 		<!-- 一半 -->
 		<view class='sm-container'>
-			<view class='sm-content' wx:for='{{index[0]}}' data-index='{{index}}' bindtap='index1'>
+			<view class='sm-content' wx:for='{{list[0]["list"]}}' data-index='0,{{index}}' bindtap='index1'>
 				<image src='{{item.thingImg}}'></image>
 				<view class='sm-content-text'>
 					<view class='big-text'>{{item.thingName}}</view>
@@ -50,7 +50,7 @@
 		</view>
 
 		<scroll-view scroll-x class='banner-wrap'>
-			<view class='banner-list' wx:for='{{index[1]}}' data-index='{{index}}' bindtap='index2'>
+			<view class='banner-list' wx:for='{{list[1]["list"]}}' data-index='1,{{index}}' bindtap='index2'>
 				<view class='banner-list-img'>
 					<image src='{{item.thingImg}}'></image>
 				</view>
@@ -70,7 +70,7 @@
 		</view>
 
 		<view class='sm-container'>
-			<view class='sm-container1-wrap' wx:for='{{index[2]}}' data-index='{{index}}' bindtap='index3'>
+			<view class='sm-container1-wrap' wx:for='{{list[2]["list"]}}' data-index='2,{{index}}' bindtap='index3'>
 				<view class='sm-container1-top'>
 					<view class='sm-container1-name1'>{{item.thingName}}</view>
 					<view class='sm-container1-name2'>{{item.para}}</view>
@@ -85,7 +85,7 @@
 		<!-- 专题精选 -->
 		<view class='special-top'>专题精选</view>
 		<scroll-view class='special' scroll-x>
-			<view class='special-wrap' wx:for='{{index[3]}}' data-index='{{index}}' bindtap='index4'>
+			<view class='special-wrap' wx:for='{{list[3]["list"]}}' data-index='3,{{index}}' bindtap='index4'>
 				<image src='{{item.thingImg}}' lazy-load='true'></image>
 				<text style='left: 15rpx'>{{item.thingName}}</text>		
 				<text class='special-right'>{{item.thingPrice}}元起</text>
@@ -99,54 +99,14 @@
 
 		<!-- 推荐内容 -->
 		<view class='showyou'>
-			<view class='banner-list'>
+			<view class='banner-list' wx:for='{{list[8]["list"]}}' data-index="8,{{index}}" bindtap='index5'>
 				<view class='banner-list-img'>
-					<image src='../../images/showyou1.jpg' lazy-load='true'></image>
-					<text>几何线条，北欧简约风</text>
+					<image src='{{item.thingImg}}' lazy-load='true'></image>
+					<text>{{item.details}}</text>
 				</view>
 				<view class='banner-list-text'>
-					<text>几何印花AB面全棉四件套</text>
-					<text>￥251</text>
-				</view>
-			</view>
-			<view class='banner-list'>
-				<view class='banner-list-img'>
-					<image src='../../images/showyou1.jpg' lazy-load='true'></image>
-					<text>几何线条，北欧简约风</text>
-				</view>
-				<view class='banner-list-text'>
-					<text>几何印花AB面全棉四件套</text>
-					<text>￥251</text>
-				</view>
-			</view>
-			<view class='banner-list'>
-				<view class='banner-list-img'>
-					<image src='../../images/showyou1.jpg' lazy-load='true'></image>
-					<text>几何线条，北欧简约风</text>
-				</view>
-				<view class='banner-list-text'>
-					<text>几何印花AB面全棉四件套</text>
-					<text>￥251</text>
-				</view>
-			</view>
-			<view class='banner-list'>
-				<view class='banner-list-img'>
-					<image src='../../images/showyou1.jpg' lazy-load='true'></image>
-					<text>几何线条，北欧简约风</text>
-				</view>
-				<view class='banner-list-text'>
-					<text>几何印花AB面全棉四件套</text>
-					<text>￥251</text>
-				</view>
-			</view>
-			<view class='banner-list'>
-				<view class='banner-list-img'>
-					<image src='../../images/showyou1.jpg' lazy-load='true'></image>
-					<text>几何线条，北欧简约风</text>
-				</view>
-				<view class='banner-list-text'>
-					<text>几何印花AB面全棉四件套</text>
-					<text>￥251</text>
+					<text>{{item.thingName}}</text>
+					<text>￥{{item.thingPrice}}</text>
 				</view>
 			</view>
 		</view>

@@ -1,7 +1,7 @@
-var shopThing = require('../../utils/shopThing.js');
-var index = require('../../utils/inedx.js');
-var list = require('../../utils/list.js');
-var pic = require('../../util/base.js');
+// var shopThing = require('../../utils/shopThing.js');
+// var index = require('../../utils/inedx.js');
+// var list = require('../../utils/list.js');
+var cart = require('../../utils/cart.js');
 
 Page({
   data: {
@@ -46,38 +46,45 @@ Page({
     })
   },
   toDetail: function(e) {
-    var index = e.currentTarget.dataset.index;
-    var arr = [0,index]
+    var a = e.currentTarget.dataset.index;
     wx.navigateTo({
-      url: "../list/detail/detail?index="+arr
+      url: "recommed/recommed?index="+a
     })
   },
   index1: function(e) {
-    console.log(e);
-    var arr = [0,e.currentTarget.dataset.index]
+    // var arr = [0,e.currentTarget.dataset.index]
+    var arr = e.currentTarget.dataset.index.split(',');
+    console.log(arr);
     wx.navigateTo({
-      url: "../list/detail/detail?index="+arr
+      url: "../list/detail/detail?list="+arr
     })
   },
   index2: function(e) {
-    console.log(e);
-    var arr = [1,e.currentTarget.dataset.index]
+    // var arr = [1,e.currentTarget.dataset.index]
+    var arr = e.currentTarget.dataset.index.split(',');
     wx.navigateTo({
-      url: "../list/detail/detail?index="+arr
+      url: "../list/detail/detail?list="+arr
     })
   },
   index3: function(e) {
-    console.log(e);
-    var arr = [2,e.currentTarget.dataset.index]
+    // var arr = [2,e.currentTarget.dataset.index]
+    var arr = e.currentTarget.dataset.index.split(',');
     wx.navigateTo({
-      url: "../list/detail/detail?index="+arr
+      url: "../list/detail/detail?list="+arr
     })
   },
   index4: function(e) {
-    console.log(e);
-    var arr = [3,e.currentTarget.dataset.index]
+    // var arr = [3,e.currentTarget.dataset.index]
+    var arr = e.currentTarget.dataset.index.split(',');
     wx.navigateTo({
-      url: "../list/detail/detail?index="+arr
+      url: "../list/detail/detail?list="+arr
+    })
+  },
+  index5: function(e) {
+    // var arr = [3,e.currentTarget.dataset.index]
+    var arr = e.currentTarget.dataset.index.split(',');
+    wx.navigateTo({
+      url: "../list/detail/detail?list="+arr
     })
   },
   getmask: function() {
@@ -91,26 +98,32 @@ Page({
     })
   },
   onLoad: function (options) { 
-    this.setData({
-      index: index.index,
-      imgList: index.list,
-      list: list.list
-    })  
-    // console.log(index.list)
+    // this.setData({
+    //   index: index.index,
+    //   imgList: index.list,
+    //   list: list.list
+    // })  
   },
   onReady: function () {
     // Do something when page ready.
   },
   onShow: function () {
+    // this.setData({
+    //   showMask: false,
+    //   list: list.list
+    // })
+
     this.setData({
       showMask: false,
-      list: list.list
+      index: cart.indexImg,
+      imgList: cart.list,
+      list: cart.cart
     })
 
-    wx.setStorageSync('list',list.list);
-    wx.setStorageSync('index',index.index);
-    wx.setStorageSync('shopThing',shopThing.shopThing);
-    wx.setStorageSync('pic',pic.pic);
+    // wx.setStorageSync('list',list.list);
+    // wx.setStorageSync('index',index.index);
+    // wx.setStorageSync('shopThing',shopThing.shopThing);
+    // wx.setStorageSync('pic',pic.pic);
   },
   onHide: function () {
     // Do something when page hide.

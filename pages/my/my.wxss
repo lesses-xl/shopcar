@@ -116,12 +116,16 @@
 }
 
 .my-wrap text {
-	width: 80%;
-	height: 60rpx;
+	position: absolute;
+	top: 110rpx;
+	left: 0%;
+	width: 100%;
+	height: 80rpx;
 	text-align: center;
 	display: inline-block;
 	margin: 0 auto;
-	margin-left: 10rpx;
+	padding-left: -10rpx;
+	word-wrap: break-word;
 }
 
 .my-mask {

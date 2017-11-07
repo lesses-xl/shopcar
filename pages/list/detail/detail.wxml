@@ -50,28 +50,29 @@
 				<view class='top-border'></view>
 				<view class='top-main'>
 					<text>商品介绍</text>
-					<image class='top-main-img' src='../../../images/goods/list1.png'></image>
-					<image class='top-main-img' src='../../../images/goods/list1.png'></image>
-					<image class='top-main-img' src='../../../images/goods/list1.png'></image>
-					<image class='top-main-img' src='../../../images/goods/list1.png'></image>
-					<image class='top-main-img' src='../../../images/goods/list1.png'></image>
+					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
+					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
+					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
+					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
+					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
 				</view>
 			</view>
 		</swiper-item>
 		<swiper-item>
 			<view class='top-two'>
-					<image class='top-main-img' src='../../../images/goods/list1.png'></image>
-					<image class='top-main-img' src='../../../images/goods/list1.png'></image>
-					<image class='top-main-img' src='../../../images/goods/list1.png'></image>
-					<image class='top-main-img' src='../../../images/goods/list1.png'></image>
-					<image class='top-main-img' src='../../../images/goods/list1.png'></image>
-					<image class='top-main-img' src='../../../images/goods/list1.png'></image>
-					<image class='top-main-img' src='../../../images/goods/list1.png'></image>
+					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
+					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
+					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
+					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
+					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
+					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
+					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
 			</view>
 		</swiper-item>
 		<swiper-item>
 			<view class='top-three'>
-
+				{{detail.details}}
+				{{detail.para}}				
 			</view>
 		</swiper-item>
 	</swiper>
