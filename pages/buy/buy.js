@@ -69,6 +69,14 @@ Page({
 		
 	},
 	onShow:function(){
+		if(wx.getStorageSync('address')) {
+			address.address = wx.getStorageSync('address');
+		}
+
+		if(wx.getStorageSync('currentIndex')) {
+			address.chooseId = wx.getStorageSync('currentIndex');
+		}
+
 		this.setData({
 			addressList: address.address[address.chooseId],
 			orderList: order.order
