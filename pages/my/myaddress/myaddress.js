@@ -41,7 +41,6 @@ Page({
     })
   },
   onLoad: function () {
-    console.log(wx.getStorageSync('address').length)  
     if(wx.getStorageSync('address')) {
       if(wx.getStorageSync('address').length > address.address.length) {
         address.address = wx.getStorageSync('address');
@@ -56,12 +55,15 @@ Page({
   onReady: function () {
     // Do something when page ready.
   },
-  onShow: function () {
-    var addressStorage = wx.getStorageSync('address');    
+  onShow: function () {  
     if(wx.getStorageSync('address')) {
       if(wx.getStorageSync('address').length > address.address.length) {
         address.address = wx.getStorageSync('address');
+      }else {
+        wx.setStorageSync('address',address.address);
       }
+    }else {
+      wx.setStorageSync('address',address.address);
     }
 
     this.setData({

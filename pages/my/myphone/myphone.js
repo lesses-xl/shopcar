@@ -1,4 +1,5 @@
 var countNum = require('../../../utils/time.js');
+var app = getApp();
 
 Page({
   data: {
@@ -166,9 +167,16 @@ Page({
     })
   },
   onLoad: function (options) {
-    this.setData({
-      userInfo: wx.getStorageSync('userInfo')
-    })
+    if(wx.getStorageSync('userInfo')) {
+      this.setData({
+        userInfo: wx.getStorageSync('userInfo')
+      })
+    }else {
+      console.log(app.globalData.userInfo);
+      this.setData({
+        userInfo: app.globalData.userInfo
+      })
+    }
     // Do some initialize when page load.
   },
   onReady: function () {

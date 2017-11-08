@@ -15,6 +15,7 @@ Page({
         '../../images/goods/list1.png',
         '../../images/goods/list1.png'
     ],
+    indexImg: cart.indexImg,
     list: cart.cart,
     currentIndex: 0,
     ifChoose: false

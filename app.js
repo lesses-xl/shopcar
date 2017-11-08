@@ -26,7 +26,9 @@ App({
                 objs.encryptedData = res.encryptedData;
                 objs.iv = res.iv;
                 wx.setStorageSync('userInfo',objs); //存储
-                console.log(res)
+                console.log(res);
+                that.globalData.userInfo = objs;
+                console.log(that.globalData.userInfo)
               }
             });
             var d = that.globalData;

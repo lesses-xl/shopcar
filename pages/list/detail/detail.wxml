@@ -138,7 +138,7 @@
 			<view class='shopcar-name'>{{item.thingName}}</view>
 			<view class='shopcar-price'>单价:￥{{item.thingPrice}} x {{item.thingNum}}</view>
 			<view class='shopcar-all'>总价:￥{{(item.thingPrice * 10) * (item.thingNum * 10) / 100}}</view>
-			<image src='../../../images/pages/clear_input.png' class='shopcar-del' bindtap='delshopThing' data-index="{{index}}"></image>
+			<image src='../../../images/ali/close.png' class='shopcar-del' bindtap='delshopThing' data-index="{{index}}"></image>
 		</view>
 	</view>
 	<view hidden="{{ifHave == true ? true : false}}" class='nothing'>购物车空空如也~</view>

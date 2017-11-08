@@ -103,6 +103,12 @@ Page({
     //   imgList: index.list,
     //   list: list.list
     // })  
+    this.setData({
+      showMask: false,
+      index: cart.indexImg,
+      imgList: cart.list,
+      list: cart.cart
+    })
   },
   onReady: function () {
     // Do something when page ready.
@@ -120,16 +126,16 @@ Page({
       list: cart.cart
     })
 
-    // wx.setStorageSync('list',list.list);
-    // wx.setStorageSync('index',index.index);
-    // wx.setStorageSync('shopThing',shopThing.shopThing);
-    // wx.setStorageSync('pic',pic.pic);
+    if(wx.getStorageSync('cart')) {
+      //null
+    }else {
+      wx.setStorageSync('cart',cart.cart);
+    }
   },
   onHide: function () {
     // Do something when page hide.
   },
   onUnload: function () {
-    // Do something when page close.
   },
   onPullDownRefresh: function () {
     this.setData({
