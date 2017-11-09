@@ -1,4 +1,10 @@
 var star = require('../../../utils/star.js');
+/*
+	缓存保存以后star需要同步cart.js
+	
+*/
+
+
 
 Page({
 	data:{

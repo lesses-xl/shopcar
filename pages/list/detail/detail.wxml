@@ -130,7 +130,7 @@
 
 <!-- 购物车显示 -->
 <!-- hidden="{{shopcarcart == true ? false : true}}" -->
-<view class='shopcar-wrap {{shopcarcart == true ? "shopcar-wrap-down" : " "}}'>
+<view  animation="{{animationData}}" class='shopcar-wrap {{shopcarcart == true ? "shopcar-wrap-down" : " "}}'>
 	<view class='shopcar-list'>商品列表</view>
 	<view class='shopcar-div' hidden="{{ifHave == true ? false : true}}">
 		<view wx:for='{{shopThing}}' class='shopdiv'>

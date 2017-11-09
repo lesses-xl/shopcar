@@ -1,5 +1,6 @@
 var address = require('../../utils/address.js');
 var order = require('../../utils/order.js');
+var time = require('../../utils/time.js');
 
 Page({
 	data:{
@@ -32,10 +33,11 @@ Page({
 		})
 	},
 	topay: function() {
+		// console.log(time.thisTime);
 		wx.requestPayment({
-			'timeStamp': '',
-			'nonceStr': '',
-			'package': '',
+			'timeStamp': time.thisTime,
+			'nonceStr': 'dgshdgfkvfj',
+			'package': 'prepay_id=',
 			'signType': 'MD5',
 			'paySign': '',
 			'success':function(res){

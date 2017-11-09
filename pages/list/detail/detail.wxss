@@ -360,9 +360,9 @@
 	background: rgba(233, 233, 233, 1);
 }
 
-.shopcar-wrap-down {
+/* .shopcar-wrap-down {
 	transform: translate(0,25%);
-}
+} */
 
 .shopcar-list {
 	font-size: 28rpx;

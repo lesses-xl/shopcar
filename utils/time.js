@@ -1,4 +1,5 @@
 	var timeNumber = 0;
+	var thisTime = 0;
 	var dates = new Date();
 	var year = dates.getFullYear() + '';
 	var month = dates.getMonth() + 1 + '';
@@ -21,10 +22,11 @@
 	}
 
 	timeNumber = year + month + date + minute + second + minute + second + time;
-
+	thisTime = dates.getTime();
 	var countNum = 60;
 
 module.exports = {
 	time: timeNumber,
-	countNum: countNum
+	countNum: countNum,
+	thisTime: thisTime
 }

@@ -29,7 +29,8 @@ Page({
 		ifHave: false,
 		starfull: false,
 		whatrequire: '',
-		one: false
+		one: false,
+		animationData: {}
 	},
 	getTime: function () {
 	  var timeNumber = 0;
@@ -96,8 +97,13 @@ Page({
 				})
 			}
 			// console.log(index.index[n1][n2])
+			wx.showActionSheet({
+				itemList: ['a','b','c']
+			})
 			wx.showToast({
-				title: '收藏成功!'
+				title: '收藏成功!',
+				image: '../../../images/ali/choose-w.png',
+				duration: 1000
 			})	
 			that.setData({
 				one: true
@@ -152,7 +158,9 @@ Page({
 				})
 			}
 			wx.showToast({
-				title: '取消收藏'
+				title: '取消收藏',
+				image: '../../../images/ali/close-w.png',
+				duration: 1000
 			})	
 		}
 		if(this.data.one) {
@@ -177,8 +185,9 @@ Page({
 		})
 	},
 	toshopcar: function() {
-		console.log(this.data.shopThing);
-		console.log(shopThing.shopThing);
+		// console.log(this.data.shopThing);
+		// console.log(shopThing.shopThing);
+		var this_ = this;
 		this.setData({
 			shopThing: shopThing.shopThing
 		})
@@ -195,6 +204,35 @@ Page({
   				ifHave: true
   			})
   		}
+
+  		var timer = setTimeout(function() {
+  			this_.toAnimation();
+  		},50)
+
+	},
+	toAnimation: function() {
+		var a = '25%';
+		var b = '-100%';
+		var animation = wx.createAnimation({
+			duration: 200
+		})
+		function down() {
+			animation.translateY(a).step();
+		}
+
+		function up() {
+			animation.translateY(b).step();
+		}
+
+		if(this.data.shopcarcart) {
+			down();
+		}else {
+			up();
+		}
+		
+		this.setData({
+			animationData: animation.export()
+		})
 	},
 	tomyshopcar: function() {
 		wx.switchTab({
@@ -262,9 +300,13 @@ Page({
 		})
 	},
 	hidemask2: function() {
+		var this_ = this;
 		this.setData({
 			shopcarcart: false
 		})
+		var timer = setTimeout(function() {
+			this_.toAnimation();
+		},50)
 	},
 	gobuy: function() {
 		this.setData({
@@ -439,7 +481,6 @@ Page({
 		this.setData({
 			starfull: this.data.detail.star
 		})
-
 	},
 	onHide:function(){
 		
