@@ -4,7 +4,7 @@
 	</view>
 	
 	<view class='new-goods'>
-		<view class='new-goods-one' wx:for="{{list}}" data-index='{{index}}' bindtap="toCart">
+		<view class='new-goods-one' wx:for="{{list}}" data-index='{{index}}' bindtap="toCart" data-id='{{item.thingId}}'>
 			<image src='../{{item.thingImg}}'></image>
 			<text>{{item.thingName}}1个</text>
 			<text>￥{{item.thingPrice}}</text>

@@ -65,9 +65,9 @@ Page({
 	},
 	tostar: function() {
 		console.log(this.data.whatrequire)
-		var n = this.data.whatrequire[0];
-		var n1 = this.data.whatrequire[1];
-		var n2 = this.data.whatrequire[2];
+		// var n = this.data.whatrequire[0];
+		// var n1 = this.data.whatrequire[1];
+		// var n2 = this.data.whatrequire[2];
 		var obj = {}
 		var that = this;
 		function addgoods() {
@@ -83,23 +83,38 @@ Page({
 				"star": true
 			}					
 			
-			if(n === 'index') {
-				index.index[n1][n2].star = true;
-				that.setData({
-					starfull: true,
-					detail: index.index[n1][n2]
-				})
-			}else if(n === 'list') {
-				cart.cart[n1]['list'][n2].star = true;
-				that.setData({
-					starfull: true,
-					detail: cart.cart[n1]['list'][n2]
-				})
+			// if(n === 'index') {
+			// 	index.index[n1][n2].star = true;
+			// 	that.setData({
+			// 		starfull: true,
+			// 		detail: index.index[n1][n2]
+			// 	})
+			// }else if(n === 'list') {
+			// 	cart.cart[n1]['list'][n2].star = true;
+			// 	that.setData({
+			// 		starfull: true,
+			// 		detail: cart.cart[n1]['list'][n2]
+			// 	})
+			// }
+
+			var id = that.data.whatrequire;
+			var datas = cart.cart;
+			var result;
+			var results = [];
+			for(var i=0; i<datas.length; i++) {
+			  result = datas[i]['list'].filter(function(item,index){
+			    if(item.thingId.toString() == id) {
+			       item.star = true;
+			       results = item;
+			    }
+			  })
 			}
-			// console.log(index.index[n1][n2])
-			wx.showActionSheet({
-				itemList: ['a','b','c']
-			})
+
+			that.setData({
+				starfull: true,
+				detail: results
+			})			
+
 			wx.showToast({
 				title: '收藏成功!',
 				image: '../../../images/ali/choose-w.png',
@@ -144,19 +159,38 @@ Page({
 				}
 				// console.log(star.star[i].thingName)
 			}
-			if(n === 'index') {
-				index.index[n1][n2].star = false;
-				this.setData({
-					starfull: false,
-					detail: index.index[n1][n2]
-				})
-			}else if(n === 'list') {
-				cart.cart[n1]['list'][n2].star = false;
-				this.setData({
-					starfull: false,
-					detail: cart.cart[n1]['list'][n2]
-				})
+			// if(n === 'index') {
+			// 	index.index[n1][n2].star = false;
+			// 	this.setData({
+			// 		starfull: false,
+			// 		detail: index.index[n1][n2]
+			// 	})
+			// }else if(n === 'list') {
+			// 	cart.cart[n1]['list'][n2].star = false;
+			// 	this.setData({
+			// 		starfull: false,
+			// 		detail: cart.cart[n1]['list'][n2]
+			// 	})
+			// }
+
+			var id = that.data.whatrequire;
+			var datas = cart.cart;
+			var result;
+			var results = [];
+			for(var i=0; i<datas.length; i++) {
+			  result = datas[i]['list'].filter(function(item,index){
+			    if(item.thingId.toString() == id) {
+			       item.star = false;
+			       results = item;
+			    }
+			  })
 			}
+
+			that.setData({
+				starfull: false,
+				detail: results
+			})	
+
 			wx.showToast({
 				title: '取消收藏',
 				image: '../../../images/ali/close-w.png',
@@ -407,7 +441,7 @@ Page({
 		}
 	},
 	onLoad:function(options){
-		console.log(options.list)
+		// console.log(options.list)
 		// console.log(options.index)
 		if(options.index) {
 			var arr = options.index.split(',');
@@ -419,7 +453,7 @@ Page({
 
 				this.setData({
 					detail: index.index[0][arr[1]],
-					whatrequire: ['list',arr[0],arr[1]]
+					whatrequire: index.index[0][arr[1]].thingId
 				})
 				console.log(index.index[0]);
 				var num = 0;
@@ -433,7 +467,7 @@ Page({
 			}
 			else {
 				this.setData({
-					whatrequire: ['list',arr[0],arr[1]],
+					whatrequire: index.index[arr[0]][arr[1]].thingId,
 					detail: index.index[arr[0]][arr[1]],
 					eIndex: options.index
 				})
@@ -446,16 +480,24 @@ Page({
 				})	
 			}
 		}else {
-			var arr1 = options.list.split(',');
-			for(var i=0; i<arr1.length; i++) {
-				arr1[i] = Number(arr1[i]);
+			var id = options.id;
+			var data = cart.cart;
+			var result;
+			var results = [];
+			for(var i=0; i<data.length; i++) {
+			  result = data[i]['list'].filter(function(item,index){
+			    if(item.thingId.toString() == id) {
+			    	// console.log(item)
+			      results = item;
+			    }
+			  })
 			}
-			// console.log(arr1)
-			// detail: list.list[arr1[0]][arr1[1]]
-			console.log(cart.cart[arr1[0]].list[arr1[1]])
+			// console.log(id)
+			// console.log(results)
+			
 			this.setData({
-				whatrequire: ['list',arr1[0],arr1[1]],
-				detail: cart.cart[arr1[0]]["list"][arr1[1]]
+				whatrequire: id,
+				detail: results
 			})
 			var num = 0;
 			for(var i=0; i<shopThing.shopThing.length; i++) {

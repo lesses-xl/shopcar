@@ -8,10 +8,11 @@ Page({
 	},
 	toCart: function(e) {
 		var index = e.currentTarget.dataset.index;
+		var id = e.currentTarget.dataset.id;
 		var arr = [this.data.indexs,index];
 		console.log(arr);
 		wx.navigateTo({
-		  url: "../../list/detail/detail?list="+arr
+		  url: "../../list/detail/detail?id="+id
 		})
 	},
 	onLoad:function(options){

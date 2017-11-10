@@ -9,21 +9,86 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 300,
-    imgUrls: [
-      '../../images/goods/list1.png',
-      '../../images/goods/list2.png',
-      '../../images/goods/list3.png'
-    ],
-    index1: '精选主题',
-    index2: '最近新品',
-    theme1: '../../images/goods/s1.png',
-    theme2: '../../images/goods/s2.png',
-    theme3: '../../images/goods/list3.png',
+    // imgUrls: [
+    //   '../../images/goods/list1.png',
+    //   '../../images/goods/list2.png',
+    //   '../../images/goods/list3.png'
+    // ],
+    // index1: '精选主题',
+    // index2: '最近新品',
+    // theme1: '../../images/goods/s1.png',
+    // theme2: '../../images/goods/s2.png',
+    // theme3: '../../images/goods/list3.png',
     index: '',
     list: '',
     imgList: [],
+    showSearchData: [],
     swiperCurrent: 0,
-    showMask: false
+    inputVal: '',
+    showMask: false,
+    nosearch: true,   //隐藏
+    showsearch: true, //隐藏
+    recsearch: false  //显示
+  },
+  clearinput: function() {
+    this.setData({
+      inputVal: '',
+      recsearch: false,
+      showsearch:true,
+      nosearch: true
+    })
+  },
+  getSearch: function(e) {
+    var val = e.detail.value;
+
+    this.setData({
+      inputVal: val
+    });
+
+    if(val == '') {
+      this.setData({
+        recsearch: false,
+        showsearch:true,
+        nosearch: true
+      })
+    }else {
+      // cart数据遍历查询
+      var data = cart.cart;
+      var result;
+      var results = [];
+      for(var i=0; i<data.length; i++) {
+        result = data[i]['list'].filter(function(item,index){
+          if(item.thingName.indexOf(val) >= 0) {
+            results.push(item)
+          }
+        })
+      }
+
+      console.log(results)
+      this.setData({
+        showSearchData: results
+      })
+
+      if(this.data.showSearchData.length > 0) {
+        this.setData({
+          recsearch: true,
+          showsearch:false,
+          nosearch: true
+        })
+      }else {
+        this.setData({
+          recsearch: true,
+          showsearch:true,
+          nosearch: false
+        })
+      }
+    }
+  },
+  donthide: function() {
+    // return false;
+    this.setData({
+      showMask: true
+    })
   },
   swiperChange: function(e){
     this.setData({
@@ -51,40 +116,54 @@ Page({
       url: "recommed/recommed?index="+a
     })
   },
-  index1: function(e) {
-    // var arr = [0,e.currentTarget.dataset.index]
-    var arr = e.currentTarget.dataset.index.split(',');
-    console.log(arr);
+  toDetail1: function(e) {
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: "../list/detail/detail?list="+arr
+      url: "../list/detail/detail?id="+id
+    })
+  },
+  searchToDetail: function(e) {
+    var index = e.currentTarget.dataset.index;
+    var id = this.data.showSearchData[index].thingId;
+    console.log(index,id);
+    wx.navigateTo({
+      url: '../list/detail/detail?id='+id
+    })
+  },
+  index1: function(e) {
+    var id = e.currentTarget.dataset.id;
+    // var arr = e.currentTarget.dataset.index.split(',');
+    // console.log(arr);
+    wx.navigateTo({
+      url: "../list/detail/detail?id="+id
     })
   },
   index2: function(e) {
-    // var arr = [1,e.currentTarget.dataset.index]
-    var arr = e.currentTarget.dataset.index.split(',');
+    var id = e.currentTarget.dataset.id;
+    // var arr = e.currentTarget.dataset.index.split(',');
     wx.navigateTo({
-      url: "../list/detail/detail?list="+arr
+      url: "../list/detail/detail?id="+id
     })
   },
   index3: function(e) {
-    // var arr = [2,e.currentTarget.dataset.index]
-    var arr = e.currentTarget.dataset.index.split(',');
+    var id = e.currentTarget.dataset.id;
+    // var arr = e.currentTarget.dataset.index.split(',');
     wx.navigateTo({
-      url: "../list/detail/detail?list="+arr
+      url: "../list/detail/detail?id="+id
     })
   },
   index4: function(e) {
-    // var arr = [3,e.currentTarget.dataset.index]
-    var arr = e.currentTarget.dataset.index.split(',');
+    var id = e.currentTarget.dataset.id;
+    // var arr = e.currentTarget.dataset.index.split(',');
     wx.navigateTo({
-      url: "../list/detail/detail?list="+arr
+      url: "../list/detail/detail?id="+id
     })
   },
   index5: function(e) {
-    // var arr = [3,e.currentTarget.dataset.index]
-    var arr = e.currentTarget.dataset.index.split(',');
+    var id = e.currentTarget.dataset.id;
+    // var arr = e.currentTarget.dataset.index.split(',');
     wx.navigateTo({
-      url: "../list/detail/detail?list="+arr
+      url: "../list/detail/detail?id="+id
     })
   },
   getmask: function() {
@@ -93,9 +172,11 @@ Page({
     })
   },
   hidemask: function() {
+    // console.log(1111);
     this.setData({
       showMask: false
     })
+    this.clearinput();
   },
   onLoad: function (options) { 
     // this.setData({
@@ -134,8 +215,10 @@ Page({
   },
   onHide: function () {
     // Do something when page hide.
+    this.clearinput();
   },
   onUnload: function () {
+    this.clearinput();
   },
   onPullDownRefresh: function () {
     this.setData({

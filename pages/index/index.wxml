@@ -1,10 +1,30 @@
 <view class='index-container {{showMask == true ? "noscroll" : " "}}'>
-	<view class='index-mask' wx:if="{{showMask}}" bindtap="hidemask"></view>
+
+	<!-- 搜索页面 -->
+	<view class='index-mask' wx:if="{{showMask}}" catchtap="hidemask">
+		<view class='nosearch' hidden='{{nosearch}}' catchtap='donthide'>
+			没有搜索结果
+		</view>
+
+		<view class='recsearch' hidden='{{recsearch}}' catchtap='donthide'>
+			<view class='search-hot' bindtap='todetail2' data-id='181'>味央黑猪肉</view>
+			<view class='search-hot' bindtap='toDetail1' data-id='4'>牛扎饼</view>
+			<view class='search-hot' bindtap='toDetail1' data-id='20'>果冻</view>
+			<view class='search-hot' bindtap='toDetail1' data-id='26'>藕片</view>
+			<view class='search-hot' bindtap='toDetail1' data-id='21'>薯角</view>
+		</view>
+
+		<view class='showsearch' hidden='{{showsearch}}' catchtap='donthide' >
+			<view class='search-result' data-index='{{index}}' wx:for='{{showSearchData}}' bindtap='searchToDetail'><text>{{item.thingName}}</text><view>{{item.thingPrice}}元起</view></view>
+		</view>
+	</view>
 	<view class='index'>
 		<view class='search-wrap'>
-			<view class='search' bindtap="getmask">
+			<view class='search {{showMask == false ? " " : "searchshow"}}' bindtap="getmask">
 				<image src='../../images/ali/search.png'></image>
-				<input type="text" placeholder="搜索商品" />
+				<input type="text" placeholder="搜索商品" value="{{inputVal}}" bindinput='getSearch'/>
+				<image  wx:if='{{recsearch}}' src='../../images/ali/c-close-b.png' class='input-close' bindtap='clearinput'></image>	
+				<image wx:if="{{showMask}}" src='../../images/ali/h-close.png' class='hidemask' catchtap='hidemask'></image>
 			</view>	
 		</view>
 		<view class='swiper-container'>		
@@ -33,7 +53,7 @@
 
 		<!-- 一半 -->
 		<view class='sm-container'>
-			<view class='sm-content' wx:for='{{list[0]["list"]}}' data-index='0,{{index}}' bindtap='index1'>
+			<view class='sm-content' wx:for='{{list[0]["list"]}}' data-index='0,{{index}}' data-id='{{item.thingId}}' bindtap='index1'>
 				<image src='{{item.thingImg}}'></image>
 				<view class='sm-content-text'>
 					<view class='big-text'>{{item.thingName}}</view>
@@ -50,7 +70,7 @@
 		</view>
 
 		<scroll-view scroll-x class='banner-wrap'>
-			<view class='banner-list' wx:for='{{list[1]["list"]}}' data-index='1,{{index}}' bindtap='index2'>
+			<view class='banner-list' wx:for='{{list[1]["list"]}}' data-index='1,{{index}}' bindtap='index2' data-id='{{item.thingId}}'>
 				<view class='banner-list-img'>
 					<image src='{{item.thingImg}}'></image>
 				</view>
@@ -70,7 +90,7 @@
 		</view>
 
 		<view class='sm-container'>
-			<view class='sm-container1-wrap' wx:for='{{list[2]["list"]}}' data-index='2,{{index}}' bindtap='index3'>
+			<view class='sm-container1-wrap' wx:for='{{list[2]["list"]}}' data-index='2,{{index}}' bindtap='index3' data-id='{{item.thingId}}'>
 				<view class='sm-container1-top'>
 					<view class='sm-container1-name1'>{{item.thingName}}</view>
 					<view class='sm-container1-name2'>{{item.para}}</view>
@@ -85,7 +105,7 @@
 		<!-- 专题精选 -->
 		<view class='special-top'>专题精选</view>
 		<scroll-view class='special' scroll-x>
-			<view class='special-wrap' wx:for='{{list[3]["list"]}}' data-index='3,{{index}}' bindtap='index4'>
+			<view class='special-wrap' wx:for='{{list[3]["list"]}}' data-index='3,{{index}}' bindtap='index4' data-id='{{item.thingId}}'>
 				<image src='{{item.thingImg}}' lazy-load='true'></image>
 				<text style='left: 15rpx'>{{item.thingName}}</text>		
 				<text class='special-right'>{{item.thingPrice}}元起</text>
@@ -99,7 +119,7 @@
 
 		<!-- 推荐内容 -->
 		<view class='showyou'>
-			<view class='banner-list' wx:for='{{list[8]["list"]}}' data-index="8,{{index}}" bindtap='index5'>
+			<view class='banner-list' wx:for='{{list[8]["list"]}}' data-index="8,{{index}}" bindtap='index5' data-id='{{item.thingId}}'>
 				<view class='banner-list-img'>
 					<image src='{{item.thingImg}}' lazy-load='true'></image>
 					<text>{{item.details}}</text>
