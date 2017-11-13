@@ -60,6 +60,13 @@ image {
 	transition: all .3s;
 }
 
+.recsearch>text {
+	display:block;
+	font-size:28rpx;
+	margin-left:27rpx;
+	margin-bottom:10rpx;
+}
+
 .recsearch .search-hot {
 	width: auto;
 	display: inline-block;
@@ -106,9 +113,9 @@ image {
 	/* border: 1px solid rgb(223, 223, 223); */
 	background: rgb(240, 242, 245);
 	border-radius: 10rpx;
-	padding: 5rpx 10rpx;
+	padding: 5rpx 15rpx;
 	float: right;
-	margin-top: 6rpx;
+	margin-top: 10rpx;
 	margin-right: 15rpx;
 }
 
@@ -140,6 +147,7 @@ image {
 .searchshow {
 	width: 85%;
 	margin-left: 4%;
+	/* margin-top: 6rpx; */
 }
 
 .search .input-close {
@@ -620,6 +628,7 @@ image {
 
 .showyou .banner-list-img {
 	height: 350rpx;
+	background: rgb(230,230,230);
 }
 
 .showyou .banner-list-img image{

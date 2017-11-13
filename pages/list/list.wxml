@@ -1,8 +1,36 @@
 <view class='container'>
-	<view class='search'>
+<!-- 	<view class='search'>
 		<input type="text" placeholder="搜索商品" maxlength="20"></input>
 		<image src='../../images/ali/search.png'></image>	
+	</view> -->
+	<!-- 搜索页面 -->
+	<view class='index-mask' wx:if="{{showMask}}" catchtap="hidemask">
+		<view class='nosearch' hidden='{{nosearch}}' catchtap='donthide'>
+			没有搜索结果
+		</view>
+
+		<view class='recsearch' hidden='{{recsearch}}' catchtap='donthide'>
+			<text>热门搜索</text>
+			<view class='search-hot' bindtap='todetail1' data-id='181'>味央黑猪肉</view>
+			<view class='search-hot' bindtap='toDetail1' data-id='4'>牛扎饼</view>
+			<view class='search-hot' bindtap='toDetail1' data-id='20'>果冻</view>
+			<view class='search-hot' bindtap='toDetail1' data-id='26'>藕片</view>
+			<view class='search-hot' bindtap='toDetail1' data-id='21'>薯角</view>
+		</view>
+
+		<view class='showsearch' hidden='{{showsearch}}' catchtap='donthide' >
+			<view class='search-result' data-index='{{index}}' wx:for='{{showSearchData}}' bindtap='searchToDetail'><text>{{item.thingName}}</text><view>{{item.thingPrice}}元起</view></view>
+		</view>
 	</view>
+	<view class='search-wrap'>
+		<view class='search {{showMask == false ? " " : "searchshow"}}' bindtap="getmask">
+			<image src='../../images/ali/search.png'></image>
+			<input type="text" placeholder="搜索商品" value="{{inputVal}}" bindinput='getSearch'/>
+			<image  wx:if='{{recsearch}}' src='../../images/ali/c-close-b.png' class='input-close' bindtap='clearinput'></image>	
+			<image wx:if="{{showMask}}" src='../../images/ali/h-close.png' class='hidemask' catchtap='hidemask'></image>
+		</view>	
+	</view>
+
 	<view class='list-wrap'>
 		<scroll-view scroll-y class='scroll-left'>
 			<view class="list">
@@ -18,7 +46,7 @@
 				<text class='list-text'>{{area[index]}}</text>
 				<view class='heng heng2'></view>
 				<view class='list-div'>
-					<view class='list-goods' wx:for="{{list[index]['list']}}" data-index="{{index}}" bindtap="getDetail">
+					<view class='list-goods' wx:for="{{list[index]['list']}}" data-index="{{index}}" data-id="{{item.thingId}}" bindtap="getDetail">
 						<image src='{{item.thingImg}}'></image>
 						<text>{{item.thingName}}</text>
 					</view>

@@ -1,3 +1,4 @@
+var cart = require('utils/cart.js');
 
 App({
   globalData: {
@@ -7,6 +8,9 @@ App({
     userInfo : null
   },
   onLaunch: function () {
+    if(wx.getStorageSync('cart')) {
+      cart.cart = wx.getStorageSync('cart');
+    }
     var that = this;
     var user = wx.getStorageSync('user') || {};
     var userInfo = wx.getStorageSync('userInfo') || {};

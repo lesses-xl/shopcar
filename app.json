@@ -3,13 +3,17 @@
 		
 		
 		"pages/index/index",
+		"pages/list/detail/detail",
+		"pages/test/test",
+		"pages/my/mystar/mystar",
+		
 		"pages/my/myaddress/myaddress",
 		"pages/my/myphone/myphone",
 		"pages/shopcar/shopcar",
-		"pages/my/mystar/mystar",
+		
 		"pages/my/my",
 		
-		"pages/list/detail/detail",
+		
 		
 		
 		"pages/buy/buy",

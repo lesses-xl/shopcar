@@ -9,6 +9,7 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 300,
+    dotcolor: '#02AAFCFF',
     // imgUrls: [
     //   '../../images/goods/list1.png',
     //   '../../images/goods/list2.png',
@@ -23,7 +24,7 @@ Page({
     list: '',
     imgList: [],
     showSearchData: [],
-    swiperCurrent: 0,
+    // swiperCurrent: 0,
     inputVal: '',
     showMask: false,
     nosearch: true,   //隐藏
@@ -64,7 +65,7 @@ Page({
         })
       }
 
-      console.log(results)
+      // console.log(results)
       this.setData({
         showSearchData: results
       })

@@ -1,9 +1,12 @@
 <view class='star-wrap' wx:if='{{havestar}}'>	
-	<view class='star-list' wx:for="{{starList}}" bindtap='opendetail' data-id='{{item.thingId}}'>
+	<view class='star-list' wx:for="{{starList}}" bindtap='opendetail' data-id='{{item.thingId}}' data-index='{{index}}'>
 		<image class='star-img' src='../{{item.thingImg}}'></image>
+		<image class='star-del' data-index='{{index}}' src='../../../images/ali/b-close.png' catchtap='delstar'></image>
 		<view class='star-border'></view>
-		<text class='star-name'>{{item.thingName}}</text>
-		<text class='star-price'>￥{{item.thingPrice}}</text>
+		<view class='star-bottom'>
+			<text class='star-name'>{{item.thingName}}</text>
+			<text class='star-price'>￥{{item.thingPrice}}</text>
+		</view>
 	</view>
 </view>
 

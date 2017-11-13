@@ -1,0 +1,32 @@
+<view class='addgoods'>
+	<view class='add-top'>
+		<view class='add-top-top'>
+			<image class='add-top-img' src='../{{detail.thingImg}}'></image>
+			<text class='add-top-name'>{{detail.thingName}}</text>
+			<text class='add-top-price'>￥{{detail.thingPrice}}</text>
+		</view>
+		<view class='add-top-list'>
+			<view class='add-top-choose1'>
+				<view wx:for="{{item.class}}" wx-item="item1">{{item1[index].name}}</view>
+			</view>
+
+			<view class='add-top-choose1'>
+				<view wx:for="{{item.class}}" wx-item="item1">{{item1[index].name}}</view>
+				<view>高配</view>
+				<view>高配</view>
+				<view>高配</view>
+				<view>高配</view>
+			</view>
+		</view>
+
+		<view class='add-top-changenumber'>
+			<text>购买数量</text>
+			<view class='add-top-btn'>
+				<view class='btn1 {{num==1?"":"current"}}' bindtap='subnum'>-</view>
+				<view class='value'>{{num}}</view>
+				<view class='btn2 {{num==99?"":"current"}}' bindtap='addnum'>+</view>
+			</view>
+		</view>
+	</view>
+	<view class='add-bottom' bindtap='tocart'>加入购物车</view>
+</view>

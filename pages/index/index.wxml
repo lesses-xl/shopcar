@@ -7,7 +7,8 @@
 		</view>
 
 		<view class='recsearch' hidden='{{recsearch}}' catchtap='donthide'>
-			<view class='search-hot' bindtap='todetail2' data-id='181'>味央黑猪肉</view>
+			<text>热门搜索</text>
+			<view class='search-hot' bindtap='todetail1' data-id='181'>味央黑猪肉</view>
 			<view class='search-hot' bindtap='toDetail1' data-id='4'>牛扎饼</view>
 			<view class='search-hot' bindtap='toDetail1' data-id='20'>果冻</view>
 			<view class='search-hot' bindtap='toDetail1' data-id='26'>藕片</view>
@@ -15,7 +16,7 @@
 		</view>
 
 		<view class='showsearch' hidden='{{showsearch}}' catchtap='donthide' >
-			<view class='search-result' data-index='{{index}}' wx:for='{{showSearchData}}' bindtap='searchToDetail'><text>{{item.thingName}}</text><view>{{item.thingPrice}}元起</view></view>
+			<view class='search-result' data-index='{{index}}' wx:for='{{showSearchData}}' bindtap='searchToDetail'><text>{{item.thingName}}</text><view>{{item.thingPrice}}元起</view><view>{{item.para}}</view></view>
 		</view>
 	</view>
 	<view class='index'>
@@ -28,18 +29,18 @@
 			</view>	
 		</view>
 		<view class='swiper-container'>		
-			<swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='true' current="{{swiperCurrent}}" bindchange='swiperChange' class='swiper'>
+			<swiper autoplay="{{autoplay}}"  indicator-dots='true' indicator-active-color='{{dotcolor}}' interval="{{interval}}" duration="{{duration}}" circular='true' current="{{swiperCurrent}}" bindchange='swiperChange' class='swiper'>
 				<block wx:for="{{index}}">
 					<swiper-item bindtap="toDetail" data-index="{{index}}">
 						<image src="{{item}}" class='swiper-img'></image>
 					</swiper-item>
 				</block>
 			</swiper>
-			<view class="dots">
+<!-- 			<view class="dots">
 			    <block wx:for="{{imgUrls}}" wx:key="unique">
 			      <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
 			    </block>
-		  	</view>
+		  	</view> -->
 	  	</view>
 		
 		<!-- 小图标分类 -->

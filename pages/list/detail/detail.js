@@ -30,7 +30,8 @@ Page({
 		starfull: false,
 		whatrequire: '',
 		one: false,
-		animationData: {}
+		animationData: {},
+		classChoose: 0
 	},
 	getTime: function () {
 	  var timeNumber = 0;
@@ -63,39 +64,22 @@ Page({
 			currentTab: e.detail.current
 		})
 	},
+	changeClassChoose: function(e) {
+		var curType = e.currentTarget.dataset.index;
+		// this.data.currentType = curType;
+		this.setData({
+			classChoose: curType
+		});
+		this.setData({
+			['detail.thingPrice']: this.data.detail.class[curType].price ,
+			['detail.thingName']: this.data.detail.class[curType].name
+		})
+	},
 	tostar: function() {
 		console.log(this.data.whatrequire)
-		// var n = this.data.whatrequire[0];
-		// var n1 = this.data.whatrequire[1];
-		// var n2 = this.data.whatrequire[2];
 		var obj = {}
 		var that = this;
 		function addgoods() {
-			obj = {
-				"thingName": that.data.detail.thingName,
-				"thingImg": that.data.detail.thingImg,
-				"thingPrice": that.data.detail.thingPrice,
-				"thingNum": that.data.num,
-				"thingId": that.data.detail.thingId,
-				"details": that.data.detail.details,
-				"para": that.data.detail.para,
-				"choose": true,
-				"star": true
-			}					
-			
-			// if(n === 'index') {
-			// 	index.index[n1][n2].star = true;
-			// 	that.setData({
-			// 		starfull: true,
-			// 		detail: index.index[n1][n2]
-			// 	})
-			// }else if(n === 'list') {
-			// 	cart.cart[n1]['list'][n2].star = true;
-			// 	that.setData({
-			// 		starfull: true,
-			// 		detail: cart.cart[n1]['list'][n2]
-			// 	})
-			// }
 
 			var id = that.data.whatrequire;
 			var datas = cart.cart;
@@ -113,7 +97,21 @@ Page({
 			that.setData({
 				starfull: true,
 				detail: results
-			})			
+			})		
+
+			console.log(cart.cart);
+
+			obj = {
+				"thingName": that.data.detail.thingName,
+				"thingImg": that.data.detail.thingImg,
+				"thingPrice": that.data.detail.thingPrice,
+				"thingNum": that.data.num,
+				"thingId": that.data.detail.thingId,
+				"details": that.data.detail.details,
+				"para": that.data.detail.para,
+				"choose": true,
+				"star": that.data.detail.star
+			}			
 
 			wx.showToast({
 				title: '收藏成功!',
@@ -124,7 +122,6 @@ Page({
 				one: true
 			})
 		}
-
 		console.log(star.star)
 		if(star.star.length == 0) {
 			console.log('相同')
@@ -148,6 +145,7 @@ Page({
 					}
 				}	
 			}
+
 		}else {
 			this.setData({
 				one: false
@@ -157,22 +155,9 @@ Page({
 				if(star.star[i].thingId == this.data.detail.thingId) {
 					star.star.splice(i,1);
 				}
-				// console.log(star.star[i].thingName)
 			}
-			// if(n === 'index') {
-			// 	index.index[n1][n2].star = false;
-			// 	this.setData({
-			// 		starfull: false,
-			// 		detail: index.index[n1][n2]
-			// 	})
-			// }else if(n === 'list') {
-			// 	cart.cart[n1]['list'][n2].star = false;
-			// 	this.setData({
-			// 		starfull: false,
-			// 		detail: cart.cart[n1]['list'][n2]
-			// 	})
-			// }
 
+			wx.setStorageSync('star',star.star);
 			var id = that.data.whatrequire;
 			var datas = cart.cart;
 			var result;
@@ -200,6 +185,9 @@ Page({
 		if(this.data.one) {
 			star.star.push(obj);
 		}
+
+		wx.setStorageSync('cart',cart.cart);
+		wx.setStorageSync('star',star.star);
 	},
 	swichNav: function(e) {  	
 	  var that = this;  	
@@ -219,8 +207,6 @@ Page({
 		})
 	},
 	toshopcar: function() {
-		// console.log(this.data.shopThing);
-		// console.log(shopThing.shopThing);
 		var this_ = this;
 		this.setData({
 			shopThing: shopThing.shopThing
@@ -360,7 +346,8 @@ Page({
 			"para": this.data.detail.para,
 			"details": this.data.detail.details,
 			"choose": true,
-			"star": false
+			"star": false,
+			"class": this.data.detail.class
 		}
 		var timer = null;
 		var num = 0;
@@ -441,8 +428,6 @@ Page({
 		}
 	},
 	onLoad:function(options){
-		// console.log(options.list)
-		// console.log(options.index)
 		if(options.index) {
 			var arr = options.index.split(',');
 			for(var i=0; i<arr.length; i++) {
@@ -493,8 +478,7 @@ Page({
 			  })
 			}
 			// console.log(id)
-			// console.log(results)
-			
+			// console.log(results)			
 			this.setData({
 				whatrequire: id,
 				detail: results

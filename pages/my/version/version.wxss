@@ -1,8 +1,15 @@
+image {
+	width: 100rpx;
+	height: 100rpx;
+	display: block;
+	margin: 35% auto 0 auto;
+}
+
 view {
 	text-align: center;
 	width: 100%;
 	height: 200rpx;
-	margin: 35% auto;
+	margin: 0 auto;
 	font-size: 30rpx;
-	color: rgb(200, 200, 200);
+	color: #1296db;
 }

@@ -85,9 +85,19 @@
 <!-- hidden="{{putcart == true ? false : true}}" -->
 <view class='addgoods {{putcart == true ? "addgoods-top" : " "}}'>
 	<view class='add-top'>
-		<image class='add-top-img' src='../{{detail.thingImg}}'></image>
-		<text class='add-top-name'>{{detail.thingName}}</text>
-		<text class='add-top-price'>￥{{detail.thingPrice}}</text>
+		<view class='add-top-top'>
+			<image class='add-top-img' src='../{{detail.thingImg}}'></image>
+			<text class='add-top-name'>{{detail.thingName}}</text>
+			<text class='add-top-price'>￥{{detail.thingPrice}}</text>
+		</view>
+		<view class='add-top-list' wx:if="{{detail.class.length}}">
+			<text class='add-top-text'>类别</text>
+			<view class='add-top-choose1'>
+				<view wx:for="{{detail.class}}" bindtap='changeClassChoose' data-index='{{index1}}' class="{{classChoose == index1 ? 'current' : ''}}" wx:for-item="item1" wx:for-index='index1'>{{item1.name}}</view>
+				
+			</view>
+		</view>
+
 		<view class='add-top-changenumber'>
 			<text>购买数量</text>
 			<view class='add-top-btn'>
@@ -107,11 +117,22 @@
 
 <!-- 立即购买类别选择 -->
 <!-- hidden="{{buycart == true ? false : true}}" -->
-<view class='addgoods {{buycart == true ? "addgoods-top" : " "}}'>
+<view class='addgoods {{buycart == true ? "addgoods-top" : " "}}' >
 	<view class='add-top'>
-		<image class='add-top-img' src='../{{detail.thingImg}}'></image>
-		<text class='add-top-name'>{{detail.thingName}}</text>
-		<text class='add-top-price'>￥{{detail.thingPrice}}</text>
+		<view class='add-top-top'>
+			<image class='add-top-img' src='../{{detail.thingImg}}'></image>
+			<text class='add-top-name'>{{detail.thingName}}</text>
+			<text class='add-top-price'>￥{{detail.thingPrice}}</text>
+		</view>	
+
+		<view class='add-top-list' wx:if="{{detail.class.length}}">
+			<text class='add-top-text'>类别</text>
+			<view class='add-top-choose1'>
+				<view wx:for="{{detail.class}}" bindtap='changeClassChoose' data-index='{{index1}}' class="{{classChoose == index1 ? 'current' : ''}}" wx:for-item="item1" wx:for-index='index1'>{{item1.name}}</view>
+				
+			</view>
+		</view>
+
 		<view class='add-top-changenumber'>
 			<text>购买数量</text>
 			<view class='add-top-btn'>
