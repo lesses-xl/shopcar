@@ -14,21 +14,6 @@ var cart =  [
 			  "para": '78.0.........................',
 			  "star": false,
 			  "class": [
-			  	// {
-			  	// 	"name": "标配",
-			  	// 	"classes": ["520克"],
-			  	// 	"price": [78.0]
-			  	// },
-			  	// {
-			  	// 	"name": "低配",
-			  	// 	"classes": ["460克","400克"],
-			  	// 	"price": [70.0,60.0]
-			  	// },
-			  	// {
-			  	// 	"name": "高配",
-			  	// 	"classes": ["620克","700克"],
-			  	// 	"price": [88.0,98.0]
-			  	// }
 			  	{
 			  		"name": "曲奇礼盒 标配 520克",
 			  		"price": 78.0
@@ -346,8 +331,18 @@ var list = [
   '../../images/sm-icon1.png'
 ]
 
+var list1 = [
+	'新品上市',
+	'强烈推荐',
+	'美食排行',
+	'优惠领券',
+	'即将上线',
+	'即将上线'
+]
+
 module.exports = {
 	cart: cart,
 	indexImg: indexImg,
-	list: list
+	list: list,
+	list1: list1
 }

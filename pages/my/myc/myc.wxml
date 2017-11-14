@@ -1,0 +1,26 @@
+<view class='c-box'>
+	<view class='c-box-l'>
+		<text class='c-price'>￥999999</text>
+		<text class='c-class'>通用券</text>
+		<text class='c-s'>满99999999元使用</text>
+		<text class='c-day'>领取10天内有效</text>
+	</view>
+	<view class='c-box-l'>
+		<text class='c-price'>￥999999</text>
+		<text class='c-class'>通用券</text>
+		<text class='c-s'>满99999999元使用</text>
+		<text class='c-day'>领取10天内有效</text>
+	</view>
+	<view class='c-box-l'>
+		<text class='c-price'>￥999999</text>
+		<text class='c-class'>通用券</text>
+		<text class='c-s'>满99999999元使用</text>
+		<text class='c-day'>领取10天内有效</text>
+	</view>
+	<view class='c-box-l'>
+		<text class='c-price'>￥999999</text>
+		<text class='c-class'>通用券</text>
+		<text class='c-s'>满99999999元使用</text>
+		<text class='c-day'>领取10天内有效</text>
+	</view>
+</view>

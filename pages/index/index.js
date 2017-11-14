@@ -10,18 +10,9 @@ Page({
     interval: 5000,
     duration: 300,
     dotcolor: '#02AAFCFF',
-    // imgUrls: [
-    //   '../../images/goods/list1.png',
-    //   '../../images/goods/list2.png',
-    //   '../../images/goods/list3.png'
-    // ],
-    // index1: '精选主题',
-    // index2: '最近新品',
-    // theme1: '../../images/goods/s1.png',
-    // theme2: '../../images/goods/s2.png',
-    // theme3: '../../images/goods/list3.png',
     index: '',
     list: '',
+    list1: cart.list1,
     imgList: [],
     showSearchData: [],
     // swiperCurrent: 0,
@@ -167,6 +158,26 @@ Page({
       url: "../list/detail/detail?id="+id
     })
   },
+  list: function(e) {
+    var index = e.currentTarget.dataset.index;
+
+    if(index == 0) {
+      console.log(index);
+    }else if(index == 1) {
+      console.log(index);
+    }else if(index == 2) {
+      console.log(index);
+    }else if(index == 3) {
+      console.log(index);
+      wx.navigateTo({
+        url: 'coupon/coupon'
+      })
+    }else if(index == 4) {
+      console.log(index);
+    }else if(index == 5) {
+      console.log(index);
+    }
+  },
   getmask: function() {
     this.setData({
       showMask: true
@@ -180,11 +191,6 @@ Page({
     this.clearinput();
   },
   onLoad: function (options) { 
-    // this.setData({
-    //   index: index.index,
-    //   imgList: index.list,
-    //   list: list.list
-    // })  
     this.setData({
       showMask: false,
       index: cart.indexImg,
@@ -196,11 +202,6 @@ Page({
     // Do something when page ready.
   },
   onShow: function () {
-    // this.setData({
-    //   showMask: false,
-    //   list: list.list
-    // })
-
     this.setData({
       showMask: false,
       index: cart.indexImg,

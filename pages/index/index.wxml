@@ -45,9 +45,9 @@
 		
 		<!-- 小图标分类 -->
 		<view class='sm-wrap'>
-			<view class='sm-btn' wx:for='{{imgList}}'>
+			<view class='sm-btn' wx:for='{{imgList}}' bindtap='list' data-index='{{index}}'>
 				<image src='{{item}}' class='sm-icon'></image>
-				<text class='sm-text'>xx超市</text>
+				<text class='sm-text'>{{list1[index]}}</text>
 			</view>
 		</view>
 

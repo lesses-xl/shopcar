@@ -63,6 +63,11 @@ Page({
 			codeget: false
 		})
 	},
+	showMyC: function() {
+		wx.navigateTo({
+			url: 'myc/myc'
+		})
+	},
 	showMyOrder: function() {
 		wx.navigateTo({
 		  url:"myaddress/myaddress"

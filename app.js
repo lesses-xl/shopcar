@@ -11,6 +11,7 @@ App({
     if(wx.getStorageSync('cart')) {
       cart.cart = wx.getStorageSync('cart');
     }
+    console.log(cart);
     var that = this;
     var user = wx.getStorageSync('user') || {};
     var userInfo = wx.getStorageSync('userInfo') || {};

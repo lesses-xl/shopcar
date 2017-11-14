@@ -1,7 +1,7 @@
 <view class='star-wrap' wx:if='{{havestar}}'>	
 	<view class='star-list' wx:for="{{starList}}" bindtap='opendetail' data-id='{{item.thingId}}' data-index='{{index}}'>
 		<image class='star-img' src='../{{item.thingImg}}'></image>
-		<image class='star-del' data-index='{{index}}' src='../../../images/ali/b-close.png' catchtap='delstar'></image>
+		<image class='star-del' data-index='{{index}}' data-id='{{item.thingId}}' src='../../../images/ali/b-close.png' catchtap='delstar'></image>
 		<view class='star-border'></view>
 		<view class='star-bottom'>
 			<text class='star-name'>{{item.thingName}}</text>
@@ -14,3 +14,4 @@
 	<text>抱歉，您没有收藏过任何商品!</text>
 	<button bindtap='tolist'>去逛一逛</button>
 </view>
+

@@ -6,15 +6,13 @@
 		"pages/list/detail/detail",
 		"pages/test/test",
 		"pages/my/mystar/mystar",
-		
+		"pages/index/coupon/coupon",
 		"pages/my/myaddress/myaddress",
 		"pages/my/myphone/myphone",
 		"pages/shopcar/shopcar",
 		
 		"pages/my/my",
-		
-		
-		
+		"pages/my/myc/myc",	
 		
 		"pages/buy/buy",
 		

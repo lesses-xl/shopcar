@@ -21,14 +21,19 @@
 		<image src='../../images/ali/phone.png'></image>
 		<text>绑定手机</text>
 	</view>
-	<view class='my-list my-wrap' bindtap=''  wx:if="{{ifbind}}">
+<!-- 	<view class='my-list my-wrap' bindtap=''  wx:if="{{ifbind}}">
 		<text>已绑定: {{mobile}}</text>
 		<view class='changemobile' >修改</view>
-	</view>
+	</view> -->
 
 	<view class='my-list my-wrap'  bindtap='showMyStar'>
 		<image src='../../images/ali/star.png'></image>
 		<text>我的收藏</text>	
+	</view>
+
+	<view class='my-list my-wrap'  bindtap='showMyC'>
+		<image src='../../images/ali/myc.png'></image>
+		<text>我的优惠券</text>	
 	</view>
 	
 	<view class='my-list my-wrap' bindtap='myCode'>
