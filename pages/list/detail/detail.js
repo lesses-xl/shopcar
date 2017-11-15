@@ -110,7 +110,9 @@ Page({
 				"details": that.data.detail.details,
 				"para": that.data.detail.para,
 				"choose": true,
-				"star": that.data.detail.star
+				"star": that.data.detail.star,
+				"starChoose": false,
+				"show": true
 			}			
 
 			wx.showToast({

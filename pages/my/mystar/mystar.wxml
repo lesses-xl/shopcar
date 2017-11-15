@@ -1,13 +1,30 @@
+<view class='star-top' hidden='{{!havestar}}'>
+	<input type="text" placeholder="搜索商品" bindinput='searchThing'/>
+	<button bindtap='changeChoose'>{{toolName}}</button>
+</view>
+
 <view class='star-wrap' wx:if='{{havestar}}'>	
-	<view class='star-list' wx:for="{{starList}}" bindtap='opendetail' data-id='{{item.thingId}}' data-index='{{index}}'>
+	<view class='star-list' wx:for="{{starList}}" wx-if='{{item.show}}' bindtap='opendetail' bind:longpress='delstar' data-id='{{item.thingId}}' data-index='{{index}}'>
 		<image class='star-img' src='../{{item.thingImg}}'></image>
-		<image class='star-del' data-index='{{index}}' data-id='{{item.thingId}}' src='../../../images/ali/b-close.png' catchtap='delstar'></image>
+		<view class='star-choose' hidden='{{ifchoose}}' catchtap='chooseone' data-id='{{item.thingId}}'>
+			<image src='../../../images/ali/check_yellow.png' hidden='{{!item.starChoose}}'></image>
+		</view>
 		<view class='star-border'></view>
 		<view class='star-bottom'>
 			<text class='star-name'>{{item.thingName}}</text>
 			<text class='star-price'>￥{{item.thingPrice}}</text>
 		</view>
 	</view>
+</view>
+
+<view class='star-delall' hidden='{{ifchoose}}'>
+	<view class='star-delall-left' catchtap='chooseall'>
+		<view class='star-delall-circle'>
+			<image src='../../../images/ali/check_yellow.png' hidden='{{!chooseAll}}'></image>
+		</view>
+		<view class='star-delall-text'>全选</view>
+	</view>
+	<view class='star-delall-del' catchtap='delall'>删除</view>
 </view>
 
 <view class='no-star' wx:if='{{!havestar}}'>
