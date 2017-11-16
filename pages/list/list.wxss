@@ -8,6 +8,14 @@
 	bottom: 0;
 }
 
+.search-right {
+	position: absolute;
+	width: 80rpx;
+	height: 90%;
+	top: 0rpx;
+	right: 0;
+	line-height: 46rpx;
+}
 
 .list-wrap {
 	display: flex;

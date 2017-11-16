@@ -27,7 +27,9 @@
 			<image src='../../images/ali/search.png'></image>
 			<input type="text" placeholder="搜索商品" value="{{inputVal}}" bindinput='getSearch'/>
 			<image  wx:if='{{recsearch}}' src='../../images/ali/c-close-b.png' class='input-close' bindtap='clearinput'></image>	
-			<image wx:if="{{showMask}}" src='../../images/ali/h-close.png' class='hidemask' catchtap='hidemask'></image>
+			<view class='search-right'>
+				<image wx:if="{{showMask}}" src='../../images/ali/h-close.png' class='hidemask' catchtap='hidemask'></image>
+			</view>
 		</view>	
 	</view>
 

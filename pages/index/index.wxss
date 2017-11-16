@@ -129,6 +129,15 @@ image {
 	top: 0;
 }
 
+.search-right {
+	position: absolute;
+	width: 80rpx;
+	top: 0rpx;
+	height: 90%;
+	right: 0;
+	line-height: 46rpx;
+}
+
 .search {
 	background: rgb(237, 237, 237);
 	width: 95%;
