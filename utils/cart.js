@@ -11,7 +11,7 @@ var cart =  [
 			  "thingId": 1,
 			  "choose": false,
 			  "details": '曲奇礼盒 520克.....................',
-			  "para": '78.0.........................',
+			  "parameter": '78.0.........................',
 			  "star": false,
 			  "class": [
 			  	{
@@ -36,7 +36,7 @@ var cart =  [
 			  "thingId": 2,
 			  "choose": false,
 			  "details": '苏打夹心饼干 270克.....................',
-			  "para": '15.8.........................',
+			  "parameter": '15.8.........................',
 			  "star": false
 			},
 			{
@@ -47,7 +47,7 @@ var cart =  [
 			  "thingId": 3,
 			  "choose": false,
 			  "details": '绿豆糕 80克.....................',
-			  "para": '12.9.........................',
+			  "parameter": '12.9.........................',
 			  "star": false
 			},
 			{
@@ -58,7 +58,7 @@ var cart =  [
 			  "thingId": 4,
 			  "choose": false,
 			  "details": '牛扎饼 280克.....................',
-			  "para": '14.0.........................',
+			  "parameter": '14.0.........................',
 			  "star": false
 			},
 			{
@@ -69,7 +69,7 @@ var cart =  [
 			  "thingId": 5,
 			  "choose": false,
 			  "details": '法式松饼 160克.....................',
-			  "para": '28.0.........................',
+			  "parameter": '28.0.........................',
 			  "star": false
 			},
 			{
@@ -80,7 +80,7 @@ var cart =  [
 			  "thingId": 6,
 			  "choose": false,
 			  "details": '法式奶酪 300克.....................',
-			  "para": '20.0.........................',
+			  "parameter": '20.0.........................',
 			  "star": false
 			}
 		]
@@ -97,7 +97,7 @@ var cart =  [
 			  "thingId": 20,
 			  "choose": false,
 			  "details": '鲜果冻 180克.....................',
-			  "para": '14.00.........................',
+			  "parameter": '14.00.........................',
 			  "star": false
 			},
 			{
@@ -108,7 +108,7 @@ var cart =  [
 			  "thingId": 21,
 			  "choose": false,
 			  "details": '薯角 50克.....................',
-			  "para": '7.90.........................',
+			  "parameter": '7.90.........................',
 			  "star": false
 			},
 			{
@@ -119,7 +119,7 @@ var cart =  [
 			  "thingId": 22,
 			  "choose": false,
 			  "details": '春日落花酥 158克.....................',
-			  "para": '9.9.........................',
+			  "parameter": '9.9.........................',
 			  "star": false
 			},
 			{
@@ -130,7 +130,7 @@ var cart =  [
 			  "thingId": 23,
 			  "choose": false,
 			  "details": '台湾手工牛轧糖 250克.....................',
-			  "para": '48.0.........................',
+			  "parameter": '48.0.........................',
 			  "star": false
 			},
 			{
@@ -141,7 +141,7 @@ var cart =  [
 			  "thingId": 24,
 			  "choose": false,
 			  "details": '开口甘栗 100克.....................',
-			  "para": '9.00.........................',
+			  "parameter": '9.00.........................',
 			  "star": false
 			},
 			{
@@ -152,7 +152,7 @@ var cart =  [
 			  "thingId": 25,
 			  "choose": false,
 			  "details": '草莓白巧克力 65克.....................',
-			  "para": '16.0.........................',
+			  "parameter": '16.0.........................',
 			  "star": false
 			},
 			{
@@ -163,7 +163,7 @@ var cart =  [
 			  "thingId": 26,
 			  "choose": false,
 			  "details": '藕片 45克.....................',
-			  "para": '9.9.........................',
+			  "parameter": '9.9.........................',
 			  "star": false
 			}
 		]
@@ -180,7 +180,7 @@ var cart =  [
 			  "thingId": 40,
 			  "choose": false,
 			  "details": '新疆灰枣 280克.....................',
-			  "para": '18.0.........................',
+			  "parameter": '18.0.........................',
 			  "star": false
 			},
 			{
@@ -191,7 +191,7 @@ var cart =  [
 			  "thingId": 41,
 			  "choose": false,
 			  "details": '绿香妃葡萄干 180克.....................',
-			  "para": '26.0.........................',
+			  "parameter": '26.0.........................',
 			  "star": false
 			}
 		]
@@ -208,7 +208,7 @@ var cart =  [
 			  "thingId": 60,
 			  "choose": false,
 			  "details": '果物荟萃 馈赠佳品.....',
-			  "para": '果物荟萃(坚果果干礼盒)！！！',
+			  "parameter": '果物荟萃(坚果果干礼盒)！！！',
 			  "star": false
 			},
 			{
@@ -219,7 +219,7 @@ var cart =  [
 			  "thingId": 61,
 			  "choose": false,
 			  "details": '经典原味，酥脆果仁.....',
-			  "para": '大核桃仁(生)！！！',
+			  "parameter": '大核桃仁(生)！！！',
 			  "star": false
 			},
 			{
@@ -230,7 +230,7 @@ var cart =  [
 			  "thingId": 62,
 			  "choose": false,
 			  "details": '无农药，健康不漂白.....',
-			  "para": '开心果！！！',
+			  "parameter": '开心果！！！',
 			  "star": false
 			},
 			{
@@ -241,7 +241,7 @@ var cart =  [
 			  "thingId": 63,
 			  "choose": false,
 			  "details": '乳山花生，麻辣爽脆.....',
-			  "para": '麻辣花生！！！',
+			  "parameter": '麻辣花生！！！',
 			  "star": false
 			}
 		]
@@ -286,7 +286,7 @@ var cart =  [
 			  "thingId": 180,
 			  "choose": false,
 			  "details": '鲜享蟹宴.....',
-			  "para": '大闸蟹！！！',
+			  "parameter": '大闸蟹！！！',
 			  "star": false
 			},
 			{
@@ -297,7 +297,7 @@ var cart =  [
 			  "thingId": 181,
 			  "choose": false,
 			  "details": '肥瘦俱全,款款精选',
-			  "para": '黑猪肉！！！',
+			  "parameter": '黑猪肉！！！',
 			  "star": false
 			},
 			{
@@ -308,7 +308,7 @@ var cart =  [
 			  "thingId": 182,
 			  "choose": false,
 			  "details": '好水好虾，鲜香弹润.....',
-			  "para": '小龙虾！！！',
+			  "parameter": '小龙虾！！！',
 			  "star": false
 			},
 		]
@@ -317,32 +317,31 @@ var cart =  [
 
 
 var indexImg = [
-	"../../images/goods/list1.png",
-	"../../images/goods/list2.png",
-	"../../images/goods/list3.png"
+	[	
+		"../../images/goods/list1.png",
+		"../../images/goods/list2.png",
+		"../../images/goods/list3.png"
+	],
+	[
+		'../../images/sm-icon1.png',
+		'../../images/sm-icon1.png',
+		'../../images/sm-icon1.png',
+		'../../images/sm-icon1.png',
+		'../../images/sm-icon1.png',
+		'../../images/sm-icon1.png'	
+	],
+	[
+		'新品上市',
+		'强烈推荐',
+		'美食排行',
+		'优惠领券',
+		'即将上线',
+		'即将上线'
+	]
 ]
 
-var list = [
-  '../../images/sm-icon1.png',
-  '../../images/sm-icon1.png',
-  '../../images/sm-icon1.png',
-  '../../images/sm-icon1.png',
-  '../../images/sm-icon1.png',
-  '../../images/sm-icon1.png'
-]
-
-var list1 = [
-	'新品上市',
-	'强烈推荐',
-	'美食排行',
-	'优惠领券',
-	'即将上线',
-	'即将上线'
-]
 
 module.exports = {
 	cart: cart,
-	indexImg: indexImg,
-	list: list,
-	list1: list1
+	indexImg: indexImg
 }

@@ -72,7 +72,7 @@
 		<swiper-item>
 			<view class='top-three'>
 				{{detail.details}}
-				{{detail.para}}				
+				{{detail.parameter}}				
 			</view>
 		</swiper-item>
 	</swiper>

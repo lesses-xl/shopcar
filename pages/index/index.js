@@ -12,7 +12,7 @@ Page({
     dotcolor: '#02AAFCFF',
     index: '',
     list: '',
-    list1: cart.list1,
+    list1: '',
     imgList: [],
     showSearchData: [],
     // swiperCurrent: 0,
@@ -193,8 +193,9 @@ Page({
   onLoad: function (options) { 
     this.setData({
       showMask: false,
-      index: cart.indexImg,
-      imgList: cart.list,
+      index: cart.indexImg[0],
+      imgList: cart.indexImg[1],
+      list1: cart.indexImg[2],
       list: cart.cart
     })
   },
@@ -204,9 +205,9 @@ Page({
   onShow: function () {
     this.setData({
       showMask: false,
-      index: cart.indexImg,
-      imgList: cart.list,
-      list: cart.cart
+      index: cart.indexImg[0],
+      imgList: cart.indexImg[1],
+      list: cart.list
     })
 
     if(wx.getStorageSync('cart')) {
