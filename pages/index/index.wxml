@@ -22,7 +22,7 @@
 	<view class='index'>
 		<view class='search-wrap'>
 			<view class='search {{showMask == false ? " " : "searchshow"}}' bindtap="getmask">
-				<image src='../../images/ali/search.png'></image>
+				<image src='../../images/ali/search.png' ></image>
 				<input type="text" placeholder="搜索商品" value="{{inputVal}}" bindinput='getSearch'/>
 				<image  wx:if='{{recsearch}}' src='../../images/ali/c-close-b.png' class='input-close' bindtap='clearinput'></image>	
 				<view class='search-right'>
@@ -57,7 +57,7 @@
 		<!-- 一半 -->
 		<view class='sm-container'>
 			<view class='sm-content' wx:for='{{list[0]["list"]}}' data-index='0,{{index}}' data-id='{{item.thingId}}' bindtap='index1'>
-				<image src='{{item.thingImg}}'></image>
+				<image src='{{item.thingImg}}' lazy-load='true'></image>
 				<view class='sm-content-text'>
 					<view class='big-text'>{{item.thingName}}</view>
 					<view>{{item.thingPrice}}元起</view>
@@ -75,7 +75,7 @@
 		<scroll-view scroll-x class='banner-wrap'>
 			<view class='banner-list' wx:for='{{list[1]["list"]}}' data-index='1,{{index}}' bindtap='index2' data-id='{{item.thingId}}'>
 				<view class='banner-list-img'>
-					<image src='{{item.thingImg}}'></image>
+					<image src='{{item.thingImg}}' lazy-load='true'></image>
 				</view>
 				<view class='banner-list-text'>
 					<text>{{item.thingName}}</text>
@@ -99,7 +99,7 @@
 					<view class='sm-container1-name2'>{{item.para}}</view>
 				</view>
 				<view class='sm-container1-bottom'>
-					<image src='{{item.thingImg}}' lazy-load='true'></image>
+					<image src='{{item.thingImg}}' lazy-load='true' lazy-load='true'></image>
 				</view>
 			</view>
 		</view>

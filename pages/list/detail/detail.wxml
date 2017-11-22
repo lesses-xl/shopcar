@@ -1,7 +1,7 @@
 <view class='top-btn'>
 	<view class='top-collection' bindtap='tostar'>
-		<image src='../../../images/ali/fav.png' wx-if="{{!starfull}}"></image>
-		<image src='../../../images/ali/fav_fill.png' wx-if="{{starfull}}"></image>
+		<image src='../../../images/ali/coll.png' wx-if="{{!starfull}}"></image>
+		<image src='../../../images/ali/coll-fill.png' wx-if="{{starfull}}"></image>
 		<text>收藏</text>
 	</view>
 	<view class='top-right' bindtap="changeput">
@@ -52,18 +52,11 @@
 					<text>商品介绍</text>
 					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
 					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
-					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
-					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
-					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
 				</view>
 			</view>
 		</swiper-item>
 		<swiper-item>
 			<view class='top-two'>
-					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
-					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
-					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
-					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
 					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
 					<image class='top-main-img' src='../{{detail.thingImg}}'></image>
 					<image class='top-main-img' src='../{{detail.thingImg}}'></image>

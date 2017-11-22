@@ -1,3 +1,8 @@
+.on {
+	color: #B4A078;
+	border-bottom: 6rpx solid #B4A078;
+}
+
 .top-btn {
 	position: fixed;
 	bottom: 0;
@@ -6,7 +11,6 @@
 	height: 85rpx;
 	font-size: 26rpx;
 	color: white;
-	/* background: #AB956C; */
 	margin: 0 auto;
 	line-height: 85rpx;
 	display: flex;
@@ -110,7 +114,7 @@
 .cart-view view {
 	width: 28rpx;
 	height: 28rpx;
-	background: red;
+	background: #B4A078;
 	border-radius: 50%;
 	position: absolute;
 	top: -3rpx;

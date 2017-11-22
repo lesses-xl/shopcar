@@ -586,6 +586,7 @@ image {
 	margin-left: 30rpx;
 	display: inline-block;
 	margin-bottom: 20rpx;
+	/* border: 2rpx solid #ccc; */
 }
 
 .banner-list:last-child {
@@ -608,6 +609,9 @@ image {
 .banner-list-text {
 	width: 100%;
 	height: auto;
+	border: 4rpx solid rgb(244,244,244);
+	border-top: none;
+	box-sizing: border-box;
 }
 
 .banner-list-text text {

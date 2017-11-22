@@ -52,6 +52,7 @@ Page({
 							wx.clearStorageSync();
 						}else if(res.cancel) {
 							//null
+							
 						}
 					}
 				})

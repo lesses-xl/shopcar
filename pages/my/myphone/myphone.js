@@ -43,7 +43,7 @@ Page({
     }
   },
   getAuthCode: function() {
-    console.log(this.data.mobile)
+    // console.log(this.data.mobile)
     this.phoneIfTrue();
     if(!this.data.ifMobile) {
       wx.showToast({
@@ -57,7 +57,7 @@ Page({
         title: '验证码已发送'
       });
       wx.request({
-        url: 'https://api.feiwuhb.com/getUserPhoneNumber',
+        url: 'https://api.feiwuhb.com/verifyCode',
         data: {
           phoneNumber: this.data.mobile
         },
@@ -133,8 +133,6 @@ Page({
   },
   getPhoneNumbers: function(e) {
     var that = this;
-    // console.log(e);
-    // console.log(that.data.code)
     console.log(this.data.mobile);
     wx.request({
       url: 'https://api.feiwuhb.com/getUserPhoneNumber',
@@ -149,7 +147,7 @@ Page({
       },
       success: function(res) {
         console.log(res);
-        console.log(this.data.mobile);
+        // console.log(this.data.mobile);
         if(res == undefined || res == null || res == '') {
           //null
         }else {

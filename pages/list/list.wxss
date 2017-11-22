@@ -70,8 +70,8 @@
 
 
 .active {
-	border-left: 5rpx solid rgb(180,45,40);
-	color: #ab2b2b;
+	border-left: 5rpx solid #B4A078;
+	color: #B4A078;
 	box-sizing: border-box;
 }
 
@@ -80,6 +80,7 @@
 	width: 100%;
 	margin-top: 15rpx;
 	position: relative;
+	color: #B4A078!important;
 }
 
 .list-show .list-img {

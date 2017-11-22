@@ -1,6 +1,6 @@
 <view wx-if='{{!haveThing}}' class='shopcar-no'>	
   <image src='../../images/ali/cart_y.png'></image>
-  <text>购物车空空如也~</text>
+  <text>有没有商品心里没点B数吗？</text>
   <button bindtap="tolist">去逛逛</button> 
 </view>
 <view wx-if='{{haveThing}}' class='shopcar-have'>

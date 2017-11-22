@@ -26,11 +26,11 @@
 
 .shopcar-no button {
   margin: 0 auto;
-  width: 260rpx;
+  width: 250rpx;
   box-sizing: border-box;
-  padding: 0rpx 15rpx;
+  padding: 0rpx 12rpx;
   font-size: 24rpx;
-  background: #AB956C;
+  background: #B4A078;
   color: white;
 }
 
